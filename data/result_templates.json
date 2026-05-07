@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "phrasing_rules": {
+    "allowed_openers": [
+      "Your responses resonate with",
+      "Your strongest recognition pattern appears around",
+      "This profile sits near",
+      "This deity anchor offers a narrative placement for",
+      "This result is a point of entry into the Bonpuri structure"
+    ],
+    "forbidden_claims": [
+      "You are this deity.",
+      "This is your personality type.",
+      "You have trauma.",
+      "You need healing.",
+      "This means you are anxious/neurotic."
+    ]
+  },
+  "axis_combination_templates": {
+    "Self + Care": {
+      "summary": "Your strongest recognition pattern appears around self-growth, cultivation, emergence, and the conditions that allow something in the self to form or continue.",
+      "axis_explanation": "Self and Care are the leading axes in this profile. The result points toward authorship, personal direction, life-force, sustenance, and becoming.",
+      "bonpuri_connection": "This result is a point of entry into Bonpuri structures where self-formation and cultivation are held together.",
+      "encounter_suggestions": "Look for deity encounters connected to cultivation, emergence, continuation, and the care conditions around becoming."
+    },
+    "Self + Justice": {
+      "summary": "Your strongest recognition pattern appears around self-definition, self-source, rightful explanation, and the legitimacy of one's position.",
+      "axis_explanation": "Self and Justice are the leading axes in this profile. The result points toward authorship, misrecognition, truth, agency, and distorted explanation.",
+      "bonpuri_connection": "This result is a point of entry into Bonpuri structures where questions of origin, recognition, and moral order are tightly linked.",
+      "encounter_suggestions": "Look for deity encounters connected to self-source, misrecognition, agency, calling, and truth-detection."
+    },
+    "Social + Care": {
+      "summary": "Your strongest recognition pattern appears around relation, belonging, care structure, reciprocity, and shared survival.",
+      "axis_explanation": "Social and Care are the leading axes in this profile. The result points toward household or community fields, reception, continuation, and the conditions that can hold what enters them.",
+      "bonpuri_connection": "This result is a point of entry into Bonpuri structures where care is not private only, but held by relational and social arrangements.",
+      "encounter_suggestions": "Look for deity encounters connected to hosting otherness, reciprocity, shared survival, seasonal relation, and household care."
+    },
+    "Social + Justice": {
+      "summary": "Your strongest recognition pattern appears around truth, harm, responsibility, authority, and distorted world-order.",
+      "axis_explanation": "Social and Justice are the leading axes in this profile. The result points toward hidden causes, false authority, crooked rules, power, and moral order in the social field.",
+      "bonpuri_connection": "This result is a point of entry into Bonpuri structures where social rupture becomes a question of judgement, truth, and responsibility.",
+      "encounter_suggestions": "Look for deity encounters connected to truth, harm, judgement, false explanation, authority, and the correction or exposure of distorted order."
+    },
+    "Mixed Field": {
+      "summary": "Your result sits in a mixed field rather than a single clean axis pair.",
+      "axis_explanation": "Two or more axis patterns are close together. The result should be read as a layered sensitivity profile, not as a forced category.",
+      "bonpuri_connection": "This result is a point of entry into more than one Bonpuri structure and should remain open during testing.",
+      "encounter_suggestions": "Compare the closest deity anchors and use their encounter prompts as parallel entry points."
+    }
+  },
+  "reactivity_language": {
+    "low": "The response intensity modifier is low to medium, so the result tone can lean toward stabilising, constructive, investigative, cultivating, or ordering anchors.",
+    "medium": "The response intensity modifier is moderate, so the result tone can hold both structure and pressure without treating either as the whole result.",
+    "high": "The response intensity modifier shows a strong response intensity, so the result tone can include pressure, urgency, unstable transformation, or high-stakes judgement without describing that charge negatively."
+  },
+  "mixed_anchor_sentence": "Your result sits between {primary} and {secondary}. The first carries {primary_tone}; the second carries {secondary_tone}."
+}

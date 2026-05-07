@@ -1,0 +1,826 @@
+{
+  "schema_version": "0.1.0",
+  "notes": "Final revised questionnaire seed data. Question IDs and option IDs are preserved as q01-q16.",
+  "score_scale": {
+    "min": 0,
+    "max": 3
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "phase": "broad_orientation",
+      "text": "What do you usually notice first when something feels off?",
+      "options": [
+        {
+          "id": "q01_a",
+          "text": "A pull to check whether it has something to do with me.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 0,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q01_b",
+          "text": "A shift in the people around me.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 1,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q01_c",
+          "text": "That something isn't getting the attention it needs.",
+          "scores": {
+            "self": 0,
+            "social": 1,
+            "care": 3,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q01_d",
+          "text": "That something isn't right.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "phase": "broad_orientation",
+      "text": "What tends to stay with you the longest?",
+      "options": [
+        {
+          "id": "q02_a",
+          "text": "A question about myself I haven't been able to settle.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q02_b",
+          "text": "A relationship that shifted and never quite recovered.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q02_c",
+          "text": "Something that never got the chance it needed.",
+          "scores": {
+            "self": 1,
+            "social": 0,
+            "care": 3,
+            "justice": 0,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q02_d",
+          "text": "Something wrong that nobody ever addressed.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "phase": "response_intensity",
+      "text": "When you sense something important, how does it usually arrive?",
+      "options": [
+        {
+          "id": "q03_a",
+          "text": "As a vague feeling I can't place yet.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q03_b",
+          "text": "As a thought that quietly keeps returning.",
+          "scores": {
+            "self": 1,
+            "social": 0,
+            "care": 0,
+            "justice": 0,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q03_c",
+          "text": "As a pressure that builds until I act.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 2
+          }
+        },
+        {
+          "id": "q03_d",
+          "text": "As something I can't stop turning over.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "phase": "broad_orientation",
+      "text": "When you try to understand a difficult situation, where do you begin?",
+      "options": [
+        {
+          "id": "q04_a",
+          "text": "With my own position in it.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q04_b",
+          "text": "With what each person involved was going through.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 1,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q04_c",
+          "text": "With what got overlooked or wasn't taken care of.",
+          "scores": {
+            "self": 0,
+            "social": 1,
+            "care": 3,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q04_d",
+          "text": "With what actually happened.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "phase": "broad_orientation",
+      "text": "Which feels most important to protect?",
+      "options": [
+        {
+          "id": "q05_a",
+          "text": "My sense of who I am.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q05_b",
+          "text": "The people I care about.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 1,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q05_c",
+          "text": "Something that's still in the middle of becoming.",
+          "scores": {
+            "self": 1,
+            "social": 0,
+            "care": 3,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q05_d",
+          "text": "What's actually true about the situation.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "phase": "sensitivity_refinement",
+      "text": "What feels most difficult to leave unresolved?",
+      "options": [
+        {
+          "id": "q06_a",
+          "text": "Feeling like I was misread.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 0,
+            "justice": 2,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q06_b",
+          "text": "Knowing something real got wasted.",
+          "scores": {
+            "self": 1,
+            "social": 0,
+            "care": 3,
+            "justice": 1,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q06_c",
+          "text": "Someone ending up alone with something they shouldn't have had to carry.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 2,
+            "justice": 2,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q06_d",
+          "text": "Something wrong being left to quietly become normal.",
+          "scores": {
+            "self": 0,
+            "social": 1,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "phase": "response_intensity",
+      "text": "How long do subtle signals usually stay with you?",
+      "options": [
+        {
+          "id": "q07_a",
+          "text": "Not long. They pass on their own.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q07_b",
+          "text": "They drift back sometimes, but loosely.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 0,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q07_c",
+          "text": "They stay somewhere in the background, still running.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 1,
+            "justice": 0,
+            "response_intensity": 2
+          }
+        },
+        {
+          "id": "q07_d",
+          "text": "They keep coming back until I do something about them.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "phase": "sensitivity_refinement",
+      "text": "Which kind of mistake bothers you most?",
+      "options": [
+        {
+          "id": "q08_a",
+          "text": "Getting someone completely wrong.",
+          "scores": {
+            "self": 2,
+            "social": 1,
+            "care": 0,
+            "justice": 2,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q08_b",
+          "text": "Doing something that cost someone their trust in me.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 0,
+            "justice": 2,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q08_c",
+          "text": "Failing to look after something while I still could.",
+          "scores": {
+            "self": 0,
+            "social": 1,
+            "care": 3,
+            "justice": 0,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q08_d",
+          "text": "Letting something dishonest go without saying anything.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "phase": "sensitivity_refinement",
+      "text": "What do you tend to look for beneath the surface?",
+      "options": [
+        {
+          "id": "q09_a",
+          "text": "Who someone actually is, not just how they're coming across.",
+          "scores": {
+            "self": 3,
+            "social": 1,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q09_b",
+          "text": "What someone actually needs but hasn't said.",
+          "scores": {
+            "self": 0,
+            "social": 2,
+            "care": 3,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q09_c",
+          "text": "Where the tension between people is really coming from.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 1,
+            "justice": 2,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q09_d",
+          "text": "The real reason something happened.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "phase": "sensitivity_refinement",
+      "text": "What makes you want to step in?",
+      "options": [
+        {
+          "id": "q10_a",
+          "text": "Someone is being seen as something they're not.",
+          "scores": {
+            "self": 3,
+            "social": 1,
+            "care": 0,
+            "justice": 2,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q10_b",
+          "text": "Something is going to fall apart if no one pays attention to it.",
+          "scores": {
+            "self": 1,
+            "social": 1,
+            "care": 3,
+            "justice": 1,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q10_c",
+          "text": "Someone is being failed by the people around them and nobody notices.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 2,
+            "justice": 2,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q10_d",
+          "text": "Something unfair is starting to just be accepted.",
+          "scores": {
+            "self": 0,
+            "social": 1,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "phase": "response_intensity",
+      "text": "When others dismiss what you notice, what happens?",
+      "options": [
+        {
+          "id": "q11_a",
+          "text": "I can usually let it go.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q11_b",
+          "text": "It nags a little, but I move on.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 0,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q11_c",
+          "text": "I want it acknowledged, even if nothing changes.",
+          "scores": {
+            "self": 1,
+            "social": 1,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 2
+          }
+        },
+        {
+          "id": "q11_d",
+          "text": "It sits wrong with me in a way that's hard to shake.",
+          "scores": {
+            "self": 1,
+            "social": 1,
+            "care": 0,
+            "justice": 2,
+            "response_intensity": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "phase": "narrative_pressure",
+      "text": "A situation keeps repeating. What do you most want to know?",
+      "options": [
+        {
+          "id": "q12_a",
+          "text": "What it keeps revealing about me.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q12_b",
+          "text": "What it's still waiting for.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 3,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q12_c",
+          "text": "Who's been quietly carrying it.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 2,
+            "justice": 2,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q12_d",
+          "text": "Why it keeps happening.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "phase": "narrative_pressure",
+      "text": "Something unfamiliar enters your life. What matters to you first?",
+      "options": [
+        {
+          "id": "q13_a",
+          "text": "What it might change about me.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 1,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q13_b",
+          "text": "Whether it has room to grow.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 3,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q13_c",
+          "text": "Whether the people around me can make space for it.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 1,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q13_d",
+          "text": "What it's actually bringing with it.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "phase": "narrative_pressure",
+      "text": "When something breaks, what do you first want to recover?",
+      "options": [
+        {
+          "id": "q14_a",
+          "text": "My own sense of what happened.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q14_b",
+          "text": "The conditions for things to start repairing.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 3,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q14_c",
+          "text": "The closeness between the people involved.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 1,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q14_d",
+          "text": "A clear picture of what actually went wrong.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "phase": "response_intensity",
+      "text": "When something stays unresolved, how does it feel?",
+      "options": [
+        {
+          "id": "q15_a",
+          "text": "It fades on its own, given time.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 0,
+            "response_intensity": 0
+          }
+        },
+        {
+          "id": "q15_b",
+          "text": "It softens. Still there, but distant.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 0,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q15_c",
+          "text": "It sits with me, waiting to find its shape.",
+          "scores": {
+            "self": 2,
+            "social": 0,
+            "care": 2,
+            "justice": 2,
+            "response_intensity": 2
+          }
+        },
+        {
+          "id": "q15_d",
+          "text": "It presses. It wants an answer.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 2,
+            "response_intensity": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "phase": "narrative_pressure",
+      "text": "What kind of unresolved thing feels most alive to you?",
+      "options": [
+        {
+          "id": "q16_a",
+          "text": "A part of myself I haven't figured out yet.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 0,
+            "justice": 1,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q16_b",
+          "text": "Something that ended before it could finish becoming.",
+          "scores": {
+            "self": 2,
+            "social": 0,
+            "care": 3,
+            "justice": 1,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q16_c",
+          "text": "A relationship that still pulls at me.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 1,
+            "justice": 0,
+            "response_intensity": 1
+          }
+        },
+        {
+          "id": "q16_d",
+          "text": "A wrong that was never properly dealt with.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "justice": 3,
+            "response_intensity": 1
+          }
+        }
+      ]
+    }
+  ]
+}

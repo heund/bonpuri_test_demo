@@ -1,0 +1,24 @@
+{
+  "name": "bonpuri-code-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Transparent Bonpuri sensitivity profile scoring prototype.",
+  "main": "src/bonpuriScoring.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "sample": "node examples/run_sample.js",
+    "sample:self-justice": "node examples/run_sample.js sample_self_justice",
+    "sample:social-care": "node examples/run_sample.js sample_social_care",
+    "sample:social-justice": "node examples/run_sample.js sample_social_justice_high_reactivity"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^5.4.21"
+  },
+  "license": "UNLICENSED"
+}

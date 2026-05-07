@@ -1,0 +1,687 @@
+{
+  "schema_version": "0.1.0",
+  "notes": "All deity axis vectors are provisional, editable, and intended for conceptual testing. Values use the supplied 0-100 scale.",
+  "vector_status": "provisional",
+  "scoring_scale": {
+    "axis": {
+      "0-20": "barely relevant",
+      "21-40": "present but secondary",
+      "41-60": "moderately relevant",
+      "61-80": "strongly relevant",
+      "81-100": "defining axis"
+    },
+    "response_intensity": {
+      "0-30": "stable / low pressure / constructive",
+      "31-60": "moderate charge / active tension",
+      "61-80": "high pressure / threat / rupture / instability",
+      "81-100": "extreme pressure / violence / disease / death / severe rupture"
+    }
+  },
+  "deities": [
+    {
+      "deity_id": "gamunjangagi",
+      "name_ko": "가믄장아기",
+      "name_en": "Gamunjangagi",
+      "bonpuri": "삼공본풀이",
+      "axis_vector": {
+        "self": 90,
+        "social": 35,
+        "care": 40,
+        "justice": 75,
+        "response_intensity": 65
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "self-definition / misrecognition / agency",
+      "primary_axes": [
+        "self",
+        "justice"
+      ],
+      "secondary_axes": [
+        "care"
+      ],
+      "keywords": [
+        "self-source",
+        "fortune",
+        "misrecognition",
+        "expulsion",
+        "agency"
+      ],
+      "result_summary": "This anchor carries questions of self-source, rightful explanation, and the force of agency when a person is misrecognized.",
+      "encounter_prompt": "Enter through 삼공본풀이 as a narrative field for self-definition, origin, fortune, and misrecognition."
+    },
+    {
+      "deity_id": "oneuri",
+      "name_ko": "오늘이",
+      "name_en": "Oneuri",
+      "bonpuri": "원천강본풀이",
+      "axis_vector": {
+        "self": 85,
+        "social": 60,
+        "care": 45,
+        "justice": 35,
+        "response_intensity": 45
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "origin / self-growth / cultivated direction",
+      "primary_axes": [
+        "self",
+        "care"
+      ],
+      "secondary_axes": [
+        "justice"
+      ],
+      "keywords": [
+        "origin",
+        "growth",
+        "journey",
+        "direction"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "jacheongbi",
+      "name_ko": "자청비",
+      "name_en": "Jacheongbi",
+      "bonpuri": "세경본풀이",
+      "axis_vector": {
+        "self": 85,
+        "social": 55,
+        "care": 85,
+        "justice": 70,
+        "response_intensity": 55
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "cultivated capacity / agency / emergence",
+      "primary_axes": [
+        "self",
+        "care"
+      ],
+      "secondary_axes": [
+        "justice"
+      ],
+      "keywords": [
+        "cultivation",
+        "capacity",
+        "agency",
+        "becoming"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "hallakgungi",
+      "name_ko": "할락궁이",
+      "name_en": "Hallakgungi",
+      "bonpuri": "이공본풀이",
+      "axis_vector": {
+        "self": 75,
+        "social": 50,
+        "care": 35,
+        "justice": 85,
+        "response_intensity": 70
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "truth / rightful position / pressure",
+      "primary_axes": [
+        "self",
+        "justice"
+      ],
+      "secondary_axes": [],
+      "keywords": [
+        "misrecognition",
+        "truth",
+        "legitimacy",
+        "pressure"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "chogong_three_brothers",
+      "name_ko": "초공신삼형제",
+      "name_en": "Chogong Three Brothers",
+      "bonpuri": "초공본풀이",
+      "axis_vector": {
+        "self": 70,
+        "social": 45,
+        "care": 55,
+        "justice": 65,
+        "response_intensity": 65
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "role-transition pressure / calling / legitimacy",
+      "primary_axes": [
+        "self",
+        "justice"
+      ],
+      "secondary_axes": [
+        "care"
+      ],
+      "keywords": [
+        "role-transition",
+        "calling",
+        "legitimacy"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "yu_jeongseungs_daughter",
+      "name_ko": "유정승따님애기",
+      "name_en": "Yu Jeongseung's Daughter",
+      "bonpuri": "초공본풀이",
+      "axis_vector": {
+        "self": 75,
+        "social": 45,
+        "care": 60,
+        "justice": 55,
+        "response_intensity": 75
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "role-transition pressure / relation / emergence",
+      "primary_axes": [
+        "self",
+        "care"
+      ],
+      "secondary_axes": [
+        "justice"
+      ],
+      "keywords": [
+        "transition",
+        "pressure",
+        "relation",
+        "emergence"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "myeongjinguks_daughter",
+      "name_ko": "명진국따님애기",
+      "name_en": "Myeongjinguk's Daughter",
+      "bonpuri": "삼승할망본풀이",
+      "axis_vector": {
+        "self": 50,
+        "social": 55,
+        "care": 90,
+        "justice": 50,
+        "response_intensity": 35
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "birth / emergence / care structure",
+      "primary_axes": [
+        "self",
+        "care"
+      ],
+      "secondary_axes": [
+        "social"
+      ],
+      "keywords": [
+        "birth",
+        "emergence",
+        "care",
+        "life-force"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "samseung_halmang",
+      "name_ko": "삼승할망",
+      "name_en": "Samseung Halmang",
+      "bonpuri": "삼승할망본풀이",
+      "axis_vector": {
+        "self": 40,
+        "social": 65,
+        "care": 98,
+        "justice": 60,
+        "response_intensity": 30
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "life-force / birth / care structure",
+      "primary_axes": [
+        "care",
+        "social"
+      ],
+      "secondary_axes": [
+        "self"
+      ],
+      "keywords": [
+        "birth",
+        "care",
+        "life-force",
+        "continuation"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "donghae_yonggungs_daughter",
+      "name_ko": "동해용궁따님애기",
+      "name_en": "Donghae Yonggung's Daughter",
+      "bonpuri": "삼승할망본풀이",
+      "axis_vector": {
+        "self": 55,
+        "social": 45,
+        "care": 80,
+        "justice": 50,
+        "response_intensity": 80
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "failed emergence pressure / failed order pressure",
+      "primary_axes": [
+        "social",
+        "justice"
+      ],
+      "secondary_axes": [
+        "care"
+      ],
+      "keywords": [
+        "failed-emergence",
+        "pressure",
+        "order",
+        "care"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "jeoseung_halmang",
+      "name_ko": "저승할망",
+      "name_en": "Jeoseung Halmang",
+      "bonpuri": "삼승할망본풀이",
+      "axis_vector": {
+        "self": 40,
+        "social": 55,
+        "care": 70,
+        "justice": 65,
+        "response_intensity": 90
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "threshold / care / transition",
+      "primary_axes": [
+        "care",
+        "justice"
+      ],
+      "secondary_axes": [
+        "social"
+      ],
+      "keywords": [
+        "threshold",
+        "transition",
+        "care",
+        "order"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "yeosan_buin",
+      "name_ko": "여산부인",
+      "name_en": "Yeosan Buin",
+      "bonpuri": "문전본풀이",
+      "axis_vector": {
+        "self": 45,
+        "social": 80,
+        "care": 85,
+        "justice": 35,
+        "response_intensity": 40
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "household / relation / care",
+      "primary_axes": [
+        "social",
+        "care"
+      ],
+      "secondary_axes": [
+        "self"
+      ],
+      "keywords": [
+        "household",
+        "belonging",
+        "care",
+        "reception"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "nokdisaengi",
+      "name_ko": "녹디생이",
+      "name_en": "Nokdisaengi",
+      "bonpuri": "문전본풀이",
+      "axis_vector": {
+        "self": 55,
+        "social": 85,
+        "care": 65,
+        "justice": 85,
+        "response_intensity": 75
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "truth-detection / household order / hidden cause",
+      "primary_axes": [
+        "social",
+        "justice"
+      ],
+      "secondary_axes": [
+        "care"
+      ],
+      "keywords": [
+        "truth",
+        "household",
+        "hidden-cause",
+        "order"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "chilseong_agi",
+      "name_ko": "칠성아기",
+      "name_en": "Chilseong Agi",
+      "bonpuri": "칠성본풀이",
+      "axis_vector": {
+        "self": 55,
+        "social": 90,
+        "care": 80,
+        "justice": 45,
+        "response_intensity": 75
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "belonging / otherness / household reception",
+      "primary_axes": [
+        "social",
+        "care"
+      ],
+      "secondary_axes": [],
+      "keywords": [
+        "belonging",
+        "otherness",
+        "reception",
+        "shared-survival"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "samani",
+      "name_ko": "사만이",
+      "name_en": "Samani",
+      "bonpuri": "멩감본풀이 or 사만이본풀이",
+      "axis_vector": {
+        "self": 45,
+        "social": 80,
+        "care": 65,
+        "justice": 50,
+        "response_intensity": 70
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "shared survival / care / relational field",
+      "primary_axes": [
+        "social",
+        "care"
+      ],
+      "secondary_axes": [],
+      "keywords": [
+        "survival",
+        "relation",
+        "care",
+        "reciprocity"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "yeongdeung_halmang",
+      "name_ko": "영등할망",
+      "name_en": "Yeongdeung Halmang",
+      "bonpuri": "영등본풀이",
+      "axis_vector": {
+        "self": 35,
+        "social": 80,
+        "care": 85,
+        "justice": 35,
+        "response_intensity": 45
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "seasonal relation / cultivation / shared survival",
+      "primary_axes": [
+        "social",
+        "care"
+      ],
+      "secondary_axes": [
+        "self"
+      ],
+      "keywords": [
+        "season",
+        "cultivation",
+        "relation",
+        "continuation"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "wongang_ami",
+      "name_ko": "원강아미",
+      "name_en": "Wongang Ami",
+      "bonpuri": "이공본풀이",
+      "axis_vector": {
+        "self": 55,
+        "social": 80,
+        "care": 45,
+        "justice": 95,
+        "response_intensity": 90
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "harm / responsibility / pressure",
+      "primary_axes": [
+        "social",
+        "justice"
+      ],
+      "secondary_axes": [],
+      "keywords": [
+        "harm",
+        "responsibility",
+        "pressure",
+        "order"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "noga_danpung_agissi",
+      "name_ko": "노가단풍아기씨",
+      "name_en": "Noga Danpung Agissi",
+      "bonpuri": "초공본풀이",
+      "axis_vector": {
+        "self": 60,
+        "social": 70,
+        "care": 60,
+        "justice": 70,
+        "response_intensity": 90
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "abandonment-care pressure / relation / emergence",
+      "primary_axes": [
+        "social",
+        "care"
+      ],
+      "secondary_axes": [],
+      "keywords": [
+        "abandonment",
+        "care-pressure",
+        "relation",
+        "emergence"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "gangnim",
+      "name_ko": "강림",
+      "name_en": "Gangnim",
+      "bonpuri": "차사본풀이",
+      "axis_vector": {
+        "self": 55,
+        "social": 60,
+        "care": 30,
+        "justice": 95,
+        "response_intensity": 75
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "truth / judgement / distorted order",
+      "primary_axes": [
+        "social",
+        "justice"
+      ],
+      "secondary_axes": [
+        "self"
+      ],
+      "keywords": [
+        "truth",
+        "judgement",
+        "authority",
+        "hidden-cause"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "jijang_agissi",
+      "name_ko": "지장아기씨",
+      "name_en": "Jijang Agissi",
+      "bonpuri": "지장본풀이",
+      "axis_vector": {
+        "self": 50,
+        "social": 70,
+        "care": 65,
+        "justice": 70,
+        "response_intensity": 85
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "pressure / transition / relation",
+      "primary_axes": [
+        "social",
+        "care"
+      ],
+      "secondary_axes": [
+        "justice"
+      ],
+      "keywords": [
+        "pressure",
+        "transition",
+        "relation"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "sobyeolwang",
+      "name_ko": "소별왕",
+      "name_en": "Sobyeolwang",
+      "bonpuri": "천지왕본풀이",
+      "axis_vector": {
+        "self": 45,
+        "social": 65,
+        "care": 20,
+        "justice": 95,
+        "response_intensity": 85
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "crooked order / authority / distorted world-order",
+      "primary_axes": [
+        "social",
+        "justice"
+      ],
+      "secondary_axes": [],
+      "keywords": [
+        "authority",
+        "crooked-order",
+        "power",
+        "false-rule"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "daebyeolwang",
+      "name_ko": "대별왕",
+      "name_en": "Daebyeolwang",
+      "bonpuri": "천지왕본풀이",
+      "axis_vector": {
+        "self": 45,
+        "social": 55,
+        "care": 20,
+        "justice": 95,
+        "response_intensity": 45
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "judgement / moral order / authority",
+      "primary_axes": [
+        "social",
+        "justice"
+      ],
+      "secondary_axes": [],
+      "keywords": [
+        "judgement",
+        "moral-order",
+        "authority",
+        "truth"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "daebyeolsang_manura",
+      "name_ko": "대별상마누라",
+      "name_en": "Daebyeolsang Manura",
+      "bonpuri": "마누라본풀이",
+      "axis_vector": {
+        "self": 35,
+        "social": 55,
+        "care": 75,
+        "justice": 85,
+        "response_intensity": 90
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "disease / authority / high-pressure order",
+      "primary_axes": [
+        "social",
+        "justice"
+      ],
+      "secondary_axes": [],
+      "keywords": [
+        "disease",
+        "authority",
+        "pressure",
+        "order"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    }
+  ]
+}
