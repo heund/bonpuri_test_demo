@@ -1,6 +1,12 @@
-export const MAIN_AXES = ["self", "social", "care", "justice"];
+export const MAIN_AXES = ["self", "social", "care", "order"];
 export const MODIFIER_AXIS = "response_intensity";
-export const ALL_SCORE_KEYS = [...MAIN_AXES, MODIFIER_AXIS];
+export const AGENCY_AXIS = "agency";
+export const ALL_SCORE_KEYS = [...MAIN_AXES, MODIFIER_AXIS, AGENCY_AXIS];
+export const MATCH_SCORE_KEYS = [...MAIN_AXES, MODIFIER_AXIS, AGENCY_AXIS];
+export const DEFAULT_MATCH_WEIGHTS = {
+  responseIntensity: 0.25,
+  agency: 0.2
+};
 
 export function emptyScores() {
   return ALL_SCORE_KEYS.reduce((scores, key) => {
@@ -77,7 +83,7 @@ export function getAxisProfile(normalisedScores) {
 
 export function hasCompleteVector(deity) {
   return deity.axis_vector
-    && ALL_SCORE_KEYS.every((key) => typeof deity.axis_vector[key] === "number");
+    && MATCH_SCORE_KEYS.every((key) => typeof deity.axis_vector[key] === "number");
 }
 
 export function euclideanDistance(userProfile, deityVector) {
@@ -89,8 +95,9 @@ export function euclideanDistance(userProfile, deityVector) {
   return Math.sqrt(sumSquares);
 }
 
-export function rankDeityAnchors(axisProfile, responseIntensity, deityMap, options = {}) {
-  const reactivityWeight = options.reactivityWeight ?? 0.25;
+export function rankDeityAnchors(axisProfile, responseIntensity, agency, deityMap, options = {}) {
+  const reactivityWeight = options.reactivityWeight ?? DEFAULT_MATCH_WEIGHTS.responseIntensity;
+  const agencyWeight = options.agencyWeight ?? DEFAULT_MATCH_WEIGHTS.agency;
 
   return deityMap.deities
     .filter(hasCompleteVector)
@@ -99,12 +106,17 @@ export function rankDeityAnchors(axisProfile, responseIntensity, deityMap, optio
       const reactivityDistance = Math.abs(
         responseIntensity - deity.axis_vector[MODIFIER_AXIS]
       );
-      const finalScore = baseDistance + (reactivityDistance * reactivityWeight);
+      const agencyDistance = Math.abs(agency - deity.axis_vector[AGENCY_AXIS]);
+      const finalScore = baseDistance
+        + (reactivityDistance * reactivityWeight)
+        + (agencyDistance * agencyWeight);
 
       return {
         deity,
         base_distance: roundNumber(baseDistance),
         reactivity_distance: roundNumber(reactivityDistance),
+        affective_reactivity_distance: roundNumber(reactivityDistance),
+        agency_distance: roundNumber(agencyDistance),
         final_score: roundNumber(finalScore)
       };
     })
@@ -130,11 +142,11 @@ export function getPrimaryCombination(axisProfile) {
   const pair = [first.axis, second.axis].sort().join("+");
   const combinationMap = {
     "care+self": "Self + Care",
-    "justice+self": "Self + Justice",
+    "order+self": "Self + Order",
     "care+social": "Social + Care",
-    "justice+social": "Social + Justice",
+    "order+social": "Social + Order",
     "self+social": "Mixed Field",
-    "care+justice": "Mixed Field"
+    "care+order": "Mixed Field"
   };
 
   return combinationMap[pair] || "Mixed Field";
@@ -146,6 +158,38 @@ export function getReactivityBand(responseIntensity) {
   return "low";
 }
 
+export function getAgencyBand(agency) {
+  if (agency >= 81) {
+    return {
+      id: "intervening_transformative",
+      label: "Intervening / transformative",
+      description: "The participant tends to act quickly, name directly, push for change, or make something concrete."
+    };
+  }
+
+  if (agency >= 61) {
+    return {
+      id: "shaping_active",
+      label: "Shaping / active",
+      description: "The participant tends to clarify, support, structure, repair, or move something forward."
+    };
+  }
+
+  if (agency >= 31) {
+    return {
+      id: "processing_responsive",
+      label: "Processing / responsive",
+      description: "The participant tends to keep working with the signal internally or relationally until the next step becomes clearer."
+    };
+  }
+
+  return {
+    id: "observing_receptive",
+    label: "Observing / receptive",
+    description: "The participant tends to notice, wait, watch, or stay with something before acting."
+  };
+}
+
 export function anchorSummary(match) {
   if (!match) return null;
 
@@ -153,7 +197,38 @@ export function anchorSummary(match) {
     deity_id: match.deity.deity_id,
     name_ko: match.deity.name_ko,
     name_en: match.deity.name_en,
-    bonpuri: match.deity.bonpuri
+    bonpuri: match.deity.bonpuri,
+    match_percentage: matchPercentage(match.final_score),
+    final_score: match.final_score,
+    base_distance: match.base_distance,
+    affective_reactivity_distance: match.affective_reactivity_distance,
+    agency_distance: match.agency_distance
+  };
+}
+
+function maxPossibleDistance() {
+  const mainAxisMax = Math.sqrt(MAIN_AXES.length * (100 ** 2));
+  const responseModifierMax = 100 * DEFAULT_MATCH_WEIGHTS.responseIntensity;
+  const agencyModifierMax = 100 * DEFAULT_MATCH_WEIGHTS.agency;
+  return mainAxisMax + responseModifierMax + agencyModifierMax;
+}
+
+export function matchPercentage(finalDistance) {
+  const percentage = 100 * (1 - (finalDistance / maxPossibleDistance()));
+  return Math.max(0, Math.round(percentage));
+}
+
+export function formatTopMatch(match) {
+  return {
+    deity_id: match.deity.deity_id,
+    name_ko: match.deity.name_ko,
+    name_en: match.deity.name_en,
+    bonpuri: match.deity.bonpuri,
+    match_percentage: matchPercentage(match.final_score),
+    final_score: match.final_score,
+    base_distance: match.base_distance,
+    affective_reactivity_distance: match.affective_reactivity_distance,
+    agency_distance: match.agency_distance
   };
 }
 
@@ -212,9 +287,11 @@ export function generateResult(answersByQuestionId, data) {
   const normalisedScores = normaliseScores(scored.rawScores, scored.maxScores);
   const axisProfile = getAxisProfile(normalisedScores);
   const responseIntensity = normalisedScores[MODIFIER_AXIS];
+  const agency = normalisedScores[AGENCY_AXIS];
   const rankedMatches = rankDeityAnchors(
     axisProfile,
     responseIntensity,
+    agency,
     data.deityMap
   );
   const primaryCombination = getPrimaryCombination(axisProfile);
@@ -228,15 +305,22 @@ export function generateResult(answersByQuestionId, data) {
   return {
     axis_profile: axisProfile,
     radar_graph_data: axisProfile,
+    affective_reactivity: responseIntensity,
     response_intensity: responseIntensity,
     response_intensity_band: getReactivityBand(responseIntensity),
+    agency,
+    action_pull: agency,
+    action_pull_band: getAgencyBand(agency),
     primary_combination: primaryCombination,
     primary_anchor: anchorSummary(rankedMatches[0]),
     secondary_anchors: rankedMatches.slice(1, 4).map(anchorSummary),
+    top_matches: rankedMatches.slice(0, 5).map(formatTopMatch),
     deity_match_debug: rankedMatches.map((match) => ({
       deity_id: match.deity.deity_id,
       base_distance: match.base_distance,
       reactivity_distance: match.reactivity_distance,
+      affective_reactivity_distance: match.affective_reactivity_distance,
+      agency_distance: match.agency_distance,
       final_score: match.final_score
     })),
     unscored_anchors: getUnscoredAnchors(data.deityMap),

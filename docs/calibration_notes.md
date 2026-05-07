@@ -46,14 +46,14 @@ Previously, the reachable minimum was `39`, so low-reactivity profiles were unde
 
 Several existing options were lightly strengthened where the language already supported a composite reading.
 
-Jacheongbi-style `Self + Care + Justice` support:
+Jacheongbi-style `Self + Care + Order` support:
 
 - `q15_c`: "It sits with me, waiting to find its shape."
 - `q16_b`: "Something that ended before it could finish becoming."
 - `q06_b`: "Knowing something real got wasted."
 - `q10_b`: "Something is going to fall apart if no one pays attention to it."
 
-Nokdisaengi-style `Social + Care + Justice` support:
+Nokdisaengi-style `Social + Care + Order` support:
 
 - `q10_c`: "Someone is being failed by the people around them and nobody notices."
 - `q12_c`: "Who's been quietly carrying it."
@@ -72,28 +72,28 @@ Updated provisional vectors:
     "self": 50,
     "social": 55,
     "care": 90,
-    "justice": 50,
+    "order": 50,
     "response_intensity": 35
   },
   "samseung_halmang": {
     "self": 40,
     "social": 65,
     "care": 98,
-    "justice": 60,
+    "order": 60,
     "response_intensity": 30
   },
   "donghae_yonggungs_daughter": {
     "self": 55,
     "social": 45,
     "care": 80,
-    "justice": 50,
+    "order": 50,
     "response_intensity": 80
   },
   "jeoseung_halmang": {
     "self": 40,
     "social": 55,
     "care": 70,
-    "justice": 65,
+    "order": 65,
     "response_intensity": 90
   }
 }
@@ -153,7 +153,7 @@ The only deity still impossible as top 5 in the current 16-question prototype is
 
 This pass improved the reachable score geometry without forcing equal deity distribution.
 
-The remaining Jacheongbi issue should not be overcorrected at this stage. Jacheongbi requires a stronger reachable `Self + Care + Justice` profile than the current 16-question set naturally supports. This may be better addressed by the expanded question set or Category 3 layer rather than by heavy tuning in the current preliminary prototype.
+The remaining Jacheongbi issue should not be overcorrected at this stage. Jacheongbi requires a stronger reachable `Self + Care + Order` profile than the current 16-question set naturally supports. This may be better addressed by the expanded question set or Category 3 layer rather than by heavy tuning in the current preliminary prototype.
 
 ## Final Calibration Note
 

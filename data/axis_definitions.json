@@ -12,8 +12,8 @@
       "label": "Care",
       "definition": "Measures how strongly the participant reads rupture through growth, life-force, cultivation, care, continuation, sustenance, emergence, and the conditions that allow something to survive or become."
     },
-    "justice": {
-      "label": "Justice",
+    "order": {
+      "label": "Order",
       "definition": "Measures how strongly the participant reads rupture through truth, responsibility, fairness, harm, moral order, power, authority, hidden causes, false explanation, and distorted world-order."
     }
   },
@@ -23,6 +23,13 @@
       "definition": "A modifier that measures how intensely the participant experiences the sensitivity pattern as threat, pressure, instability, anxiety, urgency, or emotional charge. This is not a standalone category. It modifies the tone and deity matching of the four main axes."
     }
   },
-  "radar_axes": ["self", "social", "care", "justice"],
-  "modifier_axes": ["response_intensity"]
+  "action_fields": {
+    "agency": {
+      "label": "Action Pull",
+      "definition": "Measures how much a recognised signal moves the participant toward action, shaping, intervention, clarification, or transformation. This is normalised and displayed separately. It is not part of the radar graph and affects deity matching only as a light modifier."
+    }
+  },
+  "radar_axes": ["self", "social", "care", "order"],
+  "modifier_axes": ["response_intensity"],
+  "separate_score_axes": ["agency"]
 }

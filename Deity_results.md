@@ -24,7 +24,7 @@ Hallakgungi carries this pattern. His narrative was built around the moment when
 Hallakgungi is a deity from Igong Bonpuri, a Jeju ritual narrative that centres on violence, maternal suffering, and the flowers of Seocheon Flower Field.
 In the narrative, Hallakgungi grows up under oppression and leaves to find his father, the flower official of Seocheon Flower Field. When his mother Wongang Ami is murdered, he returns with flowers that can destroy and revive. He comes back with the power to answer what happened.
 This narrative was made to hold a specific experience. When understanding a wrong creates a need for action. When a broken situation asks for return, judgement, and a force strong enough to restore what violence tried to erase.
-Meet Hallakgungi in the city through recognition, return, flowers, judgement, restoration, and justice that comes back with force.
+Meet Hallakgungi in the city through recognition, return, flowers, judgement, restoration, and order that comes back with force.
 ________________________________________
 The Three Chogong Brothers
 The Three Chogong Brothers carry this pattern. Their narrative was built around the moment when the life prepared for you stops being the one that is calling you.
@@ -91,7 +91,7 @@ Meet Yeongdeung Halmang in the city through wind, sea, seasonal arrival, seed-sc
 ________________________________________
 Wongang Ami
 Wongang Ami carries this pattern. Her narrative was built around harm that refuses to disappear.
-Wongang Ami belongs to Igong Bonpuri, a Jeju ritual narrative that centres on dignity, class violence, maternal endurance, and the demand for justice after severe harm.
+Wongang Ami belongs to Igong Bonpuri, a Jeju ritual narrative that centres on dignity, class violence, maternal endurance, and the demand for order after severe harm.
 In the narrative, Wongang Ami resists the violence of an oppressive master while raising Hallakgungi under brutal conditions. After she is murdered, her death becomes the force that calls her son back with the flowers of Seocheon Flower Field. Her harm generates return, judgement, and restoration.
 This narrative was made to hold a specific experience. When you notice damage that others try to minimise, absorb, or move past. When dignity has been violated, and the situation keeps asking to be remembered before anything can truly move.
 Meet Wongang Ami in the city through dignity, coercion, maternal endurance, memory, and the wrong that keeps calling the story back.

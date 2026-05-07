@@ -15,6 +15,12 @@
       "31-60": "moderate charge / active tension",
       "61-80": "high pressure / threat / rupture / instability",
       "81-100": "extreme pressure / violence / disease / death / severe rupture"
+    },
+    "agency": {
+      "0-30": "observing / receptive",
+      "31-60": "processing / tending",
+      "61-80": "shaping / active",
+      "81-100": "intervening / transformative"
     }
   },
   "deities": [
@@ -27,15 +33,16 @@
         "self": 90,
         "social": 35,
         "care": 40,
-        "justice": 75,
-        "response_intensity": 65
+        "order": 75,
+        "response_intensity": 65,
+        "agency": 75
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "self-definition / misrecognition / agency",
       "primary_axes": [
         "self",
-        "justice"
+        "order"
       ],
       "secondary_axes": [
         "care"
@@ -59,8 +66,9 @@
         "self": 85,
         "social": 60,
         "care": 45,
-        "justice": 35,
-        "response_intensity": 45
+        "order": 35,
+        "response_intensity": 45,
+        "agency": 45
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -70,7 +78,7 @@
         "care"
       ],
       "secondary_axes": [
-        "justice"
+        "order"
       ],
       "keywords": [
         "origin",
@@ -90,8 +98,9 @@
         "self": 85,
         "social": 55,
         "care": 85,
-        "justice": 70,
-        "response_intensity": 55
+        "order": 70,
+        "response_intensity": 55,
+        "agency": 90
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -101,7 +110,7 @@
         "care"
       ],
       "secondary_axes": [
-        "justice"
+        "order"
       ],
       "keywords": [
         "cultivation",
@@ -121,15 +130,16 @@
         "self": 75,
         "social": 50,
         "care": 35,
-        "justice": 85,
-        "response_intensity": 70
+        "order": 85,
+        "response_intensity": 70,
+        "agency": 85
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "truth / rightful position / pressure",
       "primary_axes": [
         "self",
-        "justice"
+        "order"
       ],
       "secondary_axes": [],
       "keywords": [
@@ -150,15 +160,16 @@
         "self": 70,
         "social": 45,
         "care": 55,
-        "justice": 65,
-        "response_intensity": 65
+        "order": 65,
+        "response_intensity": 65,
+        "agency": 80
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "role-transition pressure / calling / legitimacy",
       "primary_axes": [
         "self",
-        "justice"
+        "order"
       ],
       "secondary_axes": [
         "care"
@@ -180,8 +191,9 @@
         "self": 75,
         "social": 45,
         "care": 60,
-        "justice": 55,
-        "response_intensity": 75
+        "order": 55,
+        "response_intensity": 75,
+        "agency": 75
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -191,7 +203,7 @@
         "care"
       ],
       "secondary_axes": [
-        "justice"
+        "order"
       ],
       "keywords": [
         "transition",
@@ -211,8 +223,9 @@
         "self": 50,
         "social": 55,
         "care": 90,
-        "justice": 50,
-        "response_intensity": 35
+        "order": 50,
+        "response_intensity": 35,
+        "agency": 55
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -242,8 +255,9 @@
         "self": 40,
         "social": 65,
         "care": 98,
-        "justice": 60,
-        "response_intensity": 30
+        "order": 60,
+        "response_intensity": 30,
+        "agency": 60
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -273,15 +287,16 @@
         "self": 55,
         "social": 45,
         "care": 80,
-        "justice": 50,
-        "response_intensity": 80
+        "order": 50,
+        "response_intensity": 80,
+        "agency": 35
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "failed emergence pressure / failed order pressure",
       "primary_axes": [
         "social",
-        "justice"
+        "order"
       ],
       "secondary_axes": [
         "care"
@@ -304,15 +319,16 @@
         "self": 40,
         "social": 55,
         "care": 70,
-        "justice": 65,
-        "response_intensity": 90
+        "order": 65,
+        "response_intensity": 90,
+        "agency": 35
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "threshold / care / transition",
       "primary_axes": [
         "care",
-        "justice"
+        "order"
       ],
       "secondary_axes": [
         "social"
@@ -335,8 +351,9 @@
         "self": 45,
         "social": 80,
         "care": 85,
-        "justice": 35,
-        "response_intensity": 40
+        "order": 35,
+        "response_intensity": 40,
+        "agency": 50
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -366,15 +383,16 @@
         "self": 55,
         "social": 85,
         "care": 65,
-        "justice": 85,
-        "response_intensity": 75
+        "order": 85,
+        "response_intensity": 75,
+        "agency": 85
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "truth-detection / household order / hidden cause",
       "primary_axes": [
         "social",
-        "justice"
+        "order"
       ],
       "secondary_axes": [
         "care"
@@ -397,8 +415,9 @@
         "self": 55,
         "social": 90,
         "care": 80,
-        "justice": 45,
-        "response_intensity": 75
+        "order": 45,
+        "response_intensity": 75,
+        "agency": 70
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -426,8 +445,9 @@
         "self": 45,
         "social": 80,
         "care": 65,
-        "justice": 50,
-        "response_intensity": 70
+        "order": 50,
+        "response_intensity": 70,
+        "agency": 35
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -455,8 +475,9 @@
         "self": 35,
         "social": 80,
         "care": 85,
-        "justice": 35,
-        "response_intensity": 45
+        "order": 35,
+        "response_intensity": 45,
+        "agency": 30
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -486,15 +507,16 @@
         "self": 55,
         "social": 80,
         "care": 45,
-        "justice": 95,
-        "response_intensity": 90
+        "order": 95,
+        "response_intensity": 90,
+        "agency": 35
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "harm / responsibility / pressure",
       "primary_axes": [
         "social",
-        "justice"
+        "order"
       ],
       "secondary_axes": [],
       "keywords": [
@@ -515,8 +537,9 @@
         "self": 60,
         "social": 70,
         "care": 60,
-        "justice": 70,
-        "response_intensity": 90
+        "order": 70,
+        "response_intensity": 90,
+        "agency": 45
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -544,15 +567,16 @@
         "self": 55,
         "social": 60,
         "care": 30,
-        "justice": 95,
-        "response_intensity": 75
+        "order": 95,
+        "response_intensity": 75,
+        "agency": 90
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "truth / judgement / distorted order",
       "primary_axes": [
         "social",
-        "justice"
+        "order"
       ],
       "secondary_axes": [
         "self"
@@ -575,8 +599,9 @@
         "self": 50,
         "social": 70,
         "care": 65,
-        "justice": 70,
-        "response_intensity": 85
+        "order": 70,
+        "response_intensity": 85,
+        "agency": 40
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -586,7 +611,7 @@
         "care"
       ],
       "secondary_axes": [
-        "justice"
+        "order"
       ],
       "keywords": [
         "pressure",
@@ -605,15 +630,16 @@
         "self": 45,
         "social": 65,
         "care": 20,
-        "justice": 95,
-        "response_intensity": 85
+        "order": 95,
+        "response_intensity": 85,
+        "agency": 45
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "crooked order / authority / distorted world-order",
       "primary_axes": [
         "social",
-        "justice"
+        "order"
       ],
       "secondary_axes": [],
       "keywords": [
@@ -634,15 +660,16 @@
         "self": 45,
         "social": 55,
         "care": 20,
-        "justice": 95,
-        "response_intensity": 45
+        "order": 95,
+        "response_intensity": 45,
+        "agency": 85
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "judgement / moral order / authority",
       "primary_axes": [
         "social",
-        "justice"
+        "order"
       ],
       "secondary_axes": [],
       "keywords": [
@@ -663,15 +690,16 @@
         "self": 35,
         "social": 55,
         "care": 75,
-        "justice": 85,
-        "response_intensity": 90
+        "order": 85,
+        "response_intensity": 90,
+        "agency": 85
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
       "tone": "disease / authority / high-pressure order",
       "primary_axes": [
         "social",
-        "justice"
+        "order"
       ],
       "secondary_axes": [],
       "keywords": [

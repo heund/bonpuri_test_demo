@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import deityMap from "../../data/deity_axis_map.json";
 import {
   buildOtherHighScoresLine,
+  getCategorySection,
   getCombinationSection,
   getDeitySection
 } from "./resultContent.js";
@@ -10,52 +11,32 @@ const AXIS_LABELS = {
   self: "Self",
   social: "Social",
   care: "Care",
-  justice: "Justice"
+  order: "Order"
 };
 
 const AXIS_DESCRIPTIONS = {
   self: "Where am I in this, and what does this change about how I understand myself?",
   social: "What is happening between us, and who is being affected?",
   care: "What needs care or support in order to keep going?",
-  justice: "What actually happened, and what needs to be named clearly?"
+  order: "What needs to be placed, shaped, or brought into order here?"
 };
-
-function maxPossibleDistance() {
-  const mainAxisMax = Math.sqrt(4 * (100 ** 2));
-  const affectiveModifierMax = 100 * 0.25;
-  return mainAxisMax + affectiveModifierMax;
-}
-
-function matchPercentage(finalDistance) {
-  // Matching ranks use distance, where lower is closer. For display, convert the
-  // observed distance to a percentage against the transparent 0-100 axis space:
-  // four full-distance axes plus the existing 0.25 affective modifier weight.
-  const percentage = 100 * (1 - (finalDistance / maxPossibleDistance()));
-  return Math.max(0, Math.round(percentage));
-}
 
 function topMatches(result) {
   const deityById = new Map(deityMap.deities.map((deity) => [deity.deity_id, deity]));
 
-  if (result.deity_match_debug) {
-    return result.deity_match_debug.slice(0, 5).map((match, index) => {
+  if (result.top_matches) {
+    return result.top_matches.map((match, index) => {
       const deity = deityById.get(match.deity_id);
 
       return {
-      rank: index + 1,
-      deity_id: match.deity_id,
-      name_ko: deity?.name_ko || match.deity_id,
-      name_en: deity?.name_en || "",
-      bonpuri: deity?.result_summary || deity?.bonpuri || "",
-      primary_axes: deity?.primary_axes || [],
-      secondary_axes: deity?.secondary_axes || [],
-      tone: deity?.tone || "",
-      match_percentage: matchPercentage(match.final_score),
-      debug: {
-        base_distance: match.base_distance,
-        reactivity_distance: match.reactivity_distance,
-        final_score: match.final_score
-      }
+        ...match,
+        rank: index + 1,
+        name_ko: match.name_ko || deity?.name_ko || match.deity_id,
+        name_en: match.name_en || deity?.name_en || "",
+        bonpuri: match.bonpuri || deity?.result_summary || deity?.bonpuri || "",
+        primary_axes: deity?.primary_axes || [],
+        secondary_axes: deity?.secondary_axes || [],
+        tone: deity?.tone || ""
       };
     });
   }
@@ -68,6 +49,7 @@ export default function ResultView({ result, onRestart }) {
   const [selectedDeityId, setSelectedDeityId] = useState(
     result.primary_anchor?.deity_id || matches[0]?.deity_id
   );
+  const [language, setLanguage] = useState("en");
   const combinationSection = getCombinationSection(result.primary_combination);
   const selectedMatch = matches.find((match) => match.deity_id === selectedDeityId) || matches[0];
   const deitySection = getDeitySection(selectedMatch?.deity_id);
@@ -78,6 +60,19 @@ export default function ResultView({ result, onRestart }) {
   const sortedAxes = Object.entries(AXIS_LABELS)
     .map(([key, label]) => ({ key, label, score: result.axis_profile[key] }))
     .sort((a, b) => b.score - a.score);
+  const strongestLens = ["self", "social"]
+    .map((key) => ({ key, score: result.axis_profile[key] }))
+    .sort((a, b) => b.score - a.score)[0];
+  const strongestOrientation = ["care", "order"]
+    .map((key) => ({ key, score: result.axis_profile[key] }))
+    .sort((a, b) => b.score - a.score)[0];
+  const categoryBlocks = [strongestLens, strongestOrientation]
+    .map(({ key, score }) => ({
+      axis: key,
+      score,
+      section: getCategorySection(key, language)
+    }))
+    .filter((block) => block.section);
   const relatedDeityLine = buildRelatedDeityLine(matches);
 
   function handleSelectDeity(deityId) {
@@ -88,12 +83,38 @@ export default function ResultView({ result, onRestart }) {
     <main>
       <section aria-labelledby="result-title">
         <h1 id="result-title">Result</h1>
+        <div aria-label="Language switch">
+          <button
+            type="button"
+            onClick={() => setLanguage("en")}
+            aria-pressed={language === "en"}
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            onClick={() => setLanguage("kr")}
+            aria-pressed={language === "kr"}
+          >
+            KR
+          </button>
+        </div>
         <p>
           Primary match: {selectedMatch?.name_en || selectedMatch?.name_ko}
           {selectedMatch?.name_ko ? ` (${selectedMatch.name_ko})` : ""}
         </p>
         <p>Recognition pattern: {result.primary_combination}</p>
-        <p>Response intensity: {result.response_intensity}% ({result.response_intensity_band})</p>
+        <p>
+          Response Intensity: {result.response_intensity}% ({result.response_intensity_band})
+          <br />
+          Shows how strongly the things you notice tend to land, return, press, or stay active for you.
+        </p>
+        <p>
+          Action Pull: {result.action_pull ?? result.agency}% (
+          {result.action_pull_band?.label || "Unbanded"})
+          <br />
+          Shows how strongly what you notice tends to move you toward acting, naming, shaping, changing, or making something concrete.
+        </p>
 
         <section className="result-section" aria-labelledby="scores-title">
           <h2 id="scores-title">Scores</h2>
@@ -116,7 +137,12 @@ export default function ResultView({ result, onRestart }) {
               <tr>
                 <td>Response Intensity</td>
                 <td>{result.response_intensity}%</td>
-                <td>This modifier stays separate from the four main axes.</td>
+                <td>Shows how strongly the things you notice tend to land, return, press, or stay active for you.</td>
+              </tr>
+              <tr>
+                <td>Action Pull</td>
+                <td>{result.action_pull ?? result.agency}%</td>
+                <td>Shows how strongly what you notice tends to move you toward acting, naming, shaping, changing, or making something concrete.</td>
               </tr>
             </tbody>
           </table>
@@ -126,6 +152,19 @@ export default function ResultView({ result, onRestart }) {
           className="result-section"
           aria-label="Result interpretation"
         >
+          {categoryBlocks.length ? (
+            <section aria-labelledby="category-results-title">
+              <h2 id="category-results-title">Category Results</h2>
+              {categoryBlocks.map(({ axis, score, section }) => (
+                <ResultTextBlock
+                  block={section}
+                  eyebrow={`${AXIS_LABELS[axis]} ${score}%`}
+                  key={axis}
+                />
+              ))}
+            </section>
+          ) : null}
+
           {combinationSection ? (
             <ResultTextBlock
               block={combinationSection}
@@ -182,6 +221,7 @@ export default function ResultView({ result, onRestart }) {
                 {match.name_en && match.name_ko ? ` / ${match.name_ko}` : ""}
                 {" - "}
                 {match.match_percentage}%
+                {match.bonpuri ? ` - ${match.bonpuri}` : ""}
                 {match.primary_axes.length ? ` - ${formatAxes(match.primary_axes)}` : ""}
               </button>
             ))}
@@ -203,7 +243,7 @@ function formatAxes(axes) {
     self: "Self",
     social: "Social",
     care: "Care",
-    justice: "Justice"
+    order: "Order"
   };
 
   return axes.map((axis) => labels[axis] || axis).join(" + ");

@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 
 const rootDir = path.resolve(__dirname, "..");
 const data = loadPrototypeData(rootDir);
-const sampleId = process.argv[2] || "sample_self_justice";
+const sampleId = process.argv[2] || "sample_self_order";
 const sample = sampleProfiles.samples.find((profile) => profile.id === sampleId);
 
 if (!sample) {

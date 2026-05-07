@@ -4,9 +4,11 @@ import { fileURLToPath } from "url";
 import {
   MAIN_AXES,
   MODIFIER_AXIS,
+  AGENCY_AXIS,
   scoreAnswers,
   normaliseScores,
   rankDeityAnchors,
+  matchPercentage,
   getPrimaryCombination,
   generateResult as generateResultFromData
 } from "./bonpuriScoringCore.js";
@@ -34,8 +36,10 @@ export function generateResult(answersByQuestionId, data = loadPrototypeData()) 
 export {
   MAIN_AXES,
   MODIFIER_AXIS,
+  AGENCY_AXIS,
   scoreAnswers,
   normaliseScores,
   rankDeityAnchors,
+  matchPercentage,
   getPrimaryCombination
 };

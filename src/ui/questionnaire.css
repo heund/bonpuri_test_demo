@@ -2,11 +2,12 @@
   color: #000;
   background: #fff;
   font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
+  font-size: 19px;
 }
 
 body {
   margin: 8px;
+  line-height: 1.45;
 }
 
 button,
@@ -18,6 +19,7 @@ textarea {
 
 button {
   margin: 2px;
+  padding: 0.25em 0.5em;
 }
 
 main {

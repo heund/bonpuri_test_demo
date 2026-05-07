@@ -11,9 +11,9 @@ One deity can sit across multiple axes. The `primary_axes` and `secondary_axes` 
 The four main conceptual groupings currently used for testing are:
 
 - Self + Care
-- Self + Justice
+- Self + Order
 - Social + Care
-- Social + Justice
+- Social + Order
 
 These groupings help generate result language, but they should not flatten a deity into one simple type.
 

@@ -1,6 +1,6 @@
 # Result Generation Rules
 
-The result describes a sensitivity profile across four axes and one modifier. It must not become a personality type, diagnosis, or fixed deity identity.
+The result describes a sensitivity profile across four axes, one modifier, and one separate action field. It must not become a personality type, diagnosis, or fixed deity identity.
 
 ## Required Result Structure
 
@@ -8,6 +8,9 @@ Prototype output should include:
 
 - `axis_profile`
 - `response_intensity`
+- `agency`
+- `action_pull`
+- `action_pull_band`
 - `primary_combination`
 - `primary_anchor`
 - `secondary_anchors`
@@ -18,9 +21,11 @@ The radar graph data object includes only:
 - `self`
 - `social`
 - `care`
-- `justice`
+- `order`
 
-Affective Reactivity is returned separately.
+Response Intensity is returned separately.
+
+Action Pull is also returned separately. It should not appear in radar graph data. It affects deity matching only as a light modifier.
 
 ## Allowed Phrasing
 
@@ -32,14 +37,14 @@ Use phrasing such as:
 - "This deity anchor offers a narrative placement for..."
 - "This result is a point of entry into the Bonpuri structure."
 
-For high Affective Reactivity, use terms such as:
+For high Response Intensity, use terms such as:
 
 - "strong response intensity"
 - "high sensitivity charge"
 - "heightened pressure field"
 - "strong affective signal"
 
-Do not describe high Affective Reactivity negatively.
+Do not describe high Response Intensity negatively.
 
 ## Forbidden Claims
 

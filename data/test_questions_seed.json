@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "notes": "Final revised questionnaire seed data. Question IDs and option IDs are preserved as q01-q16.",
+  "notes": "Final revised questionnaire seed data. q17-q22 extend the main fields; a01-a08 measure Agency / Action Pull.",
   "score_scale": {
     "min": 0,
     "max": 3
@@ -18,8 +18,9 @@
             "self": 3,
             "social": 0,
             "care": 0,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -29,8 +30,9 @@
             "self": 0,
             "social": 3,
             "care": 1,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -40,8 +42,9 @@
             "self": 0,
             "social": 1,
             "care": 3,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -51,8 +54,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 0
+            "order": 3,
+            "response_intensity": 0,
+            "agency": 0
           }
         }
       ]
@@ -69,8 +73,9 @@
             "self": 3,
             "social": 0,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 0
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -80,8 +85,9 @@
             "self": 0,
             "social": 3,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 0
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -91,8 +97,9 @@
             "self": 1,
             "social": 0,
             "care": 3,
-            "justice": 0,
-            "response_intensity": 1
+            "order": 0,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -102,8 +109,119 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 1
+            "order": 3,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "a01",
+      "phase": "agency_action_pull",
+      "text": "When something keeps bothering you, what usually happens next?",
+      "options": [
+        {
+          "id": "a01_a",
+          "text": "I sit with it until I understand it better.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "a01_b",
+          "text": "I keep turning it over until something shifts.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 1
+          }
+        },
+        {
+          "id": "a01_c",
+          "text": "I start thinking about what could actually change it.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 2
+          }
+        },
+        {
+          "id": "a01_d",
+          "text": "I find myself doing something about it before I've decided to.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q17",
+      "phase": "sustaining_effort",
+      "text": "When something needs consistent effort just to stay intact, what do you do?",
+      "options": [
+        {
+          "id": "q17_a",
+          "text": "Reconnect with why it matters to me personally.",
+          "scores": {
+            "self": 2,
+            "social": 0,
+            "care": 2,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q17_b",
+          "text": "Check in with who's actually carrying the weight of it.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 2,
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q17_c",
+          "text": "Focus on the small things that need attention right now.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 3,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q17_d",
+          "text": "Make sure the effort is being shared fairly.",
+          "scores": {
+            "self": 0,
+            "social": 2,
+            "care": 1,
+            "order": 3,
+            "response_intensity": 0,
+            "agency": 0
           }
         }
       ]
@@ -120,8 +238,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -131,8 +250,9 @@
             "self": 1,
             "social": 0,
             "care": 0,
-            "justice": 0,
-            "response_intensity": 1
+            "order": 0,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -142,8 +262,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 2
+            "order": 1,
+            "response_intensity": 2,
+            "agency": 0
           }
         },
         {
@@ -153,8 +274,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 3
+            "order": 1,
+            "response_intensity": 3,
+            "agency": 0
           }
         }
       ]
@@ -171,8 +293,9 @@
             "self": 3,
             "social": 0,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 0
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -182,8 +305,9 @@
             "self": 0,
             "social": 3,
             "care": 1,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -193,8 +317,9 @@
             "self": 0,
             "social": 1,
             "care": 3,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -204,8 +329,119 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 0
+            "order": 3,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "a02",
+      "phase": "agency_action_pull",
+      "text": "When you notice something fragile, what feels most natural?",
+      "options": [
+        {
+          "id": "a02_a",
+          "text": "Watch and wait to see what it needs.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "a02_b",
+          "text": "Stay close without intervening yet.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 1
+          }
+        },
+        {
+          "id": "a02_c",
+          "text": "Find what's missing and try to provide it.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 2
+          }
+        },
+        {
+          "id": "a02_d",
+          "text": "Do something before the moment passes.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q18",
+      "phase": "learning_support",
+      "text": "When you see someone struggling with something they're still learning, what do you do?",
+      "options": [
+        {
+          "id": "q18_a",
+          "text": "Check whether this is actually what they want to be doing.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 2,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q18_b",
+          "text": "Make sure they know their effort is being seen, not just the outcome.",
+          "scores": {
+            "self": 1,
+            "social": 2,
+            "care": 2,
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q18_c",
+          "text": "Think about what kind of practice or structure would help them.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 3,
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q18_d",
+          "text": "Try to remove whatever is getting in the way of them developing.",
+          "scores": {
+            "self": 1,
+            "social": 0,
+            "care": 2,
+            "order": 3,
+            "response_intensity": 0,
+            "agency": 0
           }
         }
       ]
@@ -222,8 +458,9 @@
             "self": 3,
             "social": 0,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 0
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -233,8 +470,9 @@
             "self": 0,
             "social": 3,
             "care": 1,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -244,8 +482,9 @@
             "self": 1,
             "social": 0,
             "care": 3,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -255,8 +494,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 0
+            "order": 3,
+            "response_intensity": 0,
+            "agency": 0
           }
         }
       ]
@@ -273,8 +513,9 @@
             "self": 3,
             "social": 0,
             "care": 0,
-            "justice": 2,
-            "response_intensity": 1
+            "order": 2,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -284,8 +525,9 @@
             "self": 1,
             "social": 0,
             "care": 3,
-            "justice": 1,
-            "response_intensity": 1
+            "order": 1,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -295,8 +537,9 @@
             "self": 0,
             "social": 3,
             "care": 2,
-            "justice": 2,
-            "response_intensity": 1
+            "order": 2,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -306,8 +549,119 @@
             "self": 0,
             "social": 1,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 1
+            "order": 3,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "a03",
+      "phase": "agency_action_pull",
+      "text": "When something feels unfair, what do you usually want first?",
+      "options": [
+        {
+          "id": "a03_a",
+          "text": "To understand what happened and why.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "a03_b",
+          "text": "To find the right words for it.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 1
+          }
+        },
+        {
+          "id": "a03_c",
+          "text": "For it to be named out loud by someone.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 2
+          }
+        },
+        {
+          "id": "a03_d",
+          "text": "For something to actually change because of it.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q19",
+      "phase": "catastrophic_response",
+      "text": "When something catastrophic happens, what hits you hardest?",
+      "options": [
+        {
+          "id": "q19_a",
+          "text": "What it does to your sense of who you are.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 0,
+            "order": 1,
+            "response_intensity": 2,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q19_b",
+          "text": "How the people around you are reacting to it.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 0,
+            "order": 1,
+            "response_intensity": 2,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q19_c",
+          "text": "What it means for everyone and how it can be held together.",
+          "scores": {
+            "self": 0,
+            "social": 2,
+            "care": 3,
+            "order": 1,
+            "response_intensity": 2,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q19_d",
+          "text": "What people fear it might lead to.",
+          "scores": {
+            "self": 0,
+            "social": 1,
+            "care": 0,
+            "order": 3,
+            "response_intensity": 3,
+            "agency": 0
           }
         }
       ]
@@ -324,8 +678,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -335,8 +690,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 0,
-            "response_intensity": 1
+            "order": 0,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -346,8 +702,9 @@
             "self": 0,
             "social": 0,
             "care": 1,
-            "justice": 0,
-            "response_intensity": 2
+            "order": 0,
+            "response_intensity": 2,
+            "agency": 0
           }
         },
         {
@@ -357,8 +714,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 3
+            "order": 1,
+            "response_intensity": 3,
+            "agency": 0
           }
         }
       ]
@@ -375,8 +733,9 @@
             "self": 2,
             "social": 1,
             "care": 0,
-            "justice": 2,
-            "response_intensity": 0
+            "order": 2,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -386,8 +745,9 @@
             "self": 0,
             "social": 3,
             "care": 0,
-            "justice": 2,
-            "response_intensity": 1
+            "order": 2,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -397,8 +757,9 @@
             "self": 0,
             "social": 1,
             "care": 3,
-            "justice": 0,
-            "response_intensity": 1
+            "order": 0,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -408,8 +769,119 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 1
+            "order": 3,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "a04",
+      "phase": "agency_action_pull",
+      "text": "When a situation feels stuck, what do you tend to do?",
+      "options": [
+        {
+          "id": "a04_a",
+          "text": "Wait for something in it to become clearer.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "a04_b",
+          "text": "Keep looking for what hasn't been understood yet.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 1
+          }
+        },
+        {
+          "id": "a04_c",
+          "text": "Find one thing that can move and try to shift it.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 2
+          }
+        },
+        {
+          "id": "a04_d",
+          "text": "Push until something gives.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q20",
+      "phase": "unsafe_place",
+      "text": "When does a familiar place start to feel unsafe to you?",
+      "options": [
+        {
+          "id": "q20_a",
+          "text": "When you can no longer be yourself there.",
+          "scores": {
+            "self": 3,
+            "social": 1,
+            "care": 0,
+            "order": 1,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q20_b",
+          "text": "When the relationships between the people in it have fractured.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 1,
+            "order": 1,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q20_c",
+          "text": "When what used to feel like care starts to feel like control.",
+          "scores": {
+            "self": 0,
+            "social": 2,
+            "care": 3,
+            "order": 3,
+            "response_intensity": 2,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q20_d",
+          "text": "When something went wrong but no one acknowledges it.",
+          "scores": {
+            "self": 0,
+            "social": 2,
+            "care": 0,
+            "order": 3,
+            "response_intensity": 2,
+            "agency": 0
           }
         }
       ]
@@ -426,8 +898,9 @@
             "self": 3,
             "social": 1,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 0
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -437,8 +910,9 @@
             "self": 0,
             "social": 2,
             "care": 3,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -448,8 +922,9 @@
             "self": 0,
             "social": 3,
             "care": 1,
-            "justice": 2,
-            "response_intensity": 0
+            "order": 2,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -459,8 +934,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 0
+            "order": 3,
+            "response_intensity": 0,
+            "agency": 0
           }
         }
       ]
@@ -477,8 +953,9 @@
             "self": 3,
             "social": 1,
             "care": 0,
-            "justice": 2,
-            "response_intensity": 1
+            "order": 2,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -488,8 +965,9 @@
             "self": 1,
             "social": 1,
             "care": 3,
-            "justice": 1,
-            "response_intensity": 1
+            "order": 1,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -499,8 +977,9 @@
             "self": 0,
             "social": 3,
             "care": 2,
-            "justice": 2,
-            "response_intensity": 1
+            "order": 2,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -510,8 +989,119 @@
             "self": 0,
             "social": 1,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 1
+            "order": 3,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "a05",
+      "phase": "agency_action_pull",
+      "text": "When you sense someone isn't being supported, what happens first?",
+      "options": [
+        {
+          "id": "a05_a",
+          "text": "I pay closer attention.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "a05_b",
+          "text": "I make sure they know I'm there if they need me.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 1
+          }
+        },
+        {
+          "id": "a05_c",
+          "text": "I think about what would actually help and offer it.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 2
+          }
+        },
+        {
+          "id": "a05_d",
+          "text": "I do something without waiting to be asked.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q21",
+      "phase": "major_ending",
+      "text": "When something major in your life has ended, what stays with you the longest?",
+      "options": [
+        {
+          "id": "q21_a",
+          "text": "How it changed you.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 0,
+            "order": 1,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q21_b",
+          "text": "How it changed the people around you.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 1,
+            "order": 0,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q21_c",
+          "text": "What still needs to be tended before closure can arrive.",
+          "scores": {
+            "self": 0,
+            "social": 1,
+            "care": 3,
+            "order": 1,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q21_d",
+          "text": "What it never got a proper answer for.",
+          "scores": {
+            "self": 0,
+            "social": 1,
+            "care": 0,
+            "order": 3,
+            "response_intensity": 2,
+            "agency": 0
           }
         }
       ]
@@ -528,8 +1118,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -539,8 +1130,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 0,
-            "response_intensity": 1
+            "order": 0,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -550,8 +1142,9 @@
             "self": 1,
             "social": 1,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 2
+            "order": 1,
+            "response_intensity": 2,
+            "agency": 0
           }
         },
         {
@@ -561,8 +1154,9 @@
             "self": 1,
             "social": 1,
             "care": 0,
-            "justice": 2,
-            "response_intensity": 3
+            "order": 2,
+            "response_intensity": 3,
+            "agency": 0
           }
         }
       ]
@@ -579,8 +1173,9 @@
             "self": 3,
             "social": 0,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 0
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -590,8 +1185,9 @@
             "self": 0,
             "social": 0,
             "care": 3,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -601,8 +1197,9 @@
             "self": 0,
             "social": 3,
             "care": 2,
-            "justice": 2,
-            "response_intensity": 1
+            "order": 2,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -612,8 +1209,119 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 1
+            "order": 3,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "a06",
+      "phase": "agency_action_pull",
+      "text": "When you realise you've been misunderstood, what do you usually do?",
+      "options": [
+        {
+          "id": "a06_a",
+          "text": "Try to understand first why it landed the way it did.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "a06_b",
+          "text": "Wait for the right moment to say something.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 1
+          }
+        },
+        {
+          "id": "a06_c",
+          "text": "Find a way to explain what was actually missed.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 2
+          }
+        },
+        {
+          "id": "a06_d",
+          "text": "Correct it straight away.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q22",
+      "phase": "unexpected_opportunity",
+      "text": "When an unexpected opportunity arrives, what do you consider first?",
+      "options": [
+        {
+          "id": "q22_a",
+          "text": "Whether it aligns with where you are and where you're headed.",
+          "scores": {
+            "self": 3,
+            "social": 0,
+            "care": 1,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q22_b",
+          "text": "How it would affect the people around me.",
+          "scores": {
+            "self": 0,
+            "social": 3,
+            "care": 1,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q22_c",
+          "text": "Whether the timing and conditions are right for it.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 3,
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "q22_d",
+          "text": "What it's actually bringing and whether it's safe.",
+          "scores": {
+            "self": 0,
+            "social": 1,
+            "care": 0,
+            "order": 3,
+            "response_intensity": 1,
+            "agency": 0
           }
         }
       ]
@@ -630,8 +1338,9 @@
             "self": 3,
             "social": 0,
             "care": 1,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -641,8 +1350,9 @@
             "self": 0,
             "social": 0,
             "care": 3,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -652,8 +1362,9 @@
             "self": 0,
             "social": 3,
             "care": 1,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -663,8 +1374,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 0
+            "order": 3,
+            "response_intensity": 0,
+            "agency": 0
           }
         }
       ]
@@ -681,8 +1393,9 @@
             "self": 3,
             "social": 0,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 0
+            "order": 1,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -692,8 +1405,9 @@
             "self": 0,
             "social": 0,
             "care": 3,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -703,8 +1417,9 @@
             "self": 0,
             "social": 3,
             "care": 1,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -714,8 +1429,64 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 0
+            "order": 3,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "a07",
+      "phase": "agency_action_pull",
+      "text": "When a group keeps avoiding the real issue, what feels most like you?",
+      "options": [
+        {
+          "id": "a07_a",
+          "text": "I notice it and keep watching.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "a07_b",
+          "text": "I try to understand why nobody's saying it yet.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 1
+          }
+        },
+        {
+          "id": "a07_c",
+          "text": "I look for a way to bring it up without forcing it.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 2
+          }
+        },
+        {
+          "id": "a07_d",
+          "text": "I say it.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 3
           }
         }
       ]
@@ -732,8 +1503,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 0,
-            "response_intensity": 0
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
           }
         },
         {
@@ -743,8 +1515,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 0,
-            "response_intensity": 1
+            "order": 0,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -754,8 +1527,9 @@
             "self": 2,
             "social": 0,
             "care": 2,
-            "justice": 2,
-            "response_intensity": 2
+            "order": 2,
+            "response_intensity": 2,
+            "agency": 0
           }
         },
         {
@@ -765,8 +1539,9 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 2,
-            "response_intensity": 3
+            "order": 2,
+            "response_intensity": 3,
+            "agency": 0
           }
         }
       ]
@@ -783,8 +1558,9 @@
             "self": 3,
             "social": 0,
             "care": 0,
-            "justice": 1,
-            "response_intensity": 1
+            "order": 1,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -794,8 +1570,9 @@
             "self": 2,
             "social": 0,
             "care": 3,
-            "justice": 1,
-            "response_intensity": 1
+            "order": 1,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -805,8 +1582,9 @@
             "self": 0,
             "social": 3,
             "care": 1,
-            "justice": 0,
-            "response_intensity": 1
+            "order": 0,
+            "response_intensity": 1,
+            "agency": 0
           }
         },
         {
@@ -816,8 +1594,64 @@
             "self": 0,
             "social": 0,
             "care": 0,
-            "justice": 3,
-            "response_intensity": 1
+            "order": 3,
+            "response_intensity": 1,
+            "agency": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "a08",
+      "phase": "agency_action_pull",
+      "text": "When something has potential but no clear shape yet, what do you usually do?",
+      "options": [
+        {
+          "id": "a08_a",
+          "text": "Leave it alone until it shows me something.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 0
+          }
+        },
+        {
+          "id": "a08_b",
+          "text": "Stay with it and see where it wants to go.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 1
+          }
+        },
+        {
+          "id": "a08_c",
+          "text": "Start giving it some structure.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 2
+          }
+        },
+        {
+          "id": "a08_d",
+          "text": "Begin making it into something concrete.",
+          "scores": {
+            "self": 0,
+            "social": 0,
+            "care": 0,
+            "order": 0,
+            "response_intensity": 0,
+            "agency": 3
           }
         }
       ]

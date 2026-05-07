@@ -1,18 +1,23 @@
 import combinationMarkdown from "../../Combination_results.md?raw";
+import categoryMarkdown from "../../Category_results.md?raw";
 import deityMarkdown from "../../Deity_results.md?raw";
 
 const COMBINATION_HEADINGS = [
+  "Self + Care",
+  "Social + Care",
+  "Self + Order",
+  "Social + Order",
   "SELF + CARE",
-  "SELF + JUSTICE",
   "SOCIAL + CARE",
-  "SOCIAL + JUSTICE"
+  "SELF + ORDER",
+  "SOCIAL + ORDER"
 ];
 
 const COMBINATION_KEYS = {
-  "Self + Care": "SELF + CARE",
-  "Self + Justice": "SELF + JUSTICE",
-  "Social + Care": "SOCIAL + CARE",
-  "Social + Justice": "SOCIAL + JUSTICE"
+  "Self + Care": "Self + Care",
+  "Self + Order": "Self + Order",
+  "Social + Care": "Social + Care",
+  "Social + Order": "Social + Order"
 };
 
 const DEITY_HEADINGS = {
@@ -44,14 +49,14 @@ const AXIS_LABELS = {
   self: "Self",
   social: "Social",
   care: "Care",
-  justice: "Justice"
+  order: "Order"
 };
 
 const PAIR_LABELS = {
   "care+self": "Self + Care",
-  "justice+self": "Self + Justice",
+  "order+self": "Self + Order",
   "care+social": "Social + Care",
-  "justice+social": "Social + Justice"
+  "order+social": "Social + Order"
 };
 
 function normalizeLineEndings(text) {
@@ -76,14 +81,58 @@ function parseCombinationSections(markdown) {
 
   for (let index = 0; index < COMBINATION_HEADINGS.length; index += 1) {
     const heading = COMBINATION_HEADINGS[index];
-    const nextHeading = COMBINATION_HEADINGS[index + 1];
-    const start = text.indexOf(heading);
-    const end = nextHeading ? text.indexOf(nextHeading) : text.length;
+    const start = text.toLowerCase().indexOf(heading.toLowerCase());
 
-    if (start >= 0) {
-      sections[heading] = parseSectionBlock(text.slice(start, end));
+    if (start < 0 || sections[heading]) continue;
+
+    const laterHeadings = COMBINATION_HEADINGS
+      .map((candidate) => text.toLowerCase().indexOf(candidate.toLowerCase(), start + heading.length))
+      .filter((candidateStart) => candidateStart > start);
+    const end = laterHeadings.length ? Math.min(...laterHeadings) : text.length;
+
+    sections[heading] = parseSectionBlock(text.slice(start, end));
+  }
+
+  return sections;
+}
+
+function normalizeHeading(title) {
+  return title
+    .replace(/^\d+\.\s*/, "")
+    .replace(/^Main\s+(Lens|Orientation):\s*/i, "")
+    .trim()
+    .toLowerCase();
+}
+
+function parseNumberedSections(markdown) {
+  const text = normalizeLineEndings(markdown);
+  const matches = [...text.matchAll(/(?:^|\n)(\d+\.\s+[^\n]+)/g)];
+
+  return matches.map((match, index) => {
+    const start = match.index + (match[0].startsWith("\n") ? 1 : 0);
+    const nextMatch = matches[index + 1];
+    const end = nextMatch ? nextMatch.index : text.length;
+    return parseSectionBlock(text.slice(start, end));
+  });
+}
+
+function parseCategorySections(markdown) {
+  const [englishText = "", koreanText = ""] = normalizeLineEndings(markdown).split(/\n\s*Korean\s*\n/i);
+  const englishSections = parseNumberedSections(englishText.replace(/^English\s*/i, ""));
+  const koreanSections = parseNumberedSections(koreanText);
+  const axisOrder = ["self", "social", "care", "order"];
+  const sections = { en: {}, kr: {} };
+
+  for (const section of englishSections) {
+    const key = normalizeHeading(section.title);
+    if (axisOrder.includes(key)) {
+      sections.en[key] = section;
     }
   }
+
+  koreanSections.slice(0, axisOrder.length).forEach((section, index) => {
+    sections.kr[axisOrder[index]] = section;
+  });
 
   return sections;
 }
@@ -120,11 +169,20 @@ function cleanDeityOpening(section) {
 }
 
 export const combinationSections = parseCombinationSections(combinationMarkdown);
+export const categorySections = parseCategorySections(categoryMarkdown);
 export const deitySections = parseDeitySections(deityMarkdown);
 
 export function getCombinationSection(primaryCombination) {
   const key = COMBINATION_KEYS[primaryCombination];
-  return key ? combinationSections[key] : null;
+  if (!key) return null;
+
+  return combinationSections[key]
+    || combinationSections[key.toUpperCase()]
+    || null;
+}
+
+export function getCategorySection(axis, language = "en") {
+  return categorySections[language]?.[axis] || categorySections.en[axis] || null;
 }
 
 export function getDeitySection(deityId) {

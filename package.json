@@ -10,9 +10,9 @@
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
     "sample": "node examples/run_sample.js",
-    "sample:self-justice": "node examples/run_sample.js sample_self_justice",
+    "sample:self-order": "node examples/run_sample.js sample_self_order",
     "sample:social-care": "node examples/run_sample.js sample_social_care",
-    "sample:social-justice": "node examples/run_sample.js sample_social_justice_high_reactivity"
+    "sample:social-order": "node examples/run_sample.js sample_social_order_high_reactivity"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
