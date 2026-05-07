@@ -12,7 +12,10 @@
     "sample": "node examples/run_sample.js",
     "sample:self-order": "node examples/run_sample.js sample_self_order",
     "sample:social-care": "node examples/run_sample.js sample_social_care",
-    "sample:social-order": "node examples/run_sample.js sample_social_order_high_reactivity"
+    "sample:social-order": "node examples/run_sample.js sample_social_order_high_reactivity",
+    "deity:space": "python tools/plot_deity_space.py",
+    "deity:diagnostics": "node tools/run_deity_space_diagnostics.js",
+    "deity:viewer": "python -m http.server 5174"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",

@@ -25,6 +25,8 @@ export function loadPrototypeData(rootDir = path.resolve(__dirname, "..")) {
     axisDefinitions: loadJson(path.join(rootDir, "data", "axis_definitions.json")),
     questions: loadJson(path.join(rootDir, "data", "test_questions_seed.json")),
     deityMap: loadJson(path.join(rootDir, "data", "deity_axis_map.json")),
+    subcategoryDefinitions: loadJson(path.join(rootDir, "data", "subcategory_definitions.json")),
+    deitySubcategoryProfiles: loadJson(path.join(rootDir, "data", "deity_subcategory_profiles.json")),
     templates: loadJson(path.join(rootDir, "data", "result_templates.json"))
   };
 }

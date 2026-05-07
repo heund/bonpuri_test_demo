@@ -12,4 +12,21 @@ npm run build
 npm run sample
 ```
 
-You can also view previews, dark mode examples, and download options on getdesign.md.
+## Deity Space Diagnostics
+
+Generate the local deity-space chart and data:
+
+```sh
+npm run deity:space
+npm run deity:diagnostics
+```
+
+Open the diagnostics viewer:
+
+```sh
+npm run deity:viewer
+```
+
+Then visit `http://127.0.0.1:5174/tools/deity-space-viewer/`.
+
+The viewer is a debugging tool. The deity map is a 2D MDS projection of the real 6D weighted matching space, and coverage percentages are sampled estimates.

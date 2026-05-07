@@ -95,12 +95,12 @@
       "name_en": "Jacheongbi",
       "bonpuri": "세경본풀이",
       "axis_vector": {
-        "self": 85,
-        "social": 55,
+        "self": 80,
+        "social": 40,
         "care": 85,
-        "order": 70,
+        "order": 55,
         "response_intensity": 55,
-        "agency": 90
+        "agency": 70
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -353,7 +353,7 @@
         "care": 85,
         "order": 35,
         "response_intensity": 40,
-        "agency": 50
+        "agency": 40
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -446,8 +446,8 @@
         "social": 80,
         "care": 65,
         "order": 50,
-        "response_intensity": 70,
-        "agency": 35
+        "response_intensity": 60,
+        "agency": 25
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -504,12 +504,12 @@
       "name_en": "Wongang Ami",
       "bonpuri": "이공본풀이",
       "axis_vector": {
-        "self": 55,
+        "self": 45,
         "social": 80,
-        "care": 45,
-        "order": 95,
+        "care": 55,
+        "order": 70,
         "response_intensity": 90,
-        "agency": 35
+        "agency": 30
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",
@@ -534,12 +534,12 @@
       "name_en": "Noga Danpung Agissi",
       "bonpuri": "초공본풀이",
       "axis_vector": {
-        "self": 60,
-        "social": 70,
+        "self": 50,
+        "social": 65,
         "care": 60,
-        "order": 70,
-        "response_intensity": 90,
-        "agency": 45
+        "order": 60,
+        "response_intensity": 85,
+        "agency": 35
       },
       "requires_manual_scoring": false,
       "vector_status": "provisional",

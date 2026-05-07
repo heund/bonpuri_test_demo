@@ -1,0 +1,209 @@
+{
+  "schema_version": "0.1.0",
+  "notes": "Internal deity subcategory profiles for mythic-structural tie-breaking after main axis scoring. These profiles do not change deity axis vectors.",
+  "scale": {
+    "1": "weak relevance",
+    "2": "strong relevance",
+    "3": "defining relevance"
+  },
+  "profiles": [
+    {
+      "id": "gamunjangagi",
+      "display_name": "Gamunjangagi",
+      "bonpuri": "삼공본풀이",
+      "main_axes": { "self": 3, "social": 1, "care": 1, "order": 3, "response_intensity": 2, "agency": 2 },
+      "subcategories": { "source_origin": 3, "self_recognition": 3, "hidden_force": 2, "restoration": 1 },
+      "hinge": "Hidden fortune and inner source recognised before others can see it.",
+      "close_neighbours": ["hallakgungi", "oneuri", "jacheongbi"]
+    },
+    {
+      "id": "oneuri",
+      "display_name": "Oneuri",
+      "bonpuri": "원천강본풀이",
+      "main_axes": { "self": 3, "social": 2, "care": 1, "order": 1, "response_intensity": 1, "agency": 1 },
+      "subcategories": { "source_origin": 2, "self_recognition": 2, "becoming_cultivation": 1, "seasonal_cycle": 2 },
+      "hinge": "Origin and direction unfold through a journey of recognition and timing.",
+      "close_neighbours": ["gamunjangagi", "jacheongbi", "yeongdeung_halmang"]
+    },
+    {
+      "id": "jacheongbi",
+      "display_name": "Jacheongbi",
+      "bonpuri": "세경본풀이",
+      "main_axes": { "self": 3, "social": 2, "care": 3, "order": 2, "response_intensity": 2, "agency": 3 },
+      "subcategories": { "becoming_cultivation": 3, "self_recognition": 2, "domestic_care": 1, "restoration": 1 },
+      "hinge": "Cultivated capacity becomes real through skill, movement, and active shaping.",
+      "close_neighbours": ["oneuri", "gamunjangagi", "yu_jeongseungs_daughter"]
+    },
+    {
+      "id": "chogong_three_brothers",
+      "display_name": "Chogong Three Brothers",
+      "bonpuri": "초공본풀이",
+      "main_axes": { "self": 2, "social": 1, "care": 2, "order": 2, "response_intensity": 2, "agency": 2 },
+      "subcategories": { "calling_initiation": 3, "ritual_responsibility": 3, "source_origin": 1, "procedural_order": 1 },
+      "hinge": "A role is recognised through calling, initiation, and ritual responsibility.",
+      "close_neighbours": ["yu_jeongseungs_daughter", "hallakgungi", "jacheongbi"]
+    },
+    {
+      "id": "yu_jeongseungs_daughter",
+      "display_name": "Yu Jeongseung's Daughter",
+      "bonpuri": "초공본풀이",
+      "main_axes": { "self": 3, "social": 1, "care": 2, "order": 2, "response_intensity": 2, "agency": 2 },
+      "subcategories": { "calling_initiation": 3, "ritual_responsibility": 2, "becoming_cultivation": 1, "self_recognition": 1 },
+      "hinge": "Initiation pressure moves through relation, emergence, and the assumption of sacred role.",
+      "close_neighbours": ["chogong_three_brothers", "jacheongbi", "noga_danpung_agissi"]
+    },
+    {
+      "id": "noga_danpung_agissi",
+      "display_name": "Noga Danpung Agissi",
+      "bonpuri": "초공본풀이",
+      "main_axes": { "self": 2, "social": 2, "care": 3, "order": 2, "response_intensity": 3, "agency": 1 },
+      "subcategories": { "origin_cost": 3, "birth_arrival": 2, "rupture_harm_return": 2, "ritual_responsibility": 1 },
+      "hinge": "Birth and sacred origin carry cost, harm, and ritual consequence.",
+      "close_neighbours": ["yu_jeongseungs_daughter", "jijang_agissi", "myeongjinguks_daughter"]
+    },
+    {
+      "id": "hallakgungi",
+      "display_name": "Hallakgungi",
+      "bonpuri": "이공본풀이",
+      "main_axes": { "self": 3, "social": 2, "care": 1, "order": 3, "response_intensity": 2, "agency": 3 },
+      "subcategories": { "rupture_harm_return": 3, "restoration": 3, "death_crossing": 1, "procedural_order": 1 },
+      "hinge": "Rupture demands return, recognition, and restoration of rightful position.",
+      "close_neighbours": ["gamunjangagi", "chogong_three_brothers", "gangnim"]
+    },
+    {
+      "id": "wongang_ami",
+      "display_name": "Wongang Ami",
+      "bonpuri": "이공본풀이",
+      "main_axes": { "self": 1, "social": 2, "care": 2, "order": 2, "response_intensity": 3, "agency": 1 },
+      "subcategories": { "rupture_harm_return": 3, "origin_cost": 3, "mourning_passage": 1, "domestic_care": 1 },
+      "hinge": "Harm and origin cost remain in the care field as memory and pressure.",
+      "close_neighbours": ["jijang_agissi", "noga_danpung_agissi", "hallakgungi"]
+    },
+    {
+      "id": "jijang_agissi",
+      "display_name": "Jijang Agissi",
+      "bonpuri": "지장본풀이",
+      "main_axes": { "self": 1, "social": 2, "care": 2, "order": 2, "response_intensity": 3, "agency": 1 },
+      "subcategories": { "mourning_passage": 3, "rupture_harm_return": 2, "ritual_responsibility": 2, "origin_cost": 1 },
+      "hinge": "Mourning and rupture become ritual responsibility and passage.",
+      "close_neighbours": ["wongang_ami", "samani", "noga_danpung_agissi"]
+    },
+    {
+      "id": "myeongjinguks_daughter",
+      "display_name": "Myeongjinguk's Daughter",
+      "bonpuri": "삼승할망본풀이",
+      "main_axes": { "self": 2, "social": 2, "care": 3, "order": 2, "response_intensity": 1, "agency": 2 },
+      "subcategories": { "birth_arrival": 3, "domestic_care": 2, "household_sustaining": 2, "restoration": 1 },
+      "hinge": "Birth arrival depends on domestic care and a sustaining household field.",
+      "close_neighbours": ["samseung_halmang", "donghae_yonggungs_daughter", "noga_danpung_agissi"]
+    },
+    {
+      "id": "samseung_halmang",
+      "display_name": "Samseung Halmang",
+      "bonpuri": "삼승할망본풀이",
+      "main_axes": { "self": 1, "social": 2, "care": 3, "order": 2, "response_intensity": 1, "agency": 2 },
+      "subcategories": { "birth_arrival": 3, "domestic_care": 2, "household_sustaining": 2, "restoration": 1 },
+      "hinge": "Birth and life maintenance are held through practical care and responsibility.",
+      "close_neighbours": ["myeongjinguks_daughter", "yeosan_buin", "donghae_yonggungs_daughter"]
+    },
+    {
+      "id": "donghae_yonggungs_daughter",
+      "display_name": "Donghae Yonggung's Daughter",
+      "bonpuri": "삼승할망본풀이",
+      "main_axes": { "self": 1, "social": 2, "care": 3, "order": 2, "response_intensity": 3, "agency": 1 },
+      "subcategories": { "failed_arrival": 3, "birth_arrival": 2, "hidden_force": 2, "mourning_passage": 1 },
+      "hinge": "Birth pressure turns toward failed arrival, hidden force, and grief.",
+      "close_neighbours": ["jeoseung_halmang", "myeongjinguks_daughter", "samseung_halmang"]
+    },
+    {
+      "id": "jeoseung_halmang",
+      "display_name": "Jeoseung Halmang",
+      "bonpuri": "삼승할망본풀이",
+      "main_axes": { "self": 1, "social": 2, "care": 3, "order": 2, "response_intensity": 3, "agency": 1 },
+      "subcategories": { "failed_arrival": 3, "birth_arrival": 2, "hidden_force": 2, "mourning_passage": 1 },
+      "hinge": "Failed emergence presses toward the death-domain edge of birth and care.",
+      "close_neighbours": ["donghae_yonggungs_daughter", "jijang_agissi", "samani"]
+    },
+    {
+      "id": "daebyeolsang_manura",
+      "display_name": "Daebyeolsang Manura",
+      "bonpuri": "마누라본풀이",
+      "main_axes": { "self": 1, "social": 3, "care": 2, "order": 3, "response_intensity": 3, "agency": 3 },
+      "subcategories": { "hidden_force": 3, "failed_arrival": 1, "procedural_order": 1, "cosmic_law": 1 },
+      "hinge": "Hidden force and illness pressure demand order without becoming ordinary care.",
+      "close_neighbours": ["gangnim", "daebyeolwang", "nokdisaengi"]
+    },
+    {
+      "id": "yeosan_buin",
+      "display_name": "Yeosan Buin",
+      "bonpuri": "문전본풀이",
+      "main_axes": { "self": 1, "social": 3, "care": 3, "order": 2, "response_intensity": 2, "agency": 2 },
+      "subcategories": { "household_sustaining": 3, "domestic_care": 3, "rupture_harm_return": 1, "restoration": 1 },
+      "hinge": "The household survives through domestic care, maintenance, and repair after strain.",
+      "close_neighbours": ["samseung_halmang", "nokdisaengi", "chilseong_agi"]
+    },
+    {
+      "id": "nokdisaengi",
+      "display_name": "Nokdisaengi",
+      "bonpuri": "문전본풀이",
+      "main_axes": { "self": 1, "social": 3, "care": 2, "order": 3, "response_intensity": 2, "agency": 3 },
+      "subcategories": { "household_sustaining": 2, "procedural_order": 2, "restoration": 2, "domestic_care": 1 },
+      "hinge": "Hidden household danger is recognised, ordered, and repaired through action.",
+      "close_neighbours": ["yeosan_buin", "daebyeolsang_manura", "gangnim"]
+    },
+    {
+      "id": "chilseong_agi",
+      "display_name": "Chilseong Agi",
+      "bonpuri": "칠성본풀이",
+      "main_axes": { "self": 1, "social": 3, "care": 2, "order": 2, "response_intensity": 2, "agency": 2 },
+      "subcategories": { "reception_of_strange": 3, "household_sustaining": 2, "hidden_force": 3, "domestic_care": 1 },
+      "hinge": "A strange hidden force is received into the household field.",
+      "close_neighbours": ["yeongdeung_halmang", "samani", "yeosan_buin"]
+    },
+    {
+      "id": "samani",
+      "display_name": "Samani",
+      "bonpuri": "멩감본풀이 or 사만이본풀이",
+      "main_axes": { "self": 1, "social": 3, "care": 2, "order": 2, "response_intensity": 2, "agency": 1 },
+      "subcategories": { "reception_of_strange": 2, "mourning_passage": 2, "household_sustaining": 1, "death_crossing": 2 },
+      "hinge": "Strange arrival, shared survival, death pressure, and passage sit together.",
+      "close_neighbours": ["jijang_agissi", "chilseong_agi", "jeoseung_halmang"]
+    },
+    {
+      "id": "yeongdeung_halmang",
+      "display_name": "Yeongdeung Halmang",
+      "bonpuri": "영등본풀이",
+      "main_axes": { "self": 1, "social": 3, "care": 3, "order": 1, "response_intensity": 1, "agency": 1 },
+      "subcategories": { "seasonal_cycle": 3, "reception_of_strange": 2, "household_sustaining": 1, "hidden_force": 1 },
+      "hinge": "Seasonal arrival is received and sustained by a shared field.",
+      "close_neighbours": ["oneuri", "chilseong_agi", "yeosan_buin"]
+    },
+    {
+      "id": "gangnim",
+      "display_name": "Gangnim",
+      "bonpuri": "차사본풀이",
+      "main_axes": { "self": 2, "social": 2, "care": 1, "order": 3, "response_intensity": 3, "agency": 3 },
+      "subcategories": { "procedural_order": 3, "death_crossing": 3, "cosmic_law": 2, "restoration": 1 },
+      "hinge": "Death crossing and investigation restore responsibility and order.",
+      "close_neighbours": ["daebyeolwang", "hallakgungi", "daebyeolsang_manura"]
+    },
+    {
+      "id": "daebyeolwang",
+      "display_name": "Daebyeolwang",
+      "bonpuri": "천지왕본풀이",
+      "main_axes": { "self": 1, "social": 2, "care": 1, "order": 3, "response_intensity": 1, "agency": 3 },
+      "subcategories": { "cosmic_law": 3, "procedural_order": 2, "death_crossing": 2, "restoration": 1 },
+      "hinge": "Cosmic law separates, judges, and restores world-order.",
+      "close_neighbours": ["gangnim", "sobyeolwang", "daebyeolsang_manura"]
+    },
+    {
+      "id": "sobyeolwang",
+      "display_name": "Sobyeolwang",
+      "bonpuri": "천지왕본풀이",
+      "main_axes": { "self": 1, "social": 2, "care": 1, "order": 3, "response_intensity": 3, "agency": 1 },
+      "subcategories": { "crooked_order": 3, "cosmic_law": 1, "hidden_force": 2, "procedural_order": 1 },
+      "hinge": "Distorted world-order operates as crooked law rather than restoration.",
+      "close_neighbours": ["daebyeolwang", "daebyeolsang_manura", "gangnim"]
+    }
+  ]
+}

@@ -1,0 +1,6151 @@
+{
+  "sample_size": 250000,
+  "seed": 20260508,
+  "timestamp": "2026-05-07T16:54:33.176Z",
+  "note": "Estimated from sampled answer paths, not exact full enumeration. The full answer space is too large for exact enumeration in this diagnostics tool.",
+  "axes": {
+    "main_axes": [
+      "self",
+      "social",
+      "care",
+      "order"
+    ],
+    "modifiers": [
+      "response_intensity",
+      "agency"
+    ]
+  },
+  "modifier_weights": {
+    "response_intensity": 0.25,
+    "agency": 0.2
+  },
+  "max_scores": {
+    "self": 57,
+    "social": 54,
+    "care": 57,
+    "order": 60,
+    "response_intensity": 26,
+    "agency": 24
+  },
+  "max_subcategory_scores": {
+    "source_origin": 16,
+    "self_recognition": 57,
+    "becoming_cultivation": 29,
+    "reception_of_strange": 5,
+    "household_sustaining": 59,
+    "birth_arrival": 14,
+    "failed_arrival": 2,
+    "rupture_harm_return": 14,
+    "mourning_passage": 10,
+    "procedural_order": 68,
+    "cosmic_law": 0,
+    "crooked_order": 6,
+    "calling_initiation": 2,
+    "origin_cost": 1,
+    "seasonal_cycle": 0,
+    "hidden_force": 19,
+    "restoration": 17,
+    "domestic_care": 64,
+    "ritual_responsibility": 1,
+    "death_crossing": 0
+  },
+  "subcategory_keys": [
+    "source_origin",
+    "self_recognition",
+    "becoming_cultivation",
+    "reception_of_strange",
+    "household_sustaining",
+    "birth_arrival",
+    "failed_arrival",
+    "rupture_harm_return",
+    "mourning_passage",
+    "procedural_order",
+    "cosmic_law",
+    "crooked_order",
+    "calling_initiation",
+    "origin_cost",
+    "seasonal_cycle",
+    "hidden_force",
+    "restoration",
+    "domestic_care",
+    "ritual_responsibility",
+    "death_crossing"
+  ],
+  "primary_combination_counts": {
+    "Self + Care": 4760,
+    "Mixed Field": 171201,
+    "Social + Care": 21693,
+    "Social + Order": 34969,
+    "Self + Order": 17377
+  },
+  "primary_counts": {
+    "gamunjangagi": 1650,
+    "oneuri": 1210,
+    "jacheongbi": 1,
+    "hallakgungi": 3788,
+    "chogong_three_brothers": 18491,
+    "yu_jeongseungs_daughter": 12226,
+    "myeongjinguks_daughter": 21982,
+    "samseung_halmang": 1,
+    "donghae_yonggungs_daughter": 29867,
+    "jeoseung_halmang": 130227,
+    "yeosan_buin": 1738,
+    "nokdisaengi": 112,
+    "chilseong_agi": 6,
+    "samani": 4254,
+    "yeongdeung_halmang": 0,
+    "wongang_ami": 4,
+    "noga_danpung_agissi": 14162,
+    "gangnim": 0,
+    "jijang_agissi": 5568,
+    "sobyeolwang": 4712,
+    "daebyeolwang": 0,
+    "daebyeolsang_manura": 1
+  },
+  "primary_percentages": {
+    "gamunjangagi": 0.66,
+    "oneuri": 0.484,
+    "jacheongbi": 0.0004,
+    "hallakgungi": 1.5152,
+    "chogong_three_brothers": 7.3964,
+    "yu_jeongseungs_daughter": 4.8904,
+    "myeongjinguks_daughter": 8.7928,
+    "samseung_halmang": 0.0004,
+    "donghae_yonggungs_daughter": 11.9468,
+    "jeoseung_halmang": 52.0908,
+    "yeosan_buin": 0.6952,
+    "nokdisaengi": 0.0448,
+    "chilseong_agi": 0.0024,
+    "samani": 1.7016,
+    "yeongdeung_halmang": 0,
+    "wongang_ami": 0.0016,
+    "noga_danpung_agissi": 5.6648,
+    "gangnim": 0,
+    "jijang_agissi": 2.2272,
+    "sobyeolwang": 1.8848,
+    "daebyeolwang": 0,
+    "daebyeolsang_manura": 0.0004
+  },
+  "top5_counts": {
+    "gamunjangagi": 22137,
+    "oneuri": 19950,
+    "jacheongbi": 1213,
+    "hallakgungi": 47367,
+    "chogong_three_brothers": 82573,
+    "yu_jeongseungs_daughter": 64495,
+    "myeongjinguks_daughter": 158609,
+    "samseung_halmang": 45004,
+    "donghae_yonggungs_daughter": 211622,
+    "jeoseung_halmang": 235095,
+    "yeosan_buin": 61782,
+    "nokdisaengi": 7509,
+    "chilseong_agi": 2680,
+    "samani": 64051,
+    "yeongdeung_halmang": 1172,
+    "wongang_ami": 5949,
+    "noga_danpung_agissi": 61981,
+    "gangnim": 380,
+    "jijang_agissi": 100035,
+    "sobyeolwang": 43487,
+    "daebyeolwang": 1424,
+    "daebyeolsang_manura": 11485
+  },
+  "top5_percentages": {
+    "gamunjangagi": 8.8548,
+    "oneuri": 7.98,
+    "jacheongbi": 0.4852,
+    "hallakgungi": 18.9468,
+    "chogong_three_brothers": 33.0292,
+    "yu_jeongseungs_daughter": 25.798,
+    "myeongjinguks_daughter": 63.4436,
+    "samseung_halmang": 18.0016,
+    "donghae_yonggungs_daughter": 84.6488,
+    "jeoseung_halmang": 94.038,
+    "yeosan_buin": 24.7128,
+    "nokdisaengi": 3.0036,
+    "chilseong_agi": 1.072,
+    "samani": 25.6204,
+    "yeongdeung_halmang": 0.4688,
+    "wongang_ami": 2.3796,
+    "noga_danpung_agissi": 24.7924,
+    "gangnim": 0.152,
+    "jijang_agissi": 40.014,
+    "sobyeolwang": 17.3948,
+    "daebyeolwang": 0.5696,
+    "daebyeolsang_manura": 4.594
+  },
+  "best_rank_by_deity": {
+    "gamunjangagi": 1,
+    "oneuri": 1,
+    "jacheongbi": 2,
+    "hallakgungi": 1,
+    "chogong_three_brothers": 1,
+    "yu_jeongseungs_daughter": 1,
+    "myeongjinguks_daughter": 1,
+    "samseung_halmang": 2,
+    "donghae_yonggungs_daughter": 1,
+    "jeoseung_halmang": 1,
+    "yeosan_buin": 1,
+    "nokdisaengi": 4,
+    "chilseong_agi": 4,
+    "samani": 1,
+    "yeongdeung_halmang": 3,
+    "wongang_ami": 2,
+    "noga_danpung_agissi": 1,
+    "gangnim": 5,
+    "jijang_agissi": 2,
+    "sobyeolwang": 1,
+    "daebyeolwang": 3,
+    "daebyeolsang_manura": 2
+  },
+  "best_score_by_deity": {
+    "gamunjangagi": 24.52,
+    "oneuri": 24.7,
+    "jacheongbi": 28.67,
+    "hallakgungi": 24.11,
+    "chogong_three_brothers": 18.81,
+    "yu_jeongseungs_daughter": 19.18,
+    "myeongjinguks_daughter": 18.93,
+    "samseung_halmang": 21.56,
+    "donghae_yonggungs_daughter": 18.01,
+    "jeoseung_halmang": 17.23,
+    "yeosan_buin": 22.13,
+    "nokdisaengi": 26.41,
+    "chilseong_agi": 26.02,
+    "samani": 21.57,
+    "yeongdeung_halmang": 26.86,
+    "wongang_ami": 28.07,
+    "noga_danpung_agissi": 23.75,
+    "gangnim": 31.27,
+    "jijang_agissi": 24.34,
+    "sobyeolwang": 22.51,
+    "daebyeolwang": 31.19,
+    "daebyeolsang_manura": 27.95
+  },
+  "impossible_or_not_observed_top5": [],
+  "impossible_or_not_observed_primary": [
+    "yeongdeung_halmang",
+    "gangnim",
+    "daebyeolwang"
+  ],
+  "per_deity": [
+    {
+      "deity_id": "gamunjangagi",
+      "name_ko": "가믄장아기",
+      "name_en": "Gamunjangagi",
+      "bonpuri": "삼공본풀이",
+      "observed_primary_count": 1650,
+      "observed_primary_percentage": 0.66,
+      "observed_top5_count": 22137,
+      "observed_top5_percentage": 8.8548,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 24.52,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 67,
+          "social": 37,
+          "care": 25,
+          "order": 45,
+          "response_intensity": 69,
+          "agency": 54
+        },
+        "subcategory_profile": {
+          "source_origin": 75,
+          "self_recognition": 65,
+          "becoming_cultivation": 59,
+          "reception_of_strange": 20,
+          "household_sustaining": 39,
+          "birth_arrival": 43,
+          "failed_arrival": 50,
+          "rupture_harm_return": 64,
+          "mourning_passage": 40,
+          "procedural_order": 50,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 26,
+          "restoration": 53,
+          "domestic_care": 39,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "gamunjangagi",
+          "name_ko": "가믄장아기",
+          "name_en": "Gamunjangagi",
+          "bonpuri": "삼공본풀이",
+          "match_percentage": 75,
+          "final_score": 24.52,
+          "base_distance": 40.72,
+          "response_intensity_distance": 4,
+          "agency_distance": 21,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.59,
+            "modifier_similarity": 0.88,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "oneuri",
+          "name_ko": "오늘이",
+          "name_en": "Oneuri",
+          "bonpuri": "원천강본풀이",
+          "match_percentage": 74,
+          "final_score": 25.92,
+          "base_distance": 36.78,
+          "response_intensity_distance": 24,
+          "agency_distance": 9,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.82,
+            "subcategory_similarity": 0.51,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 71,
+          "final_score": 28.55,
+          "base_distance": 43.97,
+          "response_intensity_distance": 1,
+          "agency_distance": 31,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.49,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "yu_jeongseungs_daughter",
+          "name_ko": "유정승따님애기",
+          "name_en": "Yu Jeongseung's Daughter",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 66,
+          "final_score": 34.31,
+          "base_distance": 38.12,
+          "response_intensity_distance": 6,
+          "agency_distance": 21,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.17,
+            "modifier_similarity": 0.87,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 65,
+          "final_score": 34.51,
+          "base_distance": 57.08,
+          "response_intensity_distance": 11,
+          "agency_distance": 19,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.42,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "chogong_three_brothers",
+          "name_ko": "초공신삼형제",
+          "name_en": "Chogong Three Brothers",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 65,
+          "final_score": 34.62,
+          "base_distance": 37.05,
+          "response_intensity_distance": 4,
+          "agency_distance": 26,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.15,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 64,
+          "final_score": 35.68,
+          "base_distance": 58.97,
+          "response_intensity_distance": 21,
+          "agency_distance": 19,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.42,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "jacheongbi",
+          "name_ko": "자청비",
+          "name_en": "Jacheongbi",
+          "bonpuri": "세경본풀이",
+          "match_percentage": 64,
+          "final_score": 36.07,
+          "base_distance": 69.81,
+          "response_intensity_distance": 14,
+          "agency_distance": 36,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.65,
+            "subcategory_similarity": 0.56,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 63,
+          "final_score": 37.48,
+          "base_distance": 54.66,
+          "response_intensity_distance": 21,
+          "agency_distance": 9,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.27,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 62,
+          "final_score": 38.08,
+          "base_distance": 60.02,
+          "response_intensity_distance": 16,
+          "agency_distance": 14,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.7,
+            "subcategory_similarity": 0.32,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "oneuri",
+      "name_ko": "오늘이",
+      "name_en": "Oneuri",
+      "bonpuri": "원천강본풀이",
+      "observed_primary_count": 1210,
+      "observed_primary_percentage": 0.484,
+      "observed_top5_count": 19950,
+      "observed_top5_percentage": 7.98,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 24.7,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 65,
+          "social": 30,
+          "care": 37,
+          "order": 40,
+          "response_intensity": 58,
+          "agency": 38
+        },
+        "subcategory_profile": {
+          "source_origin": 75,
+          "self_recognition": 67,
+          "becoming_cultivation": 52,
+          "reception_of_strange": 20,
+          "household_sustaining": 42,
+          "birth_arrival": 71,
+          "failed_arrival": 50,
+          "rupture_harm_return": 29,
+          "mourning_passage": 20,
+          "procedural_order": 46,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 16,
+          "restoration": 24,
+          "domestic_care": 47,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "oneuri",
+          "name_ko": "오늘이",
+          "name_en": "Oneuri",
+          "bonpuri": "원천강본풀이",
+          "match_percentage": 75,
+          "final_score": 24.7,
+          "base_distance": 37.27,
+          "response_intensity_distance": 13,
+          "agency_distance": 7,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.54,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "gamunjangagi",
+          "name_ko": "가믄장아기",
+          "name_en": "Gamunjangagi",
+          "bonpuri": "삼공본풀이",
+          "match_percentage": 73,
+          "final_score": 26.64,
+          "base_distance": 43.41,
+          "response_intensity_distance": 7,
+          "agency_distance": 37,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 70,
+          "final_score": 30.15,
+          "base_distance": 47.69,
+          "response_intensity_distance": 22,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.47,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 67,
+          "final_score": 32.84,
+          "base_distance": 61.31,
+          "response_intensity_distance": 23,
+          "agency_distance": 17,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.69,
+            "subcategory_similarity": 0.56,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 67,
+          "final_score": 32.9,
+          "base_distance": 54.44,
+          "response_intensity_distance": 32,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.47,
+            "modifier_similarity": 0.81,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "yu_jeongseungs_daughter",
+          "name_ko": "유정승따님애기",
+          "name_en": "Yu Jeongseung's Daughter",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 66,
+          "final_score": 33.83,
+          "base_distance": 32.85,
+          "response_intensity_distance": 17,
+          "agency_distance": 37,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.84,
+            "subcategory_similarity": 0.18,
+            "modifier_similarity": 0.74,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "chogong_three_brothers",
+          "name_ko": "초공신삼형제",
+          "name_en": "Chogong Three Brothers",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 65,
+          "final_score": 34.6,
+          "base_distance": 34.63,
+          "response_intensity_distance": 7,
+          "agency_distance": 42,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.83,
+            "subcategory_similarity": 0.16,
+            "modifier_similarity": 0.77,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "jacheongbi",
+          "name_ko": "자청비",
+          "name_en": "Jacheongbi",
+          "bonpuri": "세경본풀이",
+          "match_percentage": 65,
+          "final_score": 35.16,
+          "base_distance": 65.03,
+          "response_intensity_distance": 3,
+          "agency_distance": 52,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.67,
+            "subcategory_similarity": 0.54,
+            "modifier_similarity": 0.75,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 63,
+          "final_score": 37.48,
+          "base_distance": 50.29,
+          "response_intensity_distance": 12,
+          "agency_distance": 47,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.26,
+            "modifier_similarity": 0.72,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 62,
+          "final_score": 38.25,
+          "base_distance": 55.26,
+          "response_intensity_distance": 32,
+          "agency_distance": 7,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.72,
+            "subcategory_similarity": 0.27,
+            "modifier_similarity": 0.79,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "jacheongbi",
+      "name_ko": "자청비",
+      "name_en": "Jacheongbi",
+      "bonpuri": "세경본풀이",
+      "observed_primary_count": 1,
+      "observed_primary_percentage": 0.0004,
+      "observed_top5_count": 1213,
+      "observed_top5_percentage": 0.4852,
+      "best_observed_rank": 2,
+      "best_observed_final_score": 28.67,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 51,
+          "social": 39,
+          "care": 54,
+          "order": 38,
+          "response_intensity": 58,
+          "agency": 58
+        },
+        "subcategory_profile": {
+          "source_origin": 38,
+          "self_recognition": 46,
+          "becoming_cultivation": 86,
+          "reception_of_strange": 20,
+          "household_sustaining": 51,
+          "birth_arrival": 71,
+          "failed_arrival": 0,
+          "rupture_harm_return": 43,
+          "mourning_passage": 40,
+          "procedural_order": 41,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 11,
+          "restoration": 71,
+          "domestic_care": 64,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 77,
+          "final_score": 23.49,
+          "base_distance": 41.19,
+          "response_intensity_distance": 23,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.65,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "jacheongbi",
+          "name_ko": "자청비",
+          "name_en": "Jacheongbi",
+          "bonpuri": "세경본풀이",
+          "match_percentage": 71,
+          "final_score": 28.67,
+          "base_distance": 58.28,
+          "response_intensity_distance": 3,
+          "agency_distance": 32,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.67,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 71,
+          "final_score": 28.77,
+          "base_distance": 56.72,
+          "response_intensity_distance": 28,
+          "agency_distance": 2,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.72,
+            "subcategory_similarity": 0.65,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 71,
+          "final_score": 29.38,
+          "base_distance": 51.84,
+          "response_intensity_distance": 18,
+          "agency_distance": 8,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.74,
+            "subcategory_similarity": 0.55,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "oneuri",
+          "name_ko": "오늘이",
+          "name_en": "Oneuri",
+          "bonpuri": "원천강본풀이",
+          "match_percentage": 70,
+          "final_score": 30.16,
+          "base_distance": 41.07,
+          "response_intensity_distance": 13,
+          "agency_distance": 13,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.38,
+            "modifier_similarity": 0.87,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 70,
+          "final_score": 30.37,
+          "base_distance": 29.53,
+          "response_intensity_distance": 22,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.85,
+            "subcategory_similarity": 0.26,
+            "modifier_similarity": 0.78,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "yu_jeongseungs_daughter",
+          "name_ko": "유정승따님애기",
+          "name_en": "Yu Jeongseung's Daughter",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 68,
+          "final_score": 32.06,
+          "base_distance": 30.61,
+          "response_intensity_distance": 17,
+          "agency_distance": 17,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.85,
+            "subcategory_similarity": 0.18,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 67,
+          "final_score": 33.32,
+          "base_distance": 36.91,
+          "response_intensity_distance": 32,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.82,
+            "subcategory_similarity": 0.26,
+            "modifier_similarity": 0.72,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 66,
+          "final_score": 33.91,
+          "base_distance": 57.16,
+          "response_intensity_distance": 12,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.46,
+            "modifier_similarity": 0.81,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 66,
+          "final_score": 34.29,
+          "base_distance": 66.8,
+          "response_intensity_distance": 17,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.67,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.79,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "hallakgungi",
+      "name_ko": "할락궁이",
+      "name_en": "Hallakgungi",
+      "bonpuri": "이공본풀이",
+      "observed_primary_count": 3788,
+      "observed_primary_percentage": 1.5152,
+      "observed_top5_count": 47367,
+      "observed_top5_percentage": 18.9468,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 24.11,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 51,
+          "social": 28,
+          "care": 25,
+          "order": 62,
+          "response_intensity": 73,
+          "agency": 67
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 53,
+          "becoming_cultivation": 62,
+          "reception_of_strange": 20,
+          "household_sustaining": 34,
+          "birth_arrival": 43,
+          "failed_arrival": 50,
+          "rupture_harm_return": 86,
+          "mourning_passage": 40,
+          "procedural_order": 62,
+          "cosmic_law": 0,
+          "crooked_order": 67,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 53,
+          "restoration": 76,
+          "domestic_care": 38,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 76,
+          "final_score": 24.11,
+          "base_distance": 41.1,
+          "response_intensity_distance": 3,
+          "agency_distance": 18,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.61,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "gamunjangagi",
+          "name_ko": "가믄장아기",
+          "name_en": "Gamunjangagi",
+          "bonpuri": "삼공본풀이",
+          "match_percentage": 71,
+          "final_score": 29.43,
+          "base_distance": 44.32,
+          "response_intensity_distance": 8,
+          "agency_distance": 8,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.43,
+            "modifier_similarity": 0.92,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "sobyeolwang",
+          "name_ko": "소별왕",
+          "name_en": "Sobyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 69,
+          "final_score": 31.13,
+          "base_distance": 50.19,
+          "response_intensity_distance": 12,
+          "agency_distance": 22,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.47,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 66,
+          "final_score": 33.64,
+          "base_distance": 53.7,
+          "response_intensity_distance": 17,
+          "agency_distance": 32,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.45,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "gangnim",
+          "name_ko": "강림",
+          "name_en": "Gangnim",
+          "bonpuri": "차사본풀이",
+          "match_percentage": 66,
+          "final_score": 34.43,
+          "base_distance": 46.41,
+          "response_intensity_distance": 2,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.27,
+            "modifier_similarity": 0.89,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 65,
+          "final_score": 34.79,
+          "base_distance": 58.94,
+          "response_intensity_distance": 7,
+          "agency_distance": 32,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.45,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "daebyeolwang",
+          "name_ko": "대별왕",
+          "name_en": "Daebyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 64,
+          "final_score": 35.59,
+          "base_distance": 43.35,
+          "response_intensity_distance": 28,
+          "agency_distance": 18,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.23,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "chogong_three_brothers",
+          "name_ko": "초공신삼형제",
+          "name_en": "Chogong Three Brothers",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 64,
+          "final_score": 36.44,
+          "base_distance": 39.48,
+          "response_intensity_distance": 8,
+          "agency_distance": 13,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.1,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 63,
+          "final_score": 36.63,
+          "base_distance": 73.44,
+          "response_intensity_distance": 2,
+          "agency_distance": 18,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.63,
+            "subcategory_similarity": 0.53,
+            "modifier_similarity": 0.91,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "yu_jeongseungs_daughter",
+          "name_ko": "유정승따님애기",
+          "name_en": "Yu Jeongseung's Daughter",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 63,
+          "final_score": 36.81,
+          "base_distance": 46.25,
+          "response_intensity_distance": 2,
+          "agency_distance": 8,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.15,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "chogong_three_brothers",
+      "name_ko": "초공신삼형제",
+      "name_en": "Chogong Three Brothers",
+      "bonpuri": "초공본풀이",
+      "observed_primary_count": 18491,
+      "observed_primary_percentage": 7.3964,
+      "observed_top5_count": 82573,
+      "observed_top5_percentage": 33.0292,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 18.81,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 44,
+          "social": 30,
+          "care": 42,
+          "order": 58,
+          "response_intensity": 69,
+          "agency": 71
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 42,
+          "becoming_cultivation": 69,
+          "reception_of_strange": 0,
+          "household_sustaining": 39,
+          "birth_arrival": 57,
+          "failed_arrival": 0,
+          "rupture_harm_return": 36,
+          "mourning_passage": 40,
+          "procedural_order": 57,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 100,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 37,
+          "restoration": 59,
+          "domestic_care": 50,
+          "ritual_responsibility": 100,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "chogong_three_brothers",
+          "name_ko": "초공신삼형제",
+          "name_en": "Chogong Three Brothers",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 81,
+          "final_score": 18.81,
+          "base_distance": 33.45,
+          "response_intensity_distance": 4,
+          "agency_distance": 9,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.83,
+            "subcategory_similarity": 0.71,
+            "modifier_similarity": 0.94,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "yu_jeongseungs_daughter",
+          "name_ko": "유정승따님애기",
+          "name_en": "Yu Jeongseung's Daughter",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 80,
+          "final_score": 19.89,
+          "base_distance": 38.97,
+          "response_intensity_distance": 6,
+          "agency_distance": 4,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.73,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 68,
+          "final_score": 31.84,
+          "base_distance": 46.25,
+          "response_intensity_distance": 1,
+          "agency_distance": 14,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.35,
+            "modifier_similarity": 0.93,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 68,
+          "final_score": 32.17,
+          "base_distance": 48.05,
+          "response_intensity_distance": 16,
+          "agency_distance": 31,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.43,
+            "modifier_similarity": 0.77,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "gamunjangagi",
+          "name_ko": "가믄장아기",
+          "name_en": "Gamunjangagi",
+          "bonpuri": "삼공본풀이",
+          "match_percentage": 67,
+          "final_score": 33.36,
+          "base_distance": 49.34,
+          "response_intensity_distance": 4,
+          "agency_distance": 4,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.32,
+            "modifier_similarity": 0.96,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 66,
+          "final_score": 34.01,
+          "base_distance": 38.39,
+          "response_intensity_distance": 21,
+          "agency_distance": 36,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.25,
+            "modifier_similarity": 0.72,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 66,
+          "final_score": 34.34,
+          "base_distance": 55.04,
+          "response_intensity_distance": 34,
+          "agency_distance": 16,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.72,
+            "subcategory_similarity": 0.45,
+            "modifier_similarity": 0.74,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 65,
+          "final_score": 34.97,
+          "base_distance": 43.06,
+          "response_intensity_distance": 11,
+          "agency_distance": 36,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.25,
+            "modifier_similarity": 0.78,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 65,
+          "final_score": 35.17,
+          "base_distance": 48.21,
+          "response_intensity_distance": 21,
+          "agency_distance": 26,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.31,
+            "modifier_similarity": 0.77,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 64,
+          "final_score": 35.95,
+          "base_distance": 66.36,
+          "response_intensity_distance": 6,
+          "agency_distance": 14,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.67,
+            "subcategory_similarity": 0.46,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "yu_jeongseungs_daughter",
+      "name_ko": "유정승따님애기",
+      "name_en": "Yu Jeongseung's Daughter",
+      "bonpuri": "초공본풀이",
+      "observed_primary_count": 12226,
+      "observed_primary_percentage": 4.8904,
+      "observed_top5_count": 64495,
+      "observed_top5_percentage": 25.798,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 19.18,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 56,
+          "social": 30,
+          "care": 37,
+          "order": 43,
+          "response_intensity": 77,
+          "agency": 67
+        },
+        "subcategory_profile": {
+          "source_origin": 38,
+          "self_recognition": 58,
+          "becoming_cultivation": 83,
+          "reception_of_strange": 20,
+          "household_sustaining": 37,
+          "birth_arrival": 57,
+          "failed_arrival": 50,
+          "rupture_harm_return": 57,
+          "mourning_passage": 40,
+          "procedural_order": 46,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 100,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 26,
+          "restoration": 59,
+          "domestic_care": 50,
+          "ritual_responsibility": 100,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "yu_jeongseungs_daughter",
+          "name_ko": "유정승따님애기",
+          "name_en": "Yu Jeongseung's Daughter",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 81,
+          "final_score": 19.18,
+          "base_distance": 35.48,
+          "response_intensity_distance": 2,
+          "agency_distance": 8,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.82,
+            "subcategory_similarity": 0.71,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "chogong_three_brothers",
+          "name_ko": "초공신삼형제",
+          "name_en": "Chogong Three Brothers",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 79,
+          "final_score": 21.17,
+          "base_distance": 35.06,
+          "response_intensity_distance": 12,
+          "agency_distance": 13,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.82,
+            "subcategory_similarity": 0.66,
+            "modifier_similarity": 0.88,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "gamunjangagi",
+          "name_ko": "가믄장아기",
+          "name_en": "Gamunjangagi",
+          "bonpuri": "삼공본풀이",
+          "match_percentage": 68,
+          "final_score": 32.36,
+          "base_distance": 47.05,
+          "response_intensity_distance": 12,
+          "agency_distance": 8,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.36,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 67,
+          "final_score": 32.53,
+          "base_distance": 46.09,
+          "response_intensity_distance": 3,
+          "agency_distance": 32,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.36,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 67,
+          "final_score": 33.05,
+          "base_distance": 50.29,
+          "response_intensity_distance": 7,
+          "agency_distance": 18,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.38,
+            "modifier_similarity": 0.88,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "oneuri",
+          "name_ko": "오늘이",
+          "name_en": "Oneuri",
+          "bonpuri": "원천강본풀이",
+          "match_percentage": 66,
+          "final_score": 33.59,
+          "base_distance": 43.23,
+          "response_intensity_distance": 32,
+          "agency_distance": 22,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.33,
+            "modifier_similarity": 0.72,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 66,
+          "final_score": 33.87,
+          "base_distance": 56.12,
+          "response_intensity_distance": 8,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.72,
+            "subcategory_similarity": 0.44,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 66,
+          "final_score": 34.21,
+          "base_distance": 49.54,
+          "response_intensity_distance": 13,
+          "agency_distance": 32,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.36,
+            "modifier_similarity": 0.79,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 64,
+          "final_score": 35.8,
+          "base_distance": 53.61,
+          "response_intensity_distance": 13,
+          "agency_distance": 22,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.33,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "jacheongbi",
+          "name_ko": "자청비",
+          "name_en": "Jacheongbi",
+          "bonpuri": "세경본풀이",
+          "match_percentage": 64,
+          "final_score": 35.87,
+          "base_distance": 67.07,
+          "response_intensity_distance": 22,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.66,
+            "subcategory_similarity": 0.53,
+            "modifier_similarity": 0.78,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "myeongjinguks_daughter",
+      "name_ko": "명진국따님애기",
+      "name_en": "Myeongjinguk's Daughter",
+      "bonpuri": "삼승할망본풀이",
+      "observed_primary_count": 21982,
+      "observed_primary_percentage": 8.7928,
+      "observed_top5_count": 158609,
+      "observed_top5_percentage": 63.4436,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 18.93,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 32,
+          "social": 43,
+          "care": 68,
+          "order": 42,
+          "response_intensity": 65,
+          "agency": 50
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 23,
+          "becoming_cultivation": 69,
+          "reception_of_strange": 20,
+          "household_sustaining": 56,
+          "birth_arrival": 86,
+          "failed_arrival": 50,
+          "rupture_harm_return": 29,
+          "mourning_passage": 40,
+          "procedural_order": 44,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 26,
+          "restoration": 41,
+          "domestic_care": 78,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 81,
+          "final_score": 18.93,
+          "base_distance": 31.87,
+          "response_intensity_distance": 30,
+          "agency_distance": 5,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.84,
+            "subcategory_similarity": 0.73,
+            "modifier_similarity": 0.81,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 78,
+          "final_score": 21.97,
+          "base_distance": 27.22,
+          "response_intensity_distance": 15,
+          "agency_distance": 15,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.86,
+            "subcategory_similarity": 0.54,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 77,
+          "final_score": 22.52,
+          "base_distance": 27.22,
+          "response_intensity_distance": 25,
+          "agency_distance": 15,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.86,
+            "subcategory_similarity": 0.54,
+            "modifier_similarity": 0.79,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 77,
+          "final_score": 22.75,
+          "base_distance": 42.1,
+          "response_intensity_distance": 35,
+          "agency_distance": 10,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.73,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 74,
+          "final_score": 26,
+          "base_distance": 43.31,
+          "response_intensity_distance": 25,
+          "agency_distance": 0,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 68,
+          "final_score": 32.3,
+          "base_distance": 40.14,
+          "response_intensity_distance": 5,
+          "agency_distance": 15,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.27,
+            "modifier_similarity": 0.91,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 66,
+          "final_score": 34.36,
+          "base_distance": 64.43,
+          "response_intensity_distance": 10,
+          "agency_distance": 35,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.68,
+            "subcategory_similarity": 0.55,
+            "modifier_similarity": 0.79,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "chilseong_agi",
+          "name_ko": "칠성아기",
+          "name_en": "Chilseong Agi",
+          "bonpuri": "칠성본풀이",
+          "match_percentage": 65,
+          "final_score": 34.54,
+          "base_distance": 53.77,
+          "response_intensity_distance": 10,
+          "agency_distance": 20,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.38,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "yeongdeung_halmang",
+          "name_ko": "영등할망",
+          "name_en": "Yeongdeung Halmang",
+          "bonpuri": "영등본풀이",
+          "match_percentage": 65,
+          "final_score": 34.71,
+          "base_distance": 41.42,
+          "response_intensity_distance": 20,
+          "agency_distance": 20,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.23,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 65,
+          "final_score": 34.77,
+          "base_distance": 42.97,
+          "response_intensity_distance": 20,
+          "agency_distance": 10,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.23,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "samseung_halmang",
+      "name_ko": "삼승할망",
+      "name_en": "Samseung Halmang",
+      "bonpuri": "삼승할망본풀이",
+      "observed_primary_count": 1,
+      "observed_primary_percentage": 0.0004,
+      "observed_top5_count": 45004,
+      "observed_top5_percentage": 18.0016,
+      "best_observed_rank": 2,
+      "best_observed_final_score": 21.56,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 23,
+          "social": 57,
+          "care": 65,
+          "order": 42,
+          "response_intensity": 62,
+          "agency": 46
+        },
+        "subcategory_profile": {
+          "source_origin": 13,
+          "self_recognition": 19,
+          "becoming_cultivation": 55,
+          "reception_of_strange": 40,
+          "household_sustaining": 64,
+          "birth_arrival": 86,
+          "failed_arrival": 50,
+          "rupture_harm_return": 29,
+          "mourning_passage": 20,
+          "procedural_order": 38,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 21,
+          "restoration": 59,
+          "domestic_care": 77,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 80,
+          "final_score": 19.66,
+          "base_distance": 37.71,
+          "response_intensity_distance": 27,
+          "agency_distance": 9,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.78,
+            "modifier_similarity": 0.81,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 78,
+          "final_score": 21.56,
+          "base_distance": 42.02,
+          "response_intensity_distance": 32,
+          "agency_distance": 14,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.78,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 77,
+          "final_score": 23.05,
+          "base_distance": 38.24,
+          "response_intensity_distance": 22,
+          "agency_distance": 4,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.63,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 76,
+          "final_score": 24,
+          "base_distance": 29.1,
+          "response_intensity_distance": 28,
+          "agency_distance": 11,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.85,
+            "subcategory_similarity": 0.5,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 74,
+          "final_score": 26.4,
+          "base_distance": 38.17,
+          "response_intensity_distance": 18,
+          "agency_distance": 11,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.5,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 70,
+          "final_score": 29.55,
+          "base_distance": 32.82,
+          "response_intensity_distance": 8,
+          "agency_distance": 11,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.84,
+            "subcategory_similarity": 0.28,
+            "modifier_similarity": 0.91,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "yeongdeung_halmang",
+          "name_ko": "영등할망",
+          "name_en": "Yeongdeung Halmang",
+          "bonpuri": "영등본풀이",
+          "match_percentage": 70,
+          "final_score": 30.09,
+          "base_distance": 33.5,
+          "response_intensity_distance": 17,
+          "agency_distance": 16,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.83,
+            "subcategory_similarity": 0.3,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "chilseong_agi",
+          "name_ko": "칠성아기",
+          "name_en": "Chilseong Agi",
+          "bonpuri": "칠성본풀이",
+          "match_percentage": 69,
+          "final_score": 31.36,
+          "base_distance": 48.45,
+          "response_intensity_distance": 13,
+          "agency_distance": 24,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.45,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 68,
+          "final_score": 31.83,
+          "base_distance": 60.47,
+          "response_intensity_distance": 13,
+          "agency_distance": 39,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.7,
+            "subcategory_similarity": 0.61,
+            "modifier_similarity": 0.75,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 65,
+          "final_score": 34.86,
+          "base_distance": 48.45,
+          "response_intensity_distance": 28,
+          "agency_distance": 1,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.3,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "donghae_yonggungs_daughter",
+      "name_ko": "동해용궁따님애기",
+      "name_en": "Donghae Yonggung's Daughter",
+      "bonpuri": "삼승할망본풀이",
+      "observed_primary_count": 29867,
+      "observed_primary_percentage": 11.9468,
+      "observed_top5_count": 211622,
+      "observed_top5_percentage": 84.6488,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 18.01,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 44,
+          "social": 41,
+          "care": 60,
+          "order": 42,
+          "response_intensity": 65,
+          "agency": 29
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 42,
+          "becoming_cultivation": 69,
+          "reception_of_strange": 0,
+          "household_sustaining": 53,
+          "birth_arrival": 71,
+          "failed_arrival": 100,
+          "rupture_harm_return": 21,
+          "mourning_passage": 80,
+          "procedural_order": 41,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 16,
+          "restoration": 41,
+          "domestic_care": 69,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 82,
+          "final_score": 18.01,
+          "base_distance": 24.52,
+          "response_intensity_distance": 15,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.88,
+            "subcategory_similarity": 0.64,
+            "modifier_similarity": 0.89,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 80,
+          "final_score": 20.02,
+          "base_distance": 29,
+          "response_intensity_distance": 25,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.86,
+            "subcategory_similarity": 0.64,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 75,
+          "final_score": 24.62,
+          "base_distance": 34.58,
+          "response_intensity_distance": 30,
+          "agency_distance": 26,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.83,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.72,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 70,
+          "final_score": 29.67,
+          "base_distance": 48.58,
+          "response_intensity_distance": 35,
+          "agency_distance": 31,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.67,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 69,
+          "final_score": 30.78,
+          "base_distance": 46.86,
+          "response_intensity_distance": 25,
+          "agency_distance": 21,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.47,
+            "modifier_similarity": 0.77,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 69,
+          "final_score": 31.32,
+          "base_distance": 40.14,
+          "response_intensity_distance": 5,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.29,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 68,
+          "final_score": 31.77,
+          "base_distance": 41.06,
+          "response_intensity_distance": 20,
+          "agency_distance": 11,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.33,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "jacheongbi",
+          "name_ko": "자청비",
+          "name_en": "Jacheongbi",
+          "bonpuri": "세경본풀이",
+          "match_percentage": 66,
+          "final_score": 34.16,
+          "base_distance": 57.32,
+          "response_intensity_distance": 10,
+          "agency_distance": 61,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.51,
+            "modifier_similarity": 0.67,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "yu_jeongseungs_daughter",
+          "name_ko": "유정승따님애기",
+          "name_en": "Yu Jeongseung's Daughter",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 65,
+          "final_score": 35.08,
+          "base_distance": 33.85,
+          "response_intensity_distance": 10,
+          "agency_distance": 46,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.83,
+            "subcategory_similarity": 0.14,
+            "modifier_similarity": 0.74,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "oneuri",
+          "name_ko": "오늘이",
+          "name_en": "Oneuri",
+          "bonpuri": "원천강본풀이",
+          "match_percentage": 64,
+          "final_score": 35.54,
+          "base_distance": 48.12,
+          "response_intensity_distance": 20,
+          "agency_distance": 16,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.28,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "jeoseung_halmang",
+      "name_ko": "저승할망",
+      "name_en": "Jeoseung Halmang",
+      "bonpuri": "삼승할망본풀이",
+      "observed_primary_count": 130227,
+      "observed_primary_percentage": 52.0908,
+      "observed_top5_count": 235095,
+      "observed_top5_percentage": 94.038,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 17.23,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 32,
+          "social": 41,
+          "care": 63,
+          "order": 52,
+          "response_intensity": 73,
+          "agency": 29
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 26,
+          "becoming_cultivation": 62,
+          "reception_of_strange": 0,
+          "household_sustaining": 49,
+          "birth_arrival": 57,
+          "failed_arrival": 100,
+          "rupture_harm_return": 50,
+          "mourning_passage": 60,
+          "procedural_order": 50,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 26,
+          "restoration": 35,
+          "domestic_care": 69,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 83,
+          "final_score": 17.23,
+          "base_distance": 21.86,
+          "response_intensity_distance": 17,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.89,
+            "subcategory_similarity": 0.64,
+            "modifier_similarity": 0.88,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 81,
+          "final_score": 18.98,
+          "base_distance": 28.95,
+          "response_intensity_distance": 7,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.86,
+            "subcategory_similarity": 0.64,
+            "modifier_similarity": 0.93,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 74,
+          "final_score": 26.26,
+          "base_distance": 35.4,
+          "response_intensity_distance": 38,
+          "agency_distance": 26,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.82,
+            "subcategory_similarity": 0.54,
+            "modifier_similarity": 0.67,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 70,
+          "final_score": 29.53,
+          "base_distance": 43.92,
+          "response_intensity_distance": 43,
+          "agency_distance": 31,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.54,
+            "modifier_similarity": 0.62,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 70,
+          "final_score": 30.15,
+          "base_distance": 38.64,
+          "response_intensity_distance": 12,
+          "agency_distance": 11,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.34,
+            "modifier_similarity": 0.88,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 69,
+          "final_score": 31.16,
+          "base_distance": 49.63,
+          "response_intensity_distance": 33,
+          "agency_distance": 21,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.51,
+            "modifier_similarity": 0.72,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "daebyeolsang_manura",
+          "name_ko": "대별상마누라",
+          "name_en": "Daebyeolsang Manura",
+          "bonpuri": "마누라본풀이",
+          "match_percentage": 68,
+          "final_score": 32.22,
+          "base_distance": 37.92,
+          "response_intensity_distance": 17,
+          "agency_distance": 56,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.34,
+            "modifier_similarity": 0.66,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 67,
+          "final_score": 32.75,
+          "base_distance": 41.21,
+          "response_intensity_distance": 3,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.24,
+            "modifier_similarity": 0.96,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 66,
+          "final_score": 34.49,
+          "base_distance": 44.25,
+          "response_intensity_distance": 17,
+          "agency_distance": 16,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.26,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 65,
+          "final_score": 34.86,
+          "base_distance": 59.65,
+          "response_intensity_distance": 2,
+          "agency_distance": 56,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.7,
+            "subcategory_similarity": 0.48,
+            "modifier_similarity": 0.74,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "yeosan_buin",
+      "name_ko": "여산부인",
+      "name_en": "Yeosan Buin",
+      "bonpuri": "문전본풀이",
+      "observed_primary_count": 1738,
+      "observed_primary_percentage": 0.6952,
+      "observed_top5_count": 61782,
+      "observed_top5_percentage": 24.7128,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 22.13,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 23,
+          "social": 65,
+          "care": 58,
+          "order": 32,
+          "response_intensity": 62,
+          "agency": 46
+        },
+        "subcategory_profile": {
+          "source_origin": 0,
+          "self_recognition": 25,
+          "becoming_cultivation": 66,
+          "reception_of_strange": 40,
+          "household_sustaining": 75,
+          "birth_arrival": 71,
+          "failed_arrival": 0,
+          "rupture_harm_return": 43,
+          "mourning_passage": 40,
+          "procedural_order": 37,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 32,
+          "restoration": 65,
+          "domestic_care": 70,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 78,
+          "final_score": 22.13,
+          "base_distance": 38.04,
+          "response_intensity_distance": 22,
+          "agency_distance": 4,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.67,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 76,
+          "final_score": 23.72,
+          "base_distance": 46.66,
+          "response_intensity_distance": 27,
+          "agency_distance": 9,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.73,
+            "modifier_similarity": 0.81,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 74,
+          "final_score": 25.86,
+          "base_distance": 51.7,
+          "response_intensity_distance": 32,
+          "agency_distance": 14,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.74,
+            "subcategory_similarity": 0.73,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 72,
+          "final_score": 27.69,
+          "base_distance": 32.89,
+          "response_intensity_distance": 8,
+          "agency_distance": 11,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.84,
+            "subcategory_similarity": 0.36,
+            "modifier_similarity": 0.91,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "yeongdeung_halmang",
+          "name_ko": "영등할망",
+          "name_en": "Yeongdeung Halmang",
+          "bonpuri": "영등본풀이",
+          "match_percentage": 71,
+          "final_score": 29.01,
+          "base_distance": 33.27,
+          "response_intensity_distance": 17,
+          "agency_distance": 16,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.83,
+            "subcategory_similarity": 0.34,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "chilseong_agi",
+          "name_ko": "칠성아기",
+          "name_en": "Chilseong Agi",
+          "bonpuri": "칠성본풀이",
+          "match_percentage": 70,
+          "final_score": 29.93,
+          "base_distance": 47.98,
+          "response_intensity_distance": 13,
+          "agency_distance": 24,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.5,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 68,
+          "final_score": 32.19,
+          "base_distance": 40.27,
+          "response_intensity_distance": 28,
+          "agency_distance": 11,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.32,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 67,
+          "final_score": 32.61,
+          "base_distance": 65.44,
+          "response_intensity_distance": 13,
+          "agency_distance": 39,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.67,
+            "subcategory_similarity": 0.64,
+            "modifier_similarity": 0.75,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 66,
+          "final_score": 33.9,
+          "base_distance": 47.24,
+          "response_intensity_distance": 18,
+          "agency_distance": 11,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.32,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 65,
+          "final_score": 35.3,
+          "base_distance": 47.4,
+          "response_intensity_distance": 23,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.27,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "nokdisaengi",
+      "name_ko": "녹디생이",
+      "name_en": "Nokdisaengi",
+      "bonpuri": "문전본풀이",
+      "observed_primary_count": 112,
+      "observed_primary_percentage": 0.0448,
+      "observed_top5_count": 7509,
+      "observed_top5_percentage": 3.0036,
+      "best_observed_rank": 4,
+      "best_observed_final_score": 26.41,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 33,
+          "social": 54,
+          "care": 53,
+          "order": 50,
+          "response_intensity": 65,
+          "agency": 58
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 28,
+          "becoming_cultivation": 59,
+          "reception_of_strange": 20,
+          "household_sustaining": 61,
+          "birth_arrival": 57,
+          "failed_arrival": 0,
+          "rupture_harm_return": 43,
+          "mourning_passage": 40,
+          "procedural_order": 54,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 26,
+          "restoration": 71,
+          "domestic_care": 61,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 77,
+          "final_score": 23.26,
+          "base_distance": 40.73,
+          "response_intensity_distance": 30,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.67,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 74,
+          "final_score": 25.81,
+          "base_distance": 45.49,
+          "response_intensity_distance": 25,
+          "agency_distance": 8,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.63,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 74,
+          "final_score": 25.83,
+          "base_distance": 47.91,
+          "response_intensity_distance": 35,
+          "agency_distance": 2,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.67,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 74,
+          "final_score": 26.41,
+          "base_distance": 53.05,
+          "response_intensity_distance": 10,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.7,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 72,
+          "final_score": 28.02,
+          "base_distance": 23.75,
+          "response_intensity_distance": 25,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.88,
+            "subcategory_similarity": 0.28,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 71,
+          "final_score": 29.04,
+          "base_distance": 31.05,
+          "response_intensity_distance": 5,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.84,
+            "subcategory_similarity": 0.29,
+            "modifier_similarity": 0.87,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 69,
+          "final_score": 30.53,
+          "base_distance": 33,
+          "response_intensity_distance": 20,
+          "agency_distance": 18,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.84,
+            "subcategory_similarity": 0.28,
+            "modifier_similarity": 0.81,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 69,
+          "final_score": 31.44,
+          "base_distance": 35.97,
+          "response_intensity_distance": 15,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.82,
+            "subcategory_similarity": 0.28,
+            "modifier_similarity": 0.81,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 68,
+          "final_score": 32.26,
+          "base_distance": 57.7,
+          "response_intensity_distance": 5,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.52,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 68,
+          "final_score": 32.37,
+          "base_distance": 37.87,
+          "response_intensity_distance": 25,
+          "agency_distance": 13,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.28,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "chilseong_agi",
+      "name_ko": "칠성아기",
+      "name_en": "Chilseong Agi",
+      "bonpuri": "칠성본풀이",
+      "observed_primary_count": 6,
+      "observed_primary_percentage": 0.0024,
+      "observed_top5_count": 2680,
+      "observed_top5_percentage": 1.072,
+      "best_observed_rank": 4,
+      "best_observed_final_score": 26.02,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 25,
+          "social": 63,
+          "care": 53,
+          "order": 48,
+          "response_intensity": 65,
+          "agency": 58
+        },
+        "subcategory_profile": {
+          "source_origin": 0,
+          "self_recognition": 18,
+          "becoming_cultivation": 66,
+          "reception_of_strange": 100,
+          "household_sustaining": 73,
+          "birth_arrival": 71,
+          "failed_arrival": 50,
+          "rupture_harm_return": 43,
+          "mourning_passage": 20,
+          "procedural_order": 43,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 32,
+          "restoration": 41,
+          "domestic_care": 70,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 75,
+          "final_score": 24.9,
+          "base_distance": 28.93,
+          "response_intensity_distance": 5,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.86,
+            "subcategory_similarity": 0.43,
+            "modifier_similarity": 0.87,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 74,
+          "final_score": 25.72,
+          "base_distance": 45.41,
+          "response_intensity_distance": 30,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.63,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 74,
+          "final_score": 25.95,
+          "base_distance": 29.44,
+          "response_intensity_distance": 25,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.85,
+            "subcategory_similarity": 0.44,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "chilseong_agi",
+          "name_ko": "칠성아기",
+          "name_en": "Chilseong Agi",
+          "bonpuri": "칠성본풀이",
+          "match_percentage": 74,
+          "final_score": 26.02,
+          "base_distance": 48.65,
+          "response_intensity_distance": 10,
+          "agency_distance": 12,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.64,
+            "modifier_similarity": 0.89,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 73,
+          "final_score": 26.57,
+          "base_distance": 43.38,
+          "response_intensity_distance": 25,
+          "agency_distance": 8,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.57,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 73,
+          "final_score": 27.11,
+          "base_distance": 48.97,
+          "response_intensity_distance": 35,
+          "agency_distance": 2,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.63,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "yeongdeung_halmang",
+          "name_ko": "영등할망",
+          "name_en": "Yeongdeung Halmang",
+          "bonpuri": "영등본풀이",
+          "match_percentage": 71,
+          "final_score": 29.19,
+          "base_distance": 39.77,
+          "response_intensity_distance": 20,
+          "agency_distance": 28,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.44,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 70,
+          "final_score": 30.2,
+          "base_distance": 44.24,
+          "response_intensity_distance": 15,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.44,
+            "modifier_similarity": 0.81,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 69,
+          "final_score": 30.99,
+          "base_distance": 53.82,
+          "response_intensity_distance": 10,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.53,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 66,
+          "final_score": 34.09,
+          "base_distance": 42.51,
+          "response_intensity_distance": 25,
+          "agency_distance": 13,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.27,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "samani",
+      "name_ko": "사만이",
+      "name_en": "Samani",
+      "bonpuri": "멩감본풀이 or 사만이본풀이",
+      "observed_primary_count": 4254,
+      "observed_primary_percentage": 1.7016,
+      "observed_top5_count": 64051,
+      "observed_top5_percentage": 25.6204,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 21.57,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 25,
+          "social": 69,
+          "care": 49,
+          "order": 40,
+          "response_intensity": 62,
+          "agency": 33
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 26,
+          "becoming_cultivation": 38,
+          "reception_of_strange": 80,
+          "household_sustaining": 73,
+          "birth_arrival": 43,
+          "failed_arrival": 50,
+          "rupture_harm_return": 36,
+          "mourning_passage": 60,
+          "procedural_order": 38,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 21,
+          "restoration": 41,
+          "domestic_care": 64,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 78,
+          "final_score": 21.57,
+          "base_distance": 29.61,
+          "response_intensity_distance": 8,
+          "agency_distance": 2,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.85,
+            "subcategory_similarity": 0.54,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 74,
+          "final_score": 25.79,
+          "base_distance": 42.92,
+          "response_intensity_distance": 22,
+          "agency_distance": 17,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.61,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 72,
+          "final_score": 28.12,
+          "base_distance": 38.56,
+          "response_intensity_distance": 28,
+          "agency_distance": 2,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.44,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "yeongdeung_halmang",
+          "name_ko": "영등할망",
+          "name_en": "Yeongdeung Halmang",
+          "bonpuri": "영등본풀이",
+          "match_percentage": 72,
+          "final_score": 28.15,
+          "base_distance": 39.27,
+          "response_intensity_distance": 17,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.43,
+            "modifier_similarity": 0.89,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "chilseong_agi",
+          "name_ko": "칠성아기",
+          "name_en": "Chilseong Agi",
+          "bonpuri": "칠성본풀이",
+          "match_percentage": 72,
+          "final_score": 28.2,
+          "base_distance": 48.24,
+          "response_intensity_distance": 13,
+          "agency_distance": 37,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.59,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 70,
+          "final_score": 29.54,
+          "base_distance": 51.01,
+          "response_intensity_distance": 27,
+          "agency_distance": 22,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.74,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.75,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 69,
+          "final_score": 31.38,
+          "base_distance": 55.15,
+          "response_intensity_distance": 32,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.72,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.7,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 69,
+          "final_score": 31.41,
+          "base_distance": 50.37,
+          "response_intensity_distance": 18,
+          "agency_distance": 2,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.44,
+            "modifier_similarity": 0.89,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 68,
+          "final_score": 32.07,
+          "base_distance": 42.21,
+          "response_intensity_distance": 23,
+          "agency_distance": 7,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.33,
+            "modifier_similarity": 0.84,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 67,
+          "final_score": 32.93,
+          "base_distance": 58.63,
+          "response_intensity_distance": 13,
+          "agency_distance": 52,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.57,
+            "modifier_similarity": 0.7,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "yeongdeung_halmang",
+      "name_ko": "영등할망",
+      "name_en": "Yeongdeung Halmang",
+      "bonpuri": "영등본풀이",
+      "observed_primary_count": 0,
+      "observed_primary_percentage": 0,
+      "observed_top5_count": 1172,
+      "observed_top5_percentage": 0.4688,
+      "best_observed_rank": 3,
+      "best_observed_final_score": 26.86,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 11,
+          "social": 74,
+          "care": 60,
+          "order": 35,
+          "response_intensity": 62,
+          "agency": 29
+        },
+        "subcategory_profile": {
+          "source_origin": 13,
+          "self_recognition": 4,
+          "becoming_cultivation": 62,
+          "reception_of_strange": 80,
+          "household_sustaining": 80,
+          "birth_arrival": 57,
+          "failed_arrival": 50,
+          "rupture_harm_return": 36,
+          "mourning_passage": 60,
+          "procedural_order": 34,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 26,
+          "restoration": 35,
+          "domestic_care": 75,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 75,
+          "final_score": 25.12,
+          "base_distance": 37.97,
+          "response_intensity_distance": 8,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.52,
+            "modifier_similarity": 0.93,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 75,
+          "final_score": 25.48,
+          "base_distance": 42.63,
+          "response_intensity_distance": 22,
+          "agency_distance": 21,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.62,
+            "modifier_similarity": 0.78,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "yeongdeung_halmang",
+          "name_ko": "영등할망",
+          "name_en": "Yeongdeung Halmang",
+          "bonpuri": "영등본풀이",
+          "match_percentage": 73,
+          "final_score": 26.86,
+          "base_distance": 35.17,
+          "response_intensity_distance": 17,
+          "agency_distance": 1,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.82,
+            "subcategory_similarity": 0.42,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "chilseong_agi",
+          "name_ko": "칠성아기",
+          "name_en": "Chilseong Agi",
+          "bonpuri": "칠성본풀이",
+          "match_percentage": 71,
+          "final_score": 29.47,
+          "base_distance": 51.88,
+          "response_intensity_distance": 13,
+          "agency_distance": 41,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.74,
+            "subcategory_similarity": 0.6,
+            "modifier_similarity": 0.75,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 70,
+          "final_score": 29.72,
+          "base_distance": 54.84,
+          "response_intensity_distance": 27,
+          "agency_distance": 26,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.63,
+            "modifier_similarity": 0.73,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 70,
+          "final_score": 30.17,
+          "base_distance": 54.69,
+          "response_intensity_distance": 32,
+          "agency_distance": 31,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.63,
+            "modifier_similarity": 0.68,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 69,
+          "final_score": 30.59,
+          "base_distance": 46.93,
+          "response_intensity_distance": 28,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.46,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 66,
+          "final_score": 33.74,
+          "base_distance": 58.33,
+          "response_intensity_distance": 18,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.46,
+            "modifier_similarity": 0.87,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 64,
+          "final_score": 36.23,
+          "base_distance": 52.79,
+          "response_intensity_distance": 23,
+          "agency_distance": 11,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.74,
+            "subcategory_similarity": 0.31,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 63,
+          "final_score": 36.81,
+          "base_distance": 67.69,
+          "response_intensity_distance": 13,
+          "agency_distance": 56,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.66,
+            "subcategory_similarity": 0.54,
+            "modifier_similarity": 0.68,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": false,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "wongang_ami",
+      "name_ko": "원강아미",
+      "name_en": "Wongang Ami",
+      "bonpuri": "이공본풀이",
+      "observed_primary_count": 4,
+      "observed_primary_percentage": 0.0016,
+      "observed_top5_count": 5949,
+      "observed_top5_percentage": 2.3796,
+      "best_observed_rank": 2,
+      "best_observed_final_score": 28.07,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 37,
+          "social": 39,
+          "care": 32,
+          "order": 55,
+          "response_intensity": 77,
+          "agency": 38
+        },
+        "subcategory_profile": {
+          "source_origin": 0,
+          "self_recognition": 32,
+          "becoming_cultivation": 41,
+          "reception_of_strange": 40,
+          "household_sustaining": 44,
+          "birth_arrival": 43,
+          "failed_arrival": 50,
+          "rupture_harm_return": 93,
+          "mourning_passage": 40,
+          "procedural_order": 62,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 100,
+          "seasonal_cycle": 0,
+          "hidden_force": 47,
+          "restoration": 47,
+          "domestic_care": 48,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 74,
+          "final_score": 25.93,
+          "base_distance": 49.99,
+          "response_intensity_distance": 13,
+          "agency_distance": 7,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.65,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "wongang_ami",
+          "name_ko": "원강아미",
+          "name_en": "Wongang Ami",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 72,
+          "final_score": 28.07,
+          "base_distance": 61.43,
+          "response_intensity_distance": 13,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.69,
+            "subcategory_similarity": 0.71,
+            "modifier_similarity": 0.91,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 71,
+          "final_score": 29.1,
+          "base_distance": 42.53,
+          "response_intensity_distance": 13,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.42,
+            "modifier_similarity": 0.91,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 70,
+          "final_score": 29.99,
+          "base_distance": 49.44,
+          "response_intensity_distance": 8,
+          "agency_distance": 2,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.46,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 69,
+          "final_score": 30.57,
+          "base_distance": 49.74,
+          "response_intensity_distance": 7,
+          "agency_distance": 47,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.52,
+            "modifier_similarity": 0.75,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 68,
+          "final_score": 31.58,
+          "base_distance": 51.86,
+          "response_intensity_distance": 3,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.74,
+            "subcategory_similarity": 0.42,
+            "modifier_similarity": 0.97,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "sobyeolwang",
+          "name_ko": "소별왕",
+          "name_en": "Sobyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 66,
+          "final_score": 33.97,
+          "base_distance": 49.84,
+          "response_intensity_distance": 8,
+          "agency_distance": 7,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.32,
+            "modifier_similarity": 0.92,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 64,
+          "final_score": 36.04,
+          "base_distance": 53.47,
+          "response_intensity_distance": 7,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.27,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "daebyeolsang_manura",
+          "name_ko": "대별상마누라",
+          "name_en": "Daebyeolsang Manura",
+          "bonpuri": "마누라본풀이",
+          "match_percentage": 63,
+          "final_score": 36.78,
+          "base_distance": 54.85,
+          "response_intensity_distance": 13,
+          "agency_distance": 47,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.35,
+            "modifier_similarity": 0.72,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 63,
+          "final_score": 36.92,
+          "base_distance": 66.55,
+          "response_intensity_distance": 2,
+          "agency_distance": 47,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.67,
+            "subcategory_similarity": 0.48,
+            "modifier_similarity": 0.78,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "noga_danpung_agissi",
+      "name_ko": "노가단풍아기씨",
+      "name_en": "Noga Danpung Agissi",
+      "bonpuri": "초공본풀이",
+      "observed_primary_count": 14162,
+      "observed_primary_percentage": 5.6648,
+      "observed_top5_count": 61981,
+      "observed_top5_percentage": 24.7924,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 23.75,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 32,
+          "social": 46,
+          "care": 40,
+          "order": 52,
+          "response_intensity": 77,
+          "agency": 42
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 28,
+          "becoming_cultivation": 55,
+          "reception_of_strange": 40,
+          "household_sustaining": 54,
+          "birth_arrival": 71,
+          "failed_arrival": 50,
+          "rupture_harm_return": 71,
+          "mourning_passage": 20,
+          "procedural_order": 49,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 100,
+          "seasonal_cycle": 0,
+          "hidden_force": 32,
+          "restoration": 41,
+          "domestic_care": 56,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 76,
+          "final_score": 23.75,
+          "base_distance": 45.65,
+          "response_intensity_distance": 13,
+          "agency_distance": 3,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.68,
+            "modifier_similarity": 0.91,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 74,
+          "final_score": 26.45,
+          "base_distance": 34.84,
+          "response_intensity_distance": 13,
+          "agency_distance": 7,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.83,
+            "subcategory_similarity": 0.44,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 70,
+          "final_score": 29.58,
+          "base_distance": 46.2,
+          "response_intensity_distance": 3,
+          "agency_distance": 7,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.44,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "wongang_ami",
+          "name_ko": "원강아미",
+          "name_en": "Wongang Ami",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 70,
+          "final_score": 29.88,
+          "base_distance": 59.66,
+          "response_intensity_distance": 13,
+          "agency_distance": 7,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.7,
+            "subcategory_similarity": 0.62,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 69,
+          "final_score": 30.75,
+          "base_distance": 43,
+          "response_intensity_distance": 8,
+          "agency_distance": 2,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.35,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 68,
+          "final_score": 31.69,
+          "base_distance": 53.94,
+          "response_intensity_distance": 42,
+          "agency_distance": 13,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.55,
+            "modifier_similarity": 0.71,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 66,
+          "final_score": 34.13,
+          "base_distance": 44.2,
+          "response_intensity_distance": 7,
+          "agency_distance": 7,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.24,
+            "modifier_similarity": 0.93,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 66,
+          "final_score": 34.44,
+          "base_distance": 54.58,
+          "response_intensity_distance": 7,
+          "agency_distance": 43,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.42,
+            "modifier_similarity": 0.77,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "samseung_halmang",
+          "name_ko": "삼승할망",
+          "name_en": "Samseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 65,
+          "final_score": 34.83,
+          "base_distance": 62.07,
+          "response_intensity_distance": 47,
+          "agency_distance": 18,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.69,
+            "subcategory_similarity": 0.55,
+            "modifier_similarity": 0.66,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "yeosan_buin",
+          "name_ko": "여산부인",
+          "name_en": "Yeosan Buin",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 65,
+          "final_score": 34.85,
+          "base_distance": 60.32,
+          "response_intensity_distance": 37,
+          "agency_distance": 8,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.7,
+            "subcategory_similarity": 0.49,
+            "modifier_similarity": 0.76,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "gangnim",
+      "name_ko": "강림",
+      "name_en": "Gangnim",
+      "bonpuri": "차사본풀이",
+      "observed_primary_count": 0,
+      "observed_primary_percentage": 0,
+      "observed_top5_count": 380,
+      "observed_top5_percentage": 0.152,
+      "best_observed_rank": 5,
+      "best_observed_final_score": 31.27,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 33,
+          "social": 44,
+          "care": 33,
+          "order": 68,
+          "response_intensity": 73,
+          "agency": 75
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 23,
+          "becoming_cultivation": 79,
+          "reception_of_strange": 20,
+          "household_sustaining": 58,
+          "birth_arrival": 57,
+          "failed_arrival": 0,
+          "rupture_harm_return": 50,
+          "mourning_passage": 60,
+          "procedural_order": 72,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 100,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 21,
+          "restoration": 65,
+          "domestic_care": 48,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "chogong_three_brothers",
+          "name_ko": "초공신삼형제",
+          "name_en": "Chogong Three Brothers",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 71,
+          "final_score": 29.08,
+          "base_distance": 43.16,
+          "response_intensity_distance": 8,
+          "agency_distance": 5,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.42,
+            "modifier_similarity": 0.93,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 71,
+          "final_score": 29.33,
+          "base_distance": 45.75,
+          "response_intensity_distance": 3,
+          "agency_distance": 10,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.45,
+            "modifier_similarity": 0.94,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "yu_jeongseungs_daughter",
+          "name_ko": "유정승따님애기",
+          "name_en": "Yu Jeongseung's Daughter",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 71,
+          "final_score": 29.48,
+          "base_distance": 51.6,
+          "response_intensity_distance": 2,
+          "agency_distance": 0,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.74,
+            "subcategory_similarity": 0.5,
+            "modifier_similarity": 0.99,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 70,
+          "final_score": 30.2,
+          "base_distance": 58.97,
+          "response_intensity_distance": 2,
+          "agency_distance": 10,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.94,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "gangnim",
+          "name_ko": "강림",
+          "name_en": "Gangnim",
+          "bonpuri": "차사본풀이",
+          "match_percentage": 69,
+          "final_score": 31.27,
+          "base_distance": 38.44,
+          "response_intensity_distance": 2,
+          "agency_distance": 15,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.28,
+            "modifier_similarity": 0.92,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "daebyeolwang",
+          "name_ko": "대별왕",
+          "name_en": "Daebyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 68,
+          "final_score": 32.2,
+          "base_distance": 34.1,
+          "response_intensity_distance": 28,
+          "agency_distance": 10,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.83,
+            "subcategory_similarity": 0.24,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "sobyeolwang",
+          "name_ko": "소별왕",
+          "name_en": "Sobyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 67,
+          "final_score": 32.94,
+          "base_distance": 38.51,
+          "response_intensity_distance": 12,
+          "agency_distance": 30,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.26,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 66,
+          "final_score": 33.84,
+          "base_distance": 44.64,
+          "response_intensity_distance": 12,
+          "agency_distance": 35,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.32,
+            "modifier_similarity": 0.78,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 66,
+          "final_score": 34.42,
+          "base_distance": 39.34,
+          "response_intensity_distance": 17,
+          "agency_distance": 40,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.24,
+            "modifier_similarity": 0.73,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 64,
+          "final_score": 35.89,
+          "base_distance": 63.11,
+          "response_intensity_distance": 38,
+          "agency_distance": 20,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.68,
+            "subcategory_similarity": 0.5,
+            "modifier_similarity": 0.7,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": false,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "jijang_agissi",
+      "name_ko": "지장아기씨",
+      "name_en": "Jijang Agissi",
+      "bonpuri": "지장본풀이",
+      "observed_primary_count": 5568,
+      "observed_primary_percentage": 2.2272,
+      "observed_top5_count": 100035,
+      "observed_top5_percentage": 40.014,
+      "best_observed_rank": 2,
+      "best_observed_final_score": 24.34,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 30,
+          "social": 50,
+          "care": 46,
+          "order": 55,
+          "response_intensity": 85,
+          "agency": 29
+        },
+        "subcategory_profile": {
+          "source_origin": 38,
+          "self_recognition": 25,
+          "becoming_cultivation": 48,
+          "reception_of_strange": 0,
+          "household_sustaining": 58,
+          "birth_arrival": 57,
+          "failed_arrival": 100,
+          "rupture_harm_return": 57,
+          "mourning_passage": 60,
+          "procedural_order": 57,
+          "cosmic_law": 0,
+          "crooked_order": 33,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 32,
+          "restoration": 41,
+          "domestic_care": 58,
+          "ritual_responsibility": 100,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 80,
+          "final_score": 20.31,
+          "base_distance": 28.3,
+          "response_intensity_distance": 5,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.86,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 76,
+          "final_score": 24.34,
+          "base_distance": 37.23,
+          "response_intensity_distance": 0,
+          "agency_distance": 11,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.53,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 75,
+          "final_score": 25.02,
+          "base_distance": 42.79,
+          "response_intensity_distance": 5,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.95,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 69,
+          "final_score": 30.67,
+          "base_distance": 41.48,
+          "response_intensity_distance": 5,
+          "agency_distance": 16,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.35,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "chogong_three_brothers",
+          "name_ko": "초공신삼형제",
+          "name_en": "Chogong Three Brothers",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 68,
+          "final_score": 32.14,
+          "base_distance": 42.5,
+          "response_intensity_distance": 20,
+          "agency_distance": 51,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.4,
+            "modifier_similarity": 0.66,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 67,
+          "final_score": 32.9,
+          "base_distance": 48.85,
+          "response_intensity_distance": 50,
+          "agency_distance": 26,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.48,
+            "modifier_similarity": 0.61,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "samani",
+          "name_ko": "사만이",
+          "name_en": "Samani",
+          "bonpuri": "멩감본풀이 or 사만이본풀이",
+          "match_percentage": 67,
+          "final_score": 33.11,
+          "base_distance": 38.87,
+          "response_intensity_distance": 15,
+          "agency_distance": 6,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.22,
+            "modifier_similarity": 0.89,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "daebyeolsang_manura",
+          "name_ko": "대별상마누라",
+          "name_en": "Daebyeolsang Manura",
+          "bonpuri": "마누라본풀이",
+          "match_percentage": 67,
+          "final_score": 33.21,
+          "base_distance": 42.32,
+          "response_intensity_distance": 5,
+          "agency_distance": 56,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.33,
+            "modifier_similarity": 0.72,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 66,
+          "final_score": 34.49,
+          "base_distance": 55.78,
+          "response_intensity_distance": 10,
+          "agency_distance": 56,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.72,
+            "subcategory_similarity": 0.47,
+            "modifier_similarity": 0.7,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "yu_jeongseungs_daughter",
+          "name_ko": "유정승따님애기",
+          "name_en": "Yu Jeongseung's Daughter",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 65,
+          "final_score": 34.98,
+          "base_distance": 47.39,
+          "response_intensity_distance": 10,
+          "agency_distance": 46,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.32,
+            "modifier_similarity": 0.74,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "sobyeolwang",
+      "name_ko": "소별왕",
+      "name_en": "Sobyeolwang",
+      "bonpuri": "천지왕본풀이",
+      "observed_primary_count": 4712,
+      "observed_primary_percentage": 1.8848,
+      "observed_top5_count": 43487,
+      "observed_top5_percentage": 17.3948,
+      "best_observed_rank": 1,
+      "best_observed_final_score": 22.51,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 25,
+          "social": 44,
+          "care": 25,
+          "order": 73,
+          "response_intensity": 81,
+          "agency": 58
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 19,
+          "becoming_cultivation": 59,
+          "reception_of_strange": 20,
+          "household_sustaining": 54,
+          "birth_arrival": 57,
+          "failed_arrival": 0,
+          "rupture_harm_return": 64,
+          "mourning_passage": 40,
+          "procedural_order": 74,
+          "cosmic_law": 0,
+          "crooked_order": 100,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 47,
+          "restoration": 59,
+          "domestic_care": 38,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "sobyeolwang",
+          "name_ko": "소별왕",
+          "name_en": "Sobyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 77,
+          "final_score": 22.51,
+          "base_distance": 36.74,
+          "response_intensity_distance": 4,
+          "agency_distance": 13,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.82,
+            "subcategory_similarity": 0.61,
+            "modifier_similarity": 0.92,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 69,
+          "final_score": 31.46,
+          "base_distance": 52.73,
+          "response_intensity_distance": 11,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.74,
+            "subcategory_similarity": 0.5,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "daebyeolwang",
+          "name_ko": "대별왕",
+          "name_en": "Daebyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 68,
+          "final_score": 32.48,
+          "base_distance": 32.09,
+          "response_intensity_distance": 36,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.84,
+            "subcategory_similarity": 0.25,
+            "modifier_similarity": 0.68,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "gangnim",
+          "name_ko": "강림",
+          "name_en": "Gangnim",
+          "bonpuri": "차사본풀이",
+          "match_percentage": 67,
+          "final_score": 32.63,
+          "base_distance": 40.8,
+          "response_intensity_distance": 6,
+          "agency_distance": 32,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.3,
+            "modifier_similarity": 0.82,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 66,
+          "final_score": 33.5,
+          "base_distance": 65.76,
+          "response_intensity_distance": 6,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.67,
+            "subcategory_similarity": 0.58,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 65,
+          "final_score": 35.19,
+          "base_distance": 49.35,
+          "response_intensity_distance": 9,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.75,
+            "subcategory_similarity": 0.29,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "wongang_ami",
+          "name_ko": "원강아미",
+          "name_en": "Wongang Ami",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 64,
+          "final_score": 35.77,
+          "base_distance": 55.5,
+          "response_intensity_distance": 9,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.72,
+            "subcategory_similarity": 0.35,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 64,
+          "final_score": 36.19,
+          "base_distance": 53.94,
+          "response_intensity_distance": 4,
+          "agency_distance": 18,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.29,
+            "modifier_similarity": 0.9,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "daebyeolsang_manura",
+          "name_ko": "대별상마누라",
+          "name_en": "Daebyeolsang Manura",
+          "bonpuri": "마누라본풀이",
+          "match_percentage": 64,
+          "final_score": 36.27,
+          "base_distance": 53.53,
+          "response_intensity_distance": 9,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.73,
+            "subcategory_similarity": 0.31,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "noga_danpung_agissi",
+          "name_ko": "노가단풍아기씨",
+          "name_en": "Noga Danpung Agissi",
+          "bonpuri": "초공본풀이",
+          "match_percentage": 63,
+          "final_score": 37.09,
+          "base_distance": 55.99,
+          "response_intensity_distance": 9,
+          "agency_distance": 13,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.72,
+            "subcategory_similarity": 0.29,
+            "modifier_similarity": 0.89,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "daebyeolwang",
+      "name_ko": "대별왕",
+      "name_en": "Daebyeolwang",
+      "bonpuri": "천지왕본풀이",
+      "observed_primary_count": 0,
+      "observed_primary_percentage": 0,
+      "observed_top5_count": 1424,
+      "observed_top5_percentage": 0.5696,
+      "best_observed_rank": 3,
+      "best_observed_final_score": 31.19,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 32,
+          "social": 39,
+          "care": 16,
+          "order": 67,
+          "response_intensity": 62,
+          "agency": 75
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 28,
+          "becoming_cultivation": 62,
+          "reception_of_strange": 20,
+          "household_sustaining": 53,
+          "birth_arrival": 43,
+          "failed_arrival": 50,
+          "rupture_harm_return": 57,
+          "mourning_passage": 40,
+          "procedural_order": 69,
+          "cosmic_law": 0,
+          "crooked_order": 67,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 47,
+          "restoration": 71,
+          "domestic_care": 30,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "sobyeolwang",
+          "name_ko": "소별왕",
+          "name_en": "Sobyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 72,
+          "final_score": 28.24,
+          "base_distance": 40.56,
+          "response_intensity_distance": 23,
+          "agency_distance": 30,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.8,
+            "subcategory_similarity": 0.5,
+            "modifier_similarity": 0.74,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 71,
+          "final_score": 29.11,
+          "base_distance": 51.53,
+          "response_intensity_distance": 8,
+          "agency_distance": 10,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.74,
+            "subcategory_similarity": 0.54,
+            "modifier_similarity": 0.91,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "daebyeolwang",
+          "name_ko": "대별왕",
+          "name_en": "Daebyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 69,
+          "final_score": 31.19,
+          "base_distance": 35,
+          "response_intensity_distance": 17,
+          "agency_distance": 10,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.83,
+            "subcategory_similarity": 0.26,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "gangnim",
+          "name_ko": "강림",
+          "name_en": "Gangnim",
+          "bonpuri": "차사본풀이",
+          "match_percentage": 67,
+          "final_score": 33,
+          "base_distance": 44.16,
+          "response_intensity_distance": 13,
+          "agency_distance": 15,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.78,
+            "subcategory_similarity": 0.31,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 65,
+          "final_score": 34.58,
+          "base_distance": 73.28,
+          "response_intensity_distance": 13,
+          "agency_distance": 10,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.63,
+            "subcategory_similarity": 0.62,
+            "modifier_similarity": 0.88,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 65,
+          "final_score": 35.19,
+          "base_distance": 56.92,
+          "response_intensity_distance": 28,
+          "agency_distance": 40,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.72,
+            "subcategory_similarity": 0.47,
+            "modifier_similarity": 0.67,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "gamunjangagi",
+          "name_ko": "가믄장아기",
+          "name_en": "Gamunjangagi",
+          "bonpuri": "삼공본풀이",
+          "match_percentage": 63,
+          "final_score": 36.75,
+          "base_distance": 63.4,
+          "response_intensity_distance": 3,
+          "agency_distance": 0,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.68,
+            "subcategory_similarity": 0.36,
+            "modifier_similarity": 0.98,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "daebyeolsang_manura",
+          "name_ko": "대별상마누라",
+          "name_en": "Daebyeolsang Manura",
+          "bonpuri": "마누라본풀이",
+          "match_percentage": 62,
+          "final_score": 37.71,
+          "base_distance": 63.8,
+          "response_intensity_distance": 28,
+          "agency_distance": 10,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.68,
+            "subcategory_similarity": 0.4,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 61,
+          "final_score": 39,
+          "base_distance": 70.36,
+          "response_intensity_distance": 18,
+          "agency_distance": 40,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.65,
+            "subcategory_similarity": 0.47,
+            "modifier_similarity": 0.72,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "wongang_ami",
+          "name_ko": "원강아미",
+          "name_en": "Wongang Ami",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 60,
+          "final_score": 40.15,
+          "base_distance": 61.93,
+          "response_intensity_distance": 28,
+          "agency_distance": 40,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.69,
+            "subcategory_similarity": 0.33,
+            "modifier_similarity": 0.67,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": false,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    },
+    {
+      "deity_id": "daebyeolsang_manura",
+      "name_ko": "대별상마누라",
+      "name_en": "Daebyeolsang Manura",
+      "bonpuri": "마누라본풀이",
+      "observed_primary_count": 1,
+      "observed_primary_percentage": 0.0004,
+      "observed_top5_count": 11485,
+      "observed_top5_percentage": 4.594,
+      "best_observed_rank": 2,
+      "best_observed_final_score": 27.95,
+      "best_observed_profile": {
+        "axis_profile": {
+          "self": 19,
+          "social": 46,
+          "care": 40,
+          "order": 70,
+          "response_intensity": 77,
+          "agency": 63
+        },
+        "subcategory_profile": {
+          "source_origin": 25,
+          "self_recognition": 14,
+          "becoming_cultivation": 69,
+          "reception_of_strange": 20,
+          "household_sustaining": 54,
+          "birth_arrival": 57,
+          "failed_arrival": 100,
+          "rupture_harm_return": 43,
+          "mourning_passage": 40,
+          "procedural_order": 71,
+          "cosmic_law": 0,
+          "crooked_order": 67,
+          "calling_initiation": 0,
+          "origin_cost": 0,
+          "seasonal_cycle": 0,
+          "hidden_force": 63,
+          "restoration": 41,
+          "domestic_care": 50,
+          "ritual_responsibility": 0,
+          "death_crossing": 0
+        }
+      },
+      "best_observed_top_matches": [
+        {
+          "rank": 0,
+          "deity_id": "jeoseung_halmang",
+          "name_ko": "저승할망",
+          "name_en": "Jeoseung Halmang",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 77,
+          "final_score": 22.9,
+          "base_distance": 38.04,
+          "response_intensity_distance": 13,
+          "agency_distance": 28,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.81,
+            "subcategory_similarity": 0.66,
+            "modifier_similarity": 0.8,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "deity_id": "daebyeolsang_manura",
+          "name_ko": "대별상마누라",
+          "name_en": "Daebyeolsang Manura",
+          "bonpuri": "마누라본풀이",
+          "match_percentage": 72,
+          "final_score": 27.95,
+          "base_distance": 42.27,
+          "response_intensity_distance": 13,
+          "agency_distance": 22,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.5,
+            "modifier_similarity": 0.83,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 2,
+          "deity_id": "donghae_yonggungs_daughter",
+          "name_ko": "동해용궁따님애기",
+          "name_en": "Donghae Yonggung's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 71,
+          "final_score": 28.64,
+          "base_distance": 57.42,
+          "response_intensity_distance": 3,
+          "agency_distance": 28,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.66,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 3,
+          "deity_id": "sobyeolwang",
+          "name_ko": "소별왕",
+          "name_en": "Sobyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 71,
+          "final_score": 28.65,
+          "base_distance": 45.41,
+          "response_intensity_distance": 8,
+          "agency_distance": 18,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.49,
+            "modifier_similarity": 0.88,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 4,
+          "deity_id": "nokdisaengi",
+          "name_ko": "녹디생이",
+          "name_en": "Nokdisaengi",
+          "bonpuri": "문전본풀이",
+          "match_percentage": 67,
+          "final_score": 33.04,
+          "base_distance": 60.56,
+          "response_intensity_distance": 2,
+          "agency_distance": 22,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.7,
+            "subcategory_similarity": 0.51,
+            "modifier_similarity": 0.89,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 5,
+          "deity_id": "gangnim",
+          "name_ko": "강림",
+          "name_en": "Gangnim",
+          "bonpuri": "차사본풀이",
+          "match_percentage": 65,
+          "final_score": 35.25,
+          "base_distance": 47.09,
+          "response_intensity_distance": 2,
+          "agency_distance": 27,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.76,
+            "subcategory_similarity": 0.25,
+            "modifier_similarity": 0.87,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 6,
+          "deity_id": "jijang_agissi",
+          "name_ko": "지장아기씨",
+          "name_en": "Jijang Agissi",
+          "bonpuri": "지장본풀이",
+          "match_percentage": 64,
+          "final_score": 35.74,
+          "base_distance": 46.5,
+          "response_intensity_distance": 8,
+          "agency_distance": 23,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.77,
+            "subcategory_similarity": 0.23,
+            "modifier_similarity": 0.85,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 7,
+          "deity_id": "myeongjinguks_daughter",
+          "name_ko": "명진국따님애기",
+          "name_en": "Myeongjinguk's Daughter",
+          "bonpuri": "삼승할망본풀이",
+          "match_percentage": 64,
+          "final_score": 36.2,
+          "base_distance": 62.79,
+          "response_intensity_distance": 42,
+          "agency_distance": 8,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.69,
+            "subcategory_similarity": 0.48,
+            "modifier_similarity": 0.73,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 8,
+          "deity_id": "daebyeolwang",
+          "name_ko": "대별왕",
+          "name_en": "Daebyeolwang",
+          "bonpuri": "천지왕본풀이",
+          "match_percentage": 64,
+          "final_score": 36.29,
+          "base_distance": 42.21,
+          "response_intensity_distance": 32,
+          "agency_distance": 22,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.79,
+            "subcategory_similarity": 0.21,
+            "modifier_similarity": 0.72,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        },
+        {
+          "rank": 9,
+          "deity_id": "hallakgungi",
+          "name_ko": "할락궁이",
+          "name_en": "Hallakgungi",
+          "bonpuri": "이공본풀이",
+          "match_percentage": 63,
+          "final_score": 36.64,
+          "base_distance": 58.33,
+          "response_intensity_distance": 7,
+          "agency_distance": 22,
+          "similarity_breakdown": {
+            "main_axis_similarity": 0.71,
+            "subcategory_similarity": 0.35,
+            "modifier_similarity": 0.86,
+            "weights": {
+              "mainAxes": 0.65,
+              "subcategories": 0.25,
+              "modifiers": 0.1
+            }
+          }
+        }
+      ],
+      "appeared_as_primary": true,
+      "appeared_in_top5": true,
+      "not_observed_in_scan": false
+    }
+  ]
+}

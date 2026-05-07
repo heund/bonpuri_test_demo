@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonpuri Deity Space Diagnostics</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Bonpuri Deity Space Diagnostics</h1>
+      <p>
+        Scientific/debug view. The map is a 2D MDS projection of the real 6D weighted matching space.
+        Sampled coverage values are estimates, not exact enumeration.
+      </p>
+      <div id="status">Loading diagnostics...</div>
+    </header>
+
+    <main>
+      <section class="panel map-panel">
+        <div class="panel-header">
+          <h2>Deity Map</h2>
+          <div class="controls">
+            <button id="reset-map">Reset View</button>
+            <button data-export="coordinates">Export Coordinates</button>
+            <button data-export="distances">Export Distances</button>
+          </div>
+        </div>
+        <canvas id="map" width="1000" height="680"></canvas>
+        <div id="tooltip" class="tooltip" hidden></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Selected Deity</h2>
+          <button data-export="selected">Export Selected Detail</button>
+        </div>
+        <div id="deity-detail">Click a deity point.</div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Coverage Diagnostics</h2>
+          <button data-export="coverage">Export Coverage</button>
+        </div>
+        <p class="note" id="coverage-note"></p>
+        <div class="table-wrap">
+          <table id="coverage-table"></table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Question And Answer Inspection</h2>
+        <div class="filters">
+          <label>Search <input id="question-search" type="search" placeholder="question or answer text" /></label>
+          <label>ID <input id="id-filter" type="search" placeholder="q18, a08, q20_c" /></label>
+          <label>
+            Field
+            <select id="field-filter">
+              <option value="">Any</option>
+              <option value="self">Self</option>
+              <option value="social">Social</option>
+              <option value="care">Care</option>
+              <option value="order">Order</option>
+              <option value="response_intensity">Response Intensity</option>
+              <option value="agency">Action Pull</option>
+            </select>
+          </label>
+          <label>Min score <input id="min-score-filter" type="number" min="0" max="3" value="0" /></label>
+        </div>
+        <div id="question-list" class="question-list"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Deity-To-Question Support</h2>
+        <p class="note">Answer-vector alignment, for diagnostics only.</p>
+        <div id="support-panel">Click a deity point.</div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Manual Profile Tester</h2>
+          <button data-export="manual">Export Manual Result</button>
+        </div>
+        <div class="preset-row" id="presets"></div>
+        <div class="sliders" id="sliders"></div>
+        <div class="table-wrap">
+          <table id="manual-results"></table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

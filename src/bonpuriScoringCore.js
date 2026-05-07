@@ -7,6 +7,11 @@ export const DEFAULT_MATCH_WEIGHTS = {
   responseIntensity: 0.25,
   agency: 0.2
 };
+export const SUBCATEGORY_MATCH_WEIGHTS = {
+  mainAxes: 0.65,
+  subcategories: 0.25,
+  modifiers: 0.10
+};
 
 export function emptyScores() {
   return ALL_SCORE_KEYS.reduce((scores, key) => {
@@ -30,8 +35,37 @@ export function getMaxPossibleScores(questionsData) {
   return maxScores;
 }
 
-export function scoreAnswers(questionsData, answersByQuestionId) {
+export function getSubcategoryKeys(subcategoryDefinitions) {
+  return subcategoryDefinitions?.subcategories?.map((subcategory) => subcategory.key) || [];
+}
+
+export function emptySubcategoryScores(subcategoryKeys = []) {
+  return subcategoryKeys.reduce((scores, key) => {
+    scores[key] = 0;
+    return scores;
+  }, {});
+}
+
+export function getMaxPossibleSubcategoryScores(questionsData, subcategoryKeys = []) {
+  const maxScores = emptySubcategoryScores(subcategoryKeys);
+
+  for (const question of questionsData.questions) {
+    for (const key of subcategoryKeys) {
+      const questionMax = Math.max(
+        0,
+        ...question.options.map((option) => Number(option.subcategories?.[key] || 0))
+      );
+      maxScores[key] += questionMax;
+    }
+  }
+
+  return maxScores;
+}
+
+export function scoreAnswers(questionsData, answersByQuestionId, subcategoryDefinitions = null) {
   const rawScores = emptyScores();
+  const subcategoryKeys = getSubcategoryKeys(subcategoryDefinitions);
+  const rawSubcategoryScores = emptySubcategoryScores(subcategoryKeys);
   const selectedOptions = [];
 
   for (const question of questionsData.questions) {
@@ -47,17 +81,24 @@ export function scoreAnswers(questionsData, answersByQuestionId) {
 
     selectedOptions.push({
       question_id: question.id,
-      option_id: option.id
+      option_id: option.id,
+      subcategories: option.subcategories || {}
     });
 
     for (const key of ALL_SCORE_KEYS) {
       rawScores[key] += Number(option.scores[key] || 0);
+    }
+
+    for (const key of subcategoryKeys) {
+      rawSubcategoryScores[key] += Number(option.subcategories?.[key] || 0);
     }
   }
 
   return {
     rawScores,
     maxScores: getMaxPossibleScores(questionsData),
+    rawSubcategoryScores,
+    maxSubcategoryScores: getMaxPossibleSubcategoryScores(questionsData, subcategoryKeys),
     selectedOptions
   };
 }
@@ -69,6 +110,18 @@ export function normaliseScores(rawScores, maxScores) {
     normalised[key] = maxScores[key] === 0
       ? 0
       : Math.round((rawScores[key] / maxScores[key]) * 100);
+  }
+
+  return normalised;
+}
+
+export function normaliseSubcategoryScores(rawScores, maxScores, subcategoryKeys = Object.keys(rawScores)) {
+  const normalised = {};
+
+  for (const key of subcategoryKeys) {
+    normalised[key] = maxScores[key] === 0
+      ? 0
+      : Math.round((Number(rawScores[key] || 0) / maxScores[key]) * 100);
   }
 
   return normalised;
@@ -95,29 +148,104 @@ export function euclideanDistance(userProfile, deityVector) {
   return Math.sqrt(sumSquares);
 }
 
-export function rankDeityAnchors(axisProfile, responseIntensity, agency, deityMap, options = {}) {
+export function getDeitySubcategoryProfile(deity, deitySubcategoryProfiles) {
+  return deitySubcategoryProfiles?.profiles?.find((profile) => profile.id === deity.deity_id) || null;
+}
+
+export function cosineSimilarity(userVector, deityVector, keys) {
+  let dotProduct = 0;
+  let userMagnitude = 0;
+  let deityMagnitude = 0;
+
+  for (const key of keys) {
+    const userValue = Number(userVector?.[key] || 0);
+    const deityValue = Number(deityVector?.[key] || 0);
+    dotProduct += userValue * deityValue;
+    userMagnitude += userValue * userValue;
+    deityMagnitude += deityValue * deityValue;
+  }
+
+  if (!userMagnitude || !deityMagnitude) {
+    return 0;
+  }
+
+  return dotProduct / (Math.sqrt(userMagnitude) * Math.sqrt(deityMagnitude));
+}
+
+export function mainAxisSimilarity(baseDistance) {
+  const maxDistance = Math.sqrt(MAIN_AXES.length * (100 ** 2));
+  return Math.max(0, 1 - (baseDistance / maxDistance));
+}
+
+export function modifierSimilarity(reactivityDistance, agencyDistance, reactivityWeight, agencyWeight) {
+  const weightedDistance = (reactivityDistance * reactivityWeight) + (agencyDistance * agencyWeight);
+  const maxDistance = (100 * reactivityWeight) + (100 * agencyWeight);
+  return maxDistance === 0 ? 1 : Math.max(0, 1 - (weightedDistance / maxDistance));
+}
+
+export function rankDeityAnchors(
+  axisProfile,
+  responseIntensity,
+  agency,
+  deityMap,
+  options = {}
+) {
   const reactivityWeight = options.reactivityWeight ?? DEFAULT_MATCH_WEIGHTS.responseIntensity;
   const agencyWeight = options.agencyWeight ?? DEFAULT_MATCH_WEIGHTS.agency;
+  const subcategoryProfile = options.subcategoryProfile || {};
+  const subcategoryKeys = options.subcategoryKeys || Object.keys(subcategoryProfile);
+  const deitySubcategoryProfiles = options.deitySubcategoryProfiles || null;
+  const matchWeights = options.matchWeights || SUBCATEGORY_MATCH_WEIGHTS;
 
   return deityMap.deities
     .filter(hasCompleteVector)
     .map((deity) => {
+      const deitySubcategoryProfile = getDeitySubcategoryProfile(deity, deitySubcategoryProfiles);
       const baseDistance = euclideanDistance(axisProfile, deity.axis_vector);
       const reactivityDistance = Math.abs(
         responseIntensity - deity.axis_vector[MODIFIER_AXIS]
       );
       const agencyDistance = Math.abs(agency - deity.axis_vector[AGENCY_AXIS]);
-      const finalScore = baseDistance
+      const axisModifierDistance = baseDistance
         + (reactivityDistance * reactivityWeight)
         + (agencyDistance * agencyWeight);
+      const mainSimilarity = mainAxisSimilarity(baseDistance);
+      const subcategorySimilarity = cosineSimilarity(
+        subcategoryProfile,
+        deitySubcategoryProfile?.subcategories || {},
+        subcategoryKeys
+      );
+      const modifiersSimilarity = modifierSimilarity(
+        reactivityDistance,
+        agencyDistance,
+        reactivityWeight,
+        agencyWeight
+      );
+      const totalSimilarity = (mainSimilarity * matchWeights.mainAxes)
+        + (subcategorySimilarity * matchWeights.subcategories)
+        + (modifiersSimilarity * matchWeights.modifiers);
+      const finalScore = (1 - totalSimilarity) * 100;
 
       return {
         deity,
+        deity_subcategory_profile: deitySubcategoryProfile,
         base_distance: roundNumber(baseDistance),
         reactivity_distance: roundNumber(reactivityDistance),
         affective_reactivity_distance: roundNumber(reactivityDistance),
         agency_distance: roundNumber(agencyDistance),
-        final_score: roundNumber(finalScore)
+        axis_modifier_distance: roundNumber(axisModifierDistance),
+        main_axis_similarity: roundNumber(mainSimilarity),
+        subcategory_similarity: roundNumber(subcategorySimilarity),
+        modifier_similarity: roundNumber(modifiersSimilarity),
+        total_similarity: roundNumber(totalSimilarity),
+        similarity_breakdown: {
+          main_axis_similarity: roundNumber(mainSimilarity),
+          subcategory_similarity: roundNumber(subcategorySimilarity),
+          modifier_similarity: roundNumber(modifiersSimilarity),
+          weights: matchWeights
+        },
+        final_score: roundNumber(finalScore),
+        match_percentage: Math.max(0, Math.round(totalSimilarity * 100))
       };
     })
     .sort((a, b) => a.final_score - b.final_score);
@@ -198,11 +326,12 @@ export function anchorSummary(match) {
     name_ko: match.deity.name_ko,
     name_en: match.deity.name_en,
     bonpuri: match.deity.bonpuri,
-    match_percentage: matchPercentage(match.final_score),
+    match_percentage: match.match_percentage ?? matchPercentage(match.final_score),
     final_score: match.final_score,
     base_distance: match.base_distance,
     affective_reactivity_distance: match.affective_reactivity_distance,
-    agency_distance: match.agency_distance
+    agency_distance: match.agency_distance,
+    similarity_breakdown: match.similarity_breakdown
   };
 }
 
@@ -224,11 +353,16 @@ export function formatTopMatch(match) {
     name_ko: match.deity.name_ko,
     name_en: match.deity.name_en,
     bonpuri: match.deity.bonpuri,
-    match_percentage: matchPercentage(match.final_score),
+    match_percentage: match.match_percentage ?? matchPercentage(match.final_score),
     final_score: match.final_score,
     base_distance: match.base_distance,
     affective_reactivity_distance: match.affective_reactivity_distance,
-    agency_distance: match.agency_distance
+    agency_distance: match.agency_distance,
+    axis_modifier_distance: match.axis_modifier_distance,
+    similarity_breakdown: match.similarity_breakdown,
+    deity_subcategories: match.deity_subcategory_profile?.subcategories || {},
+    hinge: match.deity_subcategory_profile?.hinge || "",
+    close_neighbours: match.deity_subcategory_profile?.close_neighbours || []
   };
 }
 
@@ -282,9 +416,37 @@ export function getUnscoredAnchors(deityMap) {
     }));
 }
 
+export function explainMatchWin(primaryMatch, closeMatches) {
+  if (!primaryMatch || !closeMatches.length) {
+    return "No close neighbour comparison available.";
+  }
+
+  const explanations = closeMatches.map((match) => {
+    const mainDelta = roundNumber(primaryMatch.main_axis_similarity - match.main_axis_similarity);
+    const subcategoryDelta = roundNumber(primaryMatch.subcategory_similarity - match.subcategory_similarity);
+    const modifierDelta = roundNumber(primaryMatch.modifier_similarity - match.modifier_similarity);
+    const strongest = [
+      { key: "main axes", value: mainDelta },
+      { key: "subcategories", value: subcategoryDelta },
+      { key: "modifiers", value: modifierDelta }
+    ].sort((a, b) => Math.abs(b.value) - Math.abs(a.value))[0];
+
+    const direction = strongest.value >= 0 ? "led" : "trailed";
+    return `${primaryMatch.deity.name_en} ${direction} ${match.deity.name_en} most on ${strongest.key} (${strongest.value}).`;
+  });
+
+  return explanations.join(" ");
+}
+
 export function generateResult(answersByQuestionId, data) {
-  const scored = scoreAnswers(data.questions, answersByQuestionId);
+  const subcategoryKeys = getSubcategoryKeys(data.subcategoryDefinitions);
+  const scored = scoreAnswers(data.questions, answersByQuestionId, data.subcategoryDefinitions);
   const normalisedScores = normaliseScores(scored.rawScores, scored.maxScores);
+  const normalisedSubcategoryScores = normaliseSubcategoryScores(
+    scored.rawSubcategoryScores,
+    scored.maxSubcategoryScores,
+    subcategoryKeys
+  );
   const axisProfile = getAxisProfile(normalisedScores);
   const responseIntensity = normalisedScores[MODIFIER_AXIS];
   const agency = normalisedScores[AGENCY_AXIS];
@@ -292,7 +454,12 @@ export function generateResult(answersByQuestionId, data) {
     axisProfile,
     responseIntensity,
     agency,
-    data.deityMap
+    data.deityMap,
+    {
+      subcategoryProfile: normalisedSubcategoryScores,
+      subcategoryKeys,
+      deitySubcategoryProfiles: data.deitySubcategoryProfiles
+    }
   );
   const primaryCombination = getPrimaryCombination(axisProfile);
   const resultText = buildResultText(
@@ -311,17 +478,27 @@ export function generateResult(answersByQuestionId, data) {
     agency,
     action_pull: agency,
     action_pull_band: getAgencyBand(agency),
+    subcategory_scores: scored.rawSubcategoryScores,
+    subcategory_profile: normalisedSubcategoryScores,
     primary_combination: primaryCombination,
     primary_anchor: anchorSummary(rankedMatches[0]),
     secondary_anchors: rankedMatches.slice(1, 4).map(anchorSummary),
     top_matches: rankedMatches.slice(0, 5).map(formatTopMatch),
+    match_reason: explainMatchWin(rankedMatches[0], rankedMatches.slice(1, 5)),
     deity_match_debug: rankedMatches.map((match) => ({
       deity_id: match.deity.deity_id,
       base_distance: match.base_distance,
       reactivity_distance: match.reactivity_distance,
       affective_reactivity_distance: match.affective_reactivity_distance,
       agency_distance: match.agency_distance,
-      final_score: match.final_score
+      axis_modifier_distance: match.axis_modifier_distance,
+      main_axis_similarity: match.main_axis_similarity,
+      subcategory_similarity: match.subcategory_similarity,
+      modifier_similarity: match.modifier_similarity,
+      total_similarity: match.total_similarity,
+      match_percentage: match.match_percentage,
+      final_score: match.final_score,
+      deity_subcategories: match.deity_subcategory_profile?.subcategories || {}
     })),
     unscored_anchors: getUnscoredAnchors(data.deityMap),
     result_text: resultText

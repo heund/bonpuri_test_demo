@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.1.0",
+  "notes": "Internal mythic-structural subcategory dictionary for deity matching diagnostics. These are not user-facing survey categories.",
+  "subcategories": [
+    {
+      "key": "source_origin",
+      "label": "Source / Origin",
+      "description": "Hidden source, fortune, inner direction, or where something really comes from."
+    },
+    {
+      "key": "self_recognition",
+      "label": "Self Recognition",
+      "description": "Being recognised, misrecognised, self-named, or placed in relation to one's own identity."
+    },
+    {
+      "key": "becoming_cultivation",
+      "label": "Becoming / Cultivation",
+      "description": "Practice, development, growth, capacity-building, skill, or becoming able to take form."
+    },
+    {
+      "key": "reception_of_strange",
+      "label": "Reception Of The Strange",
+      "description": "Receiving what arrives from elsewhere, hosting unfamiliar presence, or responding to otherness."
+    },
+    {
+      "key": "household_sustaining",
+      "label": "Household Sustaining",
+      "description": "Shared maintenance, distributed burden, household continuity, and relational holding."
+    },
+    {
+      "key": "birth_arrival",
+      "label": "Birth / Arrival",
+      "description": "Emergence, arrival, beginning, safe entry, and the conditions that allow life or possibility to appear."
+    },
+    {
+      "key": "failed_arrival",
+      "label": "Failed Arrival",
+      "description": "Blocked emergence, failed entry, threatened birth, or pressure around arrival that cannot complete."
+    },
+    {
+      "key": "rupture_harm_return",
+      "label": "Rupture / Harm / Return",
+      "description": "Harm, rupture, catastrophe, injury, return of damage, or the pressure left by what went wrong."
+    },
+    {
+      "key": "mourning_passage",
+      "label": "Mourning / Passage",
+      "description": "Loss, endings, grief, transition, closure, passage, or what remains after something has ended."
+    },
+    {
+      "key": "procedural_order",
+      "label": "Procedural Order",
+      "description": "Investigation, acknowledgement, fairness, naming, responsibility, and proper sequence."
+    },
+    {
+      "key": "cosmic_law",
+      "label": "Cosmic Law",
+      "description": "Large-scale law, judgement, separation, world-order, and the structure of what must hold."
+    },
+    {
+      "key": "crooked_order",
+      "label": "Crooked Order",
+      "description": "Distorted law, false order, control, evasion, or a structure that functions wrongly."
+    },
+    {
+      "key": "calling_initiation",
+      "label": "Calling / Initiation",
+      "description": "Being called into role, initiation, vocational pressure, or crossing into responsibility."
+    },
+    {
+      "key": "origin_cost",
+      "label": "Origin Cost",
+      "description": "The price, wound, risk, or burden carried by origin, birth, or emergence."
+    },
+    {
+      "key": "seasonal_cycle",
+      "label": "Seasonal Cycle",
+      "description": "Timing, return, cycles, seasonal movement, readiness, and recurring conditions."
+    },
+    {
+      "key": "hidden_force",
+      "label": "Hidden Force",
+      "description": "Unseen pressure, concealed cause, strange influence, or force operating beneath the visible field."
+    },
+    {
+      "key": "restoration",
+      "label": "Restoration",
+      "description": "Repair, recovery, return to right relation, transformation, or making something whole enough to continue."
+    },
+    {
+      "key": "domestic_care",
+      "label": "Domestic Care",
+      "description": "Practical care, tending, support, home-field attention, and embodied maintenance."
+    },
+    {
+      "key": "ritual_responsibility",
+      "label": "Ritual Responsibility",
+      "description": "Ritual obligation, inherited role, sacred responsibility, and correctly held practice."
+    },
+    {
+      "key": "death_crossing",
+      "label": "Death Crossing",
+      "description": "Crossing death boundaries, underworld passage, judgement beyond life, or traffic between living and dead domains."
+    }
+  ]
+}
