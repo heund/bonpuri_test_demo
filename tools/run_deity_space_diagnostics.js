@@ -4,7 +4,8 @@ import { fileURLToPath } from "url";
 import {
   getPrimaryCombination,
   matchPercentage,
-  rankDeityAnchors
+  rankDeityAnchors,
+  SUBCATEGORY_NORMALISATION_SMOOTHING
 } from "../src/bonpuriScoringCore.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -116,7 +117,9 @@ function randomAnswerProfile(questionsData, maxScores, maxSubcategoryScores, sub
   for (const key of subcategoryKeys) {
     subcategoryProfile[key] = maxSubcategoryScores[key] === 0
       ? 0
-      : Math.round((rawSubcategoryScores[key] / maxSubcategoryScores[key]) * 100);
+      : Math.round(
+        (rawSubcategoryScores[key] / (maxSubcategoryScores[key] + SUBCATEGORY_NORMALISATION_SMOOTHING)) * 100
+      );
   }
 
   return {

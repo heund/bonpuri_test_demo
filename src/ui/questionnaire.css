@@ -62,3 +62,158 @@ td {
 progress {
   width: 100%;
 }
+
+.profile-shape {
+  margin: 1em 0;
+}
+
+.profile-shape-actions {
+  align-items: center;
+  display: flex;
+  gap: 0.5em;
+  justify-content: space-between;
+  margin-bottom: 0.25em;
+}
+
+.profile-shape-actions figcaption {
+  font-weight: bold;
+}
+
+.profile-shape svg {
+  display: block;
+  max-width: 100%;
+}
+
+.profile-shape-grid,
+.profile-shape-axis {
+  fill: none;
+  stroke: #999;
+  stroke-width: 1;
+}
+
+.profile-shape-polygon {
+  fill: rgba(0, 0, 0, 0.12);
+  stroke: #000;
+  stroke-width: 2;
+}
+
+.profile-shape-overlay-polygon {
+  fill: rgba(255, 255, 255, 0.35);
+  stroke: #000;
+  stroke-dasharray: 5 4;
+  stroke-width: 2;
+}
+
+.profile-shape-point {
+  fill: #000;
+}
+
+.profile-shape-overlay-point {
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 2;
+}
+
+.profile-shape-label {
+  fill: #000;
+  font-size: 13px;
+}
+
+.profile-shape-value {
+  fill: #000;
+  font-size: 12px;
+}
+
+.profile-shape-overlay-label,
+.profile-overlap-controls {
+  margin: 0.5em 0;
+}
+
+.profile-shape-legend {
+  display: grid;
+  gap: 0.5em;
+  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+}
+
+.profile-shape-legend div,
+.anchor-shape-card {
+  border: 1px solid #000;
+  padding: 0.5em;
+}
+
+.profile-shape-legend dt {
+  font-weight: bold;
+}
+
+.profile-shape-legend dd {
+  margin: 0.2em 0 0;
+}
+
+.profile-score-list {
+  display: grid;
+  gap: 0.35em;
+  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+  margin: 0.5em 0 1em;
+}
+
+.profile-score-list div {
+  border: 1px solid #000;
+  padding: 0.25em 0.4em;
+}
+
+.profile-score-list dt {
+  font-weight: bold;
+}
+
+.profile-score-list dd {
+  margin: 0;
+}
+
+.profile-score-list-compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.anchor-shape-grid {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+}
+
+.anchor-shape-card h3 {
+  margin-top: 0;
+}
+
+.anchor-map {
+  margin: 1em 0;
+}
+
+.similarity-matrix th span {
+  font-weight: normal;
+}
+
+.similarity-layer {
+  min-width: 11em;
+}
+
+.similarity-bar {
+  border: 1px solid #000;
+  height: 0.65em;
+  margin-bottom: 0.25em;
+}
+
+.similarity-bar span {
+  background: #000;
+  display: block;
+  height: 100%;
+}
+
+.similarity-signals {
+  margin-top: 0.25em;
+}
+
+.similarity-signals span {
+  border: 1px solid #000;
+  display: inline-block;
+  margin: 0.15em 0.2em 0.15em 0;
+  padding: 0.05em 0.25em;
+}
