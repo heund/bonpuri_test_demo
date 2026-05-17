@@ -1,5 +1,5 @@
 import combinationMarkdown from "../../Combination_results.md?raw";
-import categoryMarkdown from "../../Category_results.md?raw";
+import categoryMarkdown from "../../new_results.txt?raw";
 import deityMarkdown from "../../Deity_results.md?raw";
 
 const COMBINATION_HEADINGS = [
@@ -22,7 +22,6 @@ const COMBINATION_KEYS = {
 
 const DEITY_HEADINGS = {
   gamunjangagi: "Gameunjang-agi",
-  oneuri: "Oneuri",
   jacheongbi: "Jacheongbi",
   hallakgungi: "Hallakgungi",
   chogong_three_brothers: "The Three Chogong Brothers",
@@ -35,7 +34,6 @@ const DEITY_HEADINGS = {
   nokdisaengi: "Nokdisaengi",
   chilseong_agi: "Chilseong-agi",
   samani: "Samani",
-  yeongdeung_halmang: "Yeongdeung Halmang",
   wongang_ami: "Wongang Ami",
   noga_danpung_agissi: "Noga-danpung-agissi",
   gangnim: "Gangnim",
@@ -100,6 +98,8 @@ function normalizeHeading(title) {
   return title
     .replace(/^\d+\.\s*/, "")
     .replace(/^Main\s+(Lens|Orientation):\s*/i, "")
+    .replace(/^The\s+/i, "")
+    .replace(/\s+(Lens|Orientation)$/i, "")
     .trim()
     .toLowerCase();
 }
@@ -116,19 +116,43 @@ function parseNumberedSections(markdown) {
   });
 }
 
+function parseTitledCategorySections(markdown) {
+  const text = normalizeLineEndings(markdown);
+  const matches = [...text.matchAll(/(?:^|\n)(The\s+(?:Self|Social)\s+Lens|The\s+(?:Care|Order)\s+Orientation)\s*$/gim)];
+
+  return matches.map((match, index) => {
+    const start = match.index + (match[0].startsWith("\n") ? 1 : 0);
+    const nextMatch = matches[index + 1];
+    const end = nextMatch ? nextMatch.index : text.length;
+    return parseSectionBlock(text.slice(start, end));
+  });
+}
+
+function sectionsByAxis(markdown) {
+  const sections = {};
+  const parsedSections = [
+    ...parseNumberedSections(markdown),
+    ...parseTitledCategorySections(markdown)
+  ];
+
+  for (const section of parsedSections) {
+    const key = normalizeHeading(section.title);
+    if (["self", "social", "care", "order"].includes(key)) {
+      sections[key] = section;
+    }
+  }
+
+  return sections;
+}
+
 function parseCategorySections(markdown) {
   const [englishText = "", koreanText = ""] = normalizeLineEndings(markdown).split(/\n\s*Korean\s*\n/i);
-  const englishSections = parseNumberedSections(englishText.replace(/^English\s*/i, ""));
+  const englishSections = sectionsByAxis(englishText.replace(/^English\s*/i, ""));
   const koreanSections = parseNumberedSections(koreanText);
   const axisOrder = ["self", "social", "care", "order"];
   const sections = { en: {}, kr: {} };
 
-  for (const section of englishSections) {
-    const key = normalizeHeading(section.title);
-    if (axisOrder.includes(key)) {
-      sections.en[key] = section;
-    }
-  }
+  sections.en = englishSections;
 
   koreanSections.slice(0, axisOrder.length).forEach((section, index) => {
     sections.kr[axisOrder[index]] = section;

@@ -112,8 +112,6 @@ Primary distribution over reachable score states:
   ["samani", 11.5],
   ["donghae_yonggungs_daughter", 11.5],
   ["chogong_three_brothers", 11.2],
-  ["oneuri", 7.9],
-  ["yeongdeung_halmang", 7.2],
   ["sobyeolwang", 5.2],
   ["yu_jeongseungs_daughter", 4.0],
   ["gamunjangagi", 4.0],

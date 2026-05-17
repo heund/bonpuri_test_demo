@@ -58,38 +58,6 @@
       "encounter_prompt": "Enter through 삼공본풀이 as a narrative field for self-definition, origin, fortune, and misrecognition."
     },
     {
-      "deity_id": "oneuri",
-      "name_ko": "오늘이",
-      "name_en": "Oneuri",
-      "bonpuri": "원천강본풀이",
-      "axis_vector": {
-        "self": 85,
-        "social": 60,
-        "care": 45,
-        "order": 35,
-        "response_intensity": 45,
-        "agency": 45
-      },
-      "requires_manual_scoring": false,
-      "vector_status": "provisional",
-      "tone": "origin / self-growth / cultivated direction",
-      "primary_axes": [
-        "self",
-        "care"
-      ],
-      "secondary_axes": [
-        "order"
-      ],
-      "keywords": [
-        "origin",
-        "growth",
-        "journey",
-        "direction"
-      ],
-      "result_summary": "",
-      "encounter_prompt": ""
-    },
-    {
       "deity_id": "jacheongbi",
       "name_ko": "자청비",
       "name_en": "Jacheongbi",
@@ -462,38 +430,6 @@
         "relation",
         "care",
         "reciprocity"
-      ],
-      "result_summary": "",
-      "encounter_prompt": ""
-    },
-    {
-      "deity_id": "yeongdeung_halmang",
-      "name_ko": "영등할망",
-      "name_en": "Yeongdeung Halmang",
-      "bonpuri": "영등본풀이",
-      "axis_vector": {
-        "self": 35,
-        "social": 80,
-        "care": 85,
-        "order": 35,
-        "response_intensity": 45,
-        "agency": 30
-      },
-      "requires_manual_scoring": false,
-      "vector_status": "provisional",
-      "tone": "seasonal relation / cultivation / shared survival",
-      "primary_axes": [
-        "social",
-        "care"
-      ],
-      "secondary_axes": [
-        "self"
-      ],
-      "keywords": [
-        "season",
-        "cultivation",
-        "relation",
-        "continuation"
       ],
       "result_summary": "",
       "encounter_prompt": ""

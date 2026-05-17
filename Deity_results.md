@@ -5,13 +5,6 @@ In the narrative, Gameunjang-agi is asked who made her family wealthy. Her siste
 This narrative was made to hold a specific experience. When someone explains your choices, strength, direction, or luck from the wrong starting point. When you feel that the account misses the part that came from you. When naming your own source changes how people around you respond.
 Meet Gameunjang-agi in the city through fortune, self-origin, expulsion, misrecognition, and the moment your own answer changes the order around you.
 ________________________________________
-Oneuri
-Oneuri carries this pattern. Her narrative was built around finding yourself through the people and unfinished lives you meet on the way.
-Oneuri is a deity from Woncheongang Bonpuri, a Jeju ritual narrative that centres on origin, encounter, and the search for one’s place in the order of things.
-In the narrative, Oneuri begins without knowing where she comes from. On her way to find her parents in Woncheongang, she meets beings whose lives are suspended: people who only read, a lotus tree that cannot fully bloom, a serpent waiting to ascend, and heavenly maidens struggling with broken vessels. Her own search becomes tied to the release of others.
-This narrative was made to hold a specific experience. When your own path becomes clearer through detours, encounters, and other people’s unresolved questions. When understanding yourself takes shape through what you meet, what asks something of you, and what you help release.
-Meet Oneuri in the city through origin, encounter, blocked lives, mutual release, and the path that teaches you who you are.
-________________________________________
 Jacheongbi
 Jacheongbi carries this pattern. Her narrative was built around what it takes to turn unfinished potential into something that can sustain life.
 Jacheongbi is a deity from Segyeong Bonpuri, a Jeju ritual narrative that centres on cultivation, intelligence, desire, and the conditions that allow life to grow.
@@ -81,13 +74,6 @@ Samani belongs to Menggam Bonpuri / Samani Bonpuri, a Jeju ritual narrative that
 In the narrative, Samani finds a skull and brings it home instead of passing it by. He honours it like an ancestor. The skull becomes a helper, bringing him abundance and later teaching him how to survive the arrival of death messengers.
 This narrative was made to hold a specific experience. When you notice what others step around. Abandoned things, forgotten people, old presences, and histories that still carry force. When attention becomes a form of reciprocity.
 Meet Samani in the city through skull, offering, reciprocity, death messengers, and care for what others leave behind.
-________________________________________
-Yeongdeung Halmang
-Yeongdeung Halmang carries this pattern. Her narrative was built around forces that arrive, change the conditions of life, and leave again.
-Yeongdeung Halmang is a deity from Yeongdeung Bonpuri / Yeongdeungdang Bonpuri, a Jeju ritual narrative that centres on wind, sea, survival, seasonal arrival, and abundance.
-In the narrative, Yeongdeung’s force is tied to danger at sea, rescue, sacrifice, and the return of seasonal fertility. In Jeju belief, she arrives each second lunar month, scatters seeds of seafood and grain, and departs again. Her presence asks for timing, reception, and release.
-This narrative was made to hold a specific experience. When you notice rhythm, atmosphere, and cycles. When a force moves through a group or place, changes what can grow there, and asks to be received while it is present.
-Meet Yeongdeung Halmang in the city through wind, sea, seasonal arrival, seed-scattering, danger, rescue, and receiving what cannot stay.
 ________________________________________
 Wongang Ami
 Wongang Ami carries this pattern. Her narrative was built around harm that refuses to disappear.

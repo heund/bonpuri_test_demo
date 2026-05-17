@@ -139,10 +139,6 @@ export const DEITY_ANCHOR_METADATA = {
     anchor_line: "Domestic care and the sustaining warmth of the household.",
     longer_anchor_description: "A figure of feeding, tending, household survival, and the everyday work that keeps life intact."
   },
-  yeongdeung_halmang: {
-    anchor_line: "Seasonal arrival, wind, and communal abundance.",
-    longer_anchor_description: "A visiting force of timing, reception, sea-wind, and the abundance that arrives and leaves in cycles."
-  },
   chilseong_agi: {
     anchor_line: "Receiving the strange force that becomes household wealth.",
     longer_anchor_description: "A rejected and feared force that becomes protection and abundance when properly received."
@@ -162,10 +158,6 @@ export const DEITY_ANCHOR_METADATA = {
   gamunjangagi: {
     anchor_line: "Hidden fortune and self-recognition.",
     longer_anchor_description: "A figure who names the hidden source of her own life before others can recognise it."
-  },
-  oneuri: {
-    anchor_line: "Origin-seeking through encounter.",
-    longer_anchor_description: "A figure whose search for origin unfolds through meetings with others whose unresolved lives also need answers."
   },
   hallakgungi: {
     anchor_line: "Return after harm and restoration through force.",
@@ -563,7 +555,7 @@ export function getPrimaryCombination(axisProfile) {
     .sort((a, b) => b.value - a.value);
 
   const [first, second, third] = sortedAxes;
-  const isMixed = third && Math.abs(second.value - third.value) <= 5;
+  const isMixed = third && Math.abs(first.value - third.value) <= 5;
 
   if (isMixed) {
     return "Mixed Field";
@@ -575,8 +567,8 @@ export function getPrimaryCombination(axisProfile) {
     "order+self": "Self + Order",
     "care+social": "Social + Care",
     "order+social": "Social + Order",
+    "care+order": "Care + Order",
     "self+social": "Mixed Field",
-    "care+order": "Mixed Field"
   };
 
   return combinationMap[pair] || "Mixed Field";
