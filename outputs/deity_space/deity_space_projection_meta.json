@@ -1,6 +1,6 @@
 {
   "projection_method": "classical_mds",
-  "stress": 0.22742570898164324,
+  "stress": 0.18562629372218292,
   "axes_used": {
     "main_axes": [
       "self",
@@ -17,11 +17,11 @@
     "response_intensity": 0.25,
     "agency": 0.2
   },
-  "generated_timestamp": "2026-05-07T15:32:34.203896+00:00",
-  "number_of_deities": 22,
+  "generated_timestamp": "2026-05-21T07:08:58.378675+00:00",
+  "number_of_deities": 18,
   "positive_eigenvalue_explained_share_first_two_dimensions": [
-    0.47907126181358983,
-    0.21204281171192194
+    0.49617051478228713,
+    0.26008487030343114
   ],
   "warning": "The real deity matching space is 6D. This 2D chart is an approximate projection and should not be treated as exact geometry."
 }

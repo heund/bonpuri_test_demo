@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1.0",
+  "result_type": "combination",
+  "items": [
+    {
+      "id": "self_care",
+      "label": "Self + Care",
+      "type": "lens_orientation",
+      "axis_1": { "type": "lens", "id": "self" },
+      "axis_2": { "type": "orientation", "id": "care" },
+      "combined_short_sentence": "This pattern points toward personal becoming under conditions of support.",
+      "combined_result_bridge": "When {lens} lens and {orientation} orientation is combined,",
+      "combined_result": "it can make blocked growth, unfinished capacity, or unsupported potential especially visible. You may notice when effort needs more time, when a path needs structure, or when something is being rushed before it has had the chance to become real.",
+      "core_question": "What is taking shape in me, and what will help it become real?"
+    },
+    {
+      "id": "self_order",
+      "label": "Self + Order",
+      "type": "lens_orientation",
+      "axis_1": { "type": "lens", "id": "self" },
+      "axis_2": { "type": "orientation", "id": "order" },
+      "combined_short_sentence": "This pattern points toward source, role, authorship, and correct recognition.",
+      "combined_result_bridge": "When {lens} lens and {orientation} orientation is combined,",
+      "combined_result": "it can make misread effort, misplaced responsibility, or unclear authorship especially visible. You may notice when something you built is explained from the wrong place, when blame is assigned too quickly, or when your role in a situation needs clearer recognition.",
+      "core_question": "What belongs to me here, and what needs to be recognised correctly?"
+    },
+    {
+      "id": "social_care",
+      "label": "Social + Care",
+      "type": "lens_orientation",
+      "axis_1": { "type": "lens", "id": "social" },
+      "axis_2": { "type": "orientation", "id": "care" },
+      "combined_short_sentence": "This pattern points toward shared continuation, support, maintenance, and repair.",
+      "combined_result_bridge": "When {lens} lens and {orientation} orientation is combined,",
+      "combined_result": "it can make uneven care, quiet labour, and shared strain especially visible. You may notice who is carrying the weight, what has been left unattended, or what kind of practical support would let the wider situation keep functioning.",
+      "core_question": "What does this wider field need in order to keep going?"
+    },
+    {
+      "id": "social_order",
+      "label": "Social + Order",
+      "type": "lens_orientation",
+      "axis_1": { "type": "lens", "id": "social" },
+      "axis_2": { "type": "orientation", "id": "order" },
+      "combined_short_sentence": "This pattern points toward field structure, responsibility, hidden tension, and placement.",
+      "combined_result_bridge": "When {lens} lens and {orientation} orientation is combined,",
+      "combined_result": "it can make hidden tension, distorted structure, or unclear placement especially visible. You may notice when a wider field keeps functioning around an unresolved problem, when pressure is being distributed unevenly, or when something wrong has started to feel normal.",
+      "core_question": "What is happening in the wider field, and what needs to be named or placed correctly?"
+    },
+    {
+      "id": "care_order",
+      "label": "Care + Order",
+      "type": "orientation_balance",
+      "axis_1": { "type": "orientation", "id": "care" },
+      "axis_2": { "type": "orientation", "id": "order" },
+      "combined_short_sentence": "This pattern points toward situations where continuation depends on correct placement.",
+      "combined_result_bridge": "When {lens} lens and {orientation} orientation is combined,",
+      "combined_result": "it can make situations visible where care alone is not enough and clarity alone is not enough either. Something may need to be held, repaired, and supported, while also being put back into a position that makes sense.",
+      "core_question": "What needs care here, and what needs to be placed correctly so it can continue or settle?"
+    },
+    {
+      "id": "mixed_field",
+      "label": "Mixed Field",
+      "type": "layered_field",
+      "axis_1": null,
+      "axis_2": null,
+      "combined_short_sentence": "This pattern points toward a layered result rather than one clear axis pairing.",
+      "combined_result": "Several signals may be active at once, so the broad result works best as an open frame. In this case, the closest deity anchor carries the sharper detail, showing which pressure, question, or pattern gives the result its most specific direction.",
+      "core_question": "Which part of this situation is asking for attention first?"
+    }
+  ]
+}

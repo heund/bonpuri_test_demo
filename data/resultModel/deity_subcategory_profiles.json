@@ -129,8 +129,7 @@
       "hinge": "Birth and sacred origin carry cost, harm, and ritual consequence.",
       "close_neighbours": [
         "yu_jeongseungs_daughter",
-        "jijang_agissi",
-        "myeongjinguks_daughter"
+        "jijang_agissi"
       ]
     },
     {
@@ -209,106 +208,6 @@
       ]
     },
     {
-      "id": "myeongjinguks_daughter",
-      "display_name": "Myeongjinguk's Daughter",
-      "bonpuri": "삼승할망본풀이",
-      "main_axes": {
-        "self": 2,
-        "social": 2,
-        "care": 3,
-        "order": 2,
-        "response_intensity": 1,
-        "agency": 2
-      },
-      "subcategories": {
-        "birth_arrival": 3,
-        "domestic_care": 2,
-        "household_sustaining": 2,
-        "restoration": 1
-      },
-      "hinge": "Birth arrival depends on domestic care and a sustaining household field.",
-      "close_neighbours": [
-        "samseung_halmang",
-        "donghae_yonggungs_daughter",
-        "noga_danpung_agissi"
-      ]
-    },
-    {
-      "id": "samseung_halmang",
-      "display_name": "Samseung Halmang",
-      "bonpuri": "삼승할망본풀이",
-      "main_axes": {
-        "self": 1,
-        "social": 2,
-        "care": 3,
-        "order": 2,
-        "response_intensity": 1,
-        "agency": 2
-      },
-      "subcategories": {
-        "birth_arrival": 3,
-        "domestic_care": 2,
-        "household_sustaining": 2,
-        "restoration": 1
-      },
-      "hinge": "Birth and life maintenance are held through practical care and responsibility.",
-      "close_neighbours": [
-        "myeongjinguks_daughter",
-        "yeosan_buin",
-        "donghae_yonggungs_daughter"
-      ]
-    },
-    {
-      "id": "donghae_yonggungs_daughter",
-      "display_name": "Donghae Yonggung's Daughter",
-      "bonpuri": "삼승할망본풀이",
-      "main_axes": {
-        "self": 1,
-        "social": 2,
-        "care": 3,
-        "order": 2,
-        "response_intensity": 3,
-        "agency": 1
-      },
-      "subcategories": {
-        "failed_arrival": 3,
-        "birth_arrival": 2,
-        "hidden_force": 2,
-        "mourning_passage": 1
-      },
-      "hinge": "Birth pressure turns toward failed arrival, hidden force, and grief.",
-      "close_neighbours": [
-        "jeoseung_halmang",
-        "myeongjinguks_daughter",
-        "samseung_halmang"
-      ]
-    },
-    {
-      "id": "jeoseung_halmang",
-      "display_name": "Jeoseung Halmang",
-      "bonpuri": "삼승할망본풀이",
-      "main_axes": {
-        "self": 1,
-        "social": 2,
-        "care": 3,
-        "order": 2,
-        "response_intensity": 3,
-        "agency": 1
-      },
-      "subcategories": {
-        "failed_arrival": 3,
-        "birth_arrival": 2,
-        "hidden_force": 2,
-        "mourning_passage": 1
-      },
-      "hinge": "Failed emergence presses toward the death-domain edge of birth and care.",
-      "close_neighbours": [
-        "donghae_yonggungs_daughter",
-        "jijang_agissi",
-        "samani"
-      ]
-    },
-    {
       "id": "daebyeolsang_manura",
       "display_name": "Daebyeolsang Manura",
       "bonpuri": "마누라본풀이",
@@ -354,7 +253,6 @@
       },
       "hinge": "The household survives through domestic care, maintenance, and repair after strain.",
       "close_neighbours": [
-        "samseung_halmang",
         "nokdisaengi",
         "chilseong_agi"
       ]
@@ -430,8 +328,7 @@
       "hinge": "Strange arrival, shared survival, death pressure, and passage sit together.",
       "close_neighbours": [
         "jijang_agissi",
-        "chilseong_agi",
-        "jeoseung_halmang"
+        "chilseong_agi"
       ]
     },
     {
@@ -508,6 +405,51 @@
         "daebyeolsang_manura",
         "gangnim"
       ]
+    },
+    {
+      "id": "myeongjinguks_daughter",
+      "display_name": "Myeongjinguk's Daughter",
+      "bonpuri": "삼승할망본풀이",
+      "main_axes": {
+        "self": 2,
+        "social": 2,
+        "care": 3,
+        "order": 2,
+        "response_intensity": 1,
+        "agency": 2
+      },
+      "subcategories": {
+        "birth_arrival": 3,
+        "domestic_care": 2,
+        "household_sustaining": 2,
+        "restoration": 1
+      },
+      "hinge": "Birth arrival depends on domestic care and a sustaining household field.",
+      "close_neighbours": [
+        "noga_danpung_agissi"
+      ]
+    },
+    {
+      "id": "donghae_yonggungs_daughter",
+      "display_name": "Donghae Yonggung's Daughter",
+      "bonpuri": "삼승할망본풀이",
+      "main_axes": {
+        "self": 1,
+        "social": 2,
+        "care": 3,
+        "order": 2,
+        "response_intensity": 3,
+        "agency": 1
+      },
+      "subcategories": {
+        "failed_arrival": 3,
+        "birth_arrival": 2,
+        "hidden_force": 2,
+        "mourning_passage": 1
+      },
+      "hinge": "Birth pressure turns toward failed arrival, hidden force, and grief.",
+      "close_neighbours": []
     }
-  ]
+  ],
+  "narrative_figures": []
 }

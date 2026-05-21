@@ -60,44 +60,9 @@ Nokdisaengi-style `Social + Care + Order` support:
 - `q09_c`: "Where the tension between people is really coming from."
 - `q06_c`: "Someone ending up alone with something they shouldn't have had to carry."
 
-### Duplicate Deity Vectors
+### 삼승할망본풀이 Anchor Decision
 
-Two pairs of near-duplicate deity vectors were separated while keeping them conceptually close.
-
-Updated provisional vectors:
-
-```json
-{
-  "myeongjinguks_daughter": {
-    "self": 50,
-    "social": 55,
-    "care": 90,
-    "order": 50,
-    "response_intensity": 35
-  },
-  "samseung_halmang": {
-    "self": 40,
-    "social": 65,
-    "care": 98,
-    "order": 60,
-    "response_intensity": 30
-  },
-  "donghae_yonggungs_daughter": {
-    "self": 55,
-    "social": 45,
-    "care": 80,
-    "order": 50,
-    "response_intensity": 80
-  },
-  "jeoseung_halmang": {
-    "self": 40,
-    "social": 55,
-    "care": 70,
-    "order": 65,
-    "response_intensity": 90
-  }
-}
-```
+The active matchable anchors for this bonpuri are the two daughter figures. The seated-function labels are not active result anchors in the current model.
 
 ## Diagnostic Results
 
@@ -108,7 +73,6 @@ Primary distribution over reachable score states:
 ```json
 [
   ["daebyeolwang", 16.3],
-  ["jeoseung_halmang", 16.1],
   ["samani", 11.5],
   ["donghae_yonggungs_daughter", 11.5],
   ["chogong_three_brothers", 11.2],
@@ -131,7 +95,6 @@ Very rare but possible as primary:
 Still not primary in reachable states:
 
 - `jacheongbi`
-- `samseung_halmang`
 - `nokdisaengi`
 - `chilseong_agi`
 - `wongang_ami`

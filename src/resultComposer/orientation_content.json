@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1.0",
+  "axis_type": "orientation",
+  "items": [
+    {
+      "id": "care",
+      "label": "Care",
+      "short_definition": "noticing the conditions that allow something to continue",
+      "primary_mode": {
+        "id": "conditions_for_continuation",
+        "label": "Conditions for continuation",
+        "text": "Your attention may often go toward what needs support, time, maintenance, repair, or the right environment just to keep going."
+      },
+      "aspects": [
+        {
+          "id": "sustaining",
+          "label": "Sustaining",
+          "attention": "You might find yourself observing the repeated, everyday work that keeps things intact.",
+          "strength": "This can help you notice the practical effort that allows a situation to keep functioning.",
+          "friction": "This often becomes most apparent when a situation relies on effort that is unseen, unsupported, or unevenly distributed."
+        },
+        {
+          "id": "cultivating",
+          "label": "Cultivating",
+          "attention": "Because the {label} orientation leans toward cultivating, you may also notice what is still developing.",
+          "strength": "Whether it is a skill, a relationship, or a project, you likely see the conditions that help potential take shape.",
+          "friction": "It can stand out when potential exists but the surrounding conditions are rushed, blocked, or misaligned."
+        },
+        {
+          "id": "tending",
+          "label": "Tending",
+          "attention": "Additionally, you may pay attention to what still needs tending after a disruption or an ending.",
+          "strength": "This can include noticing when a situation requires repair, closure, or simple acknowledgment before it can fully settle.",
+          "friction": "The tension appears when something is treated as over while it still needs care, repair, or placement."
+        }
+      ],
+      "core_question": "What does this situation still need in order to continue, grow, repair, or settle?"
+    },
+    {
+      "id": "order",
+      "label": "Order",
+      "short_definition": "noticing placement, cause, responsibility, and structure",
+      "primary_mode": {
+        "id": "placement_and_structure",
+        "label": "Placement and structure",
+        "text": "When you look at a situation, your attention may often go toward how things are named, where they belong, what caused them, and what roles they hold."
+      },
+      "aspects": [
+        {
+          "id": "cause",
+          "label": "Cause",
+          "attention": "You might frequently notice what actually happened and why, tracking the sequence of actions and the real mechanisms driving an event.",
+          "strength": "This awareness can help you look past surface confusion and follow the structure of what set something in motion.",
+          "friction": "It can feel frustrating when a situation stays chaotic because its true cause has not been found, or when responsibility is avoided by keeping the root of a problem hidden."
+        },
+        {
+          "id": "placement",
+          "label": "Placement",
+          "attention": "Along with tracking causes, you may often notice where things belong and how they fit within a larger structure.",
+          "strength": "This can help you recognise roles, boundaries, and arrangements that need to be made clearer.",
+          "friction": "This tends to stand out when a role becomes confused or when a boundary is crossed without acknowledgment."
+        },
+        {
+          "id": "restoration",
+          "label": "Restoration",
+          "attention": "Furthermore, you may focus on what needs to be answered for or set right after a disruption.",
+          "strength": "This can help you notice the consequences of a fracture and what it would take to bring a situation back into balance.",
+          "friction": "The tension appears when something remains broken, displaced, or unresolved without being recognised or returned to its proper place."
+        }
+      ],
+      "core_question": "What needs to be clarified, recognized, or returned to its proper place so a situation can finally make sense?"
+    }
+  ]
+}

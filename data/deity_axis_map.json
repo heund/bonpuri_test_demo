@@ -183,134 +183,6 @@
       "encounter_prompt": ""
     },
     {
-      "deity_id": "myeongjinguks_daughter",
-      "name_ko": "명진국따님애기",
-      "name_en": "Myeongjinguk's Daughter",
-      "bonpuri": "삼승할망본풀이",
-      "axis_vector": {
-        "self": 50,
-        "social": 55,
-        "care": 90,
-        "order": 50,
-        "response_intensity": 35,
-        "agency": 55
-      },
-      "requires_manual_scoring": false,
-      "vector_status": "provisional",
-      "tone": "birth / emergence / care structure",
-      "primary_axes": [
-        "self",
-        "care"
-      ],
-      "secondary_axes": [
-        "social"
-      ],
-      "keywords": [
-        "birth",
-        "emergence",
-        "care",
-        "life-force"
-      ],
-      "result_summary": "",
-      "encounter_prompt": ""
-    },
-    {
-      "deity_id": "samseung_halmang",
-      "name_ko": "삼승할망",
-      "name_en": "Samseung Halmang",
-      "bonpuri": "삼승할망본풀이",
-      "axis_vector": {
-        "self": 40,
-        "social": 65,
-        "care": 98,
-        "order": 60,
-        "response_intensity": 30,
-        "agency": 60
-      },
-      "requires_manual_scoring": false,
-      "vector_status": "provisional",
-      "tone": "life-force / birth / care structure",
-      "primary_axes": [
-        "care",
-        "social"
-      ],
-      "secondary_axes": [
-        "self"
-      ],
-      "keywords": [
-        "birth",
-        "care",
-        "life-force",
-        "continuation"
-      ],
-      "result_summary": "",
-      "encounter_prompt": ""
-    },
-    {
-      "deity_id": "donghae_yonggungs_daughter",
-      "name_ko": "동해용궁따님애기",
-      "name_en": "Donghae Yonggung's Daughter",
-      "bonpuri": "삼승할망본풀이",
-      "axis_vector": {
-        "self": 55,
-        "social": 45,
-        "care": 80,
-        "order": 50,
-        "response_intensity": 80,
-        "agency": 35
-      },
-      "requires_manual_scoring": false,
-      "vector_status": "provisional",
-      "tone": "failed emergence pressure / failed order pressure",
-      "primary_axes": [
-        "social",
-        "order"
-      ],
-      "secondary_axes": [
-        "care"
-      ],
-      "keywords": [
-        "failed-emergence",
-        "pressure",
-        "order",
-        "care"
-      ],
-      "result_summary": "",
-      "encounter_prompt": ""
-    },
-    {
-      "deity_id": "jeoseung_halmang",
-      "name_ko": "저승할망",
-      "name_en": "Jeoseung Halmang",
-      "bonpuri": "삼승할망본풀이",
-      "axis_vector": {
-        "self": 40,
-        "social": 55,
-        "care": 70,
-        "order": 65,
-        "response_intensity": 90,
-        "agency": 35
-      },
-      "requires_manual_scoring": false,
-      "vector_status": "provisional",
-      "tone": "threshold / care / transition",
-      "primary_axes": [
-        "care",
-        "order"
-      ],
-      "secondary_axes": [
-        "social"
-      ],
-      "keywords": [
-        "threshold",
-        "transition",
-        "care",
-        "order"
-      ],
-      "result_summary": "",
-      "encounter_prompt": ""
-    },
-    {
       "deity_id": "yeosan_buin",
       "name_ko": "여산부인",
       "name_en": "Yeosan Buin",
@@ -646,6 +518,71 @@
       ],
       "result_summary": "",
       "encounter_prompt": ""
+    },
+    {
+      "deity_id": "myeongjinguks_daughter",
+      "name_ko": "명진국따님애기",
+      "name_en": "Myeongjinguk's Daughter",
+      "bonpuri": "삼승할망본풀이",
+      "axis_vector": {
+        "self": 50,
+        "social": 55,
+        "care": 90,
+        "order": 50,
+        "response_intensity": 35,
+        "agency": 55
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "birth / emergence / care structure",
+      "primary_axes": [
+        "self",
+        "care"
+      ],
+      "secondary_axes": [
+        "social"
+      ],
+      "keywords": [
+        "birth",
+        "emergence",
+        "care",
+        "life-force"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
+    },
+    {
+      "deity_id": "donghae_yonggungs_daughter",
+      "name_ko": "동해용궁따님애기",
+      "name_en": "Donghae Yonggung's Daughter",
+      "bonpuri": "삼승할망본풀이",
+      "axis_vector": {
+        "self": 55,
+        "social": 45,
+        "care": 80,
+        "order": 50,
+        "response_intensity": 80,
+        "agency": 35
+      },
+      "requires_manual_scoring": false,
+      "vector_status": "provisional",
+      "tone": "failed emergence pressure / failed order pressure",
+      "primary_axes": [
+        "social",
+        "order"
+      ],
+      "secondary_axes": [
+        "care"
+      ],
+      "keywords": [
+        "failed-emergence",
+        "pressure",
+        "order",
+        "care"
+      ],
+      "result_summary": "",
+      "encounter_prompt": ""
     }
-  ]
+  ],
+  "narrative_figures": []
 }

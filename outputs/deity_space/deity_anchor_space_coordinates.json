@@ -10,36 +10,22 @@
     "order": 75,
     "response_intensity": 65,
     "agency": 75,
-    "mds_x": -35.27819109622377,
-    "mds_y": -40.799155931045696
-  },
-  {
-    "deity_id": "oneuri",
-    "name_ko": "오늘이",
-    "name_en": "Oneuri",
-    "bonpuri": "원천강본풀이",
-    "self": 85,
-    "social": 60,
-    "care": 45,
-    "order": 35,
-    "response_intensity": 45,
-    "agency": 45,
-    "mds_x": 8.281522064415629,
-    "mds_y": -37.21094528699761
+    "mds_x": -29.726201593947117,
+    "mds_y": -40.663436275137705
   },
   {
     "deity_id": "jacheongbi",
     "name_ko": "자청비",
     "name_en": "Jacheongbi",
     "bonpuri": "세경본풀이",
-    "self": 85,
-    "social": 55,
+    "self": 80,
+    "social": 40,
     "care": 85,
-    "order": 70,
+    "order": 55,
     "response_intensity": 55,
-    "agency": 90,
-    "mds_x": 5.6003417819428645,
-    "mds_y": -32.80535187650297
+    "agency": 70,
+    "mds_x": 20.903184875598583,
+    "mds_y": -43.14068014092415
   },
   {
     "deity_id": "hallakgungi",
@@ -52,8 +38,8 @@
     "order": 85,
     "response_intensity": 70,
     "agency": 85,
-    "mds_x": -42.90853328818184,
-    "mds_y": -16.659072952850483
+    "mds_x": -38.439328980582744,
+    "mds_y": -16.43940977496783
   },
   {
     "deity_id": "chogong_three_brothers",
@@ -66,8 +52,8 @@
     "order": 65,
     "response_intensity": 65,
     "agency": 80,
-    "mds_x": -12.807978919538755,
-    "mds_y": -24.536316636320272
+    "mds_x": -8.602547228426886,
+    "mds_y": -24.646266179495342
   },
   {
     "deity_id": "yu_jeongseungs_daughter",
@@ -80,64 +66,8 @@
     "order": 55,
     "response_intensity": 75,
     "agency": 75,
-    "mds_x": -4.535156407717662,
-    "mds_y": -29.159638448649826
-  },
-  {
-    "deity_id": "myeongjinguks_daughter",
-    "name_ko": "명진국따님애기",
-    "name_en": "Myeongjinguk's Daughter",
-    "bonpuri": "삼승할망본풀이",
-    "self": 50,
-    "social": 55,
-    "care": 90,
-    "order": 50,
-    "response_intensity": 35,
-    "agency": 55,
-    "mds_x": 38.70135645932837,
-    "mds_y": -10.225624201470367
-  },
-  {
-    "deity_id": "samseung_halmang",
-    "name_ko": "삼승할망",
-    "name_en": "Samseung Halmang",
-    "bonpuri": "삼승할망본풀이",
-    "self": 40,
-    "social": 65,
-    "care": 98,
-    "order": 60,
-    "response_intensity": 30,
-    "agency": 60,
-    "mds_x": 42.21900126532246,
-    "mds_y": 5.3341243605740445
-  },
-  {
-    "deity_id": "donghae_yonggungs_daughter",
-    "name_ko": "동해용궁따님애기",
-    "name_en": "Donghae Yonggung's Daughter",
-    "bonpuri": "삼승할망본풀이",
-    "self": 55,
-    "social": 45,
-    "care": 80,
-    "order": 50,
-    "response_intensity": 80,
-    "agency": 35,
-    "mds_x": 23.155794198042805,
-    "mds_y": -7.434068881978421
-  },
-  {
-    "deity_id": "jeoseung_halmang",
-    "name_ko": "저승할망",
-    "name_en": "Jeoseung Halmang",
-    "bonpuri": "삼승할망본풀이",
-    "self": 40,
-    "social": 55,
-    "care": 70,
-    "order": 65,
-    "response_intensity": 90,
-    "agency": 35,
-    "mds_x": 10.777475116993287,
-    "mds_y": 17.73936722711679
+    "mds_x": 1.0099350844352717,
+    "mds_y": -28.54108581861583
   },
   {
     "deity_id": "yeosan_buin",
@@ -149,9 +79,9 @@
     "care": 85,
     "order": 35,
     "response_intensity": 40,
-    "agency": 50,
-    "mds_x": 50.11284986618746,
-    "mds_y": 2.2069904353181613
+    "agency": 40,
+    "mds_x": 53.52414370312665,
+    "mds_y": 11.87040138268667
   },
   {
     "deity_id": "nokdisaengi",
@@ -164,8 +94,8 @@
     "order": 85,
     "response_intensity": 75,
     "agency": 85,
-    "mds_x": -10.350652007960095,
-    "mds_y": 17.347570793854118
+    "mds_x": -6.756761327301818,
+    "mds_y": 16.987526474169023
   },
   {
     "deity_id": "chilseong_agi",
@@ -178,8 +108,8 @@
     "order": 45,
     "response_intensity": 75,
     "agency": 70,
-    "mds_x": 30.357285346447547,
-    "mds_y": 5.126300538005115
+    "mds_x": 34.113181040339306,
+    "mds_y": 9.525122982426
   },
   {
     "deity_id": "samani",
@@ -190,52 +120,38 @@
     "social": 80,
     "care": 65,
     "order": 50,
-    "response_intensity": 70,
-    "agency": 35,
-    "mds_x": 21.474228639623636,
-    "mds_y": 14.834251440964737
-  },
-  {
-    "deity_id": "yeongdeung_halmang",
-    "name_ko": "영등할망",
-    "name_en": "Yeongdeung Halmang",
-    "bonpuri": "영등본풀이",
-    "self": 35,
-    "social": 80,
-    "care": 85,
-    "order": 35,
-    "response_intensity": 45,
-    "agency": 30,
-    "mds_x": 53.80829220165497,
-    "mds_y": 13.20998192556656
+    "response_intensity": 60,
+    "agency": 25,
+    "mds_x": 27.417452651047395,
+    "mds_y": 19.797575154454933
   },
   {
     "deity_id": "wongang_ami",
     "name_ko": "원강아미",
     "name_en": "Wongang Ami",
     "bonpuri": "이공본풀이",
-    "self": 55,
+    "self": 45,
     "social": 80,
-    "care": 45,
-    "order": 95,
+    "care": 55,
+    "order": 70,
     "response_intensity": 90,
-    "agency": 35,
-    "mds_x": -27.569182904165103,
-    "mds_y": 31.242972925642253
+    "agency": 30,
+    "mds_x": 3.9844872556769735,
+    "mds_y": 32.410098165533164
   },
   {
     "deity_id": "noga_danpung_agissi",
     "name_ko": "노가단풍아기씨",
     "name_en": "Noga Danpung Agissi",
     "bonpuri": "초공본풀이",
-    "self": 60,
-    "social": 70,
+    "self": 50,
+    "social": 65,
     "care": 60,
-    "order": 70,
-    "response_intensity": 90,
-    "agency": 45,
-    "mds_x": -2.722425539212783,
-    "mds_y": 9.049547671537423
+    "order": 60,
+    "response_intensity": 85,
+    "agency": 35,
+    "mds_x": 10.785127918076887,
+    "mds_y": 12.72356041421794
   },
   {
     "deity_id": "gangnim",
@@ -248,8 +164,8 @@
     "order": 95,
     "response_intensity": 75,
     "agency": 90,
-    "mds_x": -49.58628364624339,
-    "mds_y": 8.69103631670723
+    "mds_x": -46.51129543217074,
+    "mds_y": 7.716392754506161
   },
   {
     "deity_id": "jijang_agissi",
@@ -262,8 +178,8 @@
     "order": 70,
     "response_intensity": 85,
     "agency": 40,
-    "mds_x": 4.0030005900600125,
-    "mds_y": 17.166940793194428
+    "mds_x": 8.525379909019646,
+    "mds_y": 17.22646032273531
   },
   {
     "deity_id": "sobyeolwang",
@@ -276,8 +192,8 @@
     "order": 95,
     "response_intensity": 85,
     "agency": 45,
-    "mds_x": -47.87807027497946,
-    "mds_y": 28.074057095893398
+    "mds_x": -44.96423063966455,
+    "mds_y": 29.17650666390801
   },
   {
     "deity_id": "daebyeolwang",
@@ -290,8 +206,8 @@
     "order": 95,
     "response_intensity": 45,
     "agency": 85,
-    "mds_x": -49.13703942298621,
-    "mds_y": 7.282935638527001
+    "mds_x": -50.86711871168258,
+    "mds_y": 8.243167801924523
   },
   {
     "deity_id": "daebyeolsang_manura",
@@ -304,7 +220,35 @@
     "order": 85,
     "response_intensity": 90,
     "agency": 85,
-    "mds_x": -5.717634022810035,
-    "mds_y": 21.524097052914342
+    "mds_x": -3.5267903064046915,
+    "mds_y": 10.737242597104025
+  },
+  {
+    "deity_id": "myeongjinguks_daughter",
+    "name_ko": "명진국따님애기",
+    "name_en": "Myeongjinguk's Daughter",
+    "bonpuri": "삼승할망본풀이",
+    "self": 50,
+    "social": 55,
+    "care": 90,
+    "order": 50,
+    "response_intensity": 35,
+    "agency": 55,
+    "mds_x": 40.2610845125134,
+    "mds_y": -11.599949999014468
+  },
+  {
+    "deity_id": "donghae_yonggungs_daughter",
+    "name_ko": "동해용궁따님애기",
+    "name_en": "Donghae Yonggung's Daughter",
+    "bonpuri": "삼승할망본풀이",
+    "self": 55,
+    "social": 45,
+    "care": 80,
+    "order": 50,
+    "response_intensity": 80,
+    "agency": 35,
+    "mds_x": 28.87029727034701,
+    "mds_y": -11.383226525510402
   }
 ]

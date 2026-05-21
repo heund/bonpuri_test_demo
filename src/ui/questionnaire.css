@@ -45,6 +45,23 @@ main {
   margin-top: 1em;
 }
 
+.language-toggle {
+  display: flex;
+  gap: 0.35em;
+  justify-content: flex-end;
+  margin-bottom: 0.75em;
+}
+
+.language-toggle button[aria-pressed="true"] {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.deity-match-percentage {
+  font-size: 0.75em;
+  font-weight: normal;
+}
+
 table {
   border-collapse: collapse;
   margin: 1em 0;
@@ -181,39 +198,4 @@ progress {
 
 .anchor-shape-card h3 {
   margin-top: 0;
-}
-
-.anchor-map {
-  margin: 1em 0;
-}
-
-.similarity-matrix th span {
-  font-weight: normal;
-}
-
-.similarity-layer {
-  min-width: 11em;
-}
-
-.similarity-bar {
-  border: 1px solid #000;
-  height: 0.65em;
-  margin-bottom: 0.25em;
-}
-
-.similarity-bar span {
-  background: #000;
-  display: block;
-  height: 100%;
-}
-
-.similarity-signals {
-  margin-top: 0.25em;
-}
-
-.similarity-signals span {
-  border: 1px solid #000;
-  display: inline-block;
-  margin: 0.15em 0.2em 0.15em 0;
-  padding: 0.05em 0.25em;
 }

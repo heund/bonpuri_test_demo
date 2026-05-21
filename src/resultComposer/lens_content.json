@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1.0",
+  "axis_type": "lens",
+  "items": [
+    {
+      "id": "self",
+      "label": "Self",
+      "direction": "inward",
+      "short_definition": "looking inward first",
+      "primary_mode": {
+        "id": "inner_positioning",
+        "label": "Inner positioning",
+        "text": "When situations shift, your initial instinct is likely to find your footing and clarify your specific role before fully moving forward."
+      },
+      "aspects": [
+        {
+          "id": "source",
+          "label": "Source",
+          "attention": "You seem to pay close attention to the roots of an issue, preferring to understand the real reasons behind decisions and figuring out which responsibilities actually belong to you.",
+          "strength": "This approach can give your choices a grounded quality.",
+          "friction": "It can feel frustrating when your efforts are misread, or when something you worked hard to build is written off as luck or circumstance."
+        },
+        {
+          "id": "direction",
+          "label": "Direction",
+          "attention": "Because the {label} lens tracks where things are going, a situation usually becomes clearer to you once you can see what new paths are opening up.",
+          "strength": "This perspective can help you remain steady during transitions that leave others disoriented.",
+          "friction": "You might find the ambiguous in-between phases difficult to navigate when the next chapter has not quite formed yet."
+        },
+        {
+          "id": "capacity",
+          "label": "Capacity",
+          "attention": "You also appear drawn to potential, asking how you need to grow to meet upcoming challenges.",
+          "strength": "This mindset can foster patience for long-term development.",
+          "friction": "It can be draining when that growth is blocked and your potential has nowhere to go."
+        }
+      ],
+      "core_question": "What is taking shape inside you, and what will it take to make that real?"
+    },
+    {
+      "id": "social",
+      "label": "Social",
+      "direction": "outward",
+      "short_definition": "looking outward first",
+      "primary_mode": {
+        "id": "field_reading",
+        "label": "Field reading",
+        "text": "You may notice how roles, responsibilities, and pressures are distributed in a given situation."
+      },
+      "aspects": [
+        {
+          "id": "arrangement",
+          "label": "Arrangement",
+          "attention": "When things change, you likely find yourself tracking how the shift impacts the bigger picture.",
+          "strength": "It may be relatively easy for you to spot who is carrying the heaviest load, or to sense unspoken tension that everyone feels but no one has named.",
+          "friction": "It can be frustrating when a system only functions because someone is taking on more than their fair share, or when unfair imbalances become the accepted norm."
+        },
+        {
+          "id": "reception",
+          "label": "Reception",
+          "attention": "Because the {label} lens is tuned into the shared environment, you likely pay close attention to how new or disruptive elements are received.",
+          "strength": "This awareness can make you thoughtful about integrating unfamiliar changes.",
+          "friction": "It can be difficult to watch something get rejected simply because a group does not yet know how to accommodate it."
+        },
+        {
+          "id": "passage",
+          "label": "Passage",
+          "attention": "You might also feel a pull toward transitions, spotting when a chapter has ended but lacks true closure.",
+          "strength": "This can help you notice what remains unresolved after a change.",
+          "friction": "It can feel heavy when unresolved issues are left without an answer."
+        }
+      ],
+      "core_question": "What is happening in the wider environment, and what will it take to keep that space whole?"
+    }
+  ]
+}

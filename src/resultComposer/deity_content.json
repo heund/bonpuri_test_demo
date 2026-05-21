@@ -1,0 +1,202 @@
+{
+  "schema_version": "0.1.0",
+  "result_type": "deity",
+  "items": [
+    {
+      "id": "gamunjangagi",
+      "label": "Gamunjangagi",
+      "name_ko": "가믄장아기",
+      "bonpuri": "삼공본풀이",
+      "title": "Your Bonpuri: 삼공본풀이",
+      "subtitle": "Hidden fortune and self-recognition.",
+      "paragraphs": [
+        "A figure who names the hidden source of her own life before others can recognise it."
+      ]
+    },
+    {
+      "id": "jacheongbi",
+      "label": "Jacheongbi",
+      "name_ko": "자청비",
+      "bonpuri": "세경본풀이",
+      "title": "Your Bonpuri: 세경본풀이",
+      "subtitle": "Jacheongbi",
+      "paragraphs": []
+    },
+    {
+      "id": "hallakgungi",
+      "label": "Hallakgungi",
+      "name_ko": "할락궁이",
+      "bonpuri": "이공본풀이",
+      "title": "Your Bonpuri: 이공본풀이",
+      "subtitle": "Return after harm and restoration through force.",
+      "paragraphs": [
+        "A figure who returns after violence with the power to destroy, revive, and restore."
+      ]
+    },
+    {
+      "id": "chogong_three_brothers",
+      "label": "Chogong Three Brothers",
+      "name_ko": "초공신삼형제",
+      "bonpuri": "초공본풀이",
+      "title": "Your Bonpuri: 초공본풀이",
+      "subtitle": "Role transition and ritual responsibility.",
+      "paragraphs": [
+        "A path of ordinary success is interrupted by ritual demand, forcing life into another structure."
+      ]
+    },
+    {
+      "id": "yu_jeongseungs_daughter",
+      "label": "Yu Jeongseung's Daughter",
+      "name_ko": "유정승따님애기",
+      "bonpuri": "초공본풀이",
+      "title": "Your Bonpuri: 초공본풀이",
+      "subtitle": "Calling, initiation, and pressure into ritual role.",
+      "paragraphs": [
+        "A figure moved out of ordinary life and into ritual function through pressure, illness, and transmission."
+      ]
+    },
+    {
+      "id": "myeongjinguks_daughter",
+      "label": "Myeongjinguk's Daughter",
+      "name_ko": "명진국따님애기",
+      "bonpuri": "삼승할망본풀이",
+      "title": "Your Bonpuri: 삼승할망본풀이",
+      "subtitle": "Safe arrival and the protection of life.",
+      "paragraphs": [
+        "A figure who gives birth its proper passage and protects life as it enters the world."
+      ]
+    },
+    {
+      "id": "donghae_yonggungs_daughter",
+      "label": "Donghae Yonggung's Daughter",
+      "name_ko": "동해용궁따님애기",
+      "bonpuri": "삼승할망본풀이",
+      "title": "Your Bonpuri: 삼승할망본풀이",
+      "subtitle": "Failed birth-power and unsafe arrival.",
+      "paragraphs": [
+        "A figure who can bring conception but cannot secure safe passage into life."
+      ]
+    },
+    {
+      "id": "yeosan_buin",
+      "label": "Yeosan Buin",
+      "name_ko": "여산부인",
+      "bonpuri": "문전본풀이",
+      "title": "Your Bonpuri: 문전본풀이",
+      "subtitle": "Domestic care and the sustaining warmth of the household.",
+      "paragraphs": [
+        "A figure of feeding, tending, household survival, and the everyday work that keeps life intact."
+      ]
+    },
+    {
+      "id": "nokdisaengi",
+      "label": "Nokdisaengi",
+      "name_ko": "녹디생이",
+      "bonpuri": "문전본풀이",
+      "title": "Your Bonpuri: 문전본풀이",
+      "subtitle": "Household rupture and the recovery of relational order.",
+      "paragraphs": [
+        "A figure tied to broken family structure, detection, and the restoration of household order."
+      ]
+    },
+    {
+      "id": "chilseong_agi",
+      "label": "Chilseong Agi",
+      "name_ko": "칠성아기",
+      "bonpuri": "칠성본풀이",
+      "title": "Your Bonpuri: 칠성본풀이",
+      "subtitle": "Receiving the strange force that becomes household wealth.",
+      "paragraphs": [
+        "A rejected and feared force that becomes protection and abundance when properly received."
+      ]
+    },
+    {
+      "id": "samani",
+      "label": "Samani",
+      "name_ko": "사만이",
+      "bonpuri": "멩감본풀이 or 사만이본풀이",
+      "title": "Your Bonpuri: 멩감본풀이 or 사만이본풀이",
+      "subtitle": "Care for the neglected dead and protection through acknowledgement.",
+      "paragraphs": [
+        "A figure who receives what others abandon and turns neglected death into protection and continuity."
+      ]
+    },
+    {
+      "id": "wongang_ami",
+      "label": "Wongang Ami",
+      "name_ko": "원강아미",
+      "bonpuri": "이공본풀이",
+      "title": "Your Bonpuri: 이공본풀이",
+      "subtitle": "Dignity under oppression and the cost that calls return.",
+      "paragraphs": [
+        "A figure whose suffering becomes the moral ground for return, judgement, and restoration."
+      ]
+    },
+    {
+      "id": "noga_danpung_agissi",
+      "label": "Noga Danpung Agissi",
+      "name_ko": "노가단풍아기씨",
+      "bonpuri": "초공본풀이",
+      "title": "Your Bonpuri: 초공본풀이",
+      "subtitle": "Origin-cost and the body that carries a future structure.",
+      "paragraphs": [
+        "A figure whose suffering and body become the ground from which a later ritual order can emerge."
+      ]
+    },
+    {
+      "id": "gangnim",
+      "label": "Gangnim",
+      "name_ko": "강림",
+      "bonpuri": "차사본풀이",
+      "title": "Your Bonpuri: 차사본풀이",
+      "subtitle": "Procedure, death-crossing, and hidden cause.",
+      "paragraphs": [
+        "A figure who crosses into the underworld to retrieve the missing order behind death."
+      ]
+    },
+    {
+      "id": "jijang_agissi",
+      "label": "Jijang Agissi",
+      "name_ko": "지장아기씨",
+      "bonpuri": "지장본풀이",
+      "title": "Your Bonpuri: 지장본풀이",
+      "subtitle": "Mourning, passage, and ritual care for the dead.",
+      "paragraphs": [
+        "A figure who lives through repeated loss and turns grief into passage for the dead."
+      ]
+    },
+    {
+      "id": "sobyeolwang",
+      "label": "Sobyeolwang",
+      "name_ko": "소별왕",
+      "bonpuri": "천지왕본풀이",
+      "title": "Your Bonpuri: 천지왕본풀이",
+      "subtitle": "Crooked order and the flawed structure of the living world.",
+      "paragraphs": [
+        "A figure whose trickery explains why this world carries disorder, conflict, and imperfection."
+      ]
+    },
+    {
+      "id": "daebyeolwang",
+      "label": "Daebyeolwang",
+      "name_ko": "대별왕",
+      "bonpuri": "천지왕본풀이",
+      "title": "Your Bonpuri: 천지왕본풀이",
+      "subtitle": "Law, separation, and world-order.",
+      "paragraphs": [
+        "A figure of clean order, separation, and the placement of worlds into their proper structure."
+      ]
+    },
+    {
+      "id": "daebyeolsang_manura",
+      "label": "Daebyeolsang Manura",
+      "name_ko": "대별상마누라",
+      "bonpuri": "마누라본풀이",
+      "title": "Your Bonpuri: 마누라본풀이",
+      "subtitle": "Disease-power and dangerous force brought into order.",
+      "paragraphs": [
+        "A figure of illness, threat, and the force that must be negotiated into a workable place."
+      ]
+    }
+  ]
+}

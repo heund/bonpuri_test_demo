@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1.0",
+  "result_shells": {
+    "combination": {
+      "title_template": "Result Pattern",
+      "opening_template": "Based on your answers, this result suggests a {label} pattern.",
+      "lens_bridge_template": "The {label} lens shows the starting direction of perception in this result.",
+      "orientation_bridge_template": "The {label} orientation shows the organising concern within that perception.",
+      "orientation_balance_first_bridge_template": "The {label} orientation shows one side of this result.",
+      "orientation_balance_second_bridge_template": "The {label} orientation shows the other side of this result."
+    }
+  }
+}

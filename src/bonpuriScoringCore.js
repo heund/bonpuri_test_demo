@@ -119,10 +119,6 @@ export const DEITY_ANCHOR_METADATA = {
     anchor_line: "Calling, initiation, and pressure into ritual role.",
     longer_anchor_description: "A figure moved out of ordinary life and into ritual function through pressure, illness, and transmission."
   },
-  jeoseung_halmang: {
-    anchor_line: "Failed arrival and fragile passage between life and death.",
-    longer_anchor_description: "A figure of unsafe arrival, infant danger, and the threshold where birth and death meet."
-  },
   donghae_yonggungs_daughter: {
     anchor_line: "Failed birth-power and unsafe arrival.",
     longer_anchor_description: "A figure who can bring conception but cannot secure safe passage into life."
@@ -130,10 +126,6 @@ export const DEITY_ANCHOR_METADATA = {
   myeongjinguks_daughter: {
     anchor_line: "Safe arrival and the protection of life.",
     longer_anchor_description: "A figure who gives birth its proper passage and protects life as it enters the world."
-  },
-  samseung_halmang: {
-    anchor_line: "Birth, protection, and the order of life.",
-    longer_anchor_description: "A figure of life-arrival, care, and the negotiated balance between birth and illness."
   },
   yeosan_buin: {
     anchor_line: "Domestic care and the sustaining warmth of the household.",
@@ -561,14 +553,14 @@ export function getPrimaryCombination(axisProfile) {
     return "Mixed Field";
   }
 
-  const pair = [first.axis, second.axis].sort().join("+");
+  const lens = axisProfile.self >= axisProfile.social ? "self" : "social";
+  const orientation = axisProfile.care >= axisProfile.order ? "care" : "order";
+  const pair = [lens, orientation].sort().join("+");
   const combinationMap = {
     "care+self": "Self + Care",
     "order+self": "Self + Order",
     "care+social": "Social + Care",
     "order+social": "Social + Order",
-    "care+order": "Care + Order",
-    "self+social": "Mixed Field",
   };
 
   return combinationMap[pair] || "Mixed Field";
