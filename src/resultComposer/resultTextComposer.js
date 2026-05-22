@@ -88,12 +88,24 @@ function combinationId(label = "") {
 
 function axisDisplayLabel(axis, language = "en") {
   if (!axis) return "";
-  if (language === "ko" && axis.type === "lens") return `기준: ${axis.label}`;
+  if (language === "ko") {
+    const koreanAxisLabels = {
+      self: "내면",
+      social: "관계",
+      care: "돌봄",
+      order: "질서"
+    };
+    const axisTypeLabel = axis.type === "lens" ? "기준" : "감각";
+    return `${axisTypeLabel}: ${koreanAxisLabels[axis.id] || axis.label}`;
+  }
   return `${axis.label} ${axis.type === "lens" ? "Lens" : "Orientation"}`;
 }
 
 function combinationDisplayLabel(combination, axis1, axis2, language = "en") {
   if (!axis1 || !axis2) return combination.label;
+  if (language === "ko") {
+    return `${axisDisplayLabel(axis1, language)} + ${axisDisplayLabel(axis2, language)}`;
+  }
   return `${axisDisplayLabel(axis1, language)} with ${axisDisplayLabel(axis2, language)}`;
 }
 
@@ -134,7 +146,7 @@ function buildCombinationBlock(primaryCombination, language = "en") {
     kind: "combination",
     title: {
       marker: "{combination.title_template}",
-      text: shells.combination.title_template
+      text: language === "ko" ? "결과 패턴" : shells.combination.title_template
     },
     subtitle: {
       marker: "{combination.label}",

@@ -3,7 +3,7 @@
 | 가믄장아기    | 전상신         | 전상과 운명의 흐름을 주관하는 신        |
 | 할락궁이     | 이공신, 꽃감관    | 서천꽃밭과 인간의 생사를 주관하는 신      |
 | 명진국따님애기  | 삼승할망, 생불할망  | 잉태, 출산, 양육을 돕는 산육신        |
-| 동해용궁따님애기 | 구삼승할망, 저승할망 | 아이의 질병과 죽음을 맡는 할망         |
+| 동해용궁따님애기 | 구삼승할망, 저승할망 | 아이의 질병과 죽음을 관장하는 신         |
 | 초공신삼형제   | 무조신         | 심방의 조상신, 굿법과 무구의 기원을 여는 신 |
 | 노가단풍아기씨  | 무구신, 무악기신   | 무구와 무악기를 지키는 신            |
 | 유정승따님애기  | 최초의 여무      | 심방과 굿법의 계보를 여는 여무         |
@@ -19,22 +19,21 @@
 | 지장아기씨    | 지장신         | 액을 막고 죽은 영혼을 천도하는 신       |
 
 
-| Result | Deity Name | Description |
-|--------|------------|-------------|
-| Gamunjangagi | Jeonsangshin | The goddess of fate, governing fortune and destiny across human lives |
-| Hallakgungi | Igongshin, Kkotgamgwan | The keeper of Seocheonkkotbat, the Flower Garden of the West, tending to the flowers that hold the fates of human lives |
-| Myeongjinguk's Daughter | Samseung Halmang, Saengbul Halmang | The goddess of childbirth, building the safe conditions through which new life can enter the world and grow |
-| Donghae Yonggung's Daughter | Gusamseung Halmang, Jeoseung Halmang | The goddess who watches over the boundary between life and its early end |
-| Chogong's Three Brothers | Mujoshin | The ancestral gods of shamans, the ones who first received and carried the sacred calling |
-| Noga Danpung Agissi | Maengdu | The deity who guards the ritual space and the shamans who work within it |
-| Yu Jeongseung's Daughter | The First Shaman | The one who performed the very first ritual, opening the lineage of shamans and ritual practice |
-| Gangnim | Jeoseung Chasa | The underworld messenger who guides the souls of the dead to the afterlife |
-| Daebyeolsang Manura | Mamashin, Daebyeolsangshin | The deity who governs disease (smallpox), whose power is not destroyed but made safe through the right handling |
-| Chilseong Agi | Chilseongsin | The benevolent snake goddess of wealth, agriculture, and household prosperity |
-| Daebyeolwang | Jeoseungchaji | The deity who governs the laws and order of the underworld |
-| Sobyeolwang | Iseungchaji | The deity who holds dominion over the world of the living |
-| Samani | Maengam | The deity who wards off death and governs longevity |
-| Yeosan Buin | Jowangshin | The deity of the kitchen and household |
-| Wongang Ami | Mother of Seocheonkkotbat | The mother who tends Seocheonkkotbat, the Flower Garden of the West, where the fates of human lives are kept |
-| Nokdisaengi | Munjeonsin | The deity who guards the gate of the home |
-| Jijang Agissi | Jijangsin | The deity who clears misfortune and guides souls to their proper rest |
+Result	Deity Name	Deity Name (Translation)	Description	Bonpuri
+Gamunjangagi	Jeonsangshin	God of Fate and Destiny	The goddess of fate, governing fortune and destiny across human lives	Samgongbonpuri
+Hallakgungi	Igongshin, Kkotgamgwan	God of Igong, Keeper of the Flowers	The keeper of Seocheonkkotbat, the Flower Garden of the West, tending to the flowers that hold the fates of human lives	Igongbonpuri
+Myeongjinguk's Daughter	Samseung Halmang, Saengbul Halmang	Grandmother of Three Lives, Living Buddha Grandmother	The goddess of childbirth, building the safe conditions through which new life can enter the world and grow	Halmangbonpuri
+Donghae Yonggung's Daughter	Gusamseung Halmang, Jeoseung Halmang	Old Grandmother of Three Lives, Underworld Grandmother	The goddess who watches over the boundary between life and its early end	Halmangbonpuri
+Chogong's Three Brothers	Mujoshin	Ancestral God of Shamans	The ancestral gods of shamans, the ones who first received and carried the sacred calling	Chogongbonpuri
+Noga Danpung Agissi	Maengdu	God of Ritual Instruments	The deity who guards the ritual space and the shamans who work within it	Chogongbonpuri
+Yu Jeongseung's Daughter	The First Shaman	The First Female Shaman	The one who performed the very first ritual, opening the lineage of shamans and ritual practice	Chogongbonpuri
+Gangnim	Jeoseung Chasa	Underworld Messenger	The underworld messenger who guides the souls of the dead to the afterlife	Chasabonpuri
+Daebyeolsang Manura	Mamashin, Daebyeolsangshin	Goddess of Smallpox, Daebyeolsang Deity	The deity who governs disease (smallpox), whose power is not destroyed but made safe through the right handling	Daebyeolsang Manurabonpuri
+Chilseong Agi	Chilseongsin	God of the Seven Stars	The benevolent snake goddess of wealth, agriculture, and household prosperity	Chilseongbonpuri
+Daebyeolwang	Jeoseungchaji	Sovereign of the Underworld	The deity who governs the laws and order of the underworld	Cheonjiwangbonpuri
+Sobyeolwang	Iseungchaji	Sovereign of the Living World	The deity who holds dominion over the world of the living	Cheonjiwangbonpuri
+Samani	Maengam	God of Longevity and Averted Death	The deity who wards off death and governs longevity	Samanibonpuri
+Yeosan Buin	Jowangshin	God of the Hearth	The deity of the kitchen and household	Munjeonbonpuri
+Wongang Ami	Mother of Seocheonkkotbat	Mother of the Flower Garden of the West	The mother who tends Seocheonkkotbat, the Flower Garden of the West, where the fates of human lives are kept	Munjeonbonpuri
+Nokdisaengi	Munjeonsin	God of the Gate	The deity who guards the gate of the home	Munjeonbonpuri
+Jijang Agissi	Jijangsin	God of Jijang	The deity who clears misfortune and guides souls to their proper rest	Jijangbonpuri

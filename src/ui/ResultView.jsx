@@ -3,7 +3,11 @@ import deityMap from "../../data/deity_axis_map.json";
 import deityNamesTable from "../../deity_names.txt?raw";
 import deityResultDescriptionsEnText from "../../deity_result_description_en.txt?raw";
 import deityResultDescriptionsKoText from "../../deity_result_description_ko.txt?raw";
-import { composeDeityResultBlock } from "../resultComposer/resultTextComposer.js";
+import {
+  composeDeityResultBlock,
+  composeResultTextBlocks
+} from "../resultComposer/resultTextComposer.js";
+import LanguageToggle from "./LanguageToggle.jsx";
 
 const PROFILE_AXES = [
   {
@@ -88,7 +92,7 @@ const RESULT_COPY = {
     nearbyAnchors: "가까운 신격 결과",
     nearbyDescription: "현재 결과와 가까운 다섯 개의 신격 연결입니다.",
     roleFallback: "본풀이 결과 신격",
-    takeAgain: "다시 검사하기"
+    takeAgain: "다시 하기"
   }
 };
 
@@ -156,10 +160,17 @@ function parseDeityRoleTable(table) {
       && resultName !== "Result"
       && !/^[-:]+$/.test(resultName)
     ))
-    .map(([resultName, seatedName, description]) => [
-      resultName,
-      { seatedName, description }
-    ]));
+    .map((cells) => {
+      const [resultName, seatedName] = cells;
+
+      if (cells.length >= 5) {
+        const [, , translatedName, description, bonpuri] = cells;
+        return [resultName, { seatedName, translatedName, description, bonpuri }];
+      }
+
+      const [, , description] = cells;
+      return [resultName, { seatedName, description }];
+    }));
 }
 
 function parseDeityRoleLine(line) {
@@ -202,15 +213,28 @@ function displayDeityName(match, language) {
 }
 
 function getDeityRole(match, language, fallback) {
-  if (!match) return fallback;
+  if (!match) return { description: fallback };
 
   const deityRole = DEITY_ROLES.get(language === "ko" ? match.name_ko : match.name_en);
   if (deityRole) {
-    return `${deityRole.seatedName} | ${deityRole.description}`;
+    return deityRole;
   }
 
   const roleText = removeTrailingPeriod(match.anchor_line) || formatTone(match.tone);
-  return roleText ? `Deity of ${lowercaseFirst(roleText)}` : fallback;
+  return {
+    description: roleText ? `Deity of ${lowercaseFirst(roleText)}` : fallback
+  };
+}
+
+function getBonpuriSource(match, language) {
+  if (!match) return "";
+
+  if (language === "en") {
+    const deityRole = DEITY_ROLES.get(match.name_en);
+    if (deityRole?.bonpuri) return deityRole.bonpuri;
+  }
+
+  return match.bonpuri || "";
 }
 
 function removeTrailingPeriod(text = "") {
@@ -277,6 +301,10 @@ export default function ResultView({ language = "en", onLanguageChange, result, 
     deityId: selectedMatch?.deity_id,
     language: resultLanguage
   });
+  const combinationResultBlocks = composeResultTextBlocks({
+    primaryCombination: recognitionPattern,
+    language: resultLanguage
+  });
   const userProfileScores = {
     ...result.axis_profile,
     response_intensity: result.response_intensity,
@@ -291,40 +319,27 @@ export default function ResultView({ language = "en", onLanguageChange, result, 
   return (
     <main className="result-page">
       <div className="page-top-bar">
-        <div className="language-toggle" aria-label="Result language">
-          <button
-            type="button"
-            onClick={() => onLanguageChange?.("en")}
-            aria-pressed={resultLanguage === "en"}
-          >
-            EN
-          </button>
-          <button
-            type="button"
-            onClick={() => onLanguageChange?.("ko")}
-            aria-pressed={resultLanguage === "ko"}
-          >
-            KR
-          </button>
-        </div>
+        <LanguageToggle
+          language={resultLanguage}
+          onLanguageChange={onLanguageChange}
+          label="Result language"
+        />
       </div>
 
       <section aria-labelledby="result-title">
         <section className="result-hero" aria-labelledby="result-title">
           <p className="result-eyebrow">{copy.resultTitle}</p>
           <h1 id="result-title">{displayDeityName(selectedMatch, resultLanguage)}</h1>
-          <p className="result-deity-role">
-            {getDeityRole(selectedMatch, resultLanguage, copy.roleFallback)}
-          </p>
-          {selectedMatch?.bonpuri ? (
-            <p className="result-source">
-              {sourceLine(selectedMatch.bonpuri)}
-            </p>
-          ) : null}
+          <DeityRole
+            className="result-deity-role"
+            fallback={copy.roleFallback}
+            language={resultLanguage}
+            match={selectedMatch}
+          />
           <ProfileShapeChart
             legend={{
-              deity: `${resultLanguage === "ko" ? "신격 결과" : "Deity result"}: ${displayDeityName(selectedMatch, resultLanguage)}`,
-              user: resultLanguage === "ko" ? "나의 결과" : "Your result"
+              deity: displayDeityName(selectedMatch, resultLanguage),
+              user: resultLanguage === "ko" ? "내 결과" : "Your result"
             }}
             overlayScores={getDeityProfileScores(selectedMatch?.deity_id)}
             scores={userProfileScores}
@@ -352,11 +367,17 @@ export default function ResultView({ language = "en", onLanguageChange, result, 
 
         <section className="result-section result-reading-section" aria-label={copy.resultText}>
           {deityResultDescription ? (
-            <DeityDescriptionIntroBlock block={deityResultDescription} />
+            <DeityDescriptionIntroBlock
+              block={deityResultDescription}
+              source={getBonpuriSource(selectedMatch, resultLanguage)}
+            />
           ) : null}
           {deityResultBlock ? (
             <DeityTextBlock block={deityResultBlock} />
           ) : null}
+          {combinationResultBlocks.map((block) => (
+            <CombinationTextBlock block={block} key={block.subtitle.text} />
+          ))}
         </section>
 
         <section className="result-section score-summary-section" aria-labelledby="score-summary-title">
@@ -591,12 +612,50 @@ function DeityTextBlock({ block }) {
   );
 }
 
-function DeityDescriptionIntroBlock({ block }) {
+function DeityDescriptionIntroBlock({ block, source }) {
+  const [titleName, ...titleDescriptionParts] = block.title.split(",");
+  const titleDescription = titleDescriptionParts.join(",").trim();
+
   return (
     <div className="writing-block deity-description-intro">
-      <h2>{block.title}</h2>
+      {source ? <p className="result-source">{sourceLine(source)}</p> : null}
+      <h2>{titleName.trim()}</h2>
+      {titleDescription ? <p className="deity-description-title-line">{titleDescription}</p> : null}
       {block.paragraphs.map((paragraph) => (
         <p key={paragraph}>{paragraph}</p>
+      ))}
+    </div>
+  );
+}
+
+function DeityRole({ className, fallback, language, match }) {
+  const role = getDeityRole(match, language, fallback);
+
+  return (
+    <p className={className}>
+      <span className="deity-role-description">{role.description}</span>
+      {role.translatedName ? (
+        <span className="deity-role-translation">{role.translatedName}</span>
+      ) : null}
+      {role.seatedName ? <span className="deity-role-name">{role.seatedName}</span> : null}
+    </p>
+  );
+}
+
+function CombinationTextBlock({ block }) {
+  return (
+    <div className="writing-block combination-result-block">
+      <h2>{block.title.text}</h2>
+      <h3>{block.subtitle.text}</h3>
+      {block.opening?.text ? <p>{block.opening.text}</p> : null}
+      {block.injections.map((injection) => (
+        <div className="combination-axis-injection" key={injection.title}>
+          {injection.bridge ? <p>{injection.bridge}</p> : null}
+          <p>{injection.segments.map((segment) => segment.text).join(" ")}</p>
+        </div>
+      ))}
+      {block.closing.map((segment) => (
+        <p key={segment.text}>{segment.text}</p>
       ))}
     </div>
   );
@@ -617,10 +676,15 @@ function NearbyAnchorItem({ copy, language, match }) {
           <span style={{ width: `${Math.max(0, Math.min(100, match.match_percentage))}%` }} />
         </span>
       ) : null}
-      <p className="nearby-anchor-role">{getDeityRole(match, language, copy.roleFallback)}</p>
-      {match.bonpuri ? (
+      <DeityRole
+        className="nearby-anchor-role"
+        fallback={copy.roleFallback}
+        language={language}
+        match={match}
+      />
+      {getBonpuriSource(match, language) ? (
         <p className="nearby-anchor-source">
-          {sourceLine(match.bonpuri)}
+          {sourceLine(getBonpuriSource(match, language))}
         </p>
       ) : null}
       {language === "en" && match.anchor_line ? (

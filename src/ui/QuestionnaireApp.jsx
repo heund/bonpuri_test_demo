@@ -4,6 +4,7 @@ import deityMap from "../../data/deity_axis_map.json";
 import resultTemplates from "../../data/result_templates.json";
 import axisDefinitions from "../../data/axis_definitions.json";
 import { generateResult } from "../bonpuriScoringCore.js";
+import LanguageToggle from "./LanguageToggle.jsx";
 import ResultView from "./ResultView.jsx";
 
 const prototypeData = {
@@ -114,27 +115,6 @@ export default function QuestionnaireApp() {
         </div>
       </section>
     </main>
-  );
-}
-
-function LanguageToggle({ language, onLanguageChange }) {
-  return (
-    <div className="language-toggle" aria-label="Language">
-      <button
-        type="button"
-        onClick={() => onLanguageChange("en")}
-        aria-pressed={language === "en"}
-      >
-        EN
-      </button>
-      <button
-        type="button"
-        onClick={() => onLanguageChange("ko")}
-        aria-pressed={language === "ko"}
-      >
-        KR
-      </button>
-    </div>
   );
 }
 
