@@ -1,202 +1,259 @@
 {
   "schema_version": "0.1.0",
   "result_type": "deity",
+  "source": "user_result_deity_EN.txt",
   "items": [
     {
       "id": "gamunjangagi",
       "label": "Gamunjangagi",
-      "name_ko": "가믄장아기",
-      "bonpuri": "삼공본풀이",
-      "title": "Your Bonpuri: 삼공본풀이",
-      "subtitle": "Hidden fortune and self-recognition.",
+      "title": "Gamunjangagi",
+      "subtitle": "",
       "paragraphs": [
-        "A figure who names the hidden source of her own life before others can recognise it."
-      ]
-    },
-    {
-      "id": "jacheongbi",
-      "label": "Jacheongbi",
-      "name_ko": "자청비",
-      "bonpuri": "세경본풀이",
-      "title": "Your Bonpuri: 세경본풀이",
-      "subtitle": "Jacheongbi",
-      "paragraphs": []
+        "You may be in a period where surface appearances feel less important than where things actually begin. Small details that others pass over can stand out as clues, helping you trace the origin of a situation and understand where it is likely to lead.",
+        "Rather than simply reacting to what is in front of you, you may be trying to locate the direction that genuinely makes sense to you. Your choices are likely becoming more grounded in your own sense of what is real, workable, and worth standing behind.",
+        "This may also affect how you respond to other people’s opinions of you. When an outside role, label, or judgement does not match your own sense of yourself, the gap can make your position clearer. Other people’s responses still matter as part of the situation, but they do not define the direction you choose.",
+        "This is a period of clarifying where your own value belongs in real life. What begins as an inner sense of direction may gradually become a set of concrete choices, movements, and positions that you can actually live through."
+      ],
+      "source_label": "Gamunjangagi",
+      "source": "user_result_deity_EN.txt"
     },
     {
       "id": "hallakgungi",
       "label": "Hallakgungi",
-      "name_ko": "할락궁이",
-      "bonpuri": "이공본풀이",
-      "title": "Your Bonpuri: 이공본풀이",
-      "subtitle": "Return after harm and restoration through force.",
+      "title": "Hallakgungi",
+      "subtitle": "",
       "paragraphs": [
-        "A figure who returns after violence with the power to destroy, revive, and restore."
-      ]
-    },
-    {
-      "id": "chogong_three_brothers",
-      "label": "Chogong Three Brothers",
-      "name_ko": "초공신삼형제",
-      "bonpuri": "초공본풀이",
-      "title": "Your Bonpuri: 초공본풀이",
-      "subtitle": "Role transition and ritual responsibility.",
-      "paragraphs": [
-        "A path of ordinary success is interrupted by ritual demand, forcing life into another structure."
-      ]
-    },
-    {
-      "id": "yu_jeongseungs_daughter",
-      "label": "Yu Jeongseung's Daughter",
-      "name_ko": "유정승따님애기",
-      "bonpuri": "초공본풀이",
-      "title": "Your Bonpuri: 초공본풀이",
-      "subtitle": "Calling, initiation, and pressure into ritual role.",
-      "paragraphs": [
-        "A figure moved out of ordinary life and into ritual function through pressure, illness, and transmission."
-      ]
+        "You may be going through a period where things look calm on the surface, but something underneath has quietly shifted. A conversation may continue as usual, but the rhythm feels different. A relationship may seem settled, but something in it no longer feels fully alive.",
+        "This doesn't necessarily push you toward forcing things back to how they were. There may be more of a sense of feeling out where things need to open up again. A paused relationship, a faded atmosphere, or an unfinished situation may pull at your attention because something in it still feels like it wants to continue.",
+        "You may also be more aware than usual of what lingers after something seems to have passed. What matters isn't only what happened, but what's still present in the room, in the relationship, or in the way people now move around each other.",
+        "This looks like a period of helping stalled things find motion again. The small openings through which a relationship or situation can begin to reconnect may be where your attention naturally goes."
+      ],
+      "source_label": "Hallakgungi",
+      "source": "user_result_deity_EN.txt"
     },
     {
       "id": "myeongjinguks_daughter",
       "label": "Myeongjinguk's Daughter",
-      "name_ko": "명진국따님애기",
-      "bonpuri": "삼승할망본풀이",
-      "title": "Your Bonpuri: 삼승할망본풀이",
-      "subtitle": "Safe arrival and the protection of life.",
+      "title": "Myeongjinguk's Daughter",
+      "subtitle": "",
       "paragraphs": [
-        "A figure who gives birth its proper passage and protects life as it enters the world."
-      ]
+        "You may be going through a period where a new beginning still feels delicate, and what it needs to find its footing matters more than pushing it forward. A new relationship, project, or pattern in your life may still be fragile, and your attention is likely drawn to the conditions that will help it continue.",
+        "This can show up in small, practical ways. Adjusting to what the situation needs, building rhythm through repetition, helping the people or routines around you become more stable over time.",
+        "The focus here isn't dramatic change. It's the steady building of something workable. A new possibility may start to feel more real because it's being supported by everyday rhythms, small acts, and a sense of balance in the present.",
+        "This looks like a period of helping something new grow into real life. Through consistent care and ordinary practice, the next stage can gather enough strength to move forward."
+      ],
+      "source_label": "Myeongjinguk's Daughter",
+      "source": "user_result_deity_EN.txt"
     },
     {
       "id": "donghae_yonggungs_daughter",
       "label": "Donghae Yonggung's Daughter",
-      "name_ko": "동해용궁따님애기",
-      "bonpuri": "삼승할망본풀이",
-      "title": "Your Bonpuri: 삼승할망본풀이",
-      "subtitle": "Failed birth-power and unsafe arrival.",
+      "title": "Donghae Yonggung's Daughter",
+      "subtitle": "",
       "paragraphs": [
-        "A figure who can bring conception but cannot secure safe passage into life."
-      ]
+        "You may be going through a period where what's left unsaid in a situation feels just as important as what's been expressed. Rather than forming a judgement from what's immediately visible, there may be a pull toward the feeling underneath a conversation, the emotional temperature of a relationship, or the quiet signs that something has shifted.",
+        "This can make you more attuned to feelings and needs that haven't yet been fully expressed. A conversation may end, but something in it still feels unfinished. A relationship may look calm on the surface, yet some part of it doesn't feel properly reached.",
+        "Unclear endings may stay with you as important clues. Rather than rushing to tidy those feelings away, there may be a need to sit with what kind of care or acknowledgement is still needed.",
+        "This looks like a period of reading the emotional traces left by subtle changes. Through what lingers in words and atmosphere, what still needs to be seen may begin to come into focus."
+      ],
+      "source_label": "Donghae Yonggung's Daughter",
+      "source": "user_result_deity_EN.txt"
     },
     {
-      "id": "yeosan_buin",
-      "label": "Yeosan Buin",
-      "name_ko": "여산부인",
-      "bonpuri": "문전본풀이",
-      "title": "Your Bonpuri: 문전본풀이",
-      "subtitle": "Domestic care and the sustaining warmth of the household.",
+      "id": "chogong_three_brothers",
+      "label": "Chogong Three Brothers",
+      "title": "Chogong Three Brothers",
+      "subtitle": "",
       "paragraphs": [
-        "A figure of feeding, tending, household survival, and the everyday work that keeps life intact."
-      ]
+        "You may be going through a period where what your role actually requires in practical terms is becoming clearer. How things are structured, where you fit within that structure, and what needs to move next may all be coming into sharper focus.",
+        "This can lead to clarifying responsibilities that have stayed vague. As you get a clearer sense of what needs to be done and where each role belongs, your own direction may help others understand their positions more clearly as well.",
+        "Even when a situation seems to be nearing completion, the remaining responsibilities within it may still hold your attention. What belongs to you, what still needs to be carried through, and how the work should continue in practice may feel important to get right.",
+        "This looks like a period of giving real form to a responsibility you've taken on. As standards, roles, and movement begin to align through action, things can start to function more clearly together."
+      ],
+      "source_label": "Chogong Three Brothers",
+      "source": "user_result_deity_EN.txt"
     },
     {
-      "id": "nokdisaengi",
-      "label": "Nokdisaengi",
-      "name_ko": "녹디생이",
-      "bonpuri": "문전본풀이",
-      "title": "Your Bonpuri: 문전본풀이",
-      "subtitle": "Household rupture and the recovery of relational order.",
+      "id": "yu_jeongseungs_daughter",
+      "label": "Yu Jeongseung's Daughter",
+      "title": "Yu Jeongseung's Daughter",
+      "subtitle": "",
       "paragraphs": [
-        "A figure tied to broken family structure, detection, and the restoration of household order."
-      ]
-    },
-    {
-      "id": "chilseong_agi",
-      "label": "Chilseong Agi",
-      "name_ko": "칠성아기",
-      "bonpuri": "칠성본풀이",
-      "title": "Your Bonpuri: 칠성본풀이",
-      "subtitle": "Receiving the strange force that becomes household wealth.",
-      "paragraphs": [
-        "A rejected and feared force that becomes protection and abundance when properly received."
-      ]
-    },
-    {
-      "id": "samani",
-      "label": "Samani",
-      "name_ko": "사만이",
-      "bonpuri": "멩감본풀이 or 사만이본풀이",
-      "title": "Your Bonpuri: 멩감본풀이 or 사만이본풀이",
-      "subtitle": "Care for the neglected dead and protection through acknowledgement.",
-      "paragraphs": [
-        "A figure who receives what others abandon and turns neglected death into protection and continuity."
-      ]
-    },
-    {
-      "id": "wongang_ami",
-      "label": "Wongang Ami",
-      "name_ko": "원강아미",
-      "bonpuri": "이공본풀이",
-      "title": "Your Bonpuri: 이공본풀이",
-      "subtitle": "Dignity under oppression and the cost that calls return.",
-      "paragraphs": [
-        "A figure whose suffering becomes the moral ground for return, judgement, and restoration."
-      ]
+        "You may be going through a period where you're stepping into a role that feels genuinely different from where you were before. This may not feel like something handed to you from outside. It may feel more like something you had already sensed internally, now becoming visible in the world.",
+        "That inner recognition can make it hard to leave things undefined. There may be a need to get clear on where you're headed, what kind of position you're stepping into, and what choices now follow from that.",
+        "Once this direction settles, it may continue to shape later decisions. The question of where you now stand and how to move from that position may be one you keep returning to.",
+        "This looks like a period of turning an inner sense of direction into an actual role. What has been felt internally may begin to take shape through concrete choices, actions, and a clearer sense of where you belong."
+      ],
+      "source_label": "Yu Jeongseung's Daughter",
+      "source": "user_result_deity_EN.txt"
     },
     {
       "id": "noga_danpung_agissi",
       "label": "Noga Danpung Agissi",
-      "name_ko": "노가단풍아기씨",
-      "bonpuri": "초공본풀이",
-      "title": "Your Bonpuri: 초공본풀이",
-      "subtitle": "Origin-cost and the body that carries a future structure.",
+      "title": "Noga Danpung Agissi",
+      "subtitle": "",
       "paragraphs": [
-        "A figure whose suffering and body become the ground from which a later ritual order can emerge."
-      ]
+        "You may be going through a period where a new beginning is having a stronger impact on the people and relationships around you than you expected. What has started may not stay purely personal. It may ripple outward through people's words, attitudes, and emotional responses.",
+        "This can lead to paying close attention to how others are receiving this change. Who reacts strongly, where that reaction intensifies, and what feeling accompanies it may all be difficult to set aside.",
+        "Those responses can become important clues for later. Rather than treating them as passing reactions, there may be a sense of reading them as signs of how the situation is affecting relationships and where its emotional weight is moving.",
+        "This looks like a period of sensing the wider reach of a new beginning. Holding the reactions around it long enough to understand how its impact may continue through the relationships involved."
+      ],
+      "source_label": "Noga Danpung Agissi",
+      "source": "user_result_deity_EN.txt"
+    },
+    {
+      "id": "jacheongbi",
+      "label": "Jacheongbi",
+      "title": "Jacheongbi",
+      "subtitle": "",
+      "paragraphs": [
+        "You may be going through a period where something in your life hasn't yet taken full shape, and your attention is drawn to what it needs in order to get there. A plan, relationship, or possibility may still be early, and what it needs to grow into itself may feel more pressing than pushing it toward completion.",
+        "This can become quite practical. Preparing the right conditions, making small adjustments, and creating the kind of support that allows something valuable to develop over time.",
+        "The more undefined something is, the more closely you may find yourself watching how it wants to grow. There may be a search for a direction that feels right, and for the place this possibility can eventually occupy in real life.",
+        "This looks like a period of cultivation. Rather than rushing toward a result, the focus may be on building the conditions through which something delicate can gradually find its own shape and place."
+      ],
+      "source_label": "Jacheongbi",
+      "source": "user_result_deity_EN.txt"
     },
     {
       "id": "gangnim",
       "label": "Gangnim",
-      "name_ko": "강림",
-      "bonpuri": "차사본풀이",
-      "title": "Your Bonpuri: 차사본풀이",
-      "subtitle": "Procedure, death-crossing, and hidden cause.",
+      "title": "Gangnim",
+      "subtitle": "",
       "paragraphs": [
-        "A figure who crosses into the underworld to retrieve the missing order behind death."
-      ]
+        "You may be going through a period of clear transition, where one chapter is closing and another is beginning to open. What needs to be completed first, and what order is needed for the next stage to start properly, may be where your attention naturally falls.",
+        "This can lead to getting practical about how things are arranged. Clarifying what still needs to be resolved, setting the right conditions, and helping loose ends find their place so that what comes next can begin cleanly.",
+        "At the boundary between an ending and a new beginning, even a small difference in sequence may feel significant. There may be a careful sense of what needs to close, what needs to move forward, and how the passage between the two should happen.",
+        "This looks like a period of moving through transition with care and structure. By attending to the order between closure and what comes next, a path opens for a new chapter to begin properly."
+      ],
+      "source_label": "Gangnim",
+      "source": "user_result_deity_EN.txt"
     },
     {
-      "id": "jijang_agissi",
-      "label": "Jijang Agissi",
-      "name_ko": "지장아기씨",
-      "bonpuri": "지장본풀이",
-      "title": "Your Bonpuri: 지장본풀이",
-      "subtitle": "Mourning, passage, and ritual care for the dead.",
+      "id": "nokdisaengi",
+      "label": "Nokdisaengi",
+      "title": "Nokdisaengi",
+      "subtitle": "",
       "paragraphs": [
-        "A figure who lives through repeated loss and turns grief into passage for the dead."
-      ]
-    },
-    {
-      "id": "sobyeolwang",
-      "label": "Sobyeolwang",
-      "name_ko": "소별왕",
-      "bonpuri": "천지왕본풀이",
-      "title": "Your Bonpuri: 천지왕본풀이",
-      "subtitle": "Crooked order and the flawed structure of the living world.",
-      "paragraphs": [
-        "A figure whose trickery explains why this world carries disorder, conflict, and imperfection."
-      ]
+        "You may be going through a period where how people, roles, and daily routines fit together in a shared environment feels especially important. The balance needed for relationships and everyday life to keep moving together may be something you're paying close attention to.",
+        "This can lead to untangling complicated situations in practical ways. Seeing how people's positions relate to one another, what needs to be clarified, and how things can start moving again between them.",
+        "When roles or sequences become unclear in a shared setting, you may be quick to notice. That awareness is less about holding everything in place and more about creating the conditions for people to move again from where they actually stand.",
+        "This looks like a period of actively tending to the order of shared life. That attention may help people and situations reconnect, allowing the environment around you to find greater steadiness."
+      ],
+      "source_label": "Nokdisaengi",
+      "source": "user_result_deity_EN.txt"
     },
     {
       "id": "daebyeolwang",
       "label": "Daebyeolwang",
-      "name_ko": "대별왕",
-      "bonpuri": "천지왕본풀이",
-      "title": "Your Bonpuri: 천지왕본풀이",
-      "subtitle": "Law, separation, and world-order.",
+      "title": "Daebyeolwang",
+      "subtitle": "",
       "paragraphs": [
-        "A figure of clean order, separation, and the placement of worlds into their proper structure."
-      ]
+        "You may be going through a period where a sense of order feels especially important at a turning point in your life. At the meeting point between what's ending and what's beginning, there may be a close attention to what needs to be arranged first and what still needs to find its proper place.",
+        "This can lead to getting concrete about how things are structured. Clarifying the necessary steps, standards, and arrangements that allow the next stage to open without things getting muddled.",
+        "During transition, even a small mismatch in sequence may stand out clearly. What needs to be resolved, what holds the situation together, and where the next stage can properly begin may all feel worth attending to carefully.",
+        "This looks like a period of bringing order to a major transition. By getting clear on the boundary between what's ending and what's beginning, a foundation forms for each part to move from its proper place."
+      ],
+      "source_label": "Daebyeolwang",
+      "source": "user_result_deity_EN.txt"
+    },
+    {
+      "id": "sobyeolwang",
+      "label": "Sobyeolwang",
+      "title": "Sobyeolwang",
+      "subtitle": "",
+      "paragraphs": [
+        "You may be going through a period where the gap between how things appear and what's actually driving them is hard to ignore. On the surface, things may seem to be functioning normally, but another logic underneath people's words and choices may be making itself felt.",
+        "This can lead to tracking hidden pressures within relationships and environments. Where reactions are really coming from, which rules are actually operating, and where the stated order doesn't match what's really happening may all be things you find yourself noticing.",
+        "When words and actions don't line up, that gap may become an important clue. The focus may be less on stepping in immediately and more on reading how what's operating beneath the surface is shaping the situation.",
+        "This looks like a period of developing a sharper sense for what's really going on beneath the surface of relationships and environments, and what a situation is actually made of."
+      ],
+      "source_label": "Sobyeolwang",
+      "source": "user_result_deity_EN.txt"
+    },
+    {
+      "id": "wongang_ami",
+      "label": "Wongang Ami",
+      "title": "Wongang Ami",
+      "subtitle": "",
+      "paragraphs": [
+        "You may be going through a period where the traces of something that happened are still very much present among the people and relationships around you. Even though the event has passed, its effects may still be showing up in words, attitudes, and the changed texture of everyday life.",
+        "This may draw your attention to the reactions and aftereffects still visible in the people around you. Who has changed, what remains unspoken, and how ordinary life continues around what has been marked.",
+        "Rather than moving past it quickly, there may be a sense of staying with the place where what happened, how people were affected, and how relationships continue all still meet.",
+        "This looks like a period of reading what remains in the wake of something significant. Through the reactions that linger and the feeling left in words and atmosphere, how connection and daily life carry on after something has changed may begin to come into view."
+      ],
+      "source_label": "Wongang Ami",
+      "source": "user_result_deity_EN.txt"
     },
     {
       "id": "daebyeolsang_manura",
       "label": "Daebyeolsang Manura",
-      "name_ko": "대별상마누라",
-      "bonpuri": "마누라본풀이",
-      "title": "Your Bonpuri: 마누라본풀이",
-      "subtitle": "Disease-power and dangerous force brought into order.",
+      "title": "Daebyeolsang Manura",
+      "subtitle": "",
       "paragraphs": [
-        "A figure of illness, threat, and the force that must be negotiated into a workable place."
-      ]
+        "You may be going through a period where you pick up on shifts before they become visible to others. Before something can be put into words, changes spreading through people, routines, and the atmosphere around you may already be registering.",
+        "This can lead to reading how those hidden movements are affecting things and adjusting what needs balancing. Shaping conditions so that people and everyday life can continue without losing their own rhythm.",
+        "People close to you, or possibilities still taking shape, may be especially sensitive to this kind of change. There may be a watchfulness over how they're affected, and an effort to create the conditions that allow them to continue at their own pace.",
+        "This looks like a period of sensing the direction of unseen influence and translating that awareness into practical action. What gets noticed early can become a way of helping important things find their footing and continue."
+      ],
+      "source_label": "Daebyeolsang Manura",
+      "source": "user_result_deity_EN.txt"
+    },
+    {
+      "id": "chilseong_agi",
+      "label": "Chilseong Agi",
+      "title": "Chilseong Agi",
+      "subtitle": "",
+      "paragraphs": [
+        "You may be going through a period where something unfamiliar is entering the field of your relationships. A new current may be moving among people, producing new reactions and slowly finding a place within the rhythm of daily life.",
+        "This can lead to giving that new presence a name, a place, and a practical form. Reading how people respond and looking for ways this change can settle naturally into relationships and everyday living.",
+        "What arrives may not become familiar all at once. It may take shape gradually through people's words, attitudes, and small shifts in daily life. There may be a careful watching of this process, a sense of what needs adjusting and how it can be received.",
+        "This looks like a period of making room for something unfamiliar to find its place. Through attention to relationships and everyday rhythm, a new change may gradually settle into something that can continue naturally."
+      ],
+      "source_label": "Chilseong Agi",
+      "source": "user_result_deity_EN.txt"
+    },
+    {
+      "id": "samani",
+      "label": "Samani",
+      "title": "Samani",
+      "subtitle": "",
+      "paragraphs": [
+        "You may be going through a changing period while staying closely attuned to the relationships and daily rhythms around you. As familiar atmospheres shift little by little, the feelings of those moving through this time alongside you may become more present.",
+        "This may lead to staying connected rather than rushing toward a major decision. Shared conversations, repeated routines, and the steadiness that comes from people's familiar roles may become important anchors.",
+        "The bonds with those moving through this period with you may feel more meaningful than any quick change to the situation itself. How relationships hold, how unfamiliar change enters daily life, and how the old and new begin to find balance may all feel worth paying attention to.",
+        "This looks like a period of letting change enter relationships and daily life at its own pace. By holding onto shared rhythm and connection, what's shifting may gradually begin to feel like part of everyday life."
+      ],
+      "source_label": "Samani",
+      "source": "user_result_deity_EN.txt"
+    },
+    {
+      "id": "yeosan_buin",
+      "label": "Yeosan Buin",
+      "title": "Yeosan Buin",
+      "subtitle": "",
+      "paragraphs": [
+        "You may be going through a period where the shared time and living space you have with the people close to you feels especially meaningful. The way each person's day fits together with another's, the small gestures that make an ordinary day feel warm, may be carrying more weight than usual.",
+        "This can show up through daily care. Tending to space, shared time, and the small things that allow an ordinary day to continue, deepening the warmth between people little by little.",
+        "Time spent with those close to you may feel more significant than any larger achievement. The places where people can rest comfortably, the rhythms by which lives meet, and the quiet stability that grows from them may all feel like something worth protecting.",
+        "This looks like a period in which everyday closeness accumulates through relationship. Small acts of care and shared rhythm can quietly strengthen the foundation of the life you share with others."
+      ],
+      "source_label": "Yeosan Buin",
+      "source": "user_result_deity_EN.txt"
+    },
+    {
+      "id": "jijang_agissi",
+      "label": "Jijang Agissi",
+      "title": "Jijang Agissi",
+      "subtitle": "",
+      "paragraphs": [
+        "You may be going through a period where something has ended, but its effects haven't fully faded. The way people around you respond, the atmosphere in a relationship, the small shifts in how things feel day to day, may all still carry traces of what happened.",
+        "This can lead to looking past the surface of an ending and paying attention to what's still present. What has changed in people, what hasn't been said, and what meaning the past has left behind may feel worth sitting with rather than moving past quickly.",
+        "Over time, what is truly finished and what might still continue in some form may begin to feel clearer. That sense of what remains can point toward what the shared past has actually made room for, and where things can go from here.",
+        "This isn't only a period of wrapping up what has passed. It's also one of sensing what direction can grow out of what remains. By staying with the traces left in relationships and everyday life, a way forward may begin to take shape."
+      ],
+      "source_label": "Jijang Agissi",
+      "source": "user_result_deity_EN.txt"
     }
   ]
 }

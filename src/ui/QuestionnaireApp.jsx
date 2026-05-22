@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import questionsData from "../../data/test_questions_seed.json";
 import deityMap from "../../data/deity_axis_map.json";
 import resultTemplates from "../../data/result_templates.json";
@@ -14,21 +14,18 @@ const prototypeData = {
 };
 
 export default function QuestionnaireApp() {
-  const questions = questionsData.questions;
+  const [questions, setQuestions] = useState(() => shuffleQuestionnaire(questionsData.questions));
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [result, setResult] = useState(null);
+  const [language, setLanguage] = useState("en");
 
   const currentQuestion = questions[currentQuestionIndex];
-  const progressLabel = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
+  const progressLabel = language === "ko"
+    ? `질문 ${currentQuestionIndex + 1} / ${questions.length}`
+    : `Question ${currentQuestionIndex + 1} / ${questions.length}`;
   const progressPercent = ((currentQuestionIndex + 1) / questions.length) * 100;
-
-  const phaseLabel = useMemo(() => {
-    return currentQuestion.phase
-      .split("_")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  }, [currentQuestion.phase]);
+  const questionText = getLocalizedQuestionText(currentQuestion, language);
 
   function handleAnswer(optionId) {
     const nextAnswers = {
@@ -47,6 +44,7 @@ export default function QuestionnaireApp() {
   }
 
   function handleRestart() {
+    setQuestions(shuffleQuestionnaire(questionsData.questions));
     setCurrentQuestionIndex(0);
     setSelectedAnswers({});
     setResult(null);
@@ -58,12 +56,22 @@ export default function QuestionnaireApp() {
   }
 
   if (result) {
-    return <ResultView result={result} onRestart={handleRestart} />;
+    return (
+      <ResultView
+        language={language}
+        onLanguageChange={setLanguage}
+        result={result}
+        onRestart={handleRestart}
+      />
+    );
   }
 
   return (
-    <main>
-      <h1>Bonpuri Questionnaire</h1>
+    <main className="questionnaire-page">
+      <div className="page-top-bar">
+        <LanguageToggle language={language} onLanguageChange={setLanguage} />
+      </div>
+      <h1>{language === "ko" ? "본풀이 성향 테스트" : "Bonpuri Type Test"}</h1>
 
       <section
         className="question-section"
@@ -73,10 +81,9 @@ export default function QuestionnaireApp() {
         <progress value={progressPercent} max="100">
           {Math.round(progressPercent)}%
         </progress>
-        <p>Phase: {phaseLabel}</p>
 
         <h2 id="question-title" key={currentQuestion.id}>
-          {currentQuestion.text}
+          {questionText}
         </h2>
 
         <div className="answer-list" key={`${currentQuestion.id}-answers`}>
@@ -87,7 +94,10 @@ export default function QuestionnaireApp() {
               type="button"
               onClick={() => handleAnswer(option.id)}
             >
-              {String.fromCharCode(65 + index)}. {option.text}
+              <span className={`answer-marker answer-marker-${index}`}>
+                {String.fromCharCode(65 + index)}
+              </span>
+              <span>{getLocalizedOptionText(option, language)}</span>
             </button>
           ))}
         </div>
@@ -99,10 +109,57 @@ export default function QuestionnaireApp() {
             onClick={handleBack}
             disabled={currentQuestionIndex === 0}
           >
-            Back
+            {language === "ko" ? "이전" : "Back"}
           </button>
         </div>
       </section>
     </main>
   );
+}
+
+function LanguageToggle({ language, onLanguageChange }) {
+  return (
+    <div className="language-toggle" aria-label="Language">
+      <button
+        type="button"
+        onClick={() => onLanguageChange("en")}
+        aria-pressed={language === "en"}
+      >
+        EN
+      </button>
+      <button
+        type="button"
+        onClick={() => onLanguageChange("ko")}
+        aria-pressed={language === "ko"}
+      >
+        KR
+      </button>
+    </div>
+  );
+}
+
+function getLocalizedQuestionText(question, language) {
+  return language === "ko" ? question.text_ko || question.text : question.text;
+}
+
+function getLocalizedOptionText(option, language) {
+  return language === "ko" ? option.text_ko || option.text : option.text;
+}
+
+function shuffleQuestionnaire(questions) {
+  return shuffle(questions).map((question) => ({
+    ...question,
+    options: shuffle(question.options)
+  }));
+}
+
+function shuffle(items) {
+  const shuffled = [...items];
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+
+  return shuffled;
 }

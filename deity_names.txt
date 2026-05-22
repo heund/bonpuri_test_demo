@@ -1,0 +1,40 @@
+| 결과명      | 실제 신명 / 신격명 | 설명                        |
+| -------- | ----------- | ------------------------- |
+| 가믄장아기    | 전상신         | 전상과 운명의 흐름을 주관하는 신        |
+| 할락궁이     | 이공신, 꽃감관    | 서천꽃밭과 인간의 생사를 주관하는 신      |
+| 명진국따님애기  | 삼승할망, 생불할망  | 잉태, 출산, 양육을 돕는 산육신        |
+| 동해용궁따님애기 | 구삼승할망, 저승할망 | 아이의 질병과 죽음을 맡는 할망         |
+| 초공신삼형제   | 무조신         | 심방의 조상신, 굿법과 무구의 기원을 여는 신 |
+| 노가단풍아기씨  | 무구신, 무악기신   | 무구와 무악기를 지키는 신            |
+| 유정승따님애기  | 최초의 여무      | 심방과 굿법의 계보를 여는 여무         |
+| 강림       | 저승차사        | 죽은 이를 저승으로 인도하는 차사        |
+| 대별상마누라   | 마마신, 대별상신   | 천연두를 관장하는 신               |
+| 칠성아기     | 칠성신, 사신     | 재물과 곡식을 지키는 수호신           |
+| 대별왕      | 저승차지        | 저승법과 저승의 질서를 맡은 신         |
+| 소별왕      | 이승차지        | 이승을 차지한 신                 |
+| 사만이      | 멩감        | 죽음의 액을 막고 수명을 이어가게 하는 신     |
+| 여산부인     | 조왕신         | 부엌과 살림을 관장하는 신            |
+| 원강아미     | 서천꽃밭 유모어멍   | 서천꽃밭을 지키는 어머니             |
+| 녹디생이     | 문전신         | 집의 문을 지키는 신               |
+| 지장아기씨    | 지장신         | 액을 막고 죽은 영혼을 천도하는 신       |
+
+
+| Result | Deity Name | Description |
+|--------|------------|-------------|
+| Gamunjangagi | Jeonsangshin | The goddess of fate, governing fortune and destiny across human lives |
+| Hallakgungi | Igongshin, Kkotgamgwan | The keeper of Seocheonkkotbat, the Flower Garden of the West, tending to the flowers that hold the fates of human lives |
+| Myeongjinguk's Daughter | Samseung Halmang, Saengbul Halmang | The goddess of childbirth, building the safe conditions through which new life can enter the world and grow |
+| Donghae Yonggung's Daughter | Gusamseung Halmang, Jeoseung Halmang | The goddess who watches over the boundary between life and its early end |
+| Chogong's Three Brothers | Mujoshin | The ancestral gods of shamans, the ones who first received and carried the sacred calling |
+| Noga Danpung Agissi | Maengdu | The deity who guards the ritual space and the shamans who work within it |
+| Yu Jeongseung's Daughter | The First Shaman | The one who performed the very first ritual, opening the lineage of shamans and ritual practice |
+| Gangnim | Jeoseung Chasa | The underworld messenger who guides the souls of the dead to the afterlife |
+| Daebyeolsang Manura | Mamashin, Daebyeolsangshin | The deity who governs disease (smallpox), whose power is not destroyed but made safe through the right handling |
+| Chilseong Agi | Chilseongsin | The benevolent snake goddess of wealth, agriculture, and household prosperity |
+| Daebyeolwang | Jeoseungchaji | The deity who governs the laws and order of the underworld |
+| Sobyeolwang | Iseungchaji | The deity who holds dominion over the world of the living |
+| Samani | Maengam | The deity who wards off death and governs longevity |
+| Yeosan Buin | Jowangshin | The deity of the kitchen and household |
+| Wongang Ami | Mother of Seocheonkkotbat | The mother who tends Seocheonkkotbat, the Flower Garden of the West, where the fates of human lives are kept |
+| Nokdisaengi | Munjeonsin | The deity who guards the gate of the home |
+| Jijang Agissi | Jijangsin | The deity who clears misfortune and guides souls to their proper rest |

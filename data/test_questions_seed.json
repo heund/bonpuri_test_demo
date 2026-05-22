@@ -25,7 +25,8 @@
           "subcategories": {
             "self_recognition": 2,
             "source_origin": 1
-          }
+          },
+          "text_ko": "나랑 관련된 건 아닌지 생각해본다"
         },
         {
           "id": "q01_b",
@@ -40,7 +41,8 @@
           },
           "subcategories": {
             "household_sustaining": 2
-          }
+          },
+          "text_ko": "주변 사람들한테서 뭔가 달라진 게 있는지 생각해본다"
         },
         {
           "id": "q01_c",
@@ -55,7 +57,8 @@
           },
           "subcategories": {
             "domestic_care": 2
-          }
+          },
+          "text_ko": "해야 되거나 챙겨야 하는 일이 있었는지 생각해본다"
         },
         {
           "id": "q01_d",
@@ -71,9 +74,11 @@
           "subcategories": {
             "procedural_order": 2,
             "hidden_force": 1
-          }
+          },
+          "text_ko": "뭔가 잘못된 게 있다는 생각이 든다"
         }
-      ]
+      ],
+      "text_ko": "뭔가 이상한 것 같다는 느낌이 들 때, 제일 먼저 어떤 생각을 하게 되나요?"
     },
     {
       "id": "q03",
@@ -93,7 +98,8 @@
           },
           "subcategories": {
             "hidden_force": 1
-          }
+          },
+          "text_ko": "실체는 없지만 뭔가 있다는 감이 온다"
         },
         {
           "id": "q03_b",
@@ -105,7 +111,8 @@
             "order": 0,
             "response_intensity": 0,
             "agency": 0
-          }
+          },
+          "text_ko": "어떤 생각이 조용히 자꾸 떠오른다"
         },
         {
           "id": "q03_c",
@@ -117,7 +124,8 @@
             "order": 1,
             "response_intensity": 2,
             "agency": 0
-          }
+          },
+          "text_ko": "뭔가를 결정하거나 행동해야 할 것 같은 압박이 점점 커진다"
         },
         {
           "id": "q03_d",
@@ -132,9 +140,11 @@
           },
           "subcategories": {
             "hidden_force": 1
-          }
+          },
+          "text_ko": "집요하게 돌아오는 생각"
         }
-      ]
+      ],
+      "text_ko": "중요한 뭔가가 있다는 예감이 들 때, 보통 어떤 방식으로 다가오나요?"
     },
     {
       "id": "q06",
@@ -143,7 +153,7 @@
       "options": [
         {
           "id": "q06_a",
-          "text": "Feeling like I was misread.",
+          "text": "Feeling like I was misread or misunderstood.",
           "scores": {
             "self": 3,
             "social": 0,
@@ -155,7 +165,8 @@
           "subcategories": {
             "self_recognition": 3,
             "source_origin": 2
-          }
+          },
+          "text_ko": "내가 오해받고 있다는 느낌"
         },
         {
           "id": "q06_b",
@@ -172,11 +183,12 @@
             "origin_cost": 3,
             "becoming_cultivation": 2,
             "mourning_passage": 1
-          }
+          },
+          "text_ko": "소중한 뭔가가 그냥 낭비되어버렸다는 것"
         },
         {
           "id": "q06_c",
-          "text": "Someone ending up alone with something they shouldn't have had to carry.",
+          "text": "Someone ending up alone with something they shouldn't have to carry.",
           "scores": {
             "self": 0,
             "social": 3,
@@ -189,11 +201,12 @@
             "household_sustaining": 2,
             "origin_cost": 3,
             "mourning_passage": 1
-          }
+          },
+          "text_ko": "누군가가 혼자 감당하지 않아도 될 걸 혼자 짊어지고 있는 것"
         },
         {
           "id": "q06_d",
-          "text": "Something wrong being left to quietly become normal.",
+          "text": "Something wrong quietly turning into something normal.",
           "scores": {
             "self": 0,
             "social": 1,
@@ -206,9 +219,11 @@
             "crooked_order": 3,
             "procedural_order": 1,
             "rupture_harm_return": 1
-          }
+          },
+          "text_ko": "잘못된 게 그냥 당연한 것처럼 여겨지는 것"
         }
-      ]
+      ],
+      "text_ko": "해결되지 않은 채 남겨두기 제일 힘든 상황은?"
     },
     {
       "id": "q08",
@@ -228,7 +243,8 @@
           },
           "subcategories": {
             "self_recognition": 2
-          }
+          },
+          "text_ko": "누군가를 완전히 잘못 이해했던 것"
         },
         {
           "id": "q08_b",
@@ -244,7 +260,8 @@
           "subcategories": {
             "origin_cost": 3,
             "rupture_harm_return": 1
-          }
+          },
+          "text_ko": "내 행동으로 누군가의 신뢰를 잃게 된 것"
         },
         {
           "id": "q08_c",
@@ -260,7 +277,8 @@
           "subcategories": {
             "domestic_care": 2,
             "origin_cost": 1
-          }
+          },
+          "text_ko": "할 수 있었을 때 제대로 챙기지 못한 것"
         },
         {
           "id": "q08_d",
@@ -276,9 +294,11 @@
           "subcategories": {
             "crooked_order": 3,
             "procedural_order": 1
-          }
+          },
+          "text_ko": "뭔가 잘못된 걸 알면서도 그냥 넘어간 것"
         }
-      ]
+      ],
+      "text_ko": "가장 마음에 걸리는 실수는?"
     },
     {
       "id": "q09",
@@ -300,7 +320,8 @@
             "self_recognition": 3,
             "source_origin": 1,
             "reception_of_strange": 1
-          }
+          },
+          "text_ko": "사람의 이면에 숨겨진 진짜 모습"
         },
         {
           "id": "q09_b",
@@ -316,11 +337,12 @@
           "subcategories": {
             "domestic_care": 2,
             "household_sustaining": 2
-          }
+          },
+          "text_ko": "누군가 말하지 않았지만 실제 필요로 하는 것"
         },
         {
           "id": "q09_c",
-          "text": "Where the tension between people is really coming from.",
+          "text": "Where the unspoken tension in a relationship is really coming from.",
           "scores": {
             "self": 0,
             "social": 3,
@@ -333,11 +355,12 @@
             "procedural_order": 2,
             "household_sustaining": 1,
             "crooked_order": 1
-          }
+          },
+          "text_ko": "관계에서 오는 어긋남의 이유"
         },
         {
           "id": "q09_d",
-          "text": "The real reason something happened.",
+          "text": "The true reason something happened.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -349,18 +372,20 @@
           "subcategories": {
             "procedural_order": 3,
             "source_origin": 1
-          }
+          },
+          "text_ko": "어떤 일이 일어난 진짜 이유가 무엇인지"
         }
-      ]
+      ],
+      "text_ko": "겉으로는 잘 드러나지 않는 것 중에 주로 제일 먼저 파악하고 싶어지는건?"
     },
     {
       "id": "q10",
       "phase": "sensitivity_refinement",
-      "text": "What makes you want to step in?",
+      "text": "What is a situation that makes you want to step in?",
       "options": [
         {
           "id": "q10_a",
-          "text": "Someone is being seen as something they're not.",
+          "text": "When someone is being seen as something they're not.",
           "scores": {
             "self": 3,
             "social": 1,
@@ -372,11 +397,12 @@
           "subcategories": {
             "self_recognition": 3,
             "reception_of_strange": 1
-          }
+          },
+          "text_ko": "누군가가 의도와 다르게 오해받고 있을 때"
         },
         {
           "id": "q10_b",
-          "text": "Something is going to fall apart if no one pays attention to it.",
+          "text": "When something is going to fall apart if no one pays attention to it.",
           "scores": {
             "self": 1,
             "social": 1,
@@ -389,11 +415,12 @@
             "domestic_care": 2,
             "household_sustaining": 2,
             "birth_arrival": 1
-          }
+          },
+          "text_ko": "아무도 관심을 주지 않던 무엇인가가 무너질 것 같을 때"
         },
         {
           "id": "q10_c",
-          "text": "Someone is being failed by the people around them and nobody notices.",
+          "text": "When someone is being failed by the people around them.",
           "scores": {
             "self": 0,
             "social": 3,
@@ -406,11 +433,12 @@
             "household_sustaining": 2,
             "origin_cost": 2,
             "rupture_harm_return": 1
-          }
+          },
+          "text_ko": "도움이 필요한 사람을 주변에서 외면할 때"
         },
         {
           "id": "q10_d",
-          "text": "Something unfair is starting to just be accepted.",
+          "text": "When something unfair is just starting to be accepted.",
           "scores": {
             "self": 0,
             "social": 1,
@@ -423,9 +451,11 @@
             "crooked_order": 3,
             "rupture_harm_return": 1,
             "ritual_responsibility": 1
-          }
+          },
+          "text_ko": "잘못된 상황이 그냥 당연한 것처럼 받아들여지기 시작할 때"
         }
-      ]
+      ],
+      "text_ko": "어떤 상황일 때 나서고 싶어지나요?"
     },
     {
       "id": "q12",
@@ -446,11 +476,12 @@
           "subcategories": {
             "self_recognition": 2,
             "source_origin": 2
-          }
+          },
+          "text_ko": "그게 나라는 사람에 대해 무엇을 말해주고 있는지"
         },
         {
           "id": "q12_b",
-          "text": "What it's still waiting for.",
+          "text": "What the cycle is still waiting for.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -463,11 +494,12 @@
             "becoming_cultivation": 2,
             "birth_arrival": 1,
             "seasonal_cycle": 1
-          }
+          },
+          "text_ko": "그 상황에 어떤 관심이나 시간을 더 주어야 할지"
         },
         {
           "id": "q12_c",
-          "text": "Who's been quietly carrying it.",
+          "text": "If anyone has been quietly carrying its burdens.",
           "scores": {
             "self": 0,
             "social": 3,
@@ -480,11 +512,12 @@
             "household_sustaining": 2,
             "origin_cost": 2,
             "mourning_passage": 1
-          }
+          },
+          "text_ko": "누군가가 조용히 이걸 떠안고 있지는 않았는지"
         },
         {
           "id": "q12_d",
-          "text": "Why it keeps happening.",
+          "text": "The truth of why it keeps happening.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -497,18 +530,20 @@
             "procedural_order": 3,
             "crooked_order": 1,
             "cosmic_law": 2
-          }
+          },
+          "text_ko": "계속 반복되는 근본적인 이유가 무엇인지"
         }
-      ]
+      ],
+      "text_ko": "어떤 상황이 계속 반복될 때, 제일 먼저 알고싶은건?"
     },
     {
       "id": "q13",
       "phase": "narrative_pressure",
-      "text": "Something unfamiliar enters your life. What matters to you first?",
+      "text": "Something unfamiliar enters your life. What feels most important?",
       "options": [
         {
           "id": "q13_a",
-          "text": "What it might change about me.",
+          "text": "What it might change about the person I am.",
           "scores": {
             "self": 3,
             "social": 0,
@@ -520,7 +555,8 @@
           "subcategories": {
             "self_recognition": 2,
             "becoming_cultivation": 1
-          }
+          },
+          "text_ko": "이것이 나를 어떻게 변화시킬지"
         },
         {
           "id": "q13_b",
@@ -536,7 +572,8 @@
           "subcategories": {
             "becoming_cultivation": 3,
             "birth_arrival": 1
-          }
+          },
+          "text_ko": "이것이 더 성장할 수 있는 환경이 되는지"
         },
         {
           "id": "q13_c",
@@ -552,7 +589,8 @@
           "subcategories": {
             "reception_of_strange": 3,
             "household_sustaining": 1
-          }
+          },
+          "text_ko": "내 주변 사람들이 이것을 받아들일 수 있는지"
         },
         {
           "id": "q13_d",
@@ -569,9 +607,11 @@
             "hidden_force": 3,
             "reception_of_strange": 2,
             "failed_arrival": 1
-          }
+          },
+          "text_ko": "이것이 실제로 무엇을 동반하는지"
         }
-      ]
+      ],
+      "text_ko": "낯선 무언가가 내 삶에 들어왔을 때, 제일 먼저 어떤걸 중요하게 보나요?"
     },
     {
       "id": "q14",
@@ -592,7 +632,8 @@
           "subcategories": {
             "self_recognition": 2,
             "procedural_order": 1
-          }
+          },
+          "text_ko": "무슨 일이 있었는지에 대한 내 입장 정리"
         },
         {
           "id": "q14_b",
@@ -609,7 +650,8 @@
             "restoration": 2,
             "domestic_care": 2,
             "birth_arrival": 1
-          }
+          },
+          "text_ko": "회복이 시작될 수 있는 조건"
         },
         {
           "id": "q14_c",
@@ -625,7 +667,8 @@
           "subcategories": {
             "household_sustaining": 2,
             "restoration": 1
-          }
+          },
+          "text_ko": "관련된 사람들과의 안정적인 관계"
         },
         {
           "id": "q14_d",
@@ -642,9 +685,11 @@
             "procedural_order": 3,
             "rupture_harm_return": 1,
             "cosmic_law": 2
-          }
+          },
+          "text_ko": "실제로 무엇이 잘못됐는지에 대한 명확한 이해"
         }
-      ]
+      ],
+      "text_ko": "뭔가 무너지거나 깨졌을 때, 제일 먼저 회복하고 싶은 건?"
     },
     {
       "id": "q16",
@@ -665,7 +710,8 @@
           "subcategories": {
             "self_recognition": 3,
             "source_origin": 2
-          }
+          },
+          "text_ko": "아직 파악하지 못한 내 자신의 입장"
         },
         {
           "id": "q16_b",
@@ -682,11 +728,12 @@
             "becoming_cultivation": 3,
             "mourning_passage": 1,
             "origin_cost": 1
-          }
+          },
+          "text_ko": "제대로 시작해보기도 전에 끝나버린 것들"
         },
         {
           "id": "q16_c",
-          "text": "A relationship that still pulls at me.",
+          "text": "A relationship that still lingers.",
           "scores": {
             "self": 0,
             "social": 3,
@@ -698,7 +745,8 @@
           "subcategories": {
             "household_sustaining": 2,
             "mourning_passage": 1
-          }
+          },
+          "text_ko": "여운이 남는 관계"
         },
         {
           "id": "q16_d",
@@ -715,18 +763,20 @@
             "crooked_order": 3,
             "rupture_harm_return": 2,
             "procedural_order": 1
-          }
+          },
+          "text_ko": "제대로 된 결말 없이 넘어간 잘못"
         }
-      ]
+      ],
+      "text_ko": "아래의 해결되지 않은 문제 중 나에게 제일 크게 다가오는 것은?"
     },
     {
       "id": "q17",
       "phase": "sustaining_effort",
-      "text": "When something needs consistent effort just to stay intact, what do you do?",
+      "text": "When something needs consistent group effort just to stay intact, what do you do?",
       "options": [
         {
           "id": "q17_a",
-          "text": "Reconnect with why it matters to me personally.",
+          "text": "Reconnect with why it’s something that matters to me.",
           "scores": {
             "self": 3,
             "social": 0,
@@ -738,11 +788,12 @@
           "subcategories": {
             "source_origin": 2,
             "self_recognition": 2
-          }
+          },
+          "text_ko": "이게 나에게 어떤 의미가 있고 왜 중요한지 다시 떠올려본다"
         },
         {
           "id": "q17_b",
-          "text": "Check in with who's actually carrying the weight of it.",
+          "text": "Check in with people who might be carrying too much.",
           "scores": {
             "self": 0,
             "social": 3,
@@ -755,7 +806,8 @@
             "household_sustaining": 3,
             "domestic_care": 2,
             "origin_cost": 1
-          }
+          },
+          "text_ko": "함께하는 사람들 중 무게를 너무 많이 떠안고 있는 사람이 있는건 아닌지 확인해본다"
         },
         {
           "id": "q17_c",
@@ -771,7 +823,8 @@
           "subcategories": {
             "domestic_care": 3,
             "household_sustaining": 1
-          }
+          },
+          "text_ko": "지금 당장 신경 써야 할 소소한 것들에 집중한다"
         },
         {
           "id": "q17_d",
@@ -787,9 +840,11 @@
           "subcategories": {
             "household_sustaining": 2,
             "procedural_order": 2
-          }
+          },
+          "text_ko": "노력이 공평하게 분담되고 있는지 점검한다"
         }
-      ]
+      ],
+      "text_ko": "여럿이 꾸준한 노력을 해야지만 겨우 유지가 되는 상황이 있다면, 어떻게 하나요?"
     },
     {
       "id": "q18",
@@ -810,7 +865,8 @@
           "subcategories": {
             "self_recognition": 2,
             "becoming_cultivation": 1
-          }
+          },
+          "text_ko": "이게 정말 그 사람이 원하는 건지 확인해본다"
         },
         {
           "id": "q18_b",
@@ -827,7 +883,8 @@
             "self_recognition": 1,
             "becoming_cultivation": 2,
             "domestic_care": 1
-          }
+          },
+          "text_ko": "결과를 넘어 노력한다는 그 자체가 소중하다고 말해준다"
         },
         {
           "id": "q18_c",
@@ -843,11 +900,12 @@
           "subcategories": {
             "becoming_cultivation": 3,
             "self_recognition": 1
-          }
+          },
+          "text_ko": "어떤 과정이나 방법이 도움이 될지 생각해본다"
         },
         {
           "id": "q18_d",
-          "text": "Try to remove whatever is getting in the way of them developing.",
+          "text": "Try and create the right conditions for them to learn",
           "scores": {
             "self": 2,
             "social": 0,
@@ -860,9 +918,11 @@
             "becoming_cultivation": 3,
             "restoration": 2,
             "self_recognition": 1
-          }
+          },
+          "text_ko": "그 사람이 잘 배울 수 있는 환경을 만들어준다"
         }
-      ]
+      ],
+      "text_ko": "누군가 새로운걸 처음 배우는 과정에서 괴로워하고 있을 때, 어떻게 하나요?"
     },
     {
       "id": "q19",
@@ -884,11 +944,12 @@
             "self_recognition": 3,
             "calling_initiation": 2,
             "rupture_harm_return": 1
-          }
+          },
+          "text_ko": "내 정체성이 흔들리는 것"
         },
         {
           "id": "q19_b",
-          "text": "How the people around you are reacting to it.",
+          "text": "Other people’s reaction to it.",
           "scores": {
             "self": 0,
             "social": 3,
@@ -900,11 +961,12 @@
           "subcategories": {
             "household_sustaining": 2,
             "rupture_harm_return": 1
-          }
+          },
+          "text_ko": "주변 사람들의 시선과 반응"
         },
         {
           "id": "q19_c",
-          "text": "What it means for everyone and how it can be held together.",
+          "text": "Whether this will break everyone, and if there's any way to hold it together.",
           "scores": {
             "self": 0,
             "social": 2,
@@ -917,11 +979,12 @@
             "household_sustaining": 2,
             "domestic_care": 2,
             "restoration": 1
-          }
+          },
+          "text_ko": "관계의 분열과 우리가 이걸 함께 버텨낼 수 있을지에 대한 걱정"
         },
         {
           "id": "q19_d",
-          "text": "What people fear it might lead to.",
+          "text": "The danger of what this might quietly set in motion.",
           "scores": {
             "self": 0,
             "social": 1,
@@ -934,9 +997,11 @@
             "hidden_force": 2,
             "failed_arrival": 2,
             "crooked_order": 2
-          }
+          },
+          "text_ko": "이 사건으로 인해 다른 안좋은 일이 생기진 않을지"
         }
-      ]
+      ],
+      "text_ko": "충격적인 사건이 갑자기 생겼을 때, 제일 나를 불안하게 하는건?"
     },
     {
       "id": "q20",
@@ -945,7 +1010,7 @@
       "options": [
         {
           "id": "q20_a",
-          "text": "When you can no longer be yourself there.",
+          "text": "When I can no longer be myself there.",
           "scores": {
             "self": 3,
             "social": 1,
@@ -957,11 +1022,12 @@
           "subcategories": {
             "self_recognition": 3,
             "calling_initiation": 2
-          }
+          },
+          "text_ko": "더 이상 나답게 있을 수 없다고 생각될 때"
         },
         {
           "id": "q20_b",
-          "text": "When the relationships between the people in it have fractured.",
+          "text": "When the relationships between the people in it have fallen apart.",
           "scores": {
             "self": 0,
             "social": 3,
@@ -974,7 +1040,8 @@
             "household_sustaining": 2,
             "rupture_harm_return": 1,
             "restoration": 1
-          }
+          },
+          "text_ko": "그곳에 있는 사람들의 관계가 틀어졌을 때"
         },
         {
           "id": "q20_c",
@@ -991,7 +1058,8 @@
             "failed_arrival": 3,
             "crooked_order": 2,
             "hidden_force": 1
-          }
+          },
+          "text_ko": "배려라고 느꼈던 것들이 통제처럼 느껴지기 시작할 때"
         },
         {
           "id": "q20_d",
@@ -1008,14 +1076,16 @@
             "crooked_order": 2,
             "procedural_order": 2,
             "rupture_harm_return": 1
-          }
+          },
+          "text_ko": "뭔가 잘못됐는데 아무도 그걸 인정하지 않을 때"
         }
-      ]
+      ],
+      "text_ko": "익숙하고 편했던 공간이 불편하게 느껴지는 순간은?"
     },
     {
       "id": "q21",
       "phase": "major_ending",
-      "text": "When something major in your life has ended, what stays with you the longest?",
+      "text": "When something major in your life ends, what usually stays with you the longest?",
       "options": [
         {
           "id": "q21_a",
@@ -1031,7 +1101,8 @@
           "subcategories": {
             "self_recognition": 2,
             "mourning_passage": 1
-          }
+          },
+          "text_ko": "그것이 나를 어떻게 변화시켰는지"
         },
         {
           "id": "q21_b",
@@ -1047,7 +1118,8 @@
           "subcategories": {
             "household_sustaining": 2,
             "mourning_passage": 1
-          }
+          },
+          "text_ko": "그것이 주변 사람들을 어떻게 변화시켰는지"
         },
         {
           "id": "q21_c",
@@ -1065,7 +1137,8 @@
             "domestic_care": 2,
             "restoration": 1,
             "death_crossing": 1
-          }
+          },
+          "text_ko": "아직 마무리되지 않은 것들을 챙기고 싶은 마음"
         },
         {
           "id": "q21_d",
@@ -1083,9 +1156,11 @@
             "mourning_passage": 2,
             "rupture_harm_return": 1,
             "death_crossing": 1
-          }
+          },
+          "text_ko": "끝내 답을 얻지 못한 것들"
         }
-      ]
+      ],
+      "text_ko": "삶에서 중요한 무언가가 끝났을 때, 제일 오래  곱씹게 되는 것은?"
     },
     {
       "id": "q22",
@@ -1107,7 +1182,8 @@
             "self_recognition": 2,
             "becoming_cultivation": 1,
             "seasonal_cycle": 1
-          }
+          },
+          "text_ko": "지금 내 상황과 방향에 맞는지"
         },
         {
           "id": "q22_b",
@@ -1122,7 +1198,8 @@
           },
           "subcategories": {
             "household_sustaining": 2
-          }
+          },
+          "text_ko": "주변 사람들에게 어떤 영향을 줄지"
         },
         {
           "id": "q22_c",
@@ -1139,7 +1216,8 @@
             "seasonal_cycle": 3,
             "becoming_cultivation": 2,
             "birth_arrival": 1
-          }
+          },
+          "text_ko": "지금이 적절한 타이밍인지, 조건이 맞는지"
         },
         {
           "id": "q22_d",
@@ -1156,14 +1234,16 @@
             "hidden_force": 3,
             "failed_arrival": 1,
             "reception_of_strange": 1
-          }
+          },
+          "text_ko": "이것이 실제로 무엇을 동반하는지, 숨겨진게 있진 않은지"
         }
-      ]
+      ],
+      "text_ko": "예상치 못한 기회가 찾아왔을 때, 제일 먼저 고려하는 건?"
     },
     {
       "id": "a01",
       "phase": "agency_action_pull",
-      "text": "When something keeps bothering you, what usually happens next?",
+      "text": "When something keeps bothering you, what do you do?",
       "options": [
         {
           "id": "a01_a",
@@ -1178,11 +1258,12 @@
           },
           "subcategories": {
             "source_origin": 1
-          }
+          },
+          "text_ko": "차분히 이해해보려고 한다"
         },
         {
           "id": "a01_b",
-          "text": "I keep turning it over until something shifts.",
+          "text": "I keep turning it over until something arrives.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -1190,7 +1271,8 @@
             "order": 0,
             "response_intensity": 0,
             "agency": 1
-          }
+          },
+          "text_ko": "방향이 나올때까지 계속 생각해본다"
         },
         {
           "id": "a01_c",
@@ -1205,11 +1287,12 @@
           },
           "subcategories": {
             "restoration": 1
-          }
+          },
+          "text_ko": "실질적으로 바꿀 수 있는 방향으로 생각해본다"
         },
         {
           "id": "a01_d",
-          "text": "I find myself doing something about it before I've decided to.",
+          "text": "I do something about it immediately.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -1217,9 +1300,11 @@
             "order": 0,
             "response_intensity": 0,
             "agency": 3
-          }
+          },
+          "text_ko": "생각이 정리되기도 전에 이미 뭔가를 하고 있다"
         }
-      ]
+      ],
+      "text_ko": "뭔가 계속 마음에 걸리는 것이 있을 때, 어떻게 하는 편인가요?"
     },
     {
       "id": "a03",
@@ -1239,7 +1324,8 @@
           },
           "subcategories": {
             "procedural_order": 2
-          }
+          },
+          "text_ko": "무슨 일이 있었는지, 왜 그런 건지 이해하고 싶다"
         },
         {
           "id": "a03_b",
@@ -1255,11 +1341,12 @@
           "subcategories": {
             "procedural_order": 1,
             "ritual_responsibility": 2
-          }
+          },
+          "text_ko": "그것을 제대로 표현할 말을 찾고 싶다"
         },
         {
           "id": "a03_c",
-          "text": "For it to be named out loud by someone.",
+          "text": "For it to be officially addressed.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -1271,11 +1358,12 @@
           "subcategories": {
             "procedural_order": 2,
             "ritual_responsibility": 2
-          }
+          },
+          "text_ko": "이것이 공식적으로 다뤄졌으면 한다"
         },
         {
           "id": "a03_d",
-          "text": "For something to actually change because of it.",
+          "text": "For something to actually change.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -1286,18 +1374,20 @@
           },
           "subcategories": {
             "restoration": 2
-          }
+          },
+          "text_ko": "실제로 뭔가가 바뀌는걸 보고싶다"
         }
-      ]
+      ],
+      "text_ko": "뭔가 불공평하다는 느낌이 들 때, 제일 먼저 원하는 건?"
     },
     {
       "id": "a05",
       "phase": "agency_action_pull",
-      "text": "When you sense someone isn't being supported, what happens first?",
+      "text": "When you sense someone isn't being supported, what do you do?",
       "options": [
         {
           "id": "a05_a",
-          "text": "I pay closer attention.",
+          "text": "I pay closer attention to the situation.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -1308,11 +1398,12 @@
           },
           "subcategories": {
             "domestic_care": 1
-          }
+          },
+          "text_ko": "상황을 주의 깊게 살펴본다"
         },
         {
           "id": "a05_b",
-          "text": "I make sure they know I'm there if they need me.",
+          "text": "I make sure they know that I'm here if they need me.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -1324,7 +1415,8 @@
           "subcategories": {
             "household_sustaining": 1,
             "domestic_care": 1
-          }
+          },
+          "text_ko": "필요하면 도와줄 수 있다고 말해준다"
         },
         {
           "id": "a05_c",
@@ -1340,11 +1432,12 @@
           "subcategories": {
             "domestic_care": 2,
             "restoration": 1
-          }
+          },
+          "text_ko": "실제로 뭐가 도움이 될지 생각하고 제안한다"
         },
         {
           "id": "a05_d",
-          "text": "I do something without waiting to be asked.",
+          "text": "I do something about it without being asked.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -1352,9 +1445,11 @@
             "order": 0,
             "response_intensity": 0,
             "agency": 3
-          }
+          },
+          "text_ko": "도움 요청을 기다리지 않고 먼저 행동한다"
         }
-      ]
+      ],
+      "text_ko": "누군가 제대로 된 도움을 받지 못하고 있다는 느낌이 들 때, 어떻게 하나요?"
     },
     {
       "id": "a08",
@@ -1363,7 +1458,7 @@
       "options": [
         {
           "id": "a08_a",
-          "text": "Leave it alone until it shows me something.",
+          "text": "Have it in the background until shows me something.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -1374,7 +1469,8 @@
           },
           "subcategories": {
             "birth_arrival": 1
-          }
+          },
+          "text_ko": "방향이 보일 때까지 그냥 둔다"
         },
         {
           "id": "a08_b",
@@ -1390,7 +1486,8 @@
           "subcategories": {
             "becoming_cultivation": 1,
             "seasonal_cycle": 1
-          }
+          },
+          "text_ko": "어느쪽으로 가면 좋을지 생각해본다"
         },
         {
           "id": "a08_c",
@@ -1406,11 +1503,12 @@
           "subcategories": {
             "becoming_cultivation": 2,
             "procedural_order": 1
-          }
+          },
+          "text_ko": "조금씩 구조를 잡아본다"
         },
         {
           "id": "a08_d",
-          "text": "Begin making it into something concrete.",
+          "text": "Begin turning it into something concrete.",
           "scores": {
             "self": 0,
             "social": 0,
@@ -1422,9 +1520,11 @@
           "subcategories": {
             "becoming_cultivation": 3,
             "birth_arrival": 1
-          }
+          },
+          "text_ko": "구체적인 방향을 잡아 무언가로 만든다"
         }
-      ]
+      ],
+      "text_ko": "가능성은 있지만 아직 방향이 잡히지 않은 것이 있을 때, 어떻게 하나요?"
     }
   ]
 }
