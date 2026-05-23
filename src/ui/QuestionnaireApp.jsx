@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import questionsData from "../../data/test_questions_seed.json";
 import deityMap from "../../data/deity_axis_map.json";
 import resultTemplates from "../../data/result_templates.json";
 import axisDefinitions from "../../data/axis_definitions.json";
 import { generateResult } from "../bonpuriScoringCore.js";
-import LanguageToggle from "./LanguageToggle.jsx";
 import ResultView from "./ResultView.jsx";
+import ThemeToggle from "./ThemeToggle.jsx";
 
 const prototypeData = {
   axisDefinitions,
@@ -20,6 +20,12 @@ export default function QuestionnaireApp() {
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [result, setResult] = useState(null);
   const [language, setLanguage] = useState("en");
+  const [theme, setTheme] = useState("light");
+  const [hasStarted, setHasStarted] = useState(false);
+
+  useEffect(() => {
+    document.body.dataset.theme = theme;
+  }, [theme]);
 
   const currentQuestion = questions[currentQuestionIndex];
   const progressLabel = language === "ko"
@@ -36,12 +42,14 @@ export default function QuestionnaireApp() {
 
     setSelectedAnswers(nextAnswers);
 
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      return;
-    }
+    window.setTimeout(() => {
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        return;
+      }
 
-    setResult(generateResult(nextAnswers, prototypeData));
+      setResult(generateResult(nextAnswers, prototypeData));
+    }, 120);
   }
 
   function handleRestart() {
@@ -49,6 +57,7 @@ export default function QuestionnaireApp() {
     setCurrentQuestionIndex(0);
     setSelectedAnswers({});
     setResult(null);
+    setHasStarted(false);
   }
 
   function handleBack() {
@@ -61,16 +70,53 @@ export default function QuestionnaireApp() {
       <ResultView
         language={language}
         onLanguageChange={setLanguage}
+        theme={theme}
+        onThemeChange={setTheme}
         result={result}
         onRestart={handleRestart}
       />
     );
   }
 
+  if (!hasStarted) {
+    return (
+      <main className="landing-page">
+        <ThemeToggle theme={theme} onThemeChange={setTheme} />
+        <section className="landing-panel" aria-labelledby="landing-title">
+          <h1 id="landing-title">
+            <span>Bonpuri</span>
+            <span>Type Test</span>
+          </h1>
+          <p>{language === "ko" ? "언어를 선택하고 시작하세요" : "Select language to start"}</p>
+          <div className="landing-language-actions">
+            <button
+              type="button"
+              onClick={() => {
+                setLanguage("en");
+                setHasStarted(true);
+              }}
+            >
+              English
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setLanguage("ko");
+                setHasStarted(true);
+              }}
+            >
+              한국어
+            </button>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
   return (
     <main className="questionnaire-page">
       <div className="page-top-bar">
-        <LanguageToggle language={language} onLanguageChange={setLanguage} />
+        <ThemeToggle theme={theme} onThemeChange={setTheme} />
       </div>
       <h1>{language === "ko" ? "본풀이 성향 테스트" : "Bonpuri Type Test"}</h1>
 
@@ -79,9 +125,16 @@ export default function QuestionnaireApp() {
         aria-labelledby="question-title"
       >
         <p>{progressLabel}</p>
-        <progress value={progressPercent} max="100">
-          {Math.round(progressPercent)}%
-        </progress>
+        <div
+          aria-label={progressLabel}
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow={Math.round(progressPercent)}
+          className="question-progress"
+          role="progressbar"
+        >
+          <span style={{ width: `${progressPercent}%` }} />
+        </div>
 
         <h2 id="question-title" key={currentQuestion.id}>
           {questionText}
@@ -90,7 +143,7 @@ export default function QuestionnaireApp() {
         <div className="answer-list" key={`${currentQuestion.id}-answers`}>
           {currentQuestion.options.map((option, index) => (
             <button
-              className="answer-button"
+              className={`answer-button ${selectedAnswers[currentQuestion.id] === option.id ? "is-selected" : ""}`}
               key={option.id}
               type="button"
               onClick={() => handleAnswer(option.id)}

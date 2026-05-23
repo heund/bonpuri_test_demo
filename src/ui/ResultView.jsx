@@ -1,37 +1,48 @@
 import { useMemo } from "react";
 import deityMap from "../../data/deity_axis_map.json";
 import deityNamesTable from "../../deity_names.txt?raw";
-import deityResultDescriptionsEnText from "../../deity_result_description_en.txt?raw";
-import deityResultDescriptionsKoText from "../../deity_result_description_ko.txt?raw";
+import deityResultDescriptionsEnText from "../../results_texts/deity_result_description_en.txt?raw";
+import deityResultDescriptionsKoText from "../../results_texts/deity_result_description_ko.txt?raw";
 import {
   composeDeityResultBlock,
   composeResultTextBlocks
 } from "../resultComposer/resultTextComposer.js";
+import selfLensImage from "../../image/self_lens.svg";
+import socialLensImage from "../../image/social_lens.svg";
+import careOrientationImage from "../../image/care_orientation.svg";
+import orderOrientationImage from "../../image/order_orientation.svg";
+import donghaeYonggungImage from "../../image/Deity/Donghaeyonggung.svg";
+import gangnimImage from "../../image/Deity/gangnim.svg";
+import jacheongbiImage from "../../image/Deity/Jacheongbi.svg";
+import myeongjingukImage from "../../image/Deity/Myeongjinguk.svg";
+import wongangAmiImage from "../../image/Deity/Wongang_Ami.svg";
+import yeosanBuinImage from "../../image/Deity/Yeosanbuin.svg";
 import LanguageToggle from "./LanguageToggle.jsx";
+import ThemeToggle from "./ThemeToggle.jsx";
 
 const PROFILE_AXES = [
   {
     key: "self",
     label: "Self",
-    label_ko: "내면",
+    label_ko: "ᄆᆞᆷ속",
     description: "Where you locate yourself inside a situation."
   },
   {
     key: "social",
     label: "Social",
-    label_ko: "관계",
+    label_ko: "궨당",
     description: "How you read relationships, distance, and who is affected."
   },
   {
     key: "care",
     label: "Care",
-    label_ko: "돌봄",
+    label_ko: "거념",
     description: "What you notice as needing support, tending, or protection."
   },
   {
     key: "order",
     label: "Order",
-    label_ko: "질서",
+    label_ko: "가리",
     description: "What you notice as needing shape, placement, or structure."
   },
   {
@@ -70,6 +81,20 @@ const SCORE_GROUPS = [
     axisKeys: ["response_intensity", "agency"]
   }
 ];
+const SCORE_VISUAL_IMAGES = {
+  care: careOrientationImage,
+  order: orderOrientationImage,
+  self: selfLensImage,
+  social: socialLensImage
+};
+const DEITY_IMAGES = {
+  donghae_yonggungs_daughter: donghaeYonggungImage,
+  gangnim: gangnimImage,
+  jacheongbi: jacheongbiImage,
+  myeongjinguks_daughter: myeongjingukImage,
+  wongang_ami: wongangAmiImage,
+  yeosan_buin: yeosanBuinImage
+};
 const DEITY_ROLES = parseDeityRoleTable(deityNamesTable);
 const DEITY_RESULT_DESCRIPTIONS_EN = parseDeityResultDescriptions(deityResultDescriptionsEnText);
 const DEITY_RESULT_DESCRIPTIONS_KO = parseDeityResultDescriptions(deityResultDescriptionsKoText);
@@ -211,6 +236,21 @@ function parseDeityResultDescriptions(text) {
     ]));
 }
 
+function getDeityResultDescription(match, deityResultBlock, language) {
+  const descriptions = language === "ko" ? DEITY_RESULT_DESCRIPTIONS_KO : DEITY_RESULT_DESCRIPTIONS_EN;
+  const candidates = [
+    language === "ko" ? match?.name_ko : match?.name_en,
+    match?.name_ko,
+    match?.name_en,
+    deityResultBlock?.source_label,
+    deityResultBlock?.title
+  ].filter(Boolean);
+
+  return candidates
+    .map((candidate) => descriptions.get(candidate))
+    .find(Boolean) || null;
+}
+
 function displayDeityName(match, language) {
   if (!match) return "";
   if (language === "ko") return match.name_ko || match.name_en || match.deity_id;
@@ -297,7 +337,14 @@ function formatRecognitionPattern(pattern, language) {
     .join(" + ");
 }
 
-export default function ResultView({ language = "en", onLanguageChange, result, onRestart }) {
+export default function ResultView({
+  language = "en",
+  onLanguageChange,
+  onRestart,
+  onThemeChange,
+  result,
+  theme = "light"
+}) {
   const matches = useMemo(() => topMatches(result), [result]);
   const resultLanguage = language;
   const copy = RESULT_COPY[resultLanguage];
@@ -318,9 +365,12 @@ export default function ResultView({ language = "en", onLanguageChange, result, 
     response_intensity: result.response_intensity,
     agency: result.action_pull ?? result.agency
   };
-  const deityResultDescription = resultLanguage === "ko"
-    ? DEITY_RESULT_DESCRIPTIONS_KO.get(selectedMatch?.name_ko)
-    : DEITY_RESULT_DESCRIPTIONS_EN.get(selectedMatch?.name_en);
+  const deityResultDescription = getDeityResultDescription(
+    selectedMatch,
+    deityResultBlock,
+    resultLanguage
+  );
+  const selectedDeityImage = DEITY_IMAGES[selectedMatch?.deity_id] || null;
   const nearbyMatches = matches
     .filter((match) => match.deity_id !== selectedMatch?.deity_id)
     .slice(0, 3)
@@ -337,11 +387,11 @@ export default function ResultView({ language = "en", onLanguageChange, result, 
           onLanguageChange={onLanguageChange}
           label="Result language"
         />
+        <ThemeToggle theme={theme} onThemeChange={onThemeChange} />
       </div>
 
       <section aria-labelledby="result-title">
         <section className="result-hero" aria-labelledby="result-title">
-          <p className="result-eyebrow">{copy.resultTitle}</p>
           <h1 id="result-title">{displayDeityName(selectedMatch, resultLanguage)}</h1>
           <DeityRole
             className="result-deity-role"
@@ -349,16 +399,18 @@ export default function ResultView({ language = "en", onLanguageChange, result, 
             language={resultLanguage}
             match={selectedMatch}
           />
-          <ProfileShapeChart
-            legend={{
-              deity: displayDeityName(selectedMatch, resultLanguage),
-              user: resultLanguage === "ko" ? "내 결과" : "Your result"
-            }}
-            overlayScores={getDeityProfileScores(selectedMatch?.deity_id)}
-            scores={userProfileScores}
-            size={460}
+          {selectedDeityImage ? (
+            <img
+              alt=""
+              aria-hidden="true"
+              className="result-deity-image"
+              src={selectedDeityImage}
+            />
+          ) : null}
+          <CompactScoreSummary
             language={resultLanguage}
-            showLabels
+            scores={userProfileScores}
+            showModifier={false}
           />
         </section>
 
@@ -377,9 +429,18 @@ export default function ResultView({ language = "en", onLanguageChange, result, 
           ))}
         </section>
 
-        <section className="result-section score-summary-section" aria-labelledby="score-summary-title">
-          <h2 id="score-summary-title">{copy.compactScores}</h2>
-          <CompactScoreSummary language={resultLanguage} scores={userProfileScores} />
+        <section className="result-section profile-shape-section" aria-label="Profile shape">
+          <ProfileShapeChart
+            legend={{
+              deity: displayDeityName(selectedMatch, resultLanguage),
+              user: resultLanguage === "ko" ? "내 결과" : "Your result"
+            }}
+            overlayScores={getDeityProfileScores(selectedMatch?.deity_id)}
+            scores={userProfileScores}
+            size={460}
+            language={resultLanguage}
+            showLabels
+          />
         </section>
 
         <section className="result-section nearby-anchors-section" aria-labelledby="nearby-anchors-title">
@@ -546,36 +607,79 @@ function ProfileShapeLegend({ legend }) {
   );
 }
 
-function CompactScoreSummary({ language, scores }) {
+function CompactScoreSummary({ language, scores, showModifier = true }) {
   const rawScores = getRawProfileScores(scores);
+  const visibleGroups = showModifier
+    ? SCORE_GROUPS
+    : SCORE_GROUPS.filter((group) => group.id !== "modifier");
+  const isHeroSummary = !showModifier;
 
   return (
-    <div className="compact-score-summary">
-      {SCORE_GROUPS.map((group) => (
+    <div className={`compact-score-summary${isHeroSummary ? " compact-score-summary-hero" : ""}`}>
+      {visibleGroups.map((group) => (
         <section className={`compact-score-group compact-score-group-${group.id}`} key={group.id}>
           <h3>{group.label[language]}</h3>
-          <dl>
-            {group.axisKeys.map((axisKey) => {
-              const axis = PROFILE_AXES.find((candidate) => candidate.key === axisKey);
+          {group.id === "lens" || group.id === "orientation" ? (
+            <>
+              <div className="visual-score-axes">
+                {group.axisKeys.map((axisKey) => {
+                  const axis = PROFILE_AXES.find((candidate) => candidate.key === axisKey);
 
-              return (
-                <div className="compact-score-axis" key={axis.key}>
-                  <dt>
-                    <span>{getAxisLabel(axis, language)}</span>
-                    <strong>{rawScores[axis.key]}%</strong>
-                  </dt>
-                  <dd>
-                    <span className="score-track" aria-hidden="true">
-                      <span style={{ width: `${Math.max(0, Math.min(100, rawScores[axis.key]))}%` }} />
-                    </span>
-                  </dd>
-                </div>
-              );
-            })}
-          </dl>
+                  return (
+                    <div className={`visual-score-axis visual-score-axis-${axis.key}`} key={axis.key}>
+                      <span className="visual-score-label">{getAxisLabel(axis, language)}</span>
+                      <img alt="" className="visual-score-image" src={SCORE_VISUAL_IMAGES[axis.key]} />
+                      <div className="visual-score-meter">
+                        <strong>{rawScores[axis.key]}%</strong>
+                        <span className="score-track" aria-hidden="true">
+                          <span style={{ width: `${Math.max(0, Math.min(100, rawScores[axis.key]))}%` }} />
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              {isHeroSummary ? <DominantAxisNote group={group} language={language} scores={rawScores} /> : null}
+            </>
+          ) : (
+            <dl>
+              {group.axisKeys.map((axisKey) => {
+                const axis = PROFILE_AXES.find((candidate) => candidate.key === axisKey);
+
+                return (
+                  <div className="compact-score-axis" key={axis.key}>
+                    <dt>
+                      <span>{getAxisLabel(axis, language)}</span>
+                      <strong>{rawScores[axis.key]}%</strong>
+                    </dt>
+                    <dd>
+                      <span className="score-track" aria-hidden="true">
+                        <span style={{ width: `${Math.max(0, Math.min(100, rawScores[axis.key]))}%` }} />
+                      </span>
+                    </dd>
+                  </div>
+                );
+              })}
+            </dl>
+          )}
         </section>
       ))}
     </div>
+  );
+}
+
+function DominantAxisNote({ group, language, scores }) {
+  const dominantAxisKey = group.axisKeys.reduce((winner, axisKey) => (
+    scores[axisKey] > scores[winner] ? axisKey : winner
+  ), group.axisKeys[0]);
+  const dominantAxis = PROFILE_AXES.find((axis) => axis.key === dominantAxisKey);
+
+  return (
+    <p className="dominant-axis-note">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae
+      arcu sed lorem placerat tempor. {getAxisLabel(dominantAxis, language)}
+      {" "}shows the strongest signal in this group.
+    </p>
   );
 }
 
@@ -641,7 +745,7 @@ function CombinationTextBlock({ block }) {
   return (
     <div className="writing-block combination-result-block">
       <h2>{block.title.text}</h2>
-      <h3>{block.subtitle.text}</h3>
+      <PatternPills text={block.subtitle.text} />
       {block.opening?.text ? <p>{block.opening.text}</p> : null}
       {block.injections.map((injection) => (
         <div className="combination-axis-injection" key={injection.title}>
@@ -653,6 +757,25 @@ function CombinationTextBlock({ block }) {
         <p key={segment.text}>{segment.text}</p>
       ))}
     </div>
+  );
+}
+
+function PatternPills({ text }) {
+  const parts = String(text || "").split(" + ");
+
+  if (parts.length < 2) {
+    return <h3>{text}</h3>;
+  }
+
+  return (
+    <h3 className="pattern-pill-row">
+      {parts.map((part, index) => (
+        <span className="pattern-pill-group" key={`${part}-${index}`}>
+          {index > 0 ? <span className="pattern-pill-plus">+</span> : null}
+          <span className="pattern-pill">{part}</span>
+        </span>
+      ))}
+    </h3>
   );
 }
 
