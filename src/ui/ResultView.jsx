@@ -154,7 +154,7 @@ function parseDeityRoleTable(table) {
     .trim()
     .split(/\r?\n/)
     .map(parseDeityRoleLine)
-    .filter(([resultName, , description]) => resultName && description)
+    .filter(([resultName, seatedName]) => resultName && seatedName)
     .filter(([resultName]) => (
       resultName !== "결과명"
       && resultName !== "Result"
@@ -166,6 +166,11 @@ function parseDeityRoleTable(table) {
       if (cells.length >= 5) {
         const [, , translatedName, description, bonpuri] = cells;
         return [resultName, { seatedName, translatedName, description, bonpuri }];
+      }
+
+      if (cells.length === 4) {
+        const [, , translatedName, bonpuri] = cells;
+        return [resultName, { seatedName, translatedName, bonpuri }];
       }
 
       const [, , description] = cells;
@@ -245,6 +250,10 @@ function lowercaseFirst(text = "") {
   return text ? `${text[0].toLowerCase()}${text.slice(1)}` : "";
 }
 
+function uppercaseFirst(text = "") {
+  return text ? `${text[0].toUpperCase()}${text.slice(1)}` : "";
+}
+
 function formatTone(tone = "") {
   return tone
     .split("/")
@@ -296,7 +305,6 @@ export default function ResultView({ language = "en", onLanguageChange, result, 
     match.deity_id === result.primary_anchor?.deity_id
   )) || matches[0];
   const recognitionPattern = result.recognition_pattern?.label || result.primary_combination;
-  const displayedRecognitionPattern = formatRecognitionPattern(recognitionPattern, resultLanguage);
   const deityResultBlock = composeDeityResultBlock({
     deityId: selectedMatch?.deity_id,
     language: resultLanguage
@@ -310,11 +318,16 @@ export default function ResultView({ language = "en", onLanguageChange, result, 
     response_intensity: result.response_intensity,
     agency: result.action_pull ?? result.agency
   };
-  const matchSentence = formatMatchSentence(selectedMatch, resultLanguage);
   const deityResultDescription = resultLanguage === "ko"
     ? DEITY_RESULT_DESCRIPTIONS_KO.get(selectedMatch?.name_ko)
     : DEITY_RESULT_DESCRIPTIONS_EN.get(selectedMatch?.name_en);
-  const nearbyMatches = matches.slice(0, 5);
+  const nearbyMatches = matches
+    .filter((match) => match.deity_id !== selectedMatch?.deity_id)
+    .slice(0, 3)
+    .map((match, index) => ({
+      ...match,
+      displayRank: index + 2
+    }));
 
   return (
     <main className="result-page">
@@ -347,22 +360,6 @@ export default function ResultView({ language = "en", onLanguageChange, result, 
             language={resultLanguage}
             showLabels
           />
-          <div className="result-hero-meta">
-            {selectedMatch?.match_percentage != null ? (
-              <div className="result-match-meter">
-                <p className="result-match-sentence">
-                  {matchSentence}
-                </p>
-                <span className="result-match-track" aria-hidden="true">
-                  <span style={{ width: `${Math.max(0, Math.min(100, selectedMatch.match_percentage))}%` }} />
-                </span>
-              </div>
-            ) : null}
-            <p className="result-pattern">
-              <span>{copy.recognitionPattern}</span>
-              <strong>{displayedRecognitionPattern}</strong>
-            </p>
-          </div>
         </section>
 
         <section className="result-section result-reading-section" aria-label={copy.resultText}>
@@ -614,13 +611,12 @@ function DeityTextBlock({ block }) {
 
 function DeityDescriptionIntroBlock({ block, source }) {
   const [titleName, ...titleDescriptionParts] = block.title.split(",");
-  const titleDescription = titleDescriptionParts.join(",").trim();
+  const titleDescription = uppercaseFirst(titleDescriptionParts.join(",").trim());
 
   return (
     <div className="writing-block deity-description-intro">
       {source ? <p className="result-source">{sourceLine(source)}</p> : null}
-      <h2>{titleName.trim()}</h2>
-      {titleDescription ? <p className="deity-description-title-line">{titleDescription}</p> : null}
+      {titleDescription ? <h2>{titleDescription}</h2> : <h2>{titleName.trim()}</h2>}
       {block.paragraphs.map((paragraph) => (
         <p key={paragraph}>{paragraph}</p>
       ))}
@@ -633,9 +629,8 @@ function DeityRole({ className, fallback, language, match }) {
 
   return (
     <p className={className}>
-      <span className="deity-role-description">{role.description}</span>
-      {role.translatedName ? (
-        <span className="deity-role-translation">{role.translatedName}</span>
+      {role.description ? (
+        <span className="deity-role-description">{role.description}</span>
       ) : null}
       {role.seatedName ? <span className="deity-role-name">{role.seatedName}</span> : null}
     </p>
@@ -662,34 +657,14 @@ function CombinationTextBlock({ block }) {
 }
 
 function NearbyAnchorItem({ copy, language, match }) {
+  const role = getDeityRole(match, language, copy.roleFallback);
+
   return (
     <li className="nearby-anchor">
       <div className="nearby-anchor-heading">
-        <h3>
-          <span className="nearby-anchor-rank">{match.rank}.</span>
-          {displayDeityName(match, language)}
-        </h3>
-        {match.match_percentage != null ? <strong>{match.match_percentage}%</strong> : null}
+        <h3>{displayDeityName(match, language)}</h3>
       </div>
-      {match.match_percentage != null ? (
-        <span className="nearby-anchor-match-track" aria-hidden="true">
-          <span style={{ width: `${Math.max(0, Math.min(100, match.match_percentage))}%` }} />
-        </span>
-      ) : null}
-      <DeityRole
-        className="nearby-anchor-role"
-        fallback={copy.roleFallback}
-        language={language}
-        match={match}
-      />
-      {getBonpuriSource(match, language) ? (
-        <p className="nearby-anchor-source">
-          {sourceLine(getBonpuriSource(match, language))}
-        </p>
-      ) : null}
-      {language === "en" && match.anchor_line ? (
-        <p className="nearby-anchor-description">{match.anchor_line}</p>
-      ) : null}
+      {role.seatedName ? <p>{role.seatedName}</p> : null}
     </li>
   );
 }

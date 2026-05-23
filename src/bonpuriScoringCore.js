@@ -8,7 +8,9 @@ export const DEFAULT_MATCH_WEIGHTS = {
   agency: 0.2
 };
 export const SUBCATEGORY_MATCH_WEIGHTS = {
-  mainAxes: 0.65,
+  shape: 0.40,
+  rawAxes: 0.25,
+  mainAxes: 0.25,
   subcategories: 0.25,
   modifiers: 0.10
 };
@@ -469,6 +471,95 @@ export function modifierSimilarity(reactivityDistance, agencyDistance, reactivit
   return maxDistance === 0 ? 1 : Math.max(0, 1 - (weightedDistance / maxDistance));
 }
 
+function scoreVector(scores) {
+  return MATCH_SCORE_KEYS.map((key) => Number(scores?.[key] || 0));
+}
+
+function meanCenteredCosineSimilarity(userScores, deityScores) {
+  const userVector = scoreVector(userScores);
+  const deityVector = scoreVector(deityScores);
+  const userMean = average(userVector);
+  const deityMean = average(deityVector);
+  const centeredUser = userVector.map((value) => value - userMean);
+  const centeredDeity = deityVector.map((value) => value - deityMean);
+  let dotProduct = 0;
+  let userMagnitude = 0;
+  let deityMagnitude = 0;
+
+  for (let index = 0; index < centeredUser.length; index += 1) {
+    dotProduct += centeredUser[index] * centeredDeity[index];
+    userMagnitude += centeredUser[index] * centeredUser[index];
+    deityMagnitude += centeredDeity[index] * centeredDeity[index];
+  }
+
+  if (!userMagnitude || !deityMagnitude) return 0.5;
+
+  return Math.max(
+    0,
+    Math.min(1, ((dotProduct / (Math.sqrt(userMagnitude) * Math.sqrt(deityMagnitude))) + 1) / 2)
+  );
+}
+
+function rankedScoreKeys(scores) {
+  return MATCH_SCORE_KEYS
+    .map((key, index) => ({ key, value: Number(scores?.[key] || 0), index }))
+    .sort((a, b) => b.value - a.value || a.index - b.index)
+    .map((entry) => entry.key);
+}
+
+function rankOrderSimilarity(userScores, deityScores) {
+  const userRanked = rankedScoreKeys(userScores);
+  const deityRanked = rankedScoreKeys(deityScores);
+  const deityPositions = Object.fromEntries(deityRanked.map((key, index) => [key, index]));
+  const maxDistance = MATCH_SCORE_KEYS.length * (MATCH_SCORE_KEYS.length - 1);
+  const distance = userRanked.reduce((sum, key, index) => (
+    sum + Math.abs(index - deityPositions[key])
+  ), 0);
+
+  return Math.max(0, 1 - (distance / maxDistance));
+}
+
+function setOverlapSimilarity(userScores, deityScores, count, fromEnd = false) {
+  const userRanked = rankedScoreKeys(userScores);
+  const deityRanked = rankedScoreKeys(deityScores);
+  const userSet = new Set((fromEnd ? userRanked.slice(-count) : userRanked.slice(0, count)));
+  const deitySet = new Set((fromEnd ? deityRanked.slice(-count) : deityRanked.slice(0, count)));
+  const overlapCount = [...userSet].filter((key) => deitySet.has(key)).length;
+
+  return overlapCount / count;
+}
+
+function dominantFieldSimilarity(userScores, deityScores) {
+  const fieldValues = (scores) => ({
+    lens: Math.max(Number(scores?.self || 0), Number(scores?.social || 0)),
+    orientation: Math.max(Number(scores?.care || 0), Number(scores?.order || 0)),
+    modifier: Math.max(
+      Number(scores?.[MODIFIER_AXIS] || 0),
+      Number(scores?.[AGENCY_AXIS] || 0)
+    )
+  });
+  const strongestField = (scores) => Object.entries(fieldValues(scores))
+    .sort((a, b) => b[1] - a[1])[0]?.[0];
+
+  return strongestField(userScores) === strongestField(deityScores) ? 1 : 0;
+}
+
+export function calculateShapeSimilarity(userScores, deityScores) {
+  const centeredCosine = meanCenteredCosineSimilarity(userScores, deityScores);
+  const rankSimilarity = rankOrderSimilarity(userScores, deityScores);
+  const topOverlap = setOverlapSimilarity(userScores, deityScores, 3);
+  const lowOverlap = setOverlapSimilarity(userScores, deityScores, 2, true);
+  const dominantSimilarity = dominantFieldSimilarity(userScores, deityScores);
+
+  return Math.max(0, Math.min(1, (
+    (centeredCosine * 0.45)
+    + (rankSimilarity * 0.25)
+    + (topOverlap * 0.15)
+    + (lowOverlap * 0.10)
+    + (dominantSimilarity * 0.05)
+  )));
+}
+
 export function rankDeityAnchors(
   axisProfile,
   responseIntensity,
@@ -487,6 +578,11 @@ export function rankDeityAnchors(
     .filter(hasCompleteVector)
     .map((deity) => {
       const deitySubcategoryProfile = getDeitySubcategoryProfile(deity, deitySubcategoryProfiles);
+      const userMatchScores = {
+        ...axisProfile,
+        [MODIFIER_AXIS]: responseIntensity,
+        [AGENCY_AXIS]: agency
+      };
       const baseDistance = euclideanDistance(axisProfile, deity.axis_vector);
       const reactivityDistance = Math.abs(
         responseIntensity - deity.axis_vector[MODIFIER_AXIS]
@@ -507,7 +603,10 @@ export function rankDeityAnchors(
         reactivityWeight,
         agencyWeight
       );
-      const totalSimilarity = (mainSimilarity * matchWeights.mainAxes)
+      const shapeSimilarity = calculateShapeSimilarity(userMatchScores, deity.axis_vector);
+      const rawAxisWeight = matchWeights.rawAxes ?? matchWeights.mainAxes ?? 0;
+      const totalSimilarity = (shapeSimilarity * (matchWeights.shape ?? 0))
+        + (mainSimilarity * rawAxisWeight)
         + (subcategorySimilarity * matchWeights.subcategories)
         + (modifiersSimilarity * matchWeights.modifiers);
       const finalScore = (1 - totalSimilarity) * 100;
@@ -520,11 +619,15 @@ export function rankDeityAnchors(
         affective_reactivity_distance: roundNumber(reactivityDistance),
         agency_distance: roundNumber(agencyDistance),
         axis_modifier_distance: roundNumber(axisModifierDistance),
+        shape_similarity: roundNumber(shapeSimilarity),
+        raw_axis_similarity: roundNumber(mainSimilarity),
         main_axis_similarity: roundNumber(mainSimilarity),
         subcategory_similarity: roundNumber(subcategorySimilarity),
         modifier_similarity: roundNumber(modifiersSimilarity),
         total_similarity: roundNumber(totalSimilarity),
         similarity_breakdown: {
+          shape_similarity: roundNumber(shapeSimilarity),
+          raw_axis_similarity: roundNumber(mainSimilarity),
           main_axis_similarity: roundNumber(mainSimilarity),
           subcategory_similarity: roundNumber(subcategorySimilarity),
           modifier_similarity: roundNumber(modifiersSimilarity),
@@ -633,6 +736,8 @@ export function anchorSummary(match) {
     bonpuri: match.deity.bonpuri,
     match_percentage: match.match_percentage ?? matchPercentage(match.final_score),
     final_score: match.final_score,
+    shape_similarity: match.shape_similarity,
+    raw_axis_similarity: match.raw_axis_similarity,
     base_distance: match.base_distance,
     affective_reactivity_distance: match.affective_reactivity_distance,
     agency_distance: match.agency_distance,
@@ -717,6 +822,8 @@ export function formatTopDeityMatch(match, userSubcategoryProfile = {}) {
     final_score: match.final_score,
     match_reasons: getMatchReasons(userSubcategoryProfile, match.deity_subcategory_profile),
     field_connection_line: "",
+    shape_similarity: match.shape_similarity,
+    raw_axis_similarity: match.raw_axis_similarity,
     deity_subcategories: match.deity_subcategory_profile?.subcategories || {}
   };
 }
@@ -970,7 +1077,9 @@ export function getSimilarityDecomposition(
       display_name: match.deity.name_en || match.deity.name_ko || match.deity.deity_id,
       korean_name: match.deity.name_ko,
       match_percent: match.match_percentage,
+      shape_similarity: match.shape_similarity,
       axis_similarity: match.main_axis_similarity,
+      raw_axis_similarity: match.raw_axis_similarity,
       subcategory_similarity: match.subcategory_similarity,
       modifier_similarity: match.modifier_similarity,
       main_drivers: mainDrivers,
@@ -991,9 +1100,11 @@ export function getSimilarityDecomposition(
 
 function getContributionBreakdown(match) {
   const weights = match.similarity_breakdown?.weights || SUBCATEGORY_MATCH_WEIGHTS;
+  const rawAxisWeight = weights.rawAxes ?? weights.mainAxes ?? 0;
 
   return {
-    axis: roundNumber(match.main_axis_similarity * weights.mainAxes),
+    shape: roundNumber((match.shape_similarity || 0) * (weights.shape || 0)),
+    raw_axis: roundNumber(match.main_axis_similarity * rawAxisWeight),
     subcategory: roundNumber(match.subcategory_similarity * weights.subcategories),
     modifier: roundNumber(match.modifier_similarity * weights.modifiers)
   };
@@ -1122,7 +1233,12 @@ function buildSimilarityGraphEdges(decomposedMatches) {
     const total = Object.values(match.contribution_breakdown).reduce((sum, value) => sum + value, 0);
     const edgeSpecs = [
       {
-        driver: "axis",
+        driver: "shape",
+        source: "axis_similarity",
+        labels: match.axis_overlap.map((overlap) => overlap.label)
+      },
+      {
+        driver: "raw_axis",
         source: "axis_similarity",
         labels: match.axis_overlap.map((overlap) => overlap.label)
       },
@@ -1144,7 +1260,8 @@ function buildSimilarityGraphEdges(decomposedMatches) {
       const isMeaningful = match.main_drivers.includes(spec.driver)
         || (spec.driver === "modifier" && value >= 0.06)
         || (spec.driver === "subcategory" && value >= 0.03)
-        || (spec.driver === "axis" && value >= 0.25);
+        || (spec.driver === "shape" && value >= 0.15)
+        || (spec.driver === "raw_axis" && value >= 0.15);
 
       if (!isMeaningful || spec.labels.length === 0) continue;
 
@@ -1403,6 +1520,8 @@ export function generateResult(answersByQuestionId, data) {
       agency_distance: match.agency_distance,
       axis_modifier_distance: match.axis_modifier_distance,
       main_axis_similarity: match.main_axis_similarity,
+      shape_similarity: match.shape_similarity,
+      raw_axis_similarity: match.raw_axis_similarity,
       subcategory_similarity: match.subcategory_similarity,
       modifier_similarity: match.modifier_similarity,
       total_similarity: match.total_similarity,
