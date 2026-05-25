@@ -47,17 +47,6 @@
       "core_question": "What is happening in the wider field, and what needs to be named or placed correctly?"
     },
     {
-      "id": "care_order",
-      "label": "Care + Order",
-      "type": "orientation_balance",
-      "axis_1": { "type": "orientation", "id": "care" },
-      "axis_2": { "type": "orientation", "id": "order" },
-      "combined_short_sentence": "This pattern points toward situations where continuation depends on correct placement.",
-      "combined_result_bridge": "When {lens} lens and {orientation} orientation is combined,",
-      "combined_result": "it can make situations visible where care alone is not enough and clarity alone is not enough either. Something may need to be held, repaired, and supported, while also being put back into a position that makes sense.",
-      "core_question": "What needs care here, and what needs to be placed correctly so it can continue or settle?"
-    },
-    {
       "id": "mixed_field",
       "label": "Mixed Field",
       "type": "layered_field",

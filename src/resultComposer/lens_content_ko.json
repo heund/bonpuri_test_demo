@@ -6,7 +6,7 @@
       "id": "self",
       "label": "내면",
       "direction": "안쪽",
-      "short_definition": "본인의 내면을 기준점으로 삼는 것",
+      "short_definition": "본인의 내면을 기준점으로 삼는",
       "bridge": "당신은 세상을 이해할 때 본인의 내면을 기준점으로 삼는 경향이 있습니다.",
       "primary_mode": {
         "id": "inner_positioning",
@@ -42,7 +42,7 @@
       "id": "social",
       "label": "관계",
       "direction": "바깥",
-      "short_definition": "본인을 둘러싼 관계와 맥락을 기준점으로 삼는 것",
+      "short_definition": "본인을 둘러싼 관계와 맥락을 기준점으로 삼는",
       "bridge": "당신은 세상을 이해할 때 본인을 둘러싼 관계와 맥락을 기준점으로 삼는 경향이 있습니다.",
       "primary_mode": {
         "id": "field_reading",

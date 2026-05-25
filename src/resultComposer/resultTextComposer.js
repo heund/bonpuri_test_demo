@@ -8,16 +8,28 @@ import resultShells from "./result_shells.json";
 
 const shells = resultShells.result_shells;
 
-function fillTemplate(template, values) {
+function fillTemplate(template = "", values) {
   return Object.entries(values).reduce(
     (text, [key, value]) => text.replaceAll(`{${key}}`, value ?? ""),
     template
   );
 }
 
+function combinationShell(language = "en") {
+  return language === "ko"
+    ? shells.combination_ko || shells.combination
+    : shells.combination;
+}
+
 function axisSource(type, language = "en") {
   if (type === "lens" && language === "ko") return lensContentKo;
   return type === "lens" ? lensContent : orientationContent;
+}
+
+function combinationPairId(axis1, axis2) {
+  const lens = [axis1, axis2].find((axis) => axis?.type === "lens");
+  const orientation = [axis1, axis2].find((axis) => axis?.type === "orientation");
+  return lens && orientation ? `${lens.id}_${orientation.id}` : "";
 }
 
 function findAxisContent(axis, language = "en") {
@@ -29,28 +41,29 @@ function findAxisContent(axis, language = "en") {
 function renderAxisSegments(content) {
   if (!content) return [];
   const values = { label: content.label };
+  const axisType = content.type === "lens" ? "Lens" : "Orientation";
 
   return [
     {
-      marker: `{${content.label} ${content.type === "lens" ? "Lens" : "Orientation"}.primary_mode.text}`,
+      marker: `{${content.label} ${axisType}.primary_mode.text}`,
       text: fillTemplate(content.primary_mode.text, values)
     },
     ...content.aspects.flatMap((aspect) => [
       {
-        marker: `{${content.label} ${content.type === "lens" ? "Lens" : "Orientation"}.${aspect.id}.attention}`,
+        marker: `{${content.label} ${axisType}.${aspect.id}.attention}`,
         text: fillTemplate(aspect.attention, values)
       },
       {
-        marker: `{${content.label} ${content.type === "lens" ? "Lens" : "Orientation"}.${aspect.id}.strength}`,
+        marker: `{${content.label} ${axisType}.${aspect.id}.strength}`,
         text: fillTemplate(aspect.strength, values)
       },
       {
-        marker: `{${content.label} ${content.type === "lens" ? "Lens" : "Orientation"}.${aspect.id}.friction}`,
+        marker: `{${content.label} ${axisType}.${aspect.id}.friction}`,
         text: fillTemplate(aspect.friction, values)
       }
     ]),
     {
-      marker: `{${content.label} ${content.type === "lens" ? "Lens" : "Orientation"}.core_question}`,
+      marker: `{${content.label} ${axisType}.core_question}`,
       text: fillTemplate(content.core_question, values)
     }
   ];
@@ -61,7 +74,7 @@ function getCombinationBridge(combination, axis, position, language = "en") {
     return axis.bridge;
   }
 
-  const shell = shells.combination;
+  const shell = combinationShell(language);
 
   if (combination.type === "lens_orientation" && axis.type === "lens") {
     return fillTemplate(shell.lens_bridge_template, { label: axis.label });
@@ -69,14 +82,6 @@ function getCombinationBridge(combination, axis, position, language = "en") {
 
   if (combination.type === "lens_orientation" && axis.type === "orientation") {
     return fillTemplate(shell.orientation_bridge_template, { label: axis.label });
-  }
-
-  if (combination.type === "orientation_balance" && position === 1) {
-    return fillTemplate(shell.orientation_balance_first_bridge_template, { label: axis.label });
-  }
-
-  if (combination.type === "orientation_balance" && position === 2) {
-    return fillTemplate(shell.orientation_balance_second_bridge_template, { label: axis.label });
   }
 
   return "";
@@ -90,10 +95,10 @@ function axisDisplayLabel(axis, language = "en") {
   if (!axis) return "";
   if (language === "ko") {
     const koreanAxisLabels = {
-      self: "내면",
-      social: "관계",
-      care: "돌봄",
-      order: "질서"
+      self: "ᄆᆞᆷ속",
+      social: "궨당",
+      care: "거념",
+      order: "가리"
     };
     const axisTypeLabel = axis.type === "lens" ? "기준" : "감각";
     return `${axisTypeLabel}: ${koreanAxisLabels[axis.id] || axis.label}`;
@@ -110,14 +115,48 @@ function combinationDisplayLabel(combination, axis1, axis2, language = "en") {
 }
 
 function combinationAxisTemplateValues(axis1, axis2) {
+  const lens = [axis1, axis2].find((axis) => axis?.type === "lens");
+  const lensShortDescription = (
+    lens?.short_definition || "following several signals at once"
+  ).replace(/\s+first$/i, "");
+
   return {
-    lens: [axis1, axis2].find((axis) => axis?.type === "lens")?.label
-      || axis1?.label
-      || "",
+    lens: lens?.label || axis1?.label || "",
+    "lens short definition": lensShortDescription,
+    lens_short_description: lensShortDescription,
     orientation: [axis1, axis2].find((axis) => axis?.type === "orientation")?.label
       || axis2?.label
       || ""
   };
+}
+
+function buildKoreanPatternSections(shell, axis1, axis2) {
+  const lens = [axis1, axis2].find((axis) => axis?.type === "lens");
+  const orientation = [axis1, axis2].find((axis) => axis?.type === "orientation");
+  const lensPattern = lens ? shell.pattern_lens?.[lens.id] : null;
+  const orientationPattern = orientation ? shell.pattern_orientation?.[orientation.id] : null;
+  const combinationPattern = shell.pattern_combination?.[combinationPairId(axis1, axis2)];
+
+  return [
+    lensPattern ? {
+      heading: fillTemplate(lensPattern.heading_template, {
+        subtitle: lensPattern.subtitle
+      }),
+      description: lensPattern.description
+    } : null,
+    orientationPattern ? {
+      heading: fillTemplate(orientationPattern.heading_template, {
+        subtitle: orientationPattern.subtitle
+      }),
+      description: orientationPattern.description
+    } : null,
+    combinationPattern ? {
+      paragraphs: [
+        combinationPattern.combination_description,
+        combinationPattern.bonpuri_connection
+      ].filter(Boolean)
+    } : null
+  ].filter(Boolean);
 }
 
 function buildCombinationBlock(primaryCombination, language = "en") {
@@ -129,15 +168,20 @@ function buildCombinationBlock(primaryCombination, language = "en") {
 
   const axis1 = findAxisContent(combination.axis_1, language);
   const axis2 = findAxisContent(combination.axis_2, language);
+  const shell = combinationShell(language);
   const axisTemplateValues = combinationAxisTemplateValues(axis1, axis2);
+  const patternSections = language === "ko"
+    ? buildKoreanPatternSections(shell, axis1, axis2)
+    : [];
   const injections = [axis1, axis2].map((axis, index) => {
     if (!axis) return null;
+    const axisType = axis.type === "lens" ? "Lens" : "Orientation";
 
     return {
       title: axisDisplayLabel(axis, language),
-      marker: `{${axis.label} ${axis.type === "lens" ? "Lens" : "Orientation"} injection}`,
+      marker: `{${axis.label} ${axisType} injection}`,
       bridge: getCombinationBridge(combination, axis, index + 1, language),
-      bridgeMarker: `{${axis.label} ${axis.type === "lens" ? "Lens" : "Orientation"} bridge}`,
+      bridgeMarker: `{${axis.label} ${axisType} bridge}`,
       segments: renderAxisSegments(axis).slice(0, -1)
     };
   }).filter(Boolean);
@@ -146,16 +190,21 @@ function buildCombinationBlock(primaryCombination, language = "en") {
     kind: "combination",
     title: {
       marker: "{combination.title_template}",
-      text: language === "ko" ? "결과 패턴" : shells.combination.title_template
+      text: shell.title_template
     },
     subtitle: {
       marker: "{combination.label}",
       text: combinationDisplayLabel(combination, axis1, axis2, language)
     },
     opening: {
-      marker: "{combination.combined_short_sentence}",
-      text: combination.combined_short_sentence
+      marker: "{combination.opening_template}",
+      text: fillTemplate(shell.opening_template, axisTemplateValues)
     },
+    openingBridge: {
+      marker: "{combination.opening_bridge_template}",
+      text: fillTemplate(shell.opening_bridge_template, axisTemplateValues)
+    },
+    patternSections,
     injections,
     closing: [
       {
@@ -165,7 +214,11 @@ function buildCombinationBlock(primaryCombination, language = "en") {
           combination.combined_result
         ].filter(Boolean).join(" ")
       }
-    ]
+    ],
+    ending: {
+      marker: "{combination.ending_template}",
+      text: shell.ending_template
+    }
   };
 }
 

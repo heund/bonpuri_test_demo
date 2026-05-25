@@ -495,13 +495,6 @@ p {
   max-width: 38rem;
 }
 
-.result-deity-image {
-  display: block;
-  height: auto;
-  margin: 0.9rem auto 0.85rem;
-  max-width: min(35.1rem, 80vw);
-}
-
 .result-source {
   color: #86868b;
   font-size: 0.84rem;
@@ -633,7 +626,7 @@ p {
 .result-hero .compact-score-summary {
   gap: clamp(3rem, 9vw, 7rem);
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: 0 auto;
+  margin: 4rem auto 0;
   max-width: 840px;
   width: 100%;
 }
@@ -1325,11 +1318,6 @@ body[data-theme="dark"] .profile-shape-swatch-deity {
 
   .compact-score-summary {
     grid-template-columns: 1fr;
-  }
-
-  .result-deity-image {
-    margin: 0.75rem auto 0.72rem;
-    max-width: min(27.9rem, 90vw);
   }
 
   .result-hero .compact-score-summary {

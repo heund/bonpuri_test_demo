@@ -11,12 +11,6 @@ import selfLensImage from "../../image/self_lens.svg";
 import socialLensImage from "../../image/social_lens.svg";
 import careOrientationImage from "../../image/care_orientation.svg";
 import orderOrientationImage from "../../image/order_orientation.svg";
-import donghaeYonggungImage from "../../image/Deity/Donghaeyonggung.svg";
-import gangnimImage from "../../image/Deity/gangnim.svg";
-import jacheongbiImage from "../../image/Deity/Jacheongbi.svg";
-import myeongjingukImage from "../../image/Deity/Myeongjinguk.svg";
-import wongangAmiImage from "../../image/Deity/Wongang_Ami.svg";
-import yeosanBuinImage from "../../image/Deity/Yeosanbuin.svg";
 import LanguageToggle from "./LanguageToggle.jsx";
 import ThemeToggle from "./ThemeToggle.jsx";
 
@@ -86,14 +80,6 @@ const SCORE_VISUAL_IMAGES = {
   order: orderOrientationImage,
   self: selfLensImage,
   social: socialLensImage
-};
-const DEITY_IMAGES = {
-  donghae_yonggungs_daughter: donghaeYonggungImage,
-  gangnim: gangnimImage,
-  jacheongbi: jacheongbiImage,
-  myeongjinguks_daughter: myeongjingukImage,
-  wongang_ami: wongangAmiImage,
-  yeosan_buin: yeosanBuinImage
 };
 const DEITY_ROLES = parseDeityRoleTable(deityNamesTable);
 const DEITY_RESULT_DESCRIPTIONS_EN = parseDeityResultDescriptions(deityResultDescriptionsEnText);
@@ -325,10 +311,10 @@ function formatRecognitionPattern(pattern, language) {
   if (language !== "ko") return pattern;
 
   const koreanAxisLabels = {
-    Self: "내면",
-    Social: "관계",
-    Care: "돌봄",
-    Order: "질서"
+    Self: "ᄆᆞᆷ속",
+    Social: "궨당",
+    Care: "거념",
+    Order: "가리"
   };
 
   return pattern
@@ -370,7 +356,6 @@ export default function ResultView({
     deityResultBlock,
     resultLanguage
   );
-  const selectedDeityImage = DEITY_IMAGES[selectedMatch?.deity_id] || null;
   const nearbyMatches = matches
     .filter((match) => match.deity_id !== selectedMatch?.deity_id)
     .slice(0, 3)
@@ -399,14 +384,6 @@ export default function ResultView({
             language={resultLanguage}
             match={selectedMatch}
           />
-          {selectedDeityImage ? (
-            <img
-              alt=""
-              aria-hidden="true"
-              className="result-deity-image"
-              src={selectedDeityImage}
-            />
-          ) : null}
           <CompactScoreSummary
             language={resultLanguage}
             scores={userProfileScores}
@@ -415,6 +392,7 @@ export default function ResultView({
         </section>
 
         <section className="result-section result-reading-section" aria-label={copy.resultText}>
+          <CombinationOpening blocks={combinationResultBlocks} />
           {deityResultDescription ? (
             <DeityDescriptionIntroBlock
               block={deityResultDescription}
@@ -741,21 +719,49 @@ function DeityRole({ className, fallback, language, match }) {
   );
 }
 
+function CombinationOpening({ blocks }) {
+  const openingText = blocks.find((block) => block.opening?.text)?.opening?.text;
+
+  if (!openingText) return null;
+
+  return (
+    <div className="writing-block combination-opening-block">
+      {openingText.split(/\n{2,}/).map((paragraph) => (
+        <p key={paragraph}>{paragraph}</p>
+      ))}
+    </div>
+  );
+}
+
 function CombinationTextBlock({ block }) {
   return (
     <div className="writing-block combination-result-block">
-      <h2>{block.title.text}</h2>
+      {block.title.text ? <h2>{block.title.text}</h2> : null}
       <PatternPills text={block.subtitle.text} />
-      {block.opening?.text ? <p>{block.opening.text}</p> : null}
-      {block.injections.map((injection) => (
-        <div className="combination-axis-injection" key={injection.title}>
-          {injection.bridge ? <p>{injection.bridge}</p> : null}
-          <p>{injection.segments.map((segment) => segment.text).join(" ")}</p>
-        </div>
-      ))}
-      {block.closing.map((segment) => (
-        <p key={segment.text}>{segment.text}</p>
-      ))}
+      {block.openingBridge?.text ? <p>{block.openingBridge.text}</p> : null}
+      {block.patternSections?.length ? (
+        block.patternSections.map((section) => (
+          <div className="combination-axis-injection" key={section.heading || section.paragraphs?.join(" ")}>
+            {section.heading ? <h3>{section.heading}</h3> : null}
+            {section.description ? <p>{section.description}</p> : null}
+            {section.paragraphs?.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        ))
+      ) : (
+        <>
+          {block.injections.map((injection) => (
+            <div className="combination-axis-injection" key={injection.title}>
+              <p>{injection.segments.map((segment) => segment.text).join(" ")}</p>
+            </div>
+          ))}
+          {block.closing.map((segment) => (
+            <p key={segment.text}>{segment.text}</p>
+          ))}
+        </>
+      )}
+      {block.ending?.text ? <p>{block.ending.text}</p> : null}
     </div>
   );
 }
