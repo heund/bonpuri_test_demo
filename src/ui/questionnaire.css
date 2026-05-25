@@ -418,7 +418,7 @@ p {
 }
 
 .result-hero {
-  margin-bottom: 5.6rem;
+  margin-bottom: 0;
   padding: 0;
 }
 
@@ -503,8 +503,8 @@ p {
 }
 
 .result-hero .profile-shape {
-  margin: 0.35rem auto 0;
-  max-width: 710px;
+  margin: 1.35rem auto 0;
+  max-width: min(100%, 940px);
 }
 
 .result-reading-section .profile-shape {
@@ -914,6 +914,26 @@ p {
   padding-top: 2rem;
 }
 
+.combination-result-block .compact-score-summary {
+  gap: clamp(3rem, 9vw, 7rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto 4rem;
+  max-width: 840px;
+  width: 100%;
+}
+
+.combination-result-block .compact-score-group-lens,
+.combination-result-block .compact-score-group-orientation {
+  display: grid;
+  grid-column: auto;
+  justify-items: start;
+}
+
+.combination-result-block .compact-score-group-lens h3,
+.combination-result-block .compact-score-group-orientation h3 {
+  display: none;
+}
+
 .combination-result-block h2 {
   border: 2px solid var(--text-primary);
   border-radius: 999px;
@@ -940,6 +960,10 @@ p {
   align-items: center;
   display: inline-flex;
   gap: 0.45rem;
+}
+
+.pattern-section-pill {
+  margin: 0 0 1rem;
 }
 
 .pattern-pill {
@@ -1072,8 +1096,14 @@ td {
   align-items: center;
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: minmax(0, 34rem) minmax(8.5rem, 1fr);
+  grid-template-columns: minmax(8.5rem, 1fr) minmax(0, 460px) minmax(8.5rem, 1fr);
   justify-content: center;
+}
+
+.profile-shape-layout > svg {
+  grid-column: 2;
+  justify-self: center;
+  max-width: 460px;
 }
 
 .profile-shape-grid,
@@ -1119,6 +1149,7 @@ td {
   align-self: center;
   display: grid;
   gap: 0.65rem;
+  grid-column: 3;
   justify-self: start;
   max-width: 11rem;
 }
@@ -1326,6 +1357,13 @@ body[data-theme="dark"] .profile-shape-swatch-deity {
     max-width: 24rem;
   }
 
+  .combination-result-block .compact-score-summary {
+    gap: 1.7rem;
+    grid-template-columns: 1fr;
+    margin-bottom: 3rem;
+    max-width: 24rem;
+  }
+
   .compact-score-group dl {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1378,6 +1416,11 @@ body[data-theme="dark"] .profile-shape-swatch-deity {
   .profile-shape-layout {
     gap: 0.7rem;
     grid-template-columns: 1fr;
+  }
+
+  .profile-shape-layout > svg,
+  .profile-shape-legend {
+    grid-column: auto;
   }
 
   .profile-shape-legend {

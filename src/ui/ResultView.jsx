@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+﻿import { useMemo } from "react";
 import deityMap from "../../data/deity_axis_map.json";
 import deityNamesTable from "../../deity_names.txt?raw";
 import deityResultDescriptionsEnText from "../../results_texts/deity_result_description_en.txt?raw";
@@ -101,7 +101,7 @@ const RESULT_COPY = {
     compactScores: "결과 점수",
     resultText: "결과 해석",
     nearbyAnchors: "가까운 신격 결과",
-    nearbyDescription: "현재 결과와 가까운 다섯 개의 신격 연결입니다.",
+    nearbyDescription: "현재 결과와 가까운 신격 연결입니다.",
     roleFallback: "본풀이 결과 신격",
     takeAgain: "다시 하기"
   }
@@ -384,10 +384,16 @@ export default function ResultView({
             language={resultLanguage}
             match={selectedMatch}
           />
-          <CompactScoreSummary
-            language={resultLanguage}
+          <ProfileShapeChart
+            legend={{
+              deity: displayDeityName(selectedMatch, resultLanguage),
+              user: resultLanguage === "ko" ? "내 결과" : "Your result"
+            }}
+            overlayScores={getDeityProfileScores(selectedMatch?.deity_id)}
             scores={userProfileScores}
-            showModifier={false}
+            size={460}
+            language={resultLanguage}
+            showLabels
           />
         </section>
 
@@ -403,22 +409,13 @@ export default function ResultView({
             <DeityTextBlock block={deityResultBlock} />
           ) : null}
           {combinationResultBlocks.map((block) => (
-            <CombinationTextBlock block={block} key={block.subtitle.text} />
+            <CombinationTextBlock
+              block={block}
+              key={block.subtitle.text}
+              language={resultLanguage}
+              scores={userProfileScores}
+            />
           ))}
-        </section>
-
-        <section className="result-section profile-shape-section" aria-label="Profile shape">
-          <ProfileShapeChart
-            legend={{
-              deity: displayDeityName(selectedMatch, resultLanguage),
-              user: resultLanguage === "ko" ? "내 결과" : "Your result"
-            }}
-            overlayScores={getDeityProfileScores(selectedMatch?.deity_id)}
-            scores={userProfileScores}
-            size={460}
-            language={resultLanguage}
-            showLabels
-          />
         </section>
 
         <section className="result-section nearby-anchors-section" aria-labelledby="nearby-anchors-title">
@@ -733,15 +730,21 @@ function CombinationOpening({ blocks }) {
   );
 }
 
-function CombinationTextBlock({ block }) {
+function CombinationTextBlock({ block, language, scores }) {
   return (
     <div className="writing-block combination-result-block">
+      <CompactScoreSummary
+        language={language}
+        scores={scores}
+        showModifier={false}
+      />
       {block.title.text ? <h2>{block.title.text}</h2> : null}
-      <PatternPills text={block.subtitle.text} />
+      {block.patternSections?.length ? null : <PatternPills text={block.subtitle.text} />}
       {block.openingBridge?.text ? <p>{block.openingBridge.text}</p> : null}
       {block.patternSections?.length ? (
         block.patternSections.map((section) => (
           <div className="combination-axis-injection" key={section.heading || section.paragraphs?.join(" ")}>
+            {section.pill ? <PatternSectionPill text={section.pill} /> : null}
             {section.heading ? <h3>{section.heading}</h3> : null}
             {section.description ? <p>{section.description}</p> : null}
             {section.paragraphs?.map((paragraph) => (
@@ -763,6 +766,14 @@ function CombinationTextBlock({ block }) {
       )}
       {block.ending?.text ? <p>{block.ending.text}</p> : null}
     </div>
+  );
+}
+
+function PatternSectionPill({ text }) {
+  return (
+    <h3 className="pattern-section-pill">
+      <span className="pattern-pill">{text}</span>
+    </h3>
   );
 }
 

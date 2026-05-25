@@ -139,12 +139,14 @@ function buildKoreanPatternSections(shell, axis1, axis2) {
 
   return [
     lensPattern ? {
+      pill: axisDisplayLabel(lens, "ko"),
       heading: fillTemplate(lensPattern.heading_template, {
         subtitle: lensPattern.subtitle
       }),
       description: lensPattern.description
     } : null,
     orientationPattern ? {
+      pill: axisDisplayLabel(orientation, "ko"),
       heading: fillTemplate(orientationPattern.heading_template, {
         subtitle: orientationPattern.subtitle
       }),
