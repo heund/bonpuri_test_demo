@@ -511,8 +511,7 @@ export default function ResultView({
           onClick={onRestart}
         >
           <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-            <path d="M3 10.6 12 3l9 7.6" />
-            <path d="M5.5 9.5V21h4.7v-6.2h3.6V21h4.7V9.5" />
+            <path d="M3.1 10.9 12 3.4l8.9 7.5-1.55 1.85-1.05-.88V20.6h-5.05v-5.85h-2.5v5.85H5.7v-8.73l-1.05.88-1.55-1.85Z" />
           </svg>
         </button>
         <LanguageToggle
