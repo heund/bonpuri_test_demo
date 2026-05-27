@@ -246,6 +246,7 @@ export default function QuestionnaireApp() {
 
   return (
     <main className="questionnaire-page">
+      <HomeButton language={language} onClick={handleRestart} />
       <h1>{language === "ko" ? "본풀이 성향 테스트" : "Bonpuri Type Test"}</h1>
 
       <section
@@ -296,6 +297,21 @@ export default function QuestionnaireApp() {
         </div>
       </section>
     </main>
+  );
+}
+
+function HomeButton({ language, onClick }) {
+  return (
+    <button
+      aria-label={language === "ko" ? "홈으로" : "Home"}
+      className="home-button"
+      type="button"
+      onClick={onClick}
+    >
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+        <path d="M3.1 10.9 12 3.4l8.9 7.5-1.55 1.85-1.05-.88V20.6h-5.05v-5.85h-2.5v5.85H5.7v-8.73l-1.05.88-1.55-1.85Z" />
+      </svg>
+    </button>
   );
 }
 

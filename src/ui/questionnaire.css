@@ -386,18 +386,22 @@ p {
   border: 0;
   color: #1d1d1f;
   display: inline-flex;
-  height: 1.9rem;
+  height: 2.25rem;
   justify-content: center;
-  min-height: 1.9rem;
+  left: var(--page-safe-x, clamp(1rem, 4vw, 3rem));
+  min-height: 2.25rem;
   padding: 0;
-  width: 1.9rem;
+  position: fixed;
+  top: var(--page-safe-top, clamp(1rem, 3vw, 2.4rem));
+  width: 2.25rem;
+  z-index: 200;
 }
 
 .home-button svg {
   display: block;
   fill: currentColor;
-  height: 1.12rem;
-  width: 1.12rem;
+  height: 1.42rem;
+  width: 1.42rem;
 }
 
 .home-button:hover:not(:disabled) {
