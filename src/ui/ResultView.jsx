@@ -504,6 +504,17 @@ export default function ResultView({
       style={{ "--hero-paper-image": `url(${heroBlackPaperImage})` }}
     >
       <div className="page-top-bar">
+        <button
+          aria-label={resultLanguage === "ko" ? "홈으로" : "Home"}
+          className="home-button"
+          type="button"
+          onClick={onRestart}
+        >
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path d="M3 10.6 12 3l9 7.6" />
+            <path d="M5.5 9.5V21h4.7v-6.2h3.6V21h4.7V9.5" />
+          </svg>
+        </button>
         <LanguageToggle
           language={resultLanguage}
           onLanguageChange={onLanguageChange}
