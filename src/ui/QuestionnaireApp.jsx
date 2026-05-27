@@ -58,11 +58,18 @@ export default function QuestionnaireApp() {
   const [language, setLanguage] = useState("en");
   const [hasStarted, setHasStarted] = useState(false);
   const [assetsReady, setAssetsReady] = useState(false);
+  const [loadedAssets, setLoadedAssets] = useState(0);
+  const assetCount = PRELOAD_IMAGE_URLS.length + 1;
+  const loadingProgress = assetsReady ? 100 : Math.round((loadedAssets / assetCount) * 100);
 
   useEffect(() => {
     let isMounted = true;
 
-    preloadAppAssets().finally(() => {
+    preloadAppAssets(() => {
+      if (isMounted) {
+        setLoadedAssets((count) => Math.min(assetCount, count + 1));
+      }
+    }).finally(() => {
       if (isMounted) setAssetsReady(true);
     });
 
@@ -141,9 +148,21 @@ export default function QuestionnaireApp() {
           </h1>
           <p>{language === "ko" ? "언어를 선택하고 시작하세요" : "Select language to start"}</p>
           {!assetsReady ? (
-            <p className="landing-loading-status">
-              {language === "ko" ? "이미지를 불러오는 중입니다" : "Loading assets"}
-            </p>
+            <div className="landing-loading" aria-live="polite">
+              <p className="landing-loading-status">
+                {language === "ko" ? "이미지를 불러오는 중입니다" : "Loading assets"}
+              </p>
+              <div
+                aria-label={language === "ko" ? "로딩 진행률" : "Loading progress"}
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow={loadingProgress}
+                className="landing-loading-progress"
+                role="progressbar"
+              >
+                <span style={{ width: `${loadingProgress}%` }} />
+              </div>
+            </div>
           ) : null}
           <div className="landing-language-actions">
             <button
@@ -263,11 +282,14 @@ function shuffle(items) {
   return shuffled;
 }
 
-function preloadAppAssets() {
-  const imagePromises = PRELOAD_IMAGE_URLS.map(preloadImage);
+function preloadAppAssets(onProgress) {
+  const markProgress = () => {
+    if (onProgress) onProgress();
+  };
+  const imagePromises = PRELOAD_IMAGE_URLS.map((src) => preloadImage(src).finally(markProgress));
   const fontPromise = typeof document !== "undefined" && document.fonts
-    ? document.fonts.ready
-    : Promise.resolve();
+    ? document.fonts.ready.finally(markProgress)
+    : Promise.resolve().finally(markProgress);
 
   return Promise.allSettled([...imagePromises, fontPromise]);
 }

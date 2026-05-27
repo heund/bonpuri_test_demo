@@ -133,6 +133,27 @@ main {
   margin: -0.85rem 0 1.25rem;
 }
 
+.landing-loading {
+  margin: -0.1rem auto 1.25rem;
+  max-width: min(18rem, 76vw);
+}
+
+.landing-loading-progress {
+  background: rgba(29, 29, 31, 0.12);
+  border-radius: 999px;
+  height: 0.72rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.landing-loading-progress span {
+  background: #0071e3;
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  transition: width 180ms ease;
+}
+
 .landing-language-actions {
   display: flex;
   gap: 1.15rem;
