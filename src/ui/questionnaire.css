@@ -386,22 +386,22 @@ p {
   border: 0;
   color: #1d1d1f;
   display: inline-flex;
-  height: 2.25rem;
+  height: 4rem;
   justify-content: center;
   left: var(--page-safe-x, clamp(1rem, 4vw, 3rem));
-  min-height: 2.25rem;
+  min-height: 4rem;
   padding: 0;
   position: fixed;
   top: var(--page-control-top, var(--page-safe-top, clamp(1rem, 3vw, 2.4rem)));
-  width: 2.25rem;
+  width: 4rem;
   z-index: 200;
 }
 
 .home-button svg {
   display: block;
   fill: currentColor;
-  height: 1.42rem;
-  width: 1.42rem;
+  height: 3.05rem;
+  width: 3.05rem;
 }
 
 .home-button:hover:not(:disabled) {
