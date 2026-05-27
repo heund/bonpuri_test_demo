@@ -1,10 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import questionsData from "../../data/test_questions_seed.json";
 import deityMap from "../../data/deity_axis_map.json";
 import resultTemplates from "../../data/result_templates.json";
 import axisDefinitions from "../../data/axis_definitions.json";
+import chogongThreeBrothersImage from "../../image/Deity/CHOGONGSHIN.svg";
+import daebyeolsangManuraImage from "../../image/Deity/DAEBYUL.svg";
+import donghaeYonggungDaughterImage from "../../image/Deity/DONGHAE.svg";
+import gangnimImage from "../../image/Deity/GANGNIM.svg";
+import jijangAgissiImage from "../../image/Deity/JIJANG.svg";
+import myeongjingukDaughterImage from "../../image/Deity/MYUNG.svg";
+import nokdisaengiImage from "../../image/Deity/NOKDI.svg";
+import sobyeolwangImage from "../../image/Deity/SOBYUL.svg";
+import yeosanBuinImage from "../../image/Deity/YEOSAN.svg";
+import heroBlackPaperImage from "../../image/background/blackpaper.png";
+import heroArchImage from "../../image/background/cutout.png";
+import heroCloudImage from "../../image/background/cloud.png";
+import heroCloudTwoImage from "../../image/background/cloud2.png";
+import selfLensImage from "../../image/self_lens.svg";
+import socialLensImage from "../../image/social_lens.svg";
+import careOrientationImage from "../../image/care_orientation.svg";
+import orderOrientationImage from "../../image/order_orientation.svg";
 import { generateResult } from "../bonpuriScoringCore.js";
 import ResultView from "./ResultView.jsx";
+
+const PRELOAD_IMAGE_URLS = [
+  chogongThreeBrothersImage,
+  daebyeolsangManuraImage,
+  donghaeYonggungDaughterImage,
+  gangnimImage,
+  jijangAgissiImage,
+  myeongjingukDaughterImage,
+  nokdisaengiImage,
+  sobyeolwangImage,
+  yeosanBuinImage,
+  heroBlackPaperImage,
+  heroArchImage,
+  heroCloudImage,
+  heroCloudTwoImage,
+  selfLensImage,
+  socialLensImage,
+  careOrientationImage,
+  orderOrientationImage
+];
 
 const prototypeData = {
   axisDefinitions,
@@ -20,6 +57,19 @@ export default function QuestionnaireApp() {
   const [result, setResult] = useState(null);
   const [language, setLanguage] = useState("en");
   const [hasStarted, setHasStarted] = useState(false);
+  const [assetsReady, setAssetsReady] = useState(false);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    preloadAppAssets().finally(() => {
+      if (isMounted) setAssetsReady(true);
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const currentQuestion = questions[currentQuestionIndex];
   const progressLabel = language === "ko"
@@ -60,6 +110,8 @@ export default function QuestionnaireApp() {
   }
 
   function handleDebugResult() {
+    if (!assetsReady) return;
+
     const debugAnswers = Object.fromEntries(
       questionsData.questions.map((question) => [question.id, question.options[0]?.id])
     );
@@ -88,10 +140,17 @@ export default function QuestionnaireApp() {
             <span>Type Test</span>
           </h1>
           <p>{language === "ko" ? "언어를 선택하고 시작하세요" : "Select language to start"}</p>
+          {!assetsReady ? (
+            <p className="landing-loading-status">
+              {language === "ko" ? "이미지를 불러오는 중입니다" : "Loading assets"}
+            </p>
+          ) : null}
           <div className="landing-language-actions">
             <button
+              disabled={!assetsReady}
               type="button"
               onClick={() => {
+                if (!assetsReady) return;
                 setLanguage("en");
                 setHasStarted(true);
               }}
@@ -99,8 +158,10 @@ export default function QuestionnaireApp() {
               English
             </button>
             <button
+              disabled={!assetsReady}
               type="button"
               onClick={() => {
+                if (!assetsReady) return;
                 setLanguage("ko");
                 setHasStarted(true);
               }}
@@ -108,7 +169,12 @@ export default function QuestionnaireApp() {
               한국어
             </button>
           </div>
-          <button className="debug-result-button" type="button" onClick={handleDebugResult}>
+          <button
+            className="debug-result-button"
+            disabled={!assetsReady}
+            type="button"
+            onClick={handleDebugResult}
+          >
             Debug result page
           </button>
         </section>
@@ -195,4 +261,30 @@ function shuffle(items) {
   }
 
   return shuffled;
+}
+
+function preloadAppAssets() {
+  const imagePromises = PRELOAD_IMAGE_URLS.map(preloadImage);
+  const fontPromise = typeof document !== "undefined" && document.fonts
+    ? document.fonts.ready
+    : Promise.resolve();
+
+  return Promise.allSettled([...imagePromises, fontPromise]);
+}
+
+function preloadImage(src) {
+  return new Promise((resolve) => {
+    const image = new Image();
+
+    image.onload = () => {
+      if (image.decode) {
+        image.decode().catch(() => undefined).finally(resolve);
+        return;
+      }
+
+      resolve();
+    };
+    image.onerror = resolve;
+    image.src = src;
+  });
 }
