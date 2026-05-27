@@ -392,7 +392,7 @@ p {
   min-height: 2.25rem;
   padding: 0;
   position: fixed;
-  top: var(--page-safe-top, clamp(1rem, 3vw, 2.4rem));
+  top: var(--page-control-top, var(--page-safe-top, clamp(1rem, 3vw, 2.4rem)));
   width: 2.25rem;
   z-index: 200;
 }
@@ -508,7 +508,7 @@ p {
   margin: 0;
   position: fixed;
   right: var(--page-safe-x);
-  top: var(--page-safe-top);
+  top: var(--page-control-top, var(--page-safe-top));
   z-index: 200;
 }
 
@@ -1593,12 +1593,12 @@ td {
   .result-page {
     --hero-scene-height: clamp(520px, 78vw, 720px);
     --hero-top-safe-area: clamp(5.4rem, 11vw, 7.2rem);
+    --page-control-top: clamp(0.85rem, 2.5vw, 1.4rem);
   }
 
   .page-top-bar {
     max-width: calc(100vw - 1.5rem);
     right: clamp(0.85rem, 3vw, 1.5rem);
-    top: clamp(0.85rem, 2.5vw, 1.4rem);
   }
 
   .debug-deity-select span {
