@@ -23,7 +23,7 @@ import orderOrientationImage from "../../image/order_orientation.svg";
 import { generateResult } from "../bonpuriScoringCore.js";
 import ResultView from "./ResultView.jsx";
 
-const PRELOAD_IMAGE_URLS = [
+const DEITY_WARMUP_URLS = [
   chogongThreeBrothersImage,
   daebyeolsangManuraImage,
   donghaeYonggungDaughterImage,
@@ -32,7 +32,11 @@ const PRELOAD_IMAGE_URLS = [
   myeongjingukDaughterImage,
   nokdisaengiImage,
   sobyeolwangImage,
-  yeosanBuinImage,
+  yeosanBuinImage
+];
+
+const PRELOAD_IMAGE_URLS = [
+  ...DEITY_WARMUP_URLS,
   heroBlackPaperImage,
   heroArchImage,
   heroCloudImage,
@@ -42,6 +46,7 @@ const PRELOAD_IMAGE_URLS = [
   careOrientationImage,
   orderOrientationImage
 ];
+const WARMUP_SETTLE_FRAMES = 2;
 
 const prototypeData = {
   axisDefinitions,
@@ -57,26 +62,53 @@ export default function QuestionnaireApp() {
   const [result, setResult] = useState(null);
   const [language, setLanguage] = useState("en");
   const [hasStarted, setHasStarted] = useState(false);
-  const [assetsReady, setAssetsReady] = useState(false);
-  const [loadedAssets, setLoadedAssets] = useState(0);
+  const [loadedAssetUrls, setLoadedAssetUrls] = useState(() => new Set());
+  const [fontsReady, setFontsReady] = useState(false);
+  const [paintSettled, setPaintSettled] = useState(false);
   const assetCount = PRELOAD_IMAGE_URLS.length + 1;
+  const loadedAssets = loadedAssetUrls.size + (fontsReady ? 1 : 0);
+  const assetsReady = loadedAssets >= assetCount && paintSettled;
   const loadingProgress = assetsReady ? 100 : Math.round((loadedAssets / assetCount) * 100);
 
   useEffect(() => {
     let isMounted = true;
 
-    preloadAppAssets(() => {
-      if (isMounted) {
-        setLoadedAssets((count) => Math.min(assetCount, count + 1));
-      }
-    }).finally(() => {
-      if (isMounted) setAssetsReady(true);
+    const fontPromise = typeof document !== "undefined" && document.fonts
+      ? document.fonts.ready
+      : Promise.resolve();
+
+    fontPromise.finally(() => {
+      if (isMounted) setFontsReady(true);
     });
 
     return () => {
       isMounted = false;
     };
   }, []);
+
+  useEffect(() => {
+    if (loadedAssets < assetCount) return undefined;
+
+    let frameId = 0;
+    let frameCount = 0;
+
+    function waitForPaint() {
+      frameCount += 1;
+
+      if (frameCount >= WARMUP_SETTLE_FRAMES) {
+        setPaintSettled(true);
+        return;
+      }
+
+      frameId = window.requestAnimationFrame(waitForPaint);
+    }
+
+    frameId = window.requestAnimationFrame(waitForPaint);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
+  }, [assetCount, loadedAssets]);
 
   const currentQuestion = questions[currentQuestionIndex];
   const progressLabel = language === "ko"
@@ -127,6 +159,16 @@ export default function QuestionnaireApp() {
     setHasStarted(true);
   }
 
+  function handleWarmAssetReady(src) {
+    setLoadedAssetUrls((currentUrls) => {
+      if (currentUrls.has(src)) return currentUrls;
+
+      const nextUrls = new Set(currentUrls);
+      nextUrls.add(src);
+      return nextUrls;
+    });
+  }
+
   if (result) {
     return (
       <ResultView
@@ -141,6 +183,7 @@ export default function QuestionnaireApp() {
   if (!hasStarted) {
     return (
       <main className="landing-page">
+        <AssetWarmup onAssetReady={handleWarmAssetReady} urls={PRELOAD_IMAGE_URLS} />
         <section className="landing-panel" aria-labelledby="landing-title">
           <h1 id="landing-title">
             <span>Bonpuri</span>
@@ -150,7 +193,7 @@ export default function QuestionnaireApp() {
           {!assetsReady ? (
             <div className="landing-loading" aria-live="polite">
               <p className="landing-loading-status">
-                {language === "ko" ? "이미지를 불러오는 중입니다" : "Loading assets"}
+              {language === "ko" ? "이미지를 준비하는 중입니다" : "Preparing images"}
               </p>
               <div
                 aria-label={language === "ko" ? "로딩 진행률" : "Loading progress"}
@@ -282,31 +325,29 @@ function shuffle(items) {
   return shuffled;
 }
 
-function preloadAppAssets(onProgress) {
-  const markProgress = () => {
-    if (onProgress) onProgress();
-  };
-  const imagePromises = PRELOAD_IMAGE_URLS.map((src) => preloadImage(src).finally(markProgress));
-  const fontPromise = typeof document !== "undefined" && document.fonts
-    ? document.fonts.ready.finally(markProgress)
-    : Promise.resolve().finally(markProgress);
+function AssetWarmup({ onAssetReady, urls }) {
+  return (
+    <div aria-hidden="true" className="asset-warmup">
+      {urls.map((src) => (
+        <img
+          alt=""
+          className={DEITY_WARMUP_URLS.includes(src) ? "asset-warmup-image asset-warmup-image-deity" : "asset-warmup-image"}
+          key={src}
+          loading="eager"
+          src={src}
+          onError={() => onAssetReady(src)}
+          onLoad={(event) => {
+            const image = event.currentTarget;
 
-  return Promise.allSettled([...imagePromises, fontPromise]);
-}
+            if (image.decode) {
+              image.decode().catch(() => undefined).finally(() => onAssetReady(src));
+              return;
+            }
 
-function preloadImage(src) {
-  return new Promise((resolve) => {
-    const image = new Image();
-
-    image.onload = () => {
-      if (image.decode) {
-        image.decode().catch(() => undefined).finally(resolve);
-        return;
-      }
-
-      resolve();
-    };
-    image.onerror = resolve;
-    image.src = src;
-  });
+            onAssetReady(src);
+          }}
+        />
+      ))}
+    </div>
+  );
 }

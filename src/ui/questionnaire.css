@@ -110,6 +110,31 @@ main {
   text-align: center;
 }
 
+.asset-warmup {
+  height: 100vh;
+  inset: 0;
+  opacity: 0.001;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  width: 100vw;
+  z-index: 0;
+}
+
+.asset-warmup-image {
+  height: 320px;
+  left: 0;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  width: 320px;
+}
+
+.asset-warmup-image-deity {
+  height: min(82vw, 864px);
+  width: min(60vw, 758px);
+}
+
 .landing-panel h1 {
   display: grid;
   font-size: clamp(4.1rem, 7vw, 4.7rem);
