@@ -1,3 +1,25 @@
 node_modules/
 dist/
 *.log
+
+# Local working source/reference text files not consumed directly by the app
+full_questions.txt
+archived/
+results_texts/*
+!results_texts/deity_result_description_en.txt
+!results_texts/deity_result_description_ko.txt
+
+# Reference images and generated diagnostics
+Lens.png
+results_page_test.png
+outputs/
+image/Deity/*
+!image/Deity/CHOGONGSHIN.svg
+!image/Deity/DAEBYUL.svg
+!image/Deity/DONGHAE.svg
+!image/Deity/GANGNIM.svg
+!image/Deity/JIJANG.svg
+!image/Deity/MYUNG.svg
+!image/Deity/NOKDI.svg
+!image/Deity/SOBYUL.svg
+!image/Deity/YEOSAN.svg

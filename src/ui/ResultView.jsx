@@ -1,4 +1,4 @@
-﻿import { useMemo } from "react";
+﻿import { useEffect, useMemo, useRef, useState } from "react";
 import deityMap from "../../data/deity_axis_map.json";
 import deityNamesTable from "../../deity_names.txt?raw";
 import deityResultDescriptionsEnText from "../../results_texts/deity_result_description_en.txt?raw";
@@ -11,8 +11,20 @@ import selfLensImage from "../../image/self_lens.svg";
 import socialLensImage from "../../image/social_lens.svg";
 import careOrientationImage from "../../image/care_orientation.svg";
 import orderOrientationImage from "../../image/order_orientation.svg";
+import heroBlackPaperImage from "../../image/background/blackpaper.png";
+import heroArchImage from "../../image/background/cutout.png";
+import heroCloudImage from "../../image/background/cloud.png";
+import heroCloudTwoImage from "../../image/background/cloud2.png";
+import chogongThreeBrothersImage from "../../image/Deity/CHOGONGSHIN.svg";
+import daebyeolsangManuraImage from "../../image/Deity/DAEBYUL.svg";
+import donghaeYonggungDaughterImage from "../../image/Deity/DONGHAE.svg";
+import gangnimImage from "../../image/Deity/GANGNIM.svg";
+import jijangAgissiImage from "../../image/Deity/JIJANG.svg";
+import myeongjingukDaughterImage from "../../image/Deity/MYUNG.svg";
+import nokdisaengiImage from "../../image/Deity/NOKDI.svg";
+import sobyeolwangImage from "../../image/Deity/SOBYUL.svg";
+import yeosanBuinImage from "../../image/Deity/YEOSAN.svg";
 import LanguageToggle from "./LanguageToggle.jsx";
-import ThemeToggle from "./ThemeToggle.jsx";
 
 const PROFILE_AXES = [
   {
@@ -81,6 +93,80 @@ const SCORE_VISUAL_IMAGES = {
   self: selfLensImage,
   social: socialLensImage
 };
+const RESULT_DEITY_IMAGES = {
+  chogong_three_brothers: chogongThreeBrothersImage,
+  daebyeolwang: daebyeolsangManuraImage,
+  donghae_yonggungs_daughter: donghaeYonggungDaughterImage,
+  gangnim: gangnimImage,
+  jijang_agissi: jijangAgissiImage,
+  myeongjinguks_daughter: myeongjingukDaughterImage,
+  nokdisaengi: nokdisaengiImage,
+  sobyeolwang: sobyeolwangImage,
+  yeosan_buin: yeosanBuinImage
+};
+
+function useFitSingleLineText(dependencies = []) {
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element) {
+      return undefined;
+    }
+
+    let frameId = 0;
+
+    const fitText = () => {
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(() => {
+        const container = element.closest(".result-hero-copy") || element.parentElement;
+        if (!container) {
+          return;
+        }
+
+        element.style.fontSize = "";
+
+        const availableWidth = container.getBoundingClientRect().width;
+        if (!availableWidth) {
+          return;
+        }
+
+        const computedStyle = window.getComputedStyle(element);
+        const maximumFontSize = parseFloat(computedStyle.fontSize);
+        const minimumFontSize = parseFloat(computedStyle.getPropertyValue("--fit-title-min")) || 14;
+        let fittedFontSize = maximumFontSize;
+
+        element.style.fontSize = `${fittedFontSize}px`;
+
+        for (let index = 0; index < 8 && element.scrollWidth > availableWidth && fittedFontSize > minimumFontSize; index += 1) {
+          fittedFontSize = Math.max(
+            minimumFontSize,
+            fittedFontSize * (availableWidth / element.scrollWidth) * 0.98
+          );
+          element.style.fontSize = `${fittedFontSize}px`;
+        }
+      });
+    };
+
+    const resizeObserver = new ResizeObserver(fitText);
+    const container = element.closest(".result-hero-copy") || element.parentElement;
+
+    resizeObserver.observe(element);
+    if (container) {
+      resizeObserver.observe(container);
+    }
+    window.addEventListener("resize", fitText);
+    fitText();
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", fitText);
+    };
+  }, dependencies);
+
+  return elementRef;
+}
 const DEITY_ROLES = parseDeityRoleTable(deityNamesTable);
 const DEITY_RESULT_DESCRIPTIONS_EN = parseDeityResultDescriptions(deityResultDescriptionsEnText);
 const DEITY_RESULT_DESCRIPTIONS_KO = parseDeityResultDescriptions(deityResultDescriptionsKoText);
@@ -157,6 +243,42 @@ function topMatches(result) {
   }
 
   return [];
+}
+
+function allDeityMatches() {
+  return deityMap.deities.map((deity, index) => ({
+    deity_id: deity.deity_id,
+    rank: index + 1,
+    name_ko: deity.name_ko || deity.deity_id,
+    name_en: deity.name_en || deity.deity_id,
+    bonpuri: deity.bonpuri || "",
+    match_percentage: 100,
+    anchor_line: deity.result_summary || "",
+    longer_anchor_description: "",
+    field_connection_line: "",
+    match_reasons: [],
+    deity_subcategories: {},
+    primary_axes: deity.primary_axes || [],
+    secondary_axes: deity.secondary_axes || [],
+    tone: deity.tone || ""
+  }));
+}
+
+function getDeityMatchById(deityId, matches) {
+  return matches.find((match) => match.deity_id === deityId)
+    || allDeityMatches().find((match) => match.deity_id === deityId)
+    || matches[0];
+}
+
+function getCombinationFromAxisVector(axisVector = {}) {
+  const lens = Number(axisVector.self || 0) >= Number(axisVector.social || 0)
+    ? "Self"
+    : "Social";
+  const orientation = Number(axisVector.care || 0) >= Number(axisVector.order || 0)
+    ? "Care"
+    : "Order";
+
+  return `${lens} + ${orientation}`;
 }
 
 function parseDeityRoleTable(table) {
@@ -327,17 +449,22 @@ export default function ResultView({
   language = "en",
   onLanguageChange,
   onRestart,
-  onThemeChange,
-  result,
-  theme = "light"
+  result
 }) {
   const matches = useMemo(() => topMatches(result), [result]);
+  const deityOptions = useMemo(() => allDeityMatches(), []);
   const resultLanguage = language;
   const copy = RESULT_COPY[resultLanguage];
-  const selectedMatch = matches.find((match) => (
+  const defaultSelectedMatch = matches.find((match) => (
     match.deity_id === result.primary_anchor?.deity_id
-  )) || matches[0];
-  const recognitionPattern = result.recognition_pattern?.label || result.primary_combination;
+  )) || matches[0] || deityOptions[0];
+  const [debugDeityId, setDebugDeityId] = useState(defaultSelectedMatch?.deity_id || "");
+  const selectedMatch = getDeityMatchById(debugDeityId, matches);
+  const selectedDeityScores = getDeityProfileScores(selectedMatch?.deity_id);
+  const resultDeityImage = RESULT_DEITY_IMAGES[selectedMatch?.deity_id] || null;
+  const recognitionPattern = selectedDeityScores
+    ? getCombinationFromAxisVector(selectedDeityScores)
+    : result.recognition_pattern?.label || result.primary_combination;
   const deityResultBlock = composeDeityResultBlock({
     deityId: selectedMatch?.deity_id,
     language: resultLanguage
@@ -356,87 +483,180 @@ export default function ResultView({
     deityResultBlock,
     resultLanguage
   );
-  const nearbyMatches = matches
+  const nearbyMatches = deityOptions
     .filter((match) => match.deity_id !== selectedMatch?.deity_id)
     .slice(0, 3)
     .map((match, index) => ({
       ...match,
       displayRank: index + 2
     }));
+  const selectedDeityName = displayDeityName(selectedMatch, resultLanguage);
+  const titleRef = useFitSingleLineText([selectedDeityName, resultLanguage, Boolean(resultDeityImage)]);
+  const titleLengthClass = selectedDeityName.length > 16
+    ? " result-title-extra-long"
+    : selectedDeityName.length > 9
+      ? " result-title-long"
+      : "";
 
   return (
-    <main className="result-page">
+    <main
+      className="result-page"
+      style={{ "--hero-paper-image": `url(${heroBlackPaperImage})` }}
+    >
       <div className="page-top-bar">
         <LanguageToggle
           language={resultLanguage}
           onLanguageChange={onLanguageChange}
           label="Result language"
         />
-        <ThemeToggle theme={theme} onThemeChange={onThemeChange} />
+        <label className="debug-deity-select">
+          <span>Debug deity</span>
+          <select
+            value={selectedMatch?.deity_id || ""}
+            onChange={(event) => setDebugDeityId(event.target.value)}
+          >
+            {deityOptions.map((match) => (
+              <option key={match.deity_id} value={match.deity_id}>
+                {displayDeityName(match, resultLanguage)}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
 
       <section aria-labelledby="result-title">
-        <section className="result-hero" aria-labelledby="result-title">
-          <h1 id="result-title">{displayDeityName(selectedMatch, resultLanguage)}</h1>
-          <DeityRole
-            className="result-deity-role"
-            fallback={copy.roleFallback}
-            language={resultLanguage}
-            match={selectedMatch}
-          />
-          <ProfileShapeChart
-            legend={{
-              deity: displayDeityName(selectedMatch, resultLanguage),
-              user: resultLanguage === "ko" ? "내 결과" : "Your result"
-            }}
-            overlayScores={getDeityProfileScores(selectedMatch?.deity_id)}
-            scores={userProfileScores}
-            size={460}
-            language={resultLanguage}
-            showLabels
-          />
-        </section>
-
-        <section className="result-section result-reading-section" aria-label={copy.resultText}>
-          <CombinationOpening blocks={combinationResultBlocks} />
-          {deityResultDescription ? (
-            <DeityDescriptionIntroBlock
-              block={deityResultDescription}
-              source={getBonpuriSource(selectedMatch, resultLanguage)}
-            />
-          ) : null}
-          {deityResultBlock ? (
-            <DeityTextBlock block={deityResultBlock} />
-          ) : null}
-          {combinationResultBlocks.map((block) => (
-            <CombinationTextBlock
-              block={block}
-              key={block.subtitle.text}
-              language={resultLanguage}
-              scores={userProfileScores}
-            />
-          ))}
-        </section>
-
-        <section className="result-section nearby-anchors-section" aria-labelledby="nearby-anchors-title">
-          <h2 id="nearby-anchors-title">{copy.nearbyAnchors}</h2>
-          <p>{copy.nearbyDescription}</p>
-          <ol className="nearby-anchor-list">
-            {nearbyMatches.map((match) => (
-              <NearbyAnchorItem
-                copy={copy}
-                key={match.deity_id}
+        <section
+          className={`result-hero ${resultDeityImage ? "result-hero-illustrated" : ""}`}
+          aria-labelledby="result-title"
+          style={
+            resultDeityImage
+              ? {
+                  "--hero-arch-image": `url(${heroArchImage})`,
+                  "--hero-paper-image": `url(${heroBlackPaperImage})`,
+                  "--hero-cloud-image": `url(${heroCloudImage})`,
+                  "--hero-cloud-two-image": `url(${heroCloudTwoImage})`,
+                  "--hero-deity-image": `url(${resultDeityImage})`
+                }
+              : undefined
+          }
+        >
+          {resultDeityImage ? (
+            <div className="result-hero-scene">
+              <div className="result-hero-copy">
+                <div className="result-title-row">
+                  <h1
+                    ref={titleRef}
+                    className={`${resultLanguage === "ko" ? "result-title-ko" : ""}${titleLengthClass}`.trim()}
+                    id="result-title"
+                  >
+                    {selectedDeityName}
+                  </h1>
+                </div>
+                <DeityRole
+                  className="result-deity-role"
+                  fallback={copy.roleFallback}
+                  language={resultLanguage}
+                  match={selectedMatch}
+                />
+              </div>
+              <span className="result-hero-arch" aria-hidden="true" />
+              <div className="result-hero-art" aria-hidden="true">
+                <span className="result-hero-cloud" />
+                <span className="result-hero-cloud-two" />
+                <span className={`result-hero-deity-glow result-hero-deity-glow-${selectedMatch?.deity_id || "default"}`} />
+                <span className={`result-hero-deity-shadow-clip result-hero-deity-shadow-clip-${selectedMatch?.deity_id || "default"}`}>
+                  <img
+                    alt=""
+                    className={`result-hero-deity-shadow-image result-hero-deity-shadow-image-${selectedMatch?.deity_id || "default"}`}
+                    src={resultDeityImage}
+                  />
+                </span>
+                <img
+                  alt=""
+                  className={`result-hero-deity-image result-hero-deity-image-${selectedMatch?.deity_id || "default"}`}
+                  src={resultDeityImage}
+                />
+                <span className={`result-hero-deity-foot-shadow result-hero-deity-foot-shadow-${selectedMatch?.deity_id || "default"}`} />
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="result-title-row">
+                <h1
+                  ref={titleRef}
+                  className={`${resultLanguage === "ko" ? "result-title-ko" : ""}${titleLengthClass}`.trim()}
+                  id="result-title"
+                >
+                  {selectedDeityName}
+                </h1>
+              </div>
+              <DeityRole
+                className="result-deity-role"
+                fallback={copy.roleFallback}
                 language={resultLanguage}
-                match={match}
+                match={selectedMatch}
               />
-            ))}
-          </ol>
+            </>
+          )}
+          {resultDeityImage ? null : (
+            <ProfileShapeChart
+              legend={{
+                deity: displayDeityName(selectedMatch, resultLanguage),
+                user: resultLanguage === "ko" ? "내 결과" : "Your result"
+              }}
+              overlayScores={selectedDeityScores}
+              scores={userProfileScores}
+              size={460}
+              language={resultLanguage}
+              showLabels
+            />
+          )}
         </section>
 
-        <div className="result-footer">
-          <button className="restart-button" type="button" onClick={onRestart}>
-            {copy.takeAgain}
-          </button>
+        <div className="result-body-region">
+          <div className="result-body-canvas">
+            <section className="result-section result-reading-section" aria-label={copy.resultText}>
+              <CombinationOpening blocks={combinationResultBlocks} />
+              {deityResultDescription ? (
+                <DeityDescriptionIntroBlock
+                  block={deityResultDescription}
+                  source={getBonpuriSource(selectedMatch, resultLanguage)}
+                />
+              ) : null}
+              {deityResultBlock ? (
+                <DeityTextBlock block={deityResultBlock} />
+              ) : null}
+              {combinationResultBlocks.map((block) => (
+                <CombinationTextBlock
+                  block={block}
+                  key={block.subtitle.text}
+                  language={resultLanguage}
+                  scores={userProfileScores}
+                />
+              ))}
+            </section>
+
+            <section className="result-section nearby-anchors-section" aria-labelledby="nearby-anchors-title">
+              <h2 id="nearby-anchors-title">{copy.nearbyAnchors}</h2>
+              <p>{copy.nearbyDescription}</p>
+              <ol className="nearby-anchor-list">
+                {nearbyMatches.map((match) => (
+                  <NearbyAnchorItem
+                    copy={copy}
+                    key={match.deity_id}
+                    language={resultLanguage}
+                    match={match}
+                  />
+                ))}
+              </ol>
+            </section>
+
+            <div className="result-footer">
+              <button className="restart-button" type="button" onClick={onRestart}>
+                {copy.takeAgain}
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>

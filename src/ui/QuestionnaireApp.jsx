@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import questionsData from "../../data/test_questions_seed.json";
 import deityMap from "../../data/deity_axis_map.json";
 import resultTemplates from "../../data/result_templates.json";
 import axisDefinitions from "../../data/axis_definitions.json";
 import { generateResult } from "../bonpuriScoringCore.js";
 import ResultView from "./ResultView.jsx";
-import ThemeToggle from "./ThemeToggle.jsx";
 
 const prototypeData = {
   axisDefinitions,
@@ -20,12 +19,7 @@ export default function QuestionnaireApp() {
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [result, setResult] = useState(null);
   const [language, setLanguage] = useState("en");
-  const [theme, setTheme] = useState("light");
   const [hasStarted, setHasStarted] = useState(false);
-
-  useEffect(() => {
-    document.body.dataset.theme = theme;
-  }, [theme]);
 
   const currentQuestion = questions[currentQuestionIndex];
   const progressLabel = language === "ko"
@@ -65,13 +59,20 @@ export default function QuestionnaireApp() {
     setCurrentQuestionIndex(currentQuestionIndex - 1);
   }
 
+  function handleDebugResult() {
+    const debugAnswers = Object.fromEntries(
+      questionsData.questions.map((question) => [question.id, question.options[0]?.id])
+    );
+
+    setResult(generateResult(debugAnswers, prototypeData));
+    setHasStarted(true);
+  }
+
   if (result) {
     return (
       <ResultView
         language={language}
         onLanguageChange={setLanguage}
-        theme={theme}
-        onThemeChange={setTheme}
         result={result}
         onRestart={handleRestart}
       />
@@ -81,7 +82,6 @@ export default function QuestionnaireApp() {
   if (!hasStarted) {
     return (
       <main className="landing-page">
-        <ThemeToggle theme={theme} onThemeChange={setTheme} />
         <section className="landing-panel" aria-labelledby="landing-title">
           <h1 id="landing-title">
             <span>Bonpuri</span>
@@ -108,6 +108,9 @@ export default function QuestionnaireApp() {
               한국어
             </button>
           </div>
+          <button className="debug-result-button" type="button" onClick={handleDebugResult}>
+            Debug result page
+          </button>
         </section>
       </main>
     );
@@ -115,9 +118,6 @@ export default function QuestionnaireApp() {
 
   return (
     <main className="questionnaire-page">
-      <div className="page-top-bar">
-        <ThemeToggle theme={theme} onThemeChange={setTheme} />
-      </div>
       <h1>{language === "ko" ? "본풀이 성향 테스트" : "Bonpuri Type Test"}</h1>
 
       <section
