@@ -645,7 +645,7 @@ p {
 .result-hero-art .result-hero-deity-image {
   bottom: clamp(-104px, -3.8vw, -46px);
   display: block;
-  filter: drop-shadow(-5px 11px 7px rgba(55, 38, 20, 0.5));
+  filter: drop-shadow(-6px 12px 5px rgba(55, 38, 20, 0.5));
   height: min(82vw, 864px);
   margin: 0;
   max-width: none;
