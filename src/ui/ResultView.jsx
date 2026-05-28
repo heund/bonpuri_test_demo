@@ -16,6 +16,7 @@ import heroMainPaperImage from "../../image/background/PAPER_MAIN.png";
 import heroArchImage from "../../image/background/cutout.png";
 import heroCloudImage from "../../image/background/cloud.png";
 import heroCloudTwoImage from "../../image/background/cloud2.png";
+import heroMountainImage from "../../image/background/mountain.png";
 import heroOceanImage from "../../image/background/ocean.png";
 import chogongThreeBrothersImage from "../../image/Deity/CHOGONGSHIN.svg";
 import daebyeolsangManuraImage from "../../image/Deity/DAEBYUL.svg";
@@ -555,6 +556,7 @@ export default function ResultView({
                   "--hero-paper-image": `url(${heroBlackPaperImage})`,
                   "--hero-cloud-image": `url(${heroCloudImage})`,
                   "--hero-cloud-two-image": `url(${heroCloudTwoImage})`,
+                  "--hero-mountain-image": `url(${heroMountainImage})`,
                   "--hero-ocean-image": `url(${heroOceanImage})`,
                   "--hero-deity-image": `url(${resultDeityImage})`
                 }
@@ -567,17 +569,20 @@ export default function ResultView({
                 {selectedDeityName}
               </h1>
               <span className="result-hero-arch" aria-hidden="true" />
-              <div className="result-hero-art" aria-hidden="true">
-                <span className="result-hero-ocean" />
-                <span className="result-hero-cloud" />
-                <span className="result-hero-cloud-two" />
-                <span className={`result-hero-deity-glow result-hero-deity-glow-${selectedMatch?.deity_id || "default"}`} />
-                <img
-                  alt=""
-                  className={`result-hero-deity-image result-hero-deity-image-${selectedMatch?.deity_id || "default"}`}
-                  src={resultDeityImage}
-                />
-                <span className={`result-hero-deity-foot-shadow result-hero-deity-foot-shadow-${selectedMatch?.deity_id || "default"}`} />
+              <div className="result-hero-decoration-viewport" aria-hidden="true">
+                <div className="result-hero-art">
+                  <span className="result-hero-ocean" />
+                  <span className="result-hero-mountain" />
+                  <span className="result-hero-cloud" />
+                  <span className="result-hero-cloud-two" />
+                  <span className={`result-hero-deity-glow result-hero-deity-glow-${selectedMatch?.deity_id || "default"}`} />
+                  <img
+                    alt=""
+                    className={`result-hero-deity-image result-hero-deity-image-${selectedMatch?.deity_id || "default"}`}
+                    src={resultDeityImage}
+                  />
+                  <span className={`result-hero-deity-foot-shadow result-hero-deity-foot-shadow-${selectedMatch?.deity_id || "default"}`} />
+                </div>
               </div>
             </div>
           ) : (

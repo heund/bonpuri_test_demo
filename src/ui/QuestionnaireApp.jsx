@@ -19,6 +19,7 @@ import heroMainPaperImage from "../../image/background/PAPER_MAIN.png";
 import heroArchImage from "../../image/background/cutout.png";
 import heroCloudImage from "../../image/background/cloud.png";
 import heroCloudTwoImage from "../../image/background/cloud2.png";
+import heroMountainImage from "../../image/background/mountain.png";
 import heroOceanImage from "../../image/background/ocean.png";
 import selfLensImage from "../../image/self_lens.svg";
 import socialLensImage from "../../image/social_lens.svg";
@@ -48,6 +49,7 @@ const PRELOAD_IMAGE_URLS = [
   heroArchImage,
   heroCloudImage,
   heroCloudTwoImage,
+  heroMountainImage,
   heroOceanImage,
   selfLensImage,
   socialLensImage,
