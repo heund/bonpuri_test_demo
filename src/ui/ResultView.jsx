@@ -937,17 +937,7 @@ function DeityRole({ className, fallback, language, match }) {
 }
 
 function CombinationOpening({ blocks }) {
-  const openingText = blocks.find((block) => block.opening?.text)?.opening?.text;
-
-  if (!openingText) return null;
-
-  return (
-    <div className="writing-block combination-opening-block">
-      {openingText.split(/\n{2,}/).map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
-      ))}
-    </div>
-  );
+  return null;
 }
 
 function CombinationTextBlock({ block, language, scores }) {

@@ -488,9 +488,10 @@ p {
   background: #fdf4e7;
   border-radius: clamp(18px, 3vw, 34px);
   margin: 0 auto;
-  max-width: var(--page-canvas-width);
-  padding: clamp(2.25rem, 4.5vw, 4rem) clamp(1rem, 4vw, 3rem);
+  max-width: 970px;
+  padding: clamp(2.25rem, 4.5vw, 4rem) clamp(1.4rem, 5vw, 3.7rem);
   position: relative;
+  width: min(calc(100% - clamp(1.5rem, 6vw, 5.5rem)), 970px);
   z-index: 2;
 }
 
@@ -1283,6 +1284,8 @@ p {
 
 .writing-block p {
   color: #262628;
+  font-size: 1.12rem;
+  line-height: 1.72;
   margin: 0.7rem 0;
   max-width: 58rem;
 }
@@ -1312,7 +1315,7 @@ p {
 
 .deity-description-intro .deity-description-title-line {
   color: #3a3a3c;
-  font-size: 1.16rem;
+  font-size: 1.25rem;
   font-weight: 540;
   line-height: 1.45;
   margin: 0 0 1.45rem;
@@ -1320,7 +1323,7 @@ p {
 }
 
 .deity-description-intro > p:not(.result-source):not(.deity-description-title-line) {
-  font-size: 1.02rem;
+  font-size: 1.13rem;
   line-height: 1.68;
   margin-top: 0;
 }
