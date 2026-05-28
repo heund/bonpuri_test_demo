@@ -642,33 +642,10 @@ p {
   z-index: 100;
 }
 
-.result-hero-deity-shadow-clip {
-  bottom: clamp(76px, 13vw, 146px);
-  height: calc(min(82vw, 864px) - clamp(76px, 13vw, 146px));
-  overflow: visible;
-  pointer-events: none;
-  position: absolute;
-  right: 14%;
-  width: min(60vw, 758px);
-  z-index: 80;
-}
-
-.result-hero-deity-shadow-image {
-  bottom: calc(clamp(-104px, -3.8vw, -46px) - clamp(76px, 13vw, 146px));
-  display: block;
-  filter: drop-shadow(-7px 13px 9px rgba(55, 38, 20, 0.46));
-  height: min(82vw, 864px);
-  max-width: none;
-  object-fit: contain;
-  object-position: center bottom;
-  position: absolute;
-  right: 0;
-  width: min(60vw, 758px);
-}
-
 .result-hero-art .result-hero-deity-image {
   bottom: clamp(-104px, -3.8vw, -46px);
   display: block;
+  filter: drop-shadow(-5px 11px 7px rgba(55, 38, 20, 0.5));
   height: min(82vw, 864px);
   margin: 0;
   max-width: none;
@@ -1659,7 +1636,6 @@ td {
   }
 
   .result-hero-deity-glow,
-  .result-hero-deity-shadow-clip,
   .result-hero-art .result-hero-deity-image,
   .result-hero-deity-foot-shadow {
     height: min(83.64vw, 881px);
@@ -1668,18 +1644,15 @@ td {
   }
 
   .result-hero-deity-glow-gangnim,
-  .result-hero-deity-shadow-clip-gangnim,
   .result-hero-art .result-hero-deity-image-gangnim,
   .result-hero-deity-foot-shadow-gangnim,
   .result-hero-deity-glow-chogong_three_brothers,
-  .result-hero-deity-shadow-clip-chogong_three_brothers,
   .result-hero-art .result-hero-deity-image-chogong_three_brothers,
   .result-hero-deity-foot-shadow-chogong_three_brothers {
     right: 7%;
   }
 
   .result-hero-deity-glow-yeosan_buin,
-  .result-hero-deity-shadow-clip-yeosan_buin,
   .result-hero-art .result-hero-deity-image-yeosan_buin,
   .result-hero-deity-foot-shadow-yeosan_buin {
     right: 2%;

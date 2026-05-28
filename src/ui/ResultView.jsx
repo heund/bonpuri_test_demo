@@ -578,13 +578,6 @@ export default function ResultView({
                 <span className="result-hero-cloud" />
                 <span className="result-hero-cloud-two" />
                 <span className={`result-hero-deity-glow result-hero-deity-glow-${selectedMatch?.deity_id || "default"}`} />
-                <span className={`result-hero-deity-shadow-clip result-hero-deity-shadow-clip-${selectedMatch?.deity_id || "default"}`}>
-                  <img
-                    alt=""
-                    className={`result-hero-deity-shadow-image result-hero-deity-shadow-image-${selectedMatch?.deity_id || "default"}`}
-                    src={resultDeityImage}
-                  />
-                </span>
                 <img
                   alt=""
                   className={`result-hero-deity-image result-hero-deity-image-${selectedMatch?.deity_id || "default"}`}
