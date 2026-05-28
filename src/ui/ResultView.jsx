@@ -12,6 +12,7 @@ import socialLensImage from "../../image/social_lens.svg";
 import careOrientationImage from "../../image/care_orientation.svg";
 import orderOrientationImage from "../../image/order_orientation.svg";
 import heroBlackPaperImage from "../../image/background/blackpaper.png";
+import heroMainPaperImage from "../../image/background/PAPER_MAIN.png";
 import heroArchImage from "../../image/background/cutout.png";
 import heroCloudImage from "../../image/background/cloud.png";
 import heroCloudTwoImage from "../../image/background/cloud2.png";
@@ -505,7 +506,10 @@ export default function ResultView({
   return (
     <main
       className="result-page"
-      style={{ "--hero-paper-image": `url(${heroBlackPaperImage})` }}
+      style={{
+        "--hero-main-paper-image": `url(${heroMainPaperImage})`,
+        "--hero-paper-image": `url(${heroBlackPaperImage})`
+      }}
     >
       <button
         aria-label={resultLanguage === "ko" ? "홈으로" : "Home"}
@@ -546,6 +550,7 @@ export default function ResultView({
             resultDeityImage
               ? {
                   "--hero-arch-image": `url(${heroArchImage})`,
+                  "--hero-main-paper-image": `url(${heroMainPaperImage})`,
                   "--hero-paper-image": `url(${heroBlackPaperImage})`,
                   "--hero-cloud-image": `url(${heroCloudImage})`,
                   "--hero-cloud-two-image": `url(${heroCloudTwoImage})`,

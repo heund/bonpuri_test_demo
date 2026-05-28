@@ -521,7 +521,11 @@ p {
   --hero-copy-gap: clamp(3rem, 5vw, 5rem);
   --hero-copy-left: var(--page-safe-x);
   --hero-copy-width: min(32vw, 30rem);
-  background: transparent;
+  background-color: #fdf4e7;
+  background-image: var(--hero-main-paper-image);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: min(1400px, 100vw) auto;
   isolation: isolate;
   left: 50%;
   margin: 0;

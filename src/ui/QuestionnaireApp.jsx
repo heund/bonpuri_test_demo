@@ -15,6 +15,7 @@ import sobyeolwangImage from "../../image/Deity/SOBYUL.svg";
 import yeosanBuinImage from "../../image/Deity/YEOSAN.svg";
 import yuJeongseungDaughterImage from "../../image/Deity/YUJEONG.svg";
 import heroBlackPaperImage from "../../image/background/blackpaper.png";
+import heroMainPaperImage from "../../image/background/PAPER_MAIN.png";
 import heroArchImage from "../../image/background/cutout.png";
 import heroCloudImage from "../../image/background/cloud.png";
 import heroCloudTwoImage from "../../image/background/cloud2.png";
@@ -41,6 +42,7 @@ const DEITY_WARMUP_URLS = [
 
 const PRELOAD_IMAGE_URLS = [
   ...DEITY_WARMUP_URLS,
+  heroMainPaperImage,
   heroBlackPaperImage,
   heroArchImage,
   heroCloudImage,
