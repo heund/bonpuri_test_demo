@@ -16,6 +16,7 @@ import heroMainPaperImage from "../../image/background/PAPER_MAIN.png";
 import heroArchImage from "../../image/background/cutout.png";
 import heroCloudImage from "../../image/background/cloud.png";
 import heroCloudTwoImage from "../../image/background/cloud2.png";
+import heroOceanImage from "../../image/background/ocean.png";
 import chogongThreeBrothersImage from "../../image/Deity/CHOGONGSHIN.svg";
 import daebyeolsangManuraImage from "../../image/Deity/DAEBYUL.svg";
 import donghaeYonggungDaughterImage from "../../image/Deity/DONGHAE.svg";
@@ -554,6 +555,7 @@ export default function ResultView({
                   "--hero-paper-image": `url(${heroBlackPaperImage})`,
                   "--hero-cloud-image": `url(${heroCloudImage})`,
                   "--hero-cloud-two-image": `url(${heroCloudTwoImage})`,
+                  "--hero-ocean-image": `url(${heroOceanImage})`,
                   "--hero-deity-image": `url(${resultDeityImage})`
                 }
               : undefined
@@ -561,19 +563,12 @@ export default function ResultView({
         >
           {resultDeityImage ? (
             <div className="result-hero-scene">
-              <div className="result-hero-copy">
-                <div className="result-title-row">
-                  <h1
-                    ref={titleRef}
-                    className={`${resultLanguage === "ko" ? "result-title-ko" : ""}${titleLengthClass}`.trim()}
-                    id="result-title"
-                  >
-                    {selectedDeityName}
-                  </h1>
-                </div>
-              </div>
+              <h1 className="visually-hidden" id="result-title">
+                {selectedDeityName}
+              </h1>
               <span className="result-hero-arch" aria-hidden="true" />
               <div className="result-hero-art" aria-hidden="true">
+                <span className="result-hero-ocean" />
                 <span className="result-hero-cloud" />
                 <span className="result-hero-cloud-two" />
                 <span className={`result-hero-deity-glow result-hero-deity-glow-${selectedMatch?.deity_id || "default"}`} />

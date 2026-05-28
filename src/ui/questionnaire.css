@@ -39,6 +39,16 @@ body {
   position: relative;
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 button,
 input,
 select,
@@ -603,6 +613,20 @@ p {
   top: -2%;
   width: min(22vw, 244px);
   z-index: 2;
+}
+
+.result-hero-ocean {
+  background-image: var(--hero-ocean-image);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: clamp(-72px, -5vw, -34px);
+  height: min(28vw, 300px);
+  left: clamp(-6rem, -6vw, -2.4rem);
+  pointer-events: none;
+  position: absolute;
+  width: min(34vw, 380px);
+  z-index: 96;
 }
 
 .result-hero-arch {
