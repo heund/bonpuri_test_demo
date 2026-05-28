@@ -11,7 +11,7 @@ import selfLensImage from "../../image/self_lens.svg";
 import socialLensImage from "../../image/social_lens.svg";
 import careOrientationImage from "../../image/care_orientation.svg";
 import orderOrientationImage from "../../image/order_orientation.svg";
-import heroBlackPaperImage from "../../image/background/blackpaper.png";
+import heroBlackPaperImage from "../../image/background/blackpaper_final_strip.png";
 import heroMainPaperImage from "../../image/background/PAPER_MAIN.png";
 import heroArchImage from "../../image/background/cutout.png";
 import heroCloudImage from "../../image/background/cloud.png";
