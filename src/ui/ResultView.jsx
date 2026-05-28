@@ -566,12 +566,6 @@ export default function ResultView({
                     {selectedDeityName}
                   </h1>
                 </div>
-                <DeityRole
-                  className="result-deity-role"
-                  fallback={copy.roleFallback}
-                  language={resultLanguage}
-                  match={selectedMatch}
-                />
               </div>
               <span className="result-hero-arch" aria-hidden="true" />
               <div className="result-hero-art" aria-hidden="true">
@@ -597,12 +591,6 @@ export default function ResultView({
                   {selectedDeityName}
                 </h1>
               </div>
-              <DeityRole
-                className="result-deity-role"
-                fallback={copy.roleFallback}
-                language={resultLanguage}
-                match={selectedMatch}
-              />
             </>
           )}
           {resultDeityImage ? null : (
