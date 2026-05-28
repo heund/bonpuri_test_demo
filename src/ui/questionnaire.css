@@ -35,21 +35,6 @@ body {
   position: relative;
 }
 
-#root::after {
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='5' seed='17' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.34 0 0 0 0 0.21 0 0 0 0 0.09 0 0 0 0.42 0'/%3E%3C/filter%3E%3Crect width='360' height='360' filter='url(%23paper)' opacity='1'/%3E%3C/svg%3E"),
-    repeating-linear-gradient(102deg, rgba(92, 57, 28, 0.036) 0 1px, transparent 1px 13px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(92, 57, 28, 0.04));
-  background-size: 360px 360px, 100% 100%, 100% 100%;
-  content: "";
-  inset: 0;
-  mix-blend-mode: multiply;
-  opacity: 0.62;
-  pointer-events: none;
-  position: fixed;
-  z-index: 100;
-}
-
 #root {
   position: relative;
 }
