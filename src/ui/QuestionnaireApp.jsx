@@ -9,9 +9,11 @@ import donghaeYonggungDaughterImage from "../../image/Deity/DONGHAE.svg";
 import gangnimImage from "../../image/Deity/GANGNIM.svg";
 import jijangAgissiImage from "../../image/Deity/JIJANG.svg";
 import myeongjingukDaughterImage from "../../image/Deity/MYUNG.svg";
+import nogaDanpungAgissiImage from "../../image/Deity/NOGA.svg";
 import nokdisaengiImage from "../../image/Deity/NOKDI.svg";
 import sobyeolwangImage from "../../image/Deity/SOBYUL.svg";
 import yeosanBuinImage from "../../image/Deity/YEOSAN.svg";
+import yuJeongseungDaughterImage from "../../image/Deity/YUJEONG.svg";
 import heroBlackPaperImage from "../../image/background/blackpaper.png";
 import heroArchImage from "../../image/background/cutout.png";
 import heroCloudImage from "../../image/background/cloud.png";
@@ -30,9 +32,11 @@ const DEITY_WARMUP_URLS = [
   gangnimImage,
   jijangAgissiImage,
   myeongjingukDaughterImage,
+  nogaDanpungAgissiImage,
   nokdisaengiImage,
   sobyeolwangImage,
-  yeosanBuinImage
+  yeosanBuinImage,
+  yuJeongseungDaughterImage
 ];
 
 const PRELOAD_IMAGE_URLS = [

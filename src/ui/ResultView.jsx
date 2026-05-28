@@ -21,9 +21,11 @@ import donghaeYonggungDaughterImage from "../../image/Deity/DONGHAE.svg";
 import gangnimImage from "../../image/Deity/GANGNIM.svg";
 import jijangAgissiImage from "../../image/Deity/JIJANG.svg";
 import myeongjingukDaughterImage from "../../image/Deity/MYUNG.svg";
+import nogaDanpungAgissiImage from "../../image/Deity/NOGA.svg";
 import nokdisaengiImage from "../../image/Deity/NOKDI.svg";
 import sobyeolwangImage from "../../image/Deity/SOBYUL.svg";
 import yeosanBuinImage from "../../image/Deity/YEOSAN.svg";
+import yuJeongseungDaughterImage from "../../image/Deity/YUJEONG.svg";
 import LanguageToggle from "./LanguageToggle.jsx";
 
 const PROFILE_AXES = [
@@ -100,9 +102,11 @@ const RESULT_DEITY_IMAGES = {
   gangnim: gangnimImage,
   jijang_agissi: jijangAgissiImage,
   myeongjinguks_daughter: myeongjingukDaughterImage,
+  noga_danpung_agissi: nogaDanpungAgissiImage,
   nokdisaengi: nokdisaengiImage,
   sobyeolwang: sobyeolwangImage,
-  yeosan_buin: yeosanBuinImage
+  yeosan_buin: yeosanBuinImage,
+  yu_jeongseungs_daughter: yuJeongseungDaughterImage
 };
 
 function useFitSingleLineText(dependencies = []) {
