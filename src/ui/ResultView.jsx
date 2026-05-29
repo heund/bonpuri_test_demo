@@ -481,6 +481,7 @@ function formatRecognitionPattern(pattern, language) {
 }
 
 export default function ResultView({
+  initialDeityId = "",
   language = "en",
   onLanguageChange,
   onRestart,
@@ -492,9 +493,11 @@ export default function ResultView({
   const deityOptions = useMemo(() => allDeityMatches(), []);
   const resultLanguage = language;
   const copy = RESULT_COPY[resultLanguage];
-  const defaultSelectedMatch = matches.find((match) => (
-    match.deity_id === result.primary_anchor?.deity_id
-  )) || matches[0] || deityOptions[0];
+  const defaultSelectedMatch = initialDeityId
+    ? getDeityMatchById(initialDeityId, matches)
+    : matches.find((match) => (
+      match.deity_id === result.primary_anchor?.deity_id
+    )) || matches[0] || deityOptions[0];
   const [debugDeityId, setDebugDeityId] = useState(defaultSelectedMatch?.deity_id || "");
   const selectedMatch = getDeityMatchById(debugDeityId, matches);
   const selectedDeityScores = getDeityProfileScores(selectedMatch?.deity_id);
@@ -552,9 +555,10 @@ export default function ResultView({
       const sceneScroll = heroHeight * 0.92;
       const deityLandingScroll = heroHeight * 0.82;
       const progress = clamp01(scrollY / sceneScroll);
+      const cloudProgress = clamp01(targetScrollY / sceneScroll);
       const deityProgress = staggeredProgress(clamp01(scrollY / deityLandingScroll), 0.02, 1);
-      const cloudOneProgress = staggeredProgress(progress, 0.02, 0.68);
-      const cloudTwoProgress = staggeredProgress(progress, 0.12, 0.82);
+      const cloudOneProgress = staggeredProgress(cloudProgress, 0.02, 0.78);
+      const cloudTwoProgress = staggeredProgress(cloudProgress, 0.12, 0.82);
       const oceanProgress = staggeredProgress(progress, 0.04, 0.92);
       const mountainProgress = staggeredProgress(progress, 0.22, 1);
       const canvasProgress = staggeredProgress(progress, 0.12, 1);

@@ -70,6 +70,7 @@ export default function QuestionnaireApp() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [result, setResult] = useState(null);
+  const [initialDebugDeityId, setInitialDebugDeityId] = useState("");
   const [language, setLanguage] = useState("en");
   const [hasStarted, setHasStarted] = useState(false);
   const [loadedAssetUrls, setLoadedAssetUrls] = useState(() => new Set());
@@ -141,6 +142,7 @@ export default function QuestionnaireApp() {
         return;
       }
 
+      setInitialDebugDeityId("");
       setResult(generateResult(nextAnswers, prototypeData));
     }, 120);
   }
@@ -150,6 +152,7 @@ export default function QuestionnaireApp() {
     setCurrentQuestionIndex(0);
     setSelectedAnswers({});
     setResult(null);
+    setInitialDebugDeityId("");
     setHasStarted(false);
   }
 
@@ -165,6 +168,7 @@ export default function QuestionnaireApp() {
       questionsData.questions.map((question) => [question.id, question.options[0]?.id])
     );
 
+    setInitialDebugDeityId("gangnim");
     setResult(generateResult(debugAnswers, prototypeData));
     setHasStarted(true);
   }
@@ -184,6 +188,7 @@ export default function QuestionnaireApp() {
       <ResultView
         language={language}
         onLanguageChange={setLanguage}
+        initialDeityId={initialDebugDeityId}
         result={result}
         onRestart={handleRestart}
       />
