@@ -132,6 +132,18 @@ function staggeredEaseOut(progress, start, end) {
   return easeOutCubic(clamp01((progress - start) / (end - start)));
 }
 
+function getDocumentOffsetTop(element) {
+  let top = 0;
+  let current = element;
+
+  while (current) {
+    top += current.offsetTop || 0;
+    current = current.offsetParent;
+  }
+
+  return top;
+}
+
 function useFitSingleLineText(dependencies = []) {
   const elementRef = useRef(null);
 
@@ -553,15 +565,15 @@ export default function ResultView({
       const canvasProgress = staggeredProgress(progress, 0.12, 1);
       const scoreSection = page.querySelector(".combination-result-block .compact-score-summary");
       const scoreSectionTop = scoreSection
-        ? scoreSection.getBoundingClientRect().top + scrollY
+        ? getDocumentOffsetTop(scoreSection)
         : deityLandingScroll + Math.min(window.innerHeight * 0.46, 420);
       const releaseScroll = Math.max(deityLandingScroll, scoreSectionTop - (window.innerHeight * 0.62));
       const followRange = Math.max(1, releaseScroll - deityLandingScroll);
       const followProgress = smoothStep(clamp01((scrollY - deityLandingScroll) / followRange));
-      const deityFollowOffset = followRange * followProgress;
+      const canvasFollowOffset = followRange * followProgress;
 
       page.style.setProperty("--deity-parallax-x", `${-16 * deityProgress}vw`);
-      page.style.setProperty("--deity-parallax-y", `calc(${48 * deityProgress}vh + ${deityFollowOffset}px)`);
+      page.style.setProperty("--deity-parallax-y", `${48 * deityProgress}vh`);
       page.style.setProperty("--deity-parallax-scale", `${1 - deityProgress * 0.1}`);
       page.style.setProperty("--deity-parallax-opacity", "1");
       page.style.setProperty("--cloud-one-parallax-x", `${52 * cloudOneProgress}vw`);
@@ -572,7 +584,7 @@ export default function ResultView({
       page.style.setProperty("--ocean-parallax-y", `${3 * oceanProgress}rem`);
       page.style.setProperty("--mountain-parallax-x", `${58 * mountainProgress}vw`);
       page.style.setProperty("--mountain-parallax-y", `${1.5 * mountainProgress}rem`);
-      page.style.setProperty("--canvas-parallax-y", `${-34 * canvasProgress}px`);
+      page.style.setProperty("--canvas-parallax-y", `${(-34 * canvasProgress) - (canvasFollowOffset * 1.35)}px`);
     };
 
     const requestUpdate = () => {
