@@ -555,7 +555,7 @@ export default function ResultView({
       const scrollY = window.scrollY;
       const heroHeight = hero.offsetHeight || window.innerHeight || 1;
       const sceneScroll = heroHeight * 0.92;
-      const deityLandingScroll = heroHeight * 0.62;
+      const deityLandingScroll = heroHeight * 0.72;
       const progress = clamp01(scrollY / sceneScroll);
       const deityProgress = staggeredEaseOut(clamp01(scrollY / deityLandingScroll), 0.02, 1);
       const cloudOneProgress = staggeredProgress(progress, 0, 0.52);
