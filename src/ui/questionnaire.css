@@ -638,12 +638,6 @@ p {
 }
 
 .result-hero-cloud {
-  background-image: var(--hero-cloud-image);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  filter: drop-shadow(0 10px 8px rgba(70, 48, 24, 0.34))
-    drop-shadow(0 4px 3px rgba(70, 48, 24, 0.18));
   height: min(22vw, 230px);
   position: absolute;
   right: 2%;
@@ -655,12 +649,6 @@ p {
 }
 
 .result-hero-cloud-two {
-  background-image: var(--hero-cloud-two-image);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  filter: drop-shadow(0 10px 8px rgba(70, 48, 24, 0.34))
-    drop-shadow(0 4px 3px rgba(70, 48, 24, 0.18));
   height: min(17vw, 178px);
   left: 7%;
   position: absolute;
@@ -669,6 +657,56 @@ p {
   will-change: transform;
   width: min(22vw, 244px);
   z-index: 120;
+}
+
+.result-hero-cloud::before,
+.result-hero-cloud-two::before {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  filter: drop-shadow(0 10px 8px rgba(70, 48, 24, 0.34))
+    drop-shadow(0 4px 3px rgba(70, 48, 24, 0.18));
+  inset: 0;
+  position: absolute;
+  will-change: transform;
+}
+
+.result-hero-cloud::before {
+  animation: cloudFloatOne 2.6s ease-in-out -0.45s infinite alternate;
+  background-image: var(--hero-cloud-image);
+}
+
+.result-hero-cloud-two::before {
+  animation: cloudFloatTwo 3.1s ease-in-out -1.25s infinite alternate;
+  background-image: var(--hero-cloud-two-image);
+}
+
+@keyframes cloudFloatOne {
+  from {
+    transform: translate3d(0, 0.14rem, 0);
+  }
+
+  to {
+    transform: translate3d(0.15rem, -0.18rem, 0);
+  }
+}
+
+@keyframes cloudFloatTwo {
+  from {
+    transform: translate3d(0, -0.13rem, 0);
+  }
+
+  to {
+    transform: translate3d(-0.14rem, 0.18rem, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-hero-cloud::before,
+  .result-hero-cloud-two::before {
+    animation: none;
+  }
 }
 
 .result-hero-ocean {
