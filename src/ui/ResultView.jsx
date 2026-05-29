@@ -120,16 +120,12 @@ function smoothStep(value) {
   return value * value * (3 - 2 * value);
 }
 
-function easeOutCubic(value) {
-  return 1 - ((1 - value) ** 3);
+function lerp(start, end, amount) {
+  return start + ((end - start) * amount);
 }
 
 function staggeredProgress(progress, start, end) {
   return smoothStep(clamp01((progress - start) / (end - start)));
-}
-
-function staggeredEaseOut(progress, start, end) {
-  return easeOutCubic(clamp01((progress - start) / (end - start)));
 }
 
 function getDocumentOffsetTop(element) {
@@ -548,32 +544,36 @@ export default function ResultView({
     }
 
     let frameId = 0;
+    let targetScrollY = window.scrollY;
+    let smoothedScrollY = targetScrollY;
 
-    const updateParallax = () => {
-      frameId = 0;
-
-      const scrollY = window.scrollY;
+    const renderParallax = (scrollY) => {
       const heroHeight = hero.offsetHeight || window.innerHeight || 1;
       const sceneScroll = heroHeight * 0.92;
-      const deityLandingScroll = heroHeight * 0.72;
+      const deityLandingScroll = heroHeight * 0.82;
       const progress = clamp01(scrollY / sceneScroll);
-      const deityProgress = staggeredEaseOut(clamp01(scrollY / deityLandingScroll), 0.02, 1);
-      const cloudOneProgress = staggeredProgress(progress, 0, 0.52);
-      const cloudTwoProgress = staggeredProgress(progress, 0.11, 0.78);
-      const oceanProgress = staggeredProgress(progress, 0.02, 0.68);
-      const mountainProgress = staggeredProgress(progress, 0.18, 0.9);
+      const deityProgress = staggeredProgress(clamp01(scrollY / deityLandingScroll), 0.02, 1);
+      const cloudOneProgress = staggeredProgress(progress, 0.02, 0.68);
+      const cloudTwoProgress = staggeredProgress(progress, 0.12, 0.82);
+      const oceanProgress = staggeredProgress(progress, 0.04, 0.92);
+      const mountainProgress = staggeredProgress(progress, 0.22, 1);
       const canvasProgress = staggeredProgress(progress, 0.12, 1);
       const scoreSection = page.querySelector(".combination-result-block .compact-score-summary");
       const scoreSectionTop = scoreSection
         ? getDocumentOffsetTop(scoreSection)
         : deityLandingScroll + Math.min(window.innerHeight * 0.46, 420);
       const releaseScroll = Math.max(deityLandingScroll, scoreSectionTop - (window.innerHeight * 0.62));
+      const deityReleaseStart = Math.max(deityLandingScroll, scoreSectionTop - (window.innerHeight * 0.68));
+      const deityReleaseRange = Math.max(1, window.innerHeight * 0.24);
+      const deityHoldOffset = Math.max(0, scrollY - deityLandingScroll);
+      const deityReleaseProgress = smoothStep(clamp01((scrollY - deityReleaseStart) / deityReleaseRange));
+      const deityPinnedOffset = deityHoldOffset * 0.58 * (1 - deityReleaseProgress);
       const followRange = Math.max(1, releaseScroll - deityLandingScroll);
       const followProgress = smoothStep(clamp01((scrollY - deityLandingScroll) / followRange));
       const canvasFollowOffset = followRange * followProgress;
 
       page.style.setProperty("--deity-parallax-x", `${-16 * deityProgress}vw`);
-      page.style.setProperty("--deity-parallax-y", `${48 * deityProgress}vh`);
+      page.style.setProperty("--deity-parallax-y", `calc(${48 * deityProgress}vh + ${deityPinnedOffset}px)`);
       page.style.setProperty("--deity-parallax-scale", `${1 - deityProgress * 0.1}`);
       page.style.setProperty("--deity-parallax-opacity", "1");
       page.style.setProperty("--cloud-one-parallax-x", `${52 * cloudOneProgress}vw`);
@@ -584,10 +584,27 @@ export default function ResultView({
       page.style.setProperty("--ocean-parallax-y", `${3 * oceanProgress}rem`);
       page.style.setProperty("--mountain-parallax-x", `${58 * mountainProgress}vw`);
       page.style.setProperty("--mountain-parallax-y", `${1.5 * mountainProgress}rem`);
-      page.style.setProperty("--canvas-parallax-y", `${(-34 * canvasProgress) - (canvasFollowOffset * 1.35)}px`);
+      page.style.setProperty("--canvas-parallax-y", `${(-28 * canvasProgress) - (canvasFollowOffset * 1.04)}px`);
+    };
+
+    const updateParallax = () => {
+      const distance = targetScrollY - smoothedScrollY;
+
+      if (Math.abs(distance) < 0.35) {
+        smoothedScrollY = targetScrollY;
+        renderParallax(smoothedScrollY);
+        frameId = 0;
+        return;
+      }
+
+      smoothedScrollY = lerp(smoothedScrollY, targetScrollY, 0.1);
+      renderParallax(smoothedScrollY);
+      frameId = requestAnimationFrame(updateParallax);
     };
 
     const requestUpdate = () => {
+      targetScrollY = window.scrollY;
+
       if (frameId) {
         return;
       }
@@ -595,7 +612,7 @@ export default function ResultView({
       frameId = requestAnimationFrame(updateParallax);
     };
 
-    updateParallax();
+    renderParallax(smoothedScrollY);
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
 
