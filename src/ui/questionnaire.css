@@ -474,11 +474,11 @@ p {
   --hero-copy-width: min(32vw, 30rem);
   --hero-ocean-arch-overlap: 128px;
   --hero-ocean-width: 458px;
-  --hero-scene-height: clamp(520px, 58vw, 760px);
   --mountain-parallax-x: 0px;
   --mountain-parallax-y: 0px;
   --ocean-parallax-x: 0px;
   --ocean-parallax-y: 0px;
+  --hero-scene-height: clamp(520px, 58vw, 760px);
   --page-safe-bottom: clamp(1.2rem, 3vw, 2.4rem);
   --page-safe-top: clamp(1rem, 3vw, 2.4rem);
   --page-safe-x: clamp(1rem, 4vw, 3rem);
@@ -649,8 +649,8 @@ p {
   right: 2%;
   top: 4%;
   transform: translate3d(var(--cloud-one-parallax-x), var(--cloud-one-parallax-y), 0);
-  width: min(27vw, 300px);
   will-change: transform;
+  width: min(27vw, 300px);
   z-index: 120;
 }
 
@@ -666,8 +666,8 @@ p {
   position: absolute;
   top: -2%;
   transform: translate3d(var(--cloud-two-parallax-x), var(--cloud-two-parallax-y), 0);
-  width: min(22vw, 244px);
   will-change: transform;
+  width: min(22vw, 244px);
   z-index: 120;
 }
 
@@ -690,8 +690,8 @@ p {
   pointer-events: none;
   position: absolute;
   transform: translate3d(var(--ocean-parallax-x), var(--ocean-parallax-y), 0);
-  width: var(--hero-ocean-width);
   will-change: transform;
+  width: var(--hero-ocean-width);
   z-index: 121;
 }
 
@@ -706,8 +706,8 @@ p {
   position: absolute;
   right: clamp(-8rem, -10vw, -4rem);
   transform: translate3d(var(--mountain-parallax-x), var(--mountain-parallax-y), 0);
-  width: 457px;
   will-change: transform;
+  width: 457px;
   z-index: 121;
 }
 
@@ -1708,6 +1708,15 @@ td {
     width: min(13rem, 38vw);
   }
 
+  .result-body-region {
+    padding-left: clamp(0.85rem, 3vw, 1.8rem);
+    padding-right: clamp(0.85rem, 3vw, 1.8rem);
+  }
+
+  .result-body-canvas {
+    width: min(calc(100% - clamp(1rem, 4vw, 3rem)), 1040px);
+  }
+
   .result-hero-copy {
     align-items: flex-end;
     container-type: inline-size;
@@ -1739,15 +1748,6 @@ td {
     right: auto;
     transform: translateX(-50%);
     width: 100vw;
-  }
-
-  .result-body-region {
-    padding-left: clamp(0.85rem, 3vw, 1.8rem);
-    padding-right: clamp(0.85rem, 3vw, 1.8rem);
-  }
-
-  .result-body-canvas {
-    width: min(calc(100% - clamp(1rem, 4vw, 3rem)), 1040px);
   }
 
   .result-hero-art {
