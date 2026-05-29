@@ -455,7 +455,30 @@ p {
 }
 
 .result-page {
+  --canvas-parallax-y: 0px;
+  --cloud-one-parallax-x: 0px;
+  --cloud-one-parallax-y: 0px;
+  --cloud-two-parallax-x: 0px;
+  --cloud-two-parallax-y: 0px;
+  --deity-parallax-opacity: 1;
+  --deity-parallax-scale: 1;
+  --deity-parallax-x: 0px;
+  --deity-parallax-y: 0px;
+  --hero-arch-right: clamp(0.2rem, 2vw, 2.2rem);
+  --hero-arch-visual-start-offset: clamp(2.4rem, 5vw, 4.5rem);
+  --hero-arch-width: min(70vw, 870px);
+  --hero-art-right: clamp(0.2rem, 2vw, 2.2rem);
+  --hero-art-width: min(70vw, 840px);
+  --hero-copy-gap: clamp(3rem, 5vw, 5rem);
+  --hero-copy-left: var(--page-safe-x);
+  --hero-copy-width: min(32vw, 30rem);
+  --hero-ocean-arch-overlap: 128px;
+  --hero-ocean-width: 458px;
   --hero-scene-height: clamp(520px, 58vw, 760px);
+  --mountain-parallax-x: 0px;
+  --mountain-parallax-y: 0px;
+  --ocean-parallax-x: 0px;
+  --ocean-parallax-y: 0px;
   --page-safe-bottom: clamp(1.2rem, 3vw, 2.4rem);
   --page-safe-top: clamp(1rem, 3vw, 2.4rem);
   --page-safe-x: clamp(1rem, 4vw, 3rem);
@@ -472,6 +495,18 @@ p {
   z-index: 1;
 }
 
+.result-deity-parallax-overlay {
+  height: var(--hero-scene-height);
+  left: 50%;
+  overflow: visible;
+  pointer-events: none;
+  position: absolute;
+  top: var(--hero-top-safe-area);
+  transform: translateX(-50%);
+  width: min(100%, calc(100vw - (var(--page-safe-x) * 2)));
+  z-index: 180;
+}
+
 .result-body-region {
   background-color: #11100d;
   background-image: var(--hero-paper-image), var(--hero-paper-image);
@@ -480,7 +515,7 @@ p {
   background-size: var(--paper-tile-size) auto;
   left: 50%;
   margin: clamp(-2.4rem, -4vw, -1.4rem) 0 0;
-  padding: clamp(3rem, 5.5vw, 5rem) clamp(1rem, 4vw, 2.5rem) clamp(4rem, 8vw, 7rem);
+  padding: clamp(3.65rem, 6.5vw, 5.8rem) clamp(1rem, 4vw, 2.5rem) clamp(4rem, 8vw, 7rem);
   position: relative;
   transform: translateX(-50%);
   width: 100vw;
@@ -489,11 +524,13 @@ p {
 .result-body-canvas {
   background: #fdf4e7;
   border-radius: clamp(18px, 3vw, 34px);
-  margin: 0 auto;
-  max-width: 970px;
+  margin: clamp(1rem, 2.5vw, 2rem) auto 0;
+  max-width: 1040px;
   padding: clamp(2.25rem, 4.5vw, 4rem) clamp(1.4rem, 5vw, 3.7rem);
   position: relative;
-  width: min(calc(100% - clamp(1.5rem, 6vw, 5.5rem)), 970px);
+  transform: translate3d(0, var(--canvas-parallax-y), 0);
+  width: min(calc(100% - clamp(1.5rem, 6vw, 5.5rem)), 1040px);
+  will-change: transform;
   z-index: 2;
 }
 
@@ -517,16 +554,6 @@ p {
 }
 
 .result-hero-illustrated {
-  --hero-arch-right: clamp(0.2rem, 2vw, 2.2rem);
-  --hero-arch-visual-start-offset: clamp(2.4rem, 5vw, 4.5rem);
-  --hero-arch-width: min(70vw, 870px);
-  --hero-art-right: clamp(0.2rem, 2vw, 2.2rem);
-  --hero-art-width: min(70vw, 840px);
-  --hero-copy-gap: clamp(3rem, 5vw, 5rem);
-  --hero-copy-left: var(--page-safe-x);
-  --hero-copy-width: min(32vw, 30rem);
-  --hero-ocean-arch-overlap: 128px;
-  --hero-ocean-width: 458px;
   background-color: #fdf4e7;
   background-image: var(--hero-main-paper-image);
   background-position: center;
@@ -576,7 +603,7 @@ p {
   overflow-y: visible;
   pointer-events: none;
   position: absolute;
-  z-index: 100;
+  z-index: 130;
 }
 
 .result-hero-copy {
@@ -605,6 +632,11 @@ p {
   z-index: auto;
 }
 
+.result-hero-art-overlay {
+  bottom: clamp(18px, 4vw, 46px);
+  right: var(--hero-art-right);
+}
+
 .result-hero-cloud {
   background-image: var(--hero-cloud-image);
   background-position: center;
@@ -616,8 +648,10 @@ p {
   position: absolute;
   right: 2%;
   top: 4%;
+  transform: translate3d(var(--cloud-one-parallax-x), var(--cloud-one-parallax-y), 0);
   width: min(27vw, 300px);
-  z-index: 2;
+  will-change: transform;
+  z-index: 120;
 }
 
 .result-hero-cloud-two {
@@ -631,8 +665,10 @@ p {
   left: 7%;
   position: absolute;
   top: -2%;
+  transform: translate3d(var(--cloud-two-parallax-x), var(--cloud-two-parallax-y), 0);
   width: min(22vw, 244px);
-  z-index: 2;
+  will-change: transform;
+  z-index: 120;
 }
 
 .result-hero-ocean {
@@ -653,8 +689,10 @@ p {
   );
   pointer-events: none;
   position: absolute;
+  transform: translate3d(var(--ocean-parallax-x), var(--ocean-parallax-y), 0);
   width: var(--hero-ocean-width);
-  z-index: 96;
+  will-change: transform;
+  z-index: 121;
 }
 
 .result-hero-mountain {
@@ -667,8 +705,10 @@ p {
   pointer-events: none;
   position: absolute;
   right: clamp(-8rem, -10vw, -4rem);
+  transform: translate3d(var(--mountain-parallax-x), var(--mountain-parallax-y), 0);
   width: 457px;
-  z-index: 96;
+  will-change: transform;
+  z-index: 121;
 }
 
 .result-hero-arch {
@@ -693,8 +733,11 @@ p {
   pointer-events: none;
   position: absolute;
   right: 14%;
+  transform: translate3d(var(--deity-parallax-x), var(--deity-parallax-y), 0) scale(var(--deity-parallax-scale));
+  transform-origin: center bottom;
   width: min(60vw, 758px);
-  z-index: 100;
+  will-change: transform;
+  z-index: 140;
 }
 
 .result-hero-art .result-hero-deity-image {
@@ -706,10 +749,14 @@ p {
   max-width: none;
   object-fit: contain;
   object-position: center bottom;
+  opacity: var(--deity-parallax-opacity);
   position: absolute;
   right: 14%;
+  transform: translate3d(var(--deity-parallax-x), var(--deity-parallax-y), 0) scale(var(--deity-parallax-scale));
+  transform-origin: center bottom;
   width: min(60vw, 758px);
-  z-index: 101;
+  will-change: transform, opacity;
+  z-index: 141;
 }
 
 .result-hero-deity-foot-shadow {
@@ -723,8 +770,11 @@ p {
   pointer-events: none;
   position: absolute;
   right: 14%;
+  transform: translate3d(var(--deity-parallax-x), var(--deity-parallax-y), 0) scale(var(--deity-parallax-scale));
+  transform-origin: center bottom;
   width: min(60vw, 758px);
-  z-index: 102;
+  will-change: transform;
+  z-index: 142;
   -webkit-mask-image: var(--hero-deity-image);
   -webkit-mask-position: center bottom;
   -webkit-mask-repeat: no-repeat;
@@ -1625,8 +1675,16 @@ td {
 
 @media (max-width: 980px) {
   .result-page {
+    --hero-arch-visual-start-offset: clamp(2.4rem, 5vw, 4.5rem);
+    --hero-copy-gap: clamp(2.5rem, 5vw, 4.5rem);
+    --hero-copy-left: clamp(1rem, 4vw, 3rem);
+    --hero-copy-width: min(34vw, 22rem);
+    --hero-ipad-arch-left: calc(var(--hero-copy-left) + var(--hero-copy-width) + var(--hero-copy-gap) - clamp(13rem, 20vw, 17rem));
+    --hero-ipad-art-left: calc(var(--hero-copy-left) + var(--hero-copy-width) + var(--hero-copy-gap) - clamp(4rem, 8vw, 6rem));
+    --hero-ocean-arch-overlap: 115px;
+    --hero-ocean-width: 458px;
     --hero-scene-height: clamp(520px, 78vw, 720px);
-    --hero-top-safe-area: clamp(5.4rem, 11vw, 7.2rem);
+    --hero-top-safe-area: clamp(4.55rem, 9.2vw, 6.25rem);
     --page-control-top: clamp(0.85rem, 2.5vw, 1.4rem);
   }
 
@@ -1642,18 +1700,6 @@ td {
   .debug-deity-select select {
     max-width: min(13rem, calc(100vw - 1.5rem));
     width: min(13rem, 38vw);
-  }
-
-  .result-hero-illustrated {
-    --hero-arch-visual-start-offset: clamp(2.4rem, 5vw, 4.5rem);
-    --hero-ipad-arch-left: calc(var(--hero-copy-left) + var(--hero-copy-width) + var(--hero-copy-gap) - clamp(13rem, 20vw, 17rem));
-    --hero-ipad-art-left: calc(var(--hero-copy-left) + var(--hero-copy-width) + var(--hero-copy-gap) - clamp(4rem, 8vw, 6rem));
-    --hero-ocean-arch-overlap: 115px;
-    --hero-ocean-width: 458px;
-    --hero-copy-gap: clamp(2.5rem, 5vw, 4.5rem);
-    --hero-copy-left: clamp(1rem, 4vw, 3rem);
-    --hero-copy-width: min(34vw, 22rem);
-    --hero-top-safe-area: clamp(4.55rem, 9.2vw, 6.25rem);
   }
 
   .result-hero-copy {
@@ -1687,6 +1733,15 @@ td {
     right: auto;
     transform: translateX(-50%);
     width: 100vw;
+  }
+
+  .result-body-region {
+    padding-left: clamp(0.85rem, 3vw, 1.8rem);
+    padding-right: clamp(0.85rem, 3vw, 1.8rem);
+  }
+
+  .result-body-canvas {
+    width: min(calc(100% - clamp(1rem, 4vw, 3rem)), 1040px);
   }
 
   .result-hero-art {
