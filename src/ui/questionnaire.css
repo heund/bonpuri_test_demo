@@ -733,10 +733,8 @@ p {
   pointer-events: none;
   position: absolute;
   right: 14%;
-  transform: translate3d(var(--deity-parallax-x), var(--deity-parallax-y), 0) scale(var(--deity-parallax-scale));
   transform-origin: center bottom;
   width: min(60vw, 758px);
-  will-change: transform;
   z-index: 140;
 }
 
@@ -1206,6 +1204,7 @@ p {
   object-fit: contain;
   transform: scale(1.22);
   transform-origin: center;
+  visibility: hidden;
   width: clamp(7.7rem, 17.5vw, 11.3rem);
 }
 
@@ -1375,9 +1374,16 @@ p {
 }
 
 .deity-description-intro > p:not(.result-source):not(.deity-description-title-line) {
+  display: none;
   font-size: 1.13rem;
   line-height: 1.68;
   margin-top: 0;
+}
+
+.deity-result-block {
+  min-height: clamp(18rem, 34vw, 28rem);
+  padding-bottom: clamp(18rem, 42vw, 34rem);
+  visibility: hidden;
 }
 
 .combination-result-block {

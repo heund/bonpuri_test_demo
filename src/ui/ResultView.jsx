@@ -120,8 +120,16 @@ function smoothStep(value) {
   return value * value * (3 - 2 * value);
 }
 
+function easeOutCubic(value) {
+  return 1 - ((1 - value) ** 3);
+}
+
 function staggeredProgress(progress, start, end) {
   return smoothStep(clamp01((progress - start) / (end - start)));
+}
+
+function staggeredEaseOut(progress, start, end) {
+  return easeOutCubic(clamp01((progress - start) / (end - start)));
 }
 
 function useFitSingleLineText(dependencies = []) {
@@ -534,20 +542,23 @@ export default function ResultView({
 
       const scrollY = window.scrollY;
       const heroHeight = hero.offsetHeight || window.innerHeight || 1;
-      const landingScroll = heroHeight * 0.92;
-      const progress = clamp01(scrollY / landingScroll);
-      const deityProgress = staggeredProgress(progress, 0.08, 1);
-      const cloudOneProgress = staggeredProgress(progress, 0, 0.58);
-      const cloudTwoProgress = staggeredProgress(progress, 0.04, 0.66);
-      const oceanProgress = staggeredProgress(progress, 0.02, 0.76);
-      const mountainProgress = staggeredProgress(progress, 0.1, 0.84);
+      const sceneScroll = heroHeight * 0.92;
+      const deityLandingScroll = heroHeight * 0.62;
+      const progress = clamp01(scrollY / sceneScroll);
+      const deityProgress = staggeredEaseOut(clamp01(scrollY / deityLandingScroll), 0.02, 1);
+      const cloudOneProgress = staggeredProgress(progress, 0, 0.52);
+      const cloudTwoProgress = staggeredProgress(progress, 0.11, 0.78);
+      const oceanProgress = staggeredProgress(progress, 0.02, 0.68);
+      const mountainProgress = staggeredProgress(progress, 0.18, 0.9);
       const canvasProgress = staggeredProgress(progress, 0.12, 1);
       const scoreSection = page.querySelector(".combination-result-block .compact-score-summary");
       const scoreSectionTop = scoreSection
         ? scoreSection.getBoundingClientRect().top + scrollY
-        : landingScroll + Math.min(window.innerHeight * 0.46, 420);
-      const releaseScroll = Math.max(landingScroll, scoreSectionTop - (window.innerHeight * 0.62));
-      const deityFollowOffset = Math.max(0, Math.min(scrollY - landingScroll, releaseScroll - landingScroll));
+        : deityLandingScroll + Math.min(window.innerHeight * 0.46, 420);
+      const releaseScroll = Math.max(deityLandingScroll, scoreSectionTop - (window.innerHeight * 0.62));
+      const followRange = Math.max(1, releaseScroll - deityLandingScroll);
+      const followProgress = smoothStep(clamp01((scrollY - deityLandingScroll) / followRange));
+      const deityFollowOffset = followRange * followProgress;
 
       page.style.setProperty("--deity-parallax-x", `${-16 * deityProgress}vw`);
       page.style.setProperty("--deity-parallax-y", `calc(${48 * deityProgress}vh + ${deityFollowOffset}px)`);
@@ -631,7 +642,6 @@ export default function ResultView({
           style={{ "--hero-deity-image": `url(${resultDeityImage})` }}
         >
           <div className="result-hero-art result-hero-art-overlay">
-            <span className={`result-hero-deity-glow result-hero-deity-glow-${selectedMatch?.deity_id || "default"}`} />
             <img
               alt=""
               className={`result-hero-deity-image result-hero-deity-image-${selectedMatch?.deity_id || "default"}`}
@@ -674,6 +684,7 @@ export default function ResultView({
                   <span className="result-hero-mountain" />
                   <span className="result-hero-cloud" />
                   <span className="result-hero-cloud-two" />
+                  <span className={`result-hero-deity-glow result-hero-deity-glow-${selectedMatch?.deity_id || "default"}`} />
                 </div>
               </div>
             </div>
