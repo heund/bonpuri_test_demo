@@ -25,7 +25,7 @@ import selfLensImage from "../../image/self_lens.svg";
 import socialLensImage from "../../image/social_lens.svg";
 import careOrientationImage from "../../image/care_orientation.svg";
 import orderOrientationImage from "../../image/order_orientation.svg";
-import introPrototypeUrl from "../../TYPOGR~1.HTM?url";
+import introPrototypeUrl from "../../intro.html?url";
 import { generateResult } from "../bonpuriScoringCore.js";
 import ResultView from "./ResultView.jsx";
 
