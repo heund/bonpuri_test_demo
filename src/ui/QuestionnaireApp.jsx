@@ -3,17 +3,17 @@ import questionsData from "../../data/test_questions_seed.json";
 import deityMap from "../../data/deity_axis_map.json";
 import resultTemplates from "../../data/result_templates.json";
 import axisDefinitions from "../../data/axis_definitions.json";
-import chogongThreeBrothersImage from "../../image/Deity/CHOGONGSHIN.svg";
-import daebyeolsangManuraImage from "../../image/Deity/DAEBYUL.svg";
-import donghaeYonggungDaughterImage from "../../image/Deity/DONGHAE.svg";
-import gangnimImage from "../../image/Deity/GANGNIM.svg";
-import jijangAgissiImage from "../../image/Deity/JIJANG.svg";
-import myeongjingukDaughterImage from "../../image/Deity/MYUNG.svg";
-import nogaDanpungAgissiImage from "../../image/Deity/NOGA.svg";
-import nokdisaengiImage from "../../image/Deity/NOKDI.svg";
-import sobyeolwangImage from "../../image/Deity/SOBYUL.svg";
-import yeosanBuinImage from "../../image/Deity/YEOSAN.svg";
-import yuJeongseungDaughterImage from "../../image/Deity/YUJEONG.svg";
+import chogongThreeBrothersImage from "../../image/DeityWebp/CHOGONGSHIN.webp";
+import daebyeolsangManuraImage from "../../image/DeityWebp/DAEBYUL.webp";
+import donghaeYonggungDaughterImage from "../../image/DeityWebp/DONGHAE.webp";
+import gangnimImage from "../../image/DeityWebp/GANGNIM.webp";
+import jijangAgissiImage from "../../image/DeityWebp/JIJANG.webp";
+import myeongjingukDaughterImage from "../../image/DeityWebp/MYUNG.webp";
+import nogaDanpungAgissiImage from "../../image/DeityWebp/NOGA.webp";
+import nokdisaengiImage from "../../image/DeityWebp/NOKDI.webp";
+import sobyeolwangImage from "../../image/DeityWebp/SOBYUL.webp";
+import yeosanBuinImage from "../../image/DeityWebp/YEOSAN.webp";
+import yuJeongseungDaughterImage from "../../image/DeityWebp/YUJEONG.webp";
 import heroBlackPaperImage from "../../image/background/blackpaper_final_strip.png";
 import heroMainPaperImage from "../../image/background/PAPER_MAIN.png";
 import heroArchImage from "../../image/background/cutout.png";
@@ -26,6 +26,7 @@ import socialLensImage from "../../image/social_lens.svg";
 import careOrientationImage from "../../image/care_orientation.svg";
 import orderOrientationImage from "../../image/order_orientation.svg";
 import introPrototypeUrl from "../../intro.html?url";
+import introModelUrl from "../../assets/3d/door_letter.optimized.glb?url";
 import { generateResult } from "../bonpuriScoringCore.js";
 import ResultView from "./ResultView.jsx";
 
@@ -57,6 +58,10 @@ const PRELOAD_IMAGE_URLS = [
   careOrientationImage,
   orderOrientationImage
 ];
+const PRELOAD_FETCH_URLS = [
+  introPrototypeUrl,
+  introModelUrl
+];
 const WARMUP_SETTLE_FRAMES = 2;
 
 const prototypeData = {
@@ -78,7 +83,7 @@ export default function QuestionnaireApp() {
   const [loadedAssetUrls, setLoadedAssetUrls] = useState(() => new Set());
   const [fontsReady, setFontsReady] = useState(false);
   const [paintSettled, setPaintSettled] = useState(false);
-  const assetCount = PRELOAD_IMAGE_URLS.length + 1;
+  const assetCount = PRELOAD_IMAGE_URLS.length + PRELOAD_FETCH_URLS.length + 1;
   const loadedAssets = loadedAssetUrls.size + (fontsReady ? 1 : 0);
   const assetsReady = loadedAssets >= assetCount && paintSettled;
   const loadingProgress = assetsReady ? 100 : Math.round((loadedAssets / assetCount) * 100);
@@ -92,6 +97,22 @@ export default function QuestionnaireApp() {
 
     fontPromise.finally(() => {
       if (isMounted) setFontsReady(true);
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    PRELOAD_FETCH_URLS.forEach((url) => {
+      fetch(url, { cache: "force-cache" })
+        .catch(() => undefined)
+        .finally(() => {
+          if (isMounted) handleWarmAssetReady(url);
+        });
     });
 
     return () => {
@@ -209,7 +230,7 @@ export default function QuestionnaireApp() {
       <main className="intro-mockup-page">
         <iframe
           className="intro-mockup-frame"
-          src={introPrototypeUrl}
+          src={`${introPrototypeUrl}?paper=${encodeURIComponent(heroBlackPaperImage)}&model=${encodeURIComponent(introModelUrl)}`}
           title="Bonpuri intro prototype"
         />
       </main>
