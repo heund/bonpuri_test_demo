@@ -121,6 +121,10 @@ function smoothStep(value) {
   return value * value * (3 - 2 * value);
 }
 
+function smootherStep(value) {
+  return value * value * value * (value * ((value * 6) - 15) + 10);
+}
+
 function lerp(start, end, amount) {
   return start + ((end - start) * amount);
 }
@@ -587,19 +591,23 @@ export default function ResultView({
         ? Math.min(window.innerHeight * 0.28, donghaeBubble.offsetHeight * 0.22)
         : 0;
       const donghaeMidpointProgress = isDonghaeResult
-        ? smoothStep(clamp01((scrollY - (deityLandingScroll * 0.74)) / Math.max(1, window.innerHeight * 0.28)))
+        ? smootherStep(clamp01((scrollY - (deityLandingScroll * 0.66)) / Math.max(1, window.innerHeight * 0.48)))
         : 0;
       const donghaePairLockStart = deityLandingScroll * 0.96;
+      const donghaePairBlendStart = deityLandingScroll * 0.82;
+      const donghaePairBlendRange = Math.max(1, window.innerHeight * 0.58);
+      const donghaePairBlendProgress = smootherStep(clamp01((scrollY - donghaePairBlendStart) / donghaePairBlendRange));
       const donghaePairReleaseStart = donghaePairLockStart + (window.innerHeight * 0.7);
       const donghaePairReleaseRange = Math.max(1, window.innerHeight * 0.24);
-      const donghaePairReleaseProgress = smoothStep(clamp01((scrollY - donghaePairReleaseStart) / donghaePairReleaseRange));
-      const donghaeSharedLockOffset = Math.max(0, scrollY - donghaePairLockStart)
-        * 0.72
+      const donghaePairReleaseProgress = smootherStep(clamp01((scrollY - donghaePairReleaseStart) / donghaePairReleaseRange));
+      const donghaeSharedLockOffset = Math.max(0, scrollY - donghaePairBlendStart)
+        * 0.52
+        * donghaePairBlendProgress
         * (1 - donghaePairReleaseProgress);
       const deityPinnedOffset = isDonghaeResult
         ? donghaeSharedLockOffset
         : deityHoldOffset * 0.58 * (1 - deityReleaseProgress);
-      const bubbleFollowStart = isDonghaeResult ? donghaePairLockStart : heroHeight * 0.34;
+      const bubbleFollowStart = isDonghaeResult ? donghaePairBlendStart : heroHeight * 0.34;
       const bubbleFollowDistance = Math.max(1, heroHeight * (isDonghaeResult ? 0.44 : 0.84));
       const bubbleProgress = smoothStep(clamp01((scrollY - bubbleFollowStart) / bubbleFollowDistance));
       const bubbleSettleOffset = isDonghaeResult

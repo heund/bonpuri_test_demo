@@ -25,6 +25,7 @@ import selfLensImage from "../../image/self_lens.svg";
 import socialLensImage from "../../image/social_lens.svg";
 import careOrientationImage from "../../image/care_orientation.svg";
 import orderOrientationImage from "../../image/order_orientation.svg";
+import introPrototypeUrl from "../../TYPOGR~1.HTM?url";
 import { generateResult } from "../bonpuriScoringCore.js";
 import ResultView from "./ResultView.jsx";
 
@@ -73,6 +74,7 @@ export default function QuestionnaireApp() {
   const [initialDebugDeityId, setInitialDebugDeityId] = useState("");
   const [language, setLanguage] = useState("en");
   const [hasStarted, setHasStarted] = useState(false);
+  const [showIntroMockup, setShowIntroMockup] = useState(false);
   const [loadedAssetUrls, setLoadedAssetUrls] = useState(() => new Set());
   const [fontsReady, setFontsReady] = useState(false);
   const [paintSettled, setPaintSettled] = useState(false);
@@ -154,6 +156,7 @@ export default function QuestionnaireApp() {
     setResult(null);
     setInitialDebugDeityId("");
     setHasStarted(false);
+    setShowIntroMockup(false);
   }
 
   function handleBack() {
@@ -171,6 +174,12 @@ export default function QuestionnaireApp() {
     setInitialDebugDeityId("gangnim");
     setResult(generateResult(debugAnswers, prototypeData));
     setHasStarted(true);
+  }
+
+  function handleDebugIntro() {
+    if (!assetsReady) return;
+
+    setShowIntroMockup(true);
   }
 
   function handleWarmAssetReady(src) {
@@ -192,6 +201,18 @@ export default function QuestionnaireApp() {
         result={result}
         onRestart={handleRestart}
       />
+    );
+  }
+
+  if (showIntroMockup) {
+    return (
+      <main className="intro-mockup-page">
+        <iframe
+          className="intro-mockup-frame"
+          src={introPrototypeUrl}
+          title="Bonpuri intro prototype"
+        />
+      </main>
     );
   }
 
@@ -253,6 +274,14 @@ export default function QuestionnaireApp() {
             onClick={handleDebugResult}
           >
             Debug result page
+          </button>
+          <button
+            className="debug-result-button"
+            disabled={!assetsReady}
+            type="button"
+            onClick={handleDebugIntro}
+          >
+            Debug intro page
           </button>
         </section>
       </main>
