@@ -11,14 +11,14 @@ import selfLensImage from "../../image/self_lens.svg";
 import socialLensImage from "../../image/social_lens.svg";
 import careOrientationImage from "../../image/care_orientation.svg";
 import orderOrientationImage from "../../image/order_orientation.svg";
-import heroBlackPaperImage from "../../image/background/blackpaper_final_strip.png";
-import heroMainPaperImage from "../../image/background/PAPER_MAIN.png";
-import heroArchImage from "../../image/background/cutout.png";
-import heroCloudImage from "../../image/background/cloud.png";
-import heroCloudTwoImage from "../../image/background/cloud2.png";
-import heroMountainImage from "../../image/background/mountain.png";
-import heroOceanImage from "../../image/background/ocean.png";
-import donghaeSpeechBubbleImage from "../../image/elements/speech_bubble_donghae.png";
+import heroBlackPaperImage from "../../image/BackgroundWebp/blackpaper_final_strip.webp";
+import heroMainPaperImage from "../../image/BackgroundWebp/PAPER_MAIN.webp";
+import heroArchImage from "../../image/BackgroundWebp/cutout.webp";
+import heroCloudImage from "../../image/BackgroundWebp/cloud.webp";
+import heroCloudTwoImage from "../../image/BackgroundWebp/cloud2.webp";
+import heroMountainImage from "../../image/BackgroundWebp/mountain.webp";
+import heroOceanImage from "../../image/BackgroundWebp/ocean.webp";
+import donghaeSpeechBubbleImage from "../../image/BackgroundWebp/speech_bubble_donghae.webp";
 import chogongThreeBrothersImage from "../../image/DeityWebp/CHOGONGSHIN.webp";
 import daebyeolsangManuraImage from "../../image/DeityWebp/DAEBYUL.webp";
 import donghaeYonggungDaughterImage from "../../image/DeityWebp/DONGHAE.webp";
@@ -678,16 +678,18 @@ export default function ResultView({
         "--hero-paper-image": `url(${heroBlackPaperImage})`
       }}
     >
-      <button
-        aria-label={resultLanguage === "ko" ? "홈으로" : "Home"}
-        className="home-button"
-        type="button"
-        onClick={onRestart}
-      >
-        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
-          <path d="M3.1 10.9 12 3.4l8.9 7.5-1.55 1.85-1.05-.88V20.6h-5.05v-5.85h-2.5v5.85H5.7v-8.73l-1.05.88-1.55-1.85Z" />
-        </svg>
-      </button>
+      <div className="questionnaire-top-left-controls">
+        <button
+          aria-label={resultLanguage === "ko" ? "홈으로" : "Home"}
+          className="home-button"
+          type="button"
+          onClick={onRestart}
+        >
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+            <path d="M3.1 10.9 12 3.4l8.9 7.5-1.55 1.85-1.05-.88V20.6h-5.05v-5.85h-2.5v5.85H5.7v-8.73l-1.05.88-1.55-1.85Z" />
+          </svg>
+        </button>
+      </div>
       <div className="page-top-bar">
         <LanguageToggle
           language={resultLanguage}

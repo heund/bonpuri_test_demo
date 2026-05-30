@@ -1,5 +1,12 @@
 :root {
   --page-canvas-width: 1040px;
+  --page-control-top: clamp(1.75rem, 4vw, 3rem);
+  --page-content-bottom: clamp(3rem, 8vw, 5rem);
+  --page-content-top: clamp(5rem, 9vw, 6.4rem);
+  --page-content-x: clamp(2.15rem, 6.4vw, 4.25rem);
+  --page-safe-bottom: clamp(1.2rem, 3vw, 2.4rem);
+  --page-safe-top: clamp(1rem, 3vw, 2.4rem);
+  --page-safe-x: clamp(1rem, 4vw, 3rem);
   --background: #fdf4e7;
   --surface: #fff;
   --surface-soft: rgba(255, 255, 255, 0.82);
@@ -94,7 +101,7 @@ button:disabled {
 main {
   margin: 0 auto;
   max-width: var(--page-canvas-width);
-  padding: clamp(1.25rem, 4vw, 3.5rem) clamp(1rem, 4vw, 2rem);
+  padding: clamp(1.25rem, 4vw, 3.5rem) var(--page-content-x);
 }
 
 .landing-page {
@@ -237,9 +244,41 @@ main {
   height: 100svh;
   margin: 0;
   max-width: none;
+  opacity: 1;
   overflow: hidden;
   padding: 0;
+  transition: opacity 520ms ease;
   width: 100vw;
+}
+
+.intro-entry-page {
+  inset: 0;
+  position: fixed;
+  z-index: 40;
+}
+
+.intro-mockup-page.is-exiting {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.questionnaire-page.is-entering {
+  animation: questionnaireFadeIn 620ms ease both;
+}
+
+@keyframes questionnaireFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-entry-page.is-loading .intro-mockup-frame {
+  pointer-events: none;
 }
 
 .intro-mockup-frame {
@@ -248,6 +287,45 @@ main {
   height: 100%;
   margin: 0;
   width: 100%;
+}
+
+.intro-loading-overlay {
+  align-items: center;
+  bottom: clamp(112px, 18vh, 164px);
+  color: rgba(239, 230, 216, 0.9);
+  display: grid;
+  gap: 0.78rem;
+  justify-items: center;
+  left: 50%;
+  max-width: min(19rem, 72vw);
+  pointer-events: none;
+  position: fixed;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 8;
+}
+
+.intro-loading-overlay p {
+  color: rgba(239, 230, 216, 0.86);
+  font-size: clamp(0.82rem, 1.6vw, 0.98rem);
+  font-weight: 620;
+  margin: 0;
+}
+
+.intro-loading-progress {
+  background: rgba(239, 230, 216, 0.22);
+  border-radius: 999px;
+  height: 0.58rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.intro-loading-progress span {
+  background: rgba(239, 230, 216, 0.92);
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  transition: width 180ms ease;
 }
 
 h1,
@@ -320,8 +398,10 @@ p {
 }
 
 .questionnaire-page {
-  max-width: 920px;
-  padding-top: 3.8rem;
+  max-width: 840px;
+  padding-bottom: var(--page-content-bottom);
+  padding-inline: var(--page-content-x);
+  padding-top: var(--page-content-top);
   position: relative;
 }
 
@@ -370,15 +450,15 @@ p {
 
 .back-button {
   background: var(--surface);
-  border: 2px solid var(--text-primary);
+  border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--text-primary);
-  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
-  font-weight: 760;
+  font-size: clamp(0.82rem, 1.8vw, 1rem);
+  font-weight: 650;
   line-height: 1;
-  min-height: 3.1rem;
-  min-width: 7.8rem;
-  padding: 0.52rem 1.05rem 0.58rem;
+  min-height: 2.5rem;
+  min-width: 7rem;
+  padding: 0.75rem 1.15rem;
 }
 
 .visually-hidden {
@@ -395,6 +475,16 @@ p {
   display: inline-flex;
 }
 
+.questionnaire-top-left-controls {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  left: var(--page-content-x);
+  position: fixed;
+  top: var(--page-control-top, var(--page-safe-top, clamp(1rem, 3vw, 2.4rem)));
+  z-index: 200;
+}
+
 .home-button {
   align-items: center;
   background: transparent;
@@ -403,13 +493,10 @@ p {
   display: inline-flex;
   height: 2rem;
   justify-content: center;
-  left: var(--page-safe-x, clamp(1rem, 4vw, 3rem));
   min-height: 2rem;
   padding: 0;
-  position: fixed;
-  top: var(--page-control-top, var(--page-safe-top, clamp(1rem, 3vw, 2.4rem)));
+  position: static;
   width: 2rem;
-  z-index: 200;
 }
 
 .home-button svg {
@@ -427,6 +514,34 @@ p {
 .home-button:focus-visible {
   box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.24);
   outline: none;
+}
+
+.questionnaire-debug-result-button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid rgba(29, 29, 31, 0.45);
+  border-radius: 999px;
+  color: #1d1d1f;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 650;
+  height: 2rem;
+  justify-content: center;
+  line-height: 1;
+  min-height: 2rem;
+  padding: 0 0.85rem;
+}
+
+.questionnaire-debug-result-button:hover:not(:disabled) {
+  background: #ffdf5a;
+  border-color: #1d1d1f;
+  color: #000;
+}
+
+.questionnaire-debug-result-button:disabled {
+  cursor: default;
+  opacity: 0.45;
 }
 
 .language-select select {
@@ -498,9 +613,6 @@ p {
   --ocean-parallax-x: 0px;
   --ocean-parallax-y: 0px;
   --hero-scene-height: clamp(520px, 58vw, 760px);
-  --page-safe-bottom: clamp(1.2rem, 3vw, 2.4rem);
-  --page-safe-top: clamp(1rem, 3vw, 2.4rem);
-  --page-safe-x: clamp(1rem, 4vw, 3rem);
   --hero-paper-strip-height: clamp(94px, 18vw, 178px);
   --hero-top-safe-area: clamp(4.2rem, 7vw, 6rem);
   --paper-tile-size: min(1254px, 100vw);
@@ -548,7 +660,7 @@ p {
   padding: clamp(2.25rem, 4.5vw, 4rem) clamp(1.4rem, 5vw, 3.7rem);
   position: relative;
   transform: translate3d(0, var(--canvas-parallax-y), 0);
-  width: min(calc(100% - clamp(1.5rem, 6vw, 5.5rem)), 1040px);
+  width: min(calc(100% - (var(--page-content-x) * 2)), 1040px);
   will-change: transform;
   z-index: 2;
 }
@@ -592,9 +704,9 @@ p {
   gap: 0.45rem;
   justify-content: flex-end;
   margin: 0;
-  max-width: calc(100svw - (var(--page-safe-x) * 2));
+  max-width: calc(100svw - (var(--page-content-x) * 2));
   position: fixed;
-  right: max(env(safe-area-inset-right), var(--page-safe-x));
+  right: max(env(safe-area-inset-right), var(--page-content-x));
   top: var(--page-control-top, var(--page-safe-top));
   z-index: 200;
 }
@@ -1627,7 +1739,7 @@ td {
 }
 
 .question-progress span {
-  background: #14b8d4;
+  background: #11100e;
   border-radius: inherit;
   display: block;
   height: 100%;
@@ -1780,7 +1892,6 @@ td {
     --hero-ocean-width: 458px;
     --hero-scene-height: clamp(520px, 78vw, 720px);
     --hero-top-safe-area: clamp(4.55rem, 9.2vw, 6.25rem);
-    --page-control-top: clamp(0.85rem, 2.5vw, 1.4rem);
   }
 
   .page-top-bar {

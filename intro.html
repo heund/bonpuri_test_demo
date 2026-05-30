@@ -14,10 +14,225 @@
       background-size:min(1254px, 100vw) auto;
       overflow:hidden;
     }
-    canvas { display:block; }
+    canvas {
+      display:block;
+      position:relative;
+      transform-origin:center center;
+      transition:transform 900ms cubic-bezier(0.16, 1, 0.3, 1), filter 900ms ease, opacity 900ms ease;
+      z-index:2;
+    }
+    body.is-transitioning canvas {
+      filter:blur(8px);
+      opacity:0;
+      transform:scale(1.16);
+    }
+    .intro-cloud,
+    .intro-cloud-two,
+    .intro-cloud-four {
+      opacity:0.92;
+      pointer-events:none;
+      position:fixed;
+      transition:transform 2800ms cubic-bezier(0.22, 1, 0.36, 1), opacity 2200ms ease;
+      will-change:transform, opacity;
+      z-index:1;
+    }
+    .intro-cloud {
+      height:min(25vw, 264px);
+      right:2%;
+      top:9%;
+      width:min(31vw, 345px);
+    }
+    .intro-cloud-two {
+      height:min(19vw, 202px);
+      left:7%;
+      top:4%;
+      width:min(25vw, 276px);
+    }
+    .intro-cloud-four {
+      height:min(29vw, 314px);
+      left:25%;
+      opacity:0.74;
+      top:22%;
+      transform:translateX(-50%);
+      width:min(39vw, 422px);
+    }
+    .intro-cloud::before,
+    .intro-cloud-two::before,
+    .intro-cloud-four::before {
+      background-position:center;
+      background-repeat:no-repeat;
+      background-size:contain;
+      content:"";
+      filter:drop-shadow(0 10px 8px rgba(70, 48, 24, 0.34))
+        drop-shadow(0 4px 3px rgba(70, 48, 24, 0.18));
+      inset:0;
+      position:absolute;
+    }
+    .intro-cloud::before {
+      animation:introCloudFloatOne 2.6s ease-in-out -0.45s infinite alternate;
+      background-image:var(--intro-cloud-image);
+    }
+    .intro-cloud-two::before {
+      animation:introCloudFloatTwo 3.1s ease-in-out -1.25s infinite alternate;
+      background-image:var(--intro-cloud-two-image);
+    }
+    .intro-cloud-four::before {
+      animation:introCloudFloatFour 2.9s ease-in-out -0.8s infinite alternate;
+      background-image:var(--intro-cloud-four-image);
+    }
+    body.is-opening .intro-cloud {
+      opacity:0;
+      transform:translate3d(52vw, -3.5rem, 0);
+    }
+    body.is-opening .intro-cloud-two {
+      opacity:0;
+      transform:translate3d(-52vw, -4.2rem, 0);
+    }
+    body.is-opening .intro-cloud-four {
+      opacity:0;
+      transform:translateX(-50%) translate3d(-42vw, -2.2rem, 0);
+    }
+    .intro-portal-wash {
+      background:
+        radial-gradient(circle at 50% 49%,
+          rgba(253, 244, 231, 1) 0%,
+          rgba(253, 244, 231, 0.96) 16%,
+          rgba(253, 244, 231, 0.7) 34%,
+          rgba(253, 244, 231, 0) 58%);
+      inset:-25vmax;
+      opacity:0;
+      pointer-events:none;
+      position:fixed;
+      transform:scale(0.18);
+      transform-origin:center center;
+      transition:transform 920ms cubic-bezier(0.12, 0.92, 0.18, 1), opacity 720ms ease;
+      z-index:3;
+    }
+    body.is-transitioning .intro-portal-wash {
+      opacity:1;
+      transform:scale(2.9);
+    }
+    @keyframes introCloudFloatOne {
+      from {
+        transform:translate3d(0, 0.14rem, 0);
+      }
+      to {
+        transform:translate3d(0.15rem, -0.18rem, 0);
+      }
+    }
+    @keyframes introCloudFloatTwo {
+      from {
+        transform:translate3d(0, -0.13rem, 0);
+      }
+      to {
+        transform:translate3d(-0.14rem, 0.18rem, 0);
+      }
+    }
+    @keyframes introCloudFloatFour {
+      from {
+        transform:translate3d(-0.08rem, 0.08rem, 0);
+      }
+      to {
+        transform:translate3d(0.1rem, -0.12rem, 0);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .intro-cloud,
+      .intro-cloud-two,
+      .intro-cloud-four,
+      .intro-cloud::before,
+      .intro-cloud-two::before,
+      .intro-cloud-four::before {
+        animation:none;
+        transition:none;
+      }
+    }
+    .intro-debug-reset {
+      appearance:none;
+      background:rgba(216, 216, 208, 0.12);
+      border:1px solid rgba(216, 216, 208, 0.42);
+      border-radius:999px;
+      color:#d8d8d0;
+      cursor:pointer;
+      font:600 12px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing:0;
+      padding:8px 12px;
+      position:fixed;
+      right:18px;
+      top:18px;
+      z-index:5;
+    }
+    .intro-debug-reset:hover {
+      background:rgba(216, 216, 208, 0.2);
+    }
+    .intro-language-actions {
+      align-items:center;
+      bottom:clamp(32px, 8vh, 72px);
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      left:50%;
+      opacity:0;
+      pointer-events:none;
+      position:fixed;
+      transform:translate(-50%, 0.5rem);
+      z-index:4;
+    }
+    body.assets-ready .intro-language-actions {
+      opacity:1;
+      pointer-events:auto;
+      transform:translate(-50%, 0);
+    }
+    body.is-opening .intro-language-actions {
+      opacity:0;
+      pointer-events:none;
+      transform:translate(-50%, 0.35rem);
+      transition:opacity 260ms ease, transform 260ms ease;
+    }
+    .intro-language-actions button {
+      appearance:none;
+      background:#efe6d8;
+      border:0;
+      border-radius:999px;
+      color:#14120f;
+      cursor:pointer;
+      font:650 clamp(13px, 1.8vw, 16px)/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing:0;
+      min-width:112px;
+      opacity:0;
+      padding:12px 18px;
+      transform:translateY(0.42rem);
+      transition:background 160ms ease, opacity 1200ms ease, transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body.assets-ready .intro-language-actions button {
+      opacity:1;
+      transform:translateY(0);
+    }
+    body.assets-ready .intro-language-actions button:nth-child(1) {
+      transition-delay:120ms;
+    }
+    body.assets-ready .intro-language-actions button:nth-child(2) {
+      transition-delay:360ms;
+    }
+    .intro-language-actions button:hover:not(:disabled) {
+      background:#f7efe3;
+    }
+    .intro-language-actions button:disabled {
+      cursor:default;
+      opacity:0.42;
+    }
   </style>
 </head>
 <body>
+<span class="intro-cloud" aria-hidden="true"></span>
+<span class="intro-cloud-two" aria-hidden="true"></span>
+<span class="intro-cloud-four" aria-hidden="true"></span>
+<span class="intro-portal-wash" aria-hidden="true"></span>
+<button class="intro-debug-reset" type="button">Reset animation</button>
+<div class="intro-language-actions" aria-label="Select language">
+  <button data-language="en" type="button">English</button>
+  <button data-language="ko" type="button">한국어</button>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meshoptimizer@0.22.0/meshopt_decoder.js"></script>
@@ -25,9 +240,24 @@
 const params = new URLSearchParams(window.location.search);
 const paperImage = params.get('paper');
 const modelUrl = params.get('model') || 'assets/3d/door_letter.optimized.glb';
+const cloudImage = params.get('cloud');
+const cloudTwoImage = params.get('cloud2');
+const cloudFourImage = params.get('cloud4');
 
 if (paperImage) {
   document.documentElement.style.setProperty('--intro-paper-image', 'url("' + paperImage + '")');
+}
+
+if (cloudImage) {
+  document.documentElement.style.setProperty('--intro-cloud-image', 'url("' + cloudImage + '")');
+}
+
+if (cloudTwoImage) {
+  document.documentElement.style.setProperty('--intro-cloud-two-image', 'url("' + cloudTwoImage + '")');
+}
+
+if (cloudFourImage) {
+  document.documentElement.style.setProperty('--intro-cloud-four-image', 'url("' + cloudFourImage + '")');
 }
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
@@ -54,7 +284,11 @@ scene.add(rim);
 
 const MAT = new THREE.MeshStandardMaterial({ color: 0xd8d8d8, roughness: 0.72 });
 const introGroup = new THREE.Group();
+const topLetterGroup = new THREE.Group();
+const bottomLetterGroup = new THREE.Group();
 scene.add(introGroup);
+introGroup.add(topLetterGroup);
+introGroup.add(bottomLetterGroup);
 
 let leftPivot = null;
 let rightPivot = null;
@@ -63,11 +297,26 @@ let hasPlayed = false;
 let startRequested = false;
 let animationStartedAt = 0;
 let animationFrameId = null;
+let centerGlow = null;
+let selectedLanguage = null;
+let transitionTimeoutId = 0;
+let transitionStarted = false;
+let introAssetsReady = false;
+const resetButton = document.querySelector('.intro-debug-reset');
+const languageButtons = Array.from(document.querySelectorAll('.intro-language-actions button'));
 
 const OPEN_ANGLE = Math.PI * 0.75;
 const DURATION_MS = 1500;
 const INTRO_SCALE = 0.86;
 const INTRO_Y_OFFSET = 0.34;
+const TOP_FLOAT_Y = 0.014;
+const TOP_FLOAT_X = 0.004;
+const BOTTOM_FLOAT_Y = 0.009;
+const BOTTOM_FLOAT_X = 0.003;
+const INTRO_FLOAT_MS = 3200;
+const CENTER_GLOW_SIZE = 1.22;
+const CENTER_GLOW_OPACITY = 0.68;
+const PORTAL_TRANSITION_MS = 900;
 
 introGroup.scale.setScalar(INTRO_SCALE);
 introGroup.position.y = INTRO_Y_OFFSET;
@@ -76,14 +325,106 @@ function easeOutCubic(t) {
   return 1 - Math.pow(1 - t, 3);
 }
 
+function easeInOutSine(t) {
+  return -(Math.cos(Math.PI * t) - 1) / 2;
+}
+
 function onIntroDone() {
-  console.log('intro done - transition here');
+  if (transitionStarted) return;
+
+  transitionStarted = true;
+  document.body.classList.add('is-transitioning');
+  setCenterGlowProgress(1);
+  window.clearTimeout(transitionTimeoutId);
+  transitionTimeoutId = window.setTimeout(() => {
+    window.parent.postMessage({
+      type: 'bonpuri-intro-complete',
+      language: selectedLanguage || 'en'
+    }, window.location.origin);
+  }, PORTAL_TRANSITION_MS);
+}
+
+function postIntroComplete() {
+  window.parent.postMessage({
+    type: 'bonpuri-intro-complete',
+    language: selectedLanguage || 'en'
+  }, window.location.origin);
+}
+
+function updateIntroFloat(now) {
+  const phase = (now / INTRO_FLOAT_MS) * Math.PI * 2;
+  topLetterGroup.position.x = Math.sin(phase * 0.82) * TOP_FLOAT_X;
+  topLetterGroup.position.y = Math.sin(phase) * TOP_FLOAT_Y;
+  bottomLetterGroup.position.x = Math.sin((phase * 0.72) + 1.1) * BOTTOM_FLOAT_X;
+  bottomLetterGroup.position.y = Math.sin(phase + 1.45) * BOTTOM_FLOAT_Y;
 }
 
 function applyIntroMaterial(root) {
   root.traverse((child) => {
     if (child.isMesh) child.material = MAT;
   });
+}
+
+function createCenterGlowTexture() {
+  const size = 256;
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const context = canvas.getContext('2d');
+  const gradient = context.createRadialGradient(
+    size / 2,
+    size / 2,
+    0,
+    size / 2,
+    size / 2,
+    size / 2
+  );
+
+  gradient.addColorStop(0, 'rgba(238, 238, 230, 1)');
+  gradient.addColorStop(0.2, 'rgba(238, 238, 230, 0.74)');
+  gradient.addColorStop(0.5, 'rgba(238, 238, 230, 0.28)');
+  gradient.addColorStop(1, 'rgba(232, 232, 224, 0)');
+  context.fillStyle = gradient;
+  context.fillRect(0, 0, size, size);
+
+  return new THREE.CanvasTexture(canvas);
+}
+
+function createCenterGlow(root) {
+  const leftSource = root.getObjectByName('left_door');
+  const rightSource = root.getObjectByName('right_door');
+  if (!leftSource || !rightSource) return;
+
+  const leftBox = new THREE.Box3().setFromObject(leftSource);
+  const rightBox = new THREE.Box3().setFromObject(rightSource);
+  const seamX = (leftBox.max.x + rightBox.min.x) / 2;
+  const centerY = (
+    leftBox.min.y +
+    leftBox.max.y +
+    rightBox.min.y +
+    rightBox.max.y
+  ) / 4;
+
+  centerGlow = new THREE.Mesh(
+    new THREE.PlaneGeometry(CENTER_GLOW_SIZE, CENTER_GLOW_SIZE),
+    new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      depthWrite: false,
+      map: createCenterGlowTexture(),
+      opacity: 0,
+      transparent: true
+    })
+  );
+  centerGlow.position.set(seamX, centerY, -0.08);
+  centerGlow.renderOrder = -1;
+  introGroup.add(centerGlow);
+}
+
+function setCenterGlowProgress(progress) {
+  if (!centerGlow) return;
+
+  const glowProgress = Math.min(progress / 0.68, 1);
+  centerGlow.material.opacity = CENTER_GLOW_OPACITY * easeInOutSine(glowProgress);
 }
 
 function createPivotedClone(root, name, hingeSide) {
@@ -101,22 +442,24 @@ function createPivotedClone(root, name, hingeSide) {
   clone.position.x -= hingeX;
   clone.position.y -= hingeY;
   pivot.add(clone);
-  introGroup.add(pivot);
+  topLetterGroup.add(pivot);
   return pivot;
 }
 
 function buildDoor(gltf) {
+  createCenterGlow(gltf.scene);
+
   const bottom = gltf.scene.getObjectByName('bottom_letter');
   if (bottom) {
     const bottomClone = bottom.clone(true);
     applyIntroMaterial(bottomClone);
-    introGroup.add(bottomClone);
+    bottomLetterGroup.add(bottomClone);
   }
 
   leftPivot = createPivotedClone(gltf.scene, 'left_door', 'left');
   rightPivot = createPivotedClone(gltf.scene, 'right_door', 'right');
 
-  renderOnce();
+  ensureAnimationLoop();
   if (startRequested) startIntroAnimation();
 }
 
@@ -132,28 +475,61 @@ function startIntroAnimation() {
   hasPlayed = true;
   playing = true;
   animationStartedAt = performance.now();
-  window.removeEventListener('pointerdown', requestStart);
-  window.removeEventListener('keydown', requestStart);
-  animate();
+  document.body.classList.add('is-opening');
+  onIntroDone();
+  languageButtons.forEach((button) => {
+    button.disabled = true;
+  });
+  ensureAnimationLoop();
 }
 
-function requestStart() {
+function resetIntroAnimation(event) {
+  if (event) event.stopPropagation();
+
+  playing = false;
+  hasPlayed = false;
+  startRequested = false;
+  selectedLanguage = null;
+  transitionStarted = false;
+  window.clearTimeout(transitionTimeoutId);
+  document.body.classList.remove('is-opening', 'is-transitioning');
+
+  if (leftPivot) leftPivot.rotation.y = 0;
+  if (rightPivot) rightPivot.rotation.y = 0;
+  setCenterGlowProgress(0);
+
+  languageButtons.forEach((button) => {
+    button.disabled = false;
+  });
+  ensureAnimationLoop();
+}
+
+function requestStart(language) {
+  if (!introAssetsReady) return;
+
+  selectedLanguage = language || selectedLanguage || 'en';
   startRequested = true;
   startIntroAnimation();
 }
 
+function ensureAnimationLoop() {
+  if (animationFrameId) return;
+
+  animationFrameId = requestAnimationFrame(animate);
+}
+
 function animate(now = performance.now()) {
   animationFrameId = requestAnimationFrame(animate);
+  updateIntroFloat(now);
+
   if (playing && leftPivot && rightPivot) {
     const t = Math.min((now - animationStartedAt) / DURATION_MS, 1);
     const angle = easeOutCubic(t) * OPEN_ANGLE;
     leftPivot.rotation.y = angle;
     rightPivot.rotation.y = -angle;
+    setCenterGlowProgress(t);
     if (t >= 1) {
       playing = false;
-      cancelAnimationFrame(animationFrameId);
-      animationFrameId = null;
-      onIntroDone();
     }
   }
   renderer.render(scene, camera);
@@ -163,8 +539,23 @@ function renderOnce() {
   renderer.render(scene, camera);
 }
 
-window.addEventListener('pointerdown', requestStart);
-window.addEventListener('keydown', requestStart);
+resetButton.addEventListener('pointerdown', resetIntroAnimation);
+resetButton.addEventListener('click', resetIntroAnimation);
+window.addEventListener('message', (event) => {
+  if (event.origin !== window.location.origin) return;
+  if (event.data?.type !== 'bonpuri-assets-ready') return;
+
+  introAssetsReady = true;
+  document.body.classList.add('assets-ready');
+});
+languageButtons.forEach((button) => {
+  button.addEventListener('pointerdown', (event) => {
+    event.stopPropagation();
+  });
+  button.addEventListener('click', () => {
+    requestStart(button.dataset.language);
+  });
+});
 
 window.addEventListener('resize', () => {
   camera.aspect = innerWidth / innerHeight;

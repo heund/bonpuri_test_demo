@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import questionsData from "../../data/test_questions_seed.json";
 import deityMap from "../../data/deity_axis_map.json";
 import resultTemplates from "../../data/result_templates.json";
@@ -14,13 +14,14 @@ import nokdisaengiImage from "../../image/DeityWebp/NOKDI.webp";
 import sobyeolwangImage from "../../image/DeityWebp/SOBYUL.webp";
 import yeosanBuinImage from "../../image/DeityWebp/YEOSAN.webp";
 import yuJeongseungDaughterImage from "../../image/DeityWebp/YUJEONG.webp";
-import heroBlackPaperImage from "../../image/background/blackpaper_final_strip.png";
-import heroMainPaperImage from "../../image/background/PAPER_MAIN.png";
-import heroArchImage from "../../image/background/cutout.png";
-import heroCloudImage from "../../image/background/cloud.png";
-import heroCloudTwoImage from "../../image/background/cloud2.png";
-import heroMountainImage from "../../image/background/mountain.png";
-import heroOceanImage from "../../image/background/ocean.png";
+import heroBlackPaperImage from "../../image/BackgroundWebp/blackpaper_final_strip.webp";
+import heroMainPaperImage from "../../image/BackgroundWebp/PAPER_MAIN.webp";
+import heroArchImage from "../../image/BackgroundWebp/cutout.webp";
+import heroCloudImage from "../../image/BackgroundWebp/cloud.webp";
+import heroCloudTwoImage from "../../image/BackgroundWebp/cloud2.webp";
+import introCloudFourImage from "../../image/background/cloud4.png";
+import heroMountainImage from "../../image/BackgroundWebp/mountain.webp";
+import heroOceanImage from "../../image/BackgroundWebp/ocean.webp";
 import selfLensImage from "../../image/self_lens.svg";
 import socialLensImage from "../../image/social_lens.svg";
 import careOrientationImage from "../../image/care_orientation.svg";
@@ -51,6 +52,7 @@ const PRELOAD_IMAGE_URLS = [
   heroArchImage,
   heroCloudImage,
   heroCloudTwoImage,
+  introCloudFourImage,
   heroMountainImage,
   heroOceanImage,
   selfLensImage,
@@ -79,10 +81,12 @@ export default function QuestionnaireApp() {
   const [initialDebugDeityId, setInitialDebugDeityId] = useState("");
   const [language, setLanguage] = useState("en");
   const [hasStarted, setHasStarted] = useState(false);
-  const [showIntroMockup, setShowIntroMockup] = useState(false);
+  const [introIsExiting, setIntroIsExiting] = useState(false);
   const [loadedAssetUrls, setLoadedAssetUrls] = useState(() => new Set());
   const [fontsReady, setFontsReady] = useState(false);
   const [paintSettled, setPaintSettled] = useState(false);
+  const introFrameRef = useRef(null);
+  const introExitTimeoutRef = useRef(0);
   const assetCount = PRELOAD_IMAGE_URLS.length + PRELOAD_FETCH_URLS.length + 1;
   const loadedAssets = loadedAssetUrls.size + (fontsReady ? 1 : 0);
   const assetsReady = loadedAssets >= assetCount && paintSettled;
@@ -144,6 +148,37 @@ export default function QuestionnaireApp() {
     };
   }, [assetCount, loadedAssets]);
 
+  useEffect(() => {
+    function handleIntroMessage(event) {
+      if (event.origin !== window.location.origin) return;
+      if (event.data?.type !== "bonpuri-intro-complete") return;
+      if (!assetsReady) return;
+
+      setLanguage(event.data.language === "ko" ? "ko" : "en");
+      setIntroIsExiting(true);
+      setHasStarted(true);
+      window.clearTimeout(introExitTimeoutRef.current);
+      introExitTimeoutRef.current = window.setTimeout(() => {
+        setIntroIsExiting(false);
+      }, 520);
+    }
+
+    window.addEventListener("message", handleIntroMessage);
+
+    return () => {
+      window.removeEventListener("message", handleIntroMessage);
+      window.clearTimeout(introExitTimeoutRef.current);
+    };
+  }, [assetsReady]);
+
+  useEffect(() => {
+    if (!assetsReady) return;
+
+    introFrameRef.current?.contentWindow?.postMessage({
+      type: "bonpuri-assets-ready"
+    }, window.location.origin);
+  }, [assetsReady]);
+
   const currentQuestion = questions[currentQuestionIndex];
   const progressLabel = language === "ko"
     ? `질문 ${currentQuestionIndex + 1} / ${questions.length}`
@@ -177,7 +212,8 @@ export default function QuestionnaireApp() {
     setResult(null);
     setInitialDebugDeityId("");
     setHasStarted(false);
-    setShowIntroMockup(false);
+    setIntroIsExiting(false);
+    window.clearTimeout(introExitTimeoutRef.current);
   }
 
   function handleBack() {
@@ -192,15 +228,9 @@ export default function QuestionnaireApp() {
       questionsData.questions.map((question) => [question.id, question.options[0]?.id])
     );
 
-    setInitialDebugDeityId("gangnim");
+    setInitialDebugDeityId("donghae_yonggungs_daughter");
     setResult(generateResult(debugAnswers, prototypeData));
     setHasStarted(true);
-  }
-
-  function handleDebugIntro() {
-    if (!assetsReady) return;
-
-    setShowIntroMockup(true);
   }
 
   function handleWarmAssetReady(src) {
@@ -212,6 +242,108 @@ export default function QuestionnaireApp() {
       return nextUrls;
     });
   }
+
+  const introPage = (
+    <main
+      className={`intro-mockup-page intro-entry-page${introIsExiting ? " is-exiting" : ""}${!assetsReady ? " is-loading" : ""}`}
+      key="intro"
+    >
+      <AssetWarmup onAssetReady={handleWarmAssetReady} urls={PRELOAD_IMAGE_URLS} />
+      <iframe
+        className="intro-mockup-frame"
+        ref={introFrameRef}
+        src={`${introPrototypeUrl}?paper=${encodeURIComponent(heroBlackPaperImage)}&model=${encodeURIComponent(introModelUrl)}&cloud=${encodeURIComponent(heroCloudImage)}&cloud2=${encodeURIComponent(heroCloudTwoImage)}&cloud4=${encodeURIComponent(introCloudFourImage)}`}
+        title="Bonpuri intro"
+        onLoad={() => {
+          if (!assetsReady) return;
+
+          introFrameRef.current?.contentWindow?.postMessage({
+            type: "bonpuri-assets-ready"
+          }, window.location.origin);
+        }}
+      />
+      {!assetsReady ? (
+        <div className="intro-loading-overlay" aria-live="polite">
+          <p>{language === "ko" ? "이미지를 준비하는 중입니다" : "Preparing images"}</p>
+          <div
+            aria-label={language === "ko" ? "로딩 진행률" : "Loading progress"}
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow={loadingProgress}
+            className="intro-loading-progress"
+            role="progressbar"
+          >
+            <span style={{ width: `${loadingProgress}%` }} />
+          </div>
+        </div>
+      ) : null}
+    </main>
+  );
+
+  const questionnairePage = (
+    <main className={`questionnaire-page${introIsExiting ? " is-entering" : ""}`} key="questionnaire">
+      <div className="questionnaire-top-left-controls">
+        <HomeButton language={language} onClick={handleRestart} />
+        <button
+          className="questionnaire-debug-result-button"
+          disabled={!assetsReady}
+          type="button"
+          onClick={handleDebugResult}
+        >
+          Result
+        </button>
+      </div>
+      <h1>{language === "ko" ? "본풀이 성향 테스트" : "Bonpuri Type Test"}</h1>
+
+      <section
+        className="question-section"
+        aria-labelledby="question-title"
+      >
+        <p>{progressLabel}</p>
+        <div
+          aria-label={progressLabel}
+          aria-valuemax="100"
+          aria-valuemin="0"
+          aria-valuenow={Math.round(progressPercent)}
+          className="question-progress"
+          role="progressbar"
+        >
+          <span style={{ width: `${progressPercent}%` }} />
+        </div>
+
+        <h2 id="question-title" key={currentQuestion.id}>
+          {questionText}
+        </h2>
+
+        <div className="answer-list" key={`${currentQuestion.id}-answers`}>
+          {currentQuestion.options.map((option, index) => (
+            <button
+              className={`answer-button ${selectedAnswers[currentQuestion.id] === option.id ? "is-selected" : ""}`}
+              key={option.id}
+              type="button"
+              onClick={() => handleAnswer(option.id)}
+            >
+              <span className={`answer-marker answer-marker-${index}`}>
+                {String.fromCharCode(65 + index)}
+              </span>
+              <span>{getLocalizedOptionText(option, language)}</span>
+            </button>
+          ))}
+        </div>
+
+        <div className="question-actions">
+          <button
+            className="back-button"
+            type="button"
+            onClick={handleBack}
+            disabled={currentQuestionIndex === 0}
+          >
+            {language === "ko" ? "이전" : "Back"}
+          </button>
+        </div>
+      </section>
+    </main>
+  );
 
   if (result) {
     return (
@@ -225,19 +357,43 @@ export default function QuestionnaireApp() {
     );
   }
 
-  if (showIntroMockup) {
+  if (!hasStarted) {
     return (
-      <main className="intro-mockup-page">
+      <>
+        {introPage}
+      </>
+    );
+  }
+
+  if (false && !hasStarted) {
+    return (
+      <main className={`intro-mockup-page intro-entry-page${introIsExiting ? " is-exiting" : ""}${!assetsReady ? " is-loading" : ""}`}>
+        <AssetWarmup onAssetReady={handleWarmAssetReady} urls={PRELOAD_IMAGE_URLS} />
         <iframe
           className="intro-mockup-frame"
-          src={`${introPrototypeUrl}?paper=${encodeURIComponent(heroBlackPaperImage)}&model=${encodeURIComponent(introModelUrl)}`}
-          title="Bonpuri intro prototype"
+          src={`${introPrototypeUrl}?paper=${encodeURIComponent(heroBlackPaperImage)}&model=${encodeURIComponent(introModelUrl)}&cloud=${encodeURIComponent(heroCloudImage)}&cloud2=${encodeURIComponent(heroCloudTwoImage)}&cloud4=${encodeURIComponent(introCloudFourImage)}`}
+          title="Bonpuri intro"
         />
+        {!assetsReady ? (
+          <div className="intro-loading-overlay" aria-live="polite">
+            <p>{language === "ko" ? "이미지를 준비하는 중입니다" : "Preparing images"}</p>
+            <div
+              aria-label={language === "ko" ? "로딩 진행률" : "Loading progress"}
+              aria-valuemax="100"
+              aria-valuemin="0"
+              aria-valuenow={loadingProgress}
+              className="intro-loading-progress"
+              role="progressbar"
+            >
+              <span style={{ width: `${loadingProgress}%` }} />
+            </div>
+          </div>
+        ) : null}
       </main>
     );
   }
 
-  if (!hasStarted) {
+  if (false && !hasStarted) {
     return (
       <main className="landing-page">
         <AssetWarmup onAssetReady={handleWarmAssetReady} urls={PRELOAD_IMAGE_URLS} />
@@ -246,11 +402,11 @@ export default function QuestionnaireApp() {
             <span>Bonpuri</span>
             <span>Type Test</span>
           </h1>
-          <p>{language === "ko" ? "언어를 선택하고 시작하세요" : "Select language to start"}</p>
+          <p>{language === "ko" ? "ì–¸ì–´ë¥¼ ì„ íƒí•˜ê³  ì‹œìž‘í•˜ì„¸ìš”" : "Select language to start"}</p>
           {!assetsReady ? (
             <div className="landing-loading" aria-live="polite">
               <p className="landing-loading-status">
-              {language === "ko" ? "이미지를 준비하는 중입니다" : "Preparing images"}
+              {language === "ko" ? "ì´ë¯¸ì§€ë¥¼ ì¤€ë¹„í•˜ëŠ” ì¤‘ìž…ë‹ˆë‹¤" : "Preparing images"}
               </p>
               <div
                 aria-label={language === "ko" ? "로딩 진행률" : "Loading progress"}
@@ -285,7 +441,7 @@ export default function QuestionnaireApp() {
                 setHasStarted(true);
               }}
             >
-              한국어
+              í•œêµ­ì–´
             </button>
           </div>
           <button
@@ -309,9 +465,30 @@ export default function QuestionnaireApp() {
     );
   }
 
+  if (introIsExiting) {
+    return (
+      <>
+        {questionnairePage}
+        {introPage}
+      </>
+    );
+  }
+
+  return questionnairePage;
+
   return (
     <main className="questionnaire-page">
-      <HomeButton language={language} onClick={handleRestart} />
+      <div className="questionnaire-top-left-controls">
+        <HomeButton language={language} onClick={handleRestart} />
+        <button
+          className="questionnaire-debug-result-button"
+          disabled={!assetsReady}
+          type="button"
+          onClick={handleDebugResult}
+        >
+          Result
+        </button>
+      </div>
       <h1>{language === "ko" ? "본풀이 성향 테스트" : "Bonpuri Type Test"}</h1>
 
       <section
@@ -432,3 +609,4 @@ function AssetWarmup({ onAssetReady, urls }) {
     </div>
   );
 }
+
