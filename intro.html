@@ -18,7 +18,7 @@
       display:block;
       position:relative;
       transform-origin:center center;
-      transition:transform 900ms cubic-bezier(0.16, 1, 0.3, 1), filter 900ms ease, opacity 900ms ease;
+      transition:transform 1500ms cubic-bezier(0.16, 1, 0.3, 1), filter 1500ms ease, opacity 1500ms ease;
       z-index:2;
     }
     body.is-transitioning canvas {
@@ -105,7 +105,7 @@
       position:fixed;
       transform:scale(0.18);
       transform-origin:center center;
-      transition:transform 920ms cubic-bezier(0.12, 0.92, 0.18, 1), opacity 720ms ease;
+      transition:transform 2400ms cubic-bezier(0.22, 0.9, 0.22, 1), opacity 2200ms ease;
       z-index:3;
     }
     body.is-transitioning .intro-portal-wash {
@@ -300,6 +300,7 @@ let animationFrameId = null;
 let centerGlow = null;
 let selectedLanguage = null;
 let transitionTimeoutId = 0;
+let transitionWashTimeoutId = 0;
 let transitionStarted = false;
 let introAssetsReady = false;
 const resetButton = document.querySelector('.intro-debug-reset');
@@ -316,7 +317,9 @@ const BOTTOM_FLOAT_X = 0.003;
 const INTRO_FLOAT_MS = 3200;
 const CENTER_GLOW_SIZE = 1.22;
 const CENTER_GLOW_OPACITY = 0.68;
-const PORTAL_TRANSITION_MS = 900;
+const PORTAL_WASH_DELAY_MS = 950;
+const PORTAL_TRANSITION_MS = 2400;
+const PORTAL_HANDOFF_MS = 1600;
 
 introGroup.scale.setScalar(INTRO_SCALE);
 introGroup.position.y = INTRO_Y_OFFSET;
@@ -333,15 +336,18 @@ function onIntroDone() {
   if (transitionStarted) return;
 
   transitionStarted = true;
-  document.body.classList.add('is-transitioning');
   setCenterGlowProgress(1);
+  window.clearTimeout(transitionWashTimeoutId);
+  transitionWashTimeoutId = window.setTimeout(() => {
+    document.body.classList.add('is-transitioning');
+  }, PORTAL_WASH_DELAY_MS);
   window.clearTimeout(transitionTimeoutId);
   transitionTimeoutId = window.setTimeout(() => {
     window.parent.postMessage({
       type: 'bonpuri-intro-complete',
       language: selectedLanguage || 'en'
     }, window.location.origin);
-  }, PORTAL_TRANSITION_MS);
+  }, PORTAL_WASH_DELAY_MS + PORTAL_HANDOFF_MS);
 }
 
 function postIntroComplete() {
@@ -492,6 +498,7 @@ function resetIntroAnimation(event) {
   selectedLanguage = null;
   transitionStarted = false;
   window.clearTimeout(transitionTimeoutId);
+  window.clearTimeout(transitionWashTimeoutId);
   document.body.classList.remove('is-opening', 'is-transitioning');
 
   if (leftPivot) leftPivot.rotation.y = 0;
