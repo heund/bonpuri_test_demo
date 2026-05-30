@@ -18,6 +18,7 @@ import heroCloudImage from "../../image/background/cloud.png";
 import heroCloudTwoImage from "../../image/background/cloud2.png";
 import heroMountainImage from "../../image/background/mountain.png";
 import heroOceanImage from "../../image/background/ocean.png";
+import donghaeSpeechBubbleImage from "../../image/elements/speech_bubble_donghae.png";
 import chogongThreeBrothersImage from "../../image/Deity/CHOGONGSHIN.svg";
 import daebyeolsangManuraImage from "../../image/Deity/DAEBYUL.svg";
 import donghaeYonggungDaughterImage from "../../image/Deity/DONGHAE.svg";
@@ -563,21 +564,51 @@ export default function ResultView({
       const mountainProgress = staggeredProgress(progress, 0.22, 1);
       const canvasProgress = staggeredProgress(progress, 0.12, 1);
       const scoreSection = page.querySelector(".combination-result-block .compact-score-summary");
+      const scoreSectionIsVisible = scoreSection && scoreSection.offsetParent !== null;
       const scoreSectionTop = scoreSection
+        && scoreSectionIsVisible
         ? getDocumentOffsetTop(scoreSection)
         : deityLandingScroll + Math.min(window.innerHeight * 0.46, 420);
+      const isDonghaeResult = selectedMatch?.deity_id === "donghae_yonggungs_daughter";
       const releaseScroll = Math.max(deityLandingScroll, scoreSectionTop - (window.innerHeight * 0.62));
-      const deityReleaseStart = Math.max(deityLandingScroll, scoreSectionTop - (window.innerHeight * 0.68));
-      const deityReleaseRange = Math.max(1, window.innerHeight * 0.24);
+      const deityReleaseStart = isDonghaeResult
+        ? deityLandingScroll + (window.innerHeight * 0.92)
+        : Math.max(deityLandingScroll, scoreSectionTop - (window.innerHeight * 0.68));
+      const deityReleaseRange = Math.max(1, window.innerHeight * (isDonghaeResult ? 0.36 : 0.24));
       const deityHoldOffset = Math.max(0, scrollY - deityLandingScroll);
       const deityReleaseProgress = smoothStep(clamp01((scrollY - deityReleaseStart) / deityReleaseRange));
-      const deityPinnedOffset = deityHoldOffset * 0.58 * (1 - deityReleaseProgress);
       const followRange = Math.max(1, releaseScroll - deityLandingScroll);
       const followProgress = smoothStep(clamp01((scrollY - deityLandingScroll) / followRange));
       const canvasFollowOffset = followRange * followProgress;
+      const donghaeBubble = isDonghaeResult
+        ? page.querySelector(".result-donghae-speech-bubble")
+        : null;
+      const donghaeMidpointOffset = donghaeBubble
+        ? Math.min(window.innerHeight * 0.28, donghaeBubble.offsetHeight * 0.22)
+        : 0;
+      const donghaeMidpointProgress = isDonghaeResult
+        ? smoothStep(clamp01((scrollY - (deityLandingScroll * 0.74)) / Math.max(1, window.innerHeight * 0.28)))
+        : 0;
+      const donghaePairLockStart = deityLandingScroll * 0.96;
+      const donghaePairReleaseStart = donghaePairLockStart + (window.innerHeight * 0.7);
+      const donghaePairReleaseRange = Math.max(1, window.innerHeight * 0.24);
+      const donghaePairReleaseProgress = smoothStep(clamp01((scrollY - donghaePairReleaseStart) / donghaePairReleaseRange));
+      const donghaeSharedLockOffset = Math.max(0, scrollY - donghaePairLockStart)
+        * 0.72
+        * (1 - donghaePairReleaseProgress);
+      const deityPinnedOffset = isDonghaeResult
+        ? donghaeSharedLockOffset
+        : deityHoldOffset * 0.58 * (1 - deityReleaseProgress);
+      const bubbleFollowStart = isDonghaeResult ? donghaePairLockStart : heroHeight * 0.34;
+      const bubbleFollowDistance = Math.max(1, heroHeight * (isDonghaeResult ? 0.44 : 0.84));
+      const bubbleProgress = smoothStep(clamp01((scrollY - bubbleFollowStart) / bubbleFollowDistance));
+      const bubbleSettleOffset = isDonghaeResult
+        ? donghaeSharedLockOffset
+        : Math.min(window.innerHeight * 0.34, 320) * bubbleProgress;
+      const deityMidpointOffset = donghaeMidpointOffset * donghaeMidpointProgress * (1 - donghaePairReleaseProgress);
 
       page.style.setProperty("--deity-parallax-x", `${-16 * deityProgress}vw`);
-      page.style.setProperty("--deity-parallax-y", `calc(${48 * deityProgress}vh + ${deityPinnedOffset}px)`);
+      page.style.setProperty("--deity-parallax-y", `calc(${48 * deityProgress}vh + ${deityPinnedOffset + deityMidpointOffset}px)`);
       page.style.setProperty("--deity-parallax-scale", `${1 - deityProgress * 0.1}`);
       page.style.setProperty("--deity-parallax-opacity", "1");
       page.style.setProperty("--cloud-one-parallax-x", `${52 * cloudOneProgress}vw`);
@@ -589,6 +620,7 @@ export default function ResultView({
       page.style.setProperty("--mountain-parallax-x", `${58 * mountainProgress}vw`);
       page.style.setProperty("--mountain-parallax-y", `${1.5 * mountainProgress}rem`);
       page.style.setProperty("--canvas-parallax-y", `${(-28 * canvasProgress) - (canvasFollowOffset * 1.04)}px`);
+      page.style.setProperty("--donghae-bubble-parallax-y", `${bubbleSettleOffset}px`);
     };
 
     const updateParallax = () => {
@@ -749,7 +781,15 @@ export default function ResultView({
           )}
         </section>
 
-        <div className="result-body-region">
+        <div className={`result-body-region${selectedMatch?.deity_id === "donghae_yonggungs_daughter" ? " result-body-region-donghae" : ""}`}>
+          {selectedMatch?.deity_id === "donghae_yonggungs_daughter" ? (
+            <img
+              alt=""
+              aria-hidden="true"
+              className="result-donghae-speech-bubble"
+              src={donghaeSpeechBubbleImage}
+            />
+          ) : null}
           <div className="result-body-canvas">
             <section className="result-section result-reading-section" aria-label={copy.resultText}>
               <CombinationOpening blocks={combinationResultBlocks} />
