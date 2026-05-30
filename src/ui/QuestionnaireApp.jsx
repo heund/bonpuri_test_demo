@@ -266,7 +266,7 @@ export default function QuestionnaireApp() {
       />
       {!assetsReady ? (
         <div className="intro-loading-overlay" aria-live="polite">
-          <p>{language === "ko" ? "이미지를 준비하는 중입니다" : "Preparing images"}</p>
+          <p>{language === "ko" ? "로딩 중" : "Loading"}</p>
           <div
             aria-label={language === "ko" ? "로딩 진행률" : "Loading progress"}
             aria-valuemax="100"
@@ -283,7 +283,11 @@ export default function QuestionnaireApp() {
   );
 
   const questionnairePage = (
-    <main className={`questionnaire-page${introIsExiting ? " is-entering" : ""}`} key="questionnaire">
+    <main
+      className={`questionnaire-page${introIsExiting ? " is-entering" : ""}`}
+      key="questionnaire"
+      style={{ "--questionnaire-paper-image": `url(${heroMainPaperImage})` }}
+    >
       <div className="questionnaire-top-left-controls">
         <HomeButton language={language} onClick={handleRestart} />
         <button
@@ -378,7 +382,7 @@ export default function QuestionnaireApp() {
         />
         {!assetsReady ? (
           <div className="intro-loading-overlay" aria-live="polite">
-            <p>{language === "ko" ? "이미지를 준비하는 중입니다" : "Preparing images"}</p>
+            <p>{language === "ko" ? "로딩 중" : "Loading"}</p>
             <div
               aria-label={language === "ko" ? "로딩 진행률" : "Loading progress"}
               aria-valuemax="100"
@@ -479,7 +483,10 @@ export default function QuestionnaireApp() {
   return questionnairePage;
 
   return (
-    <main className="questionnaire-page">
+    <main
+      className="questionnaire-page"
+      style={{ "--questionnaire-paper-image": `url(${heroMainPaperImage})` }}
+    >
       <div className="questionnaire-top-left-controls">
         <HomeButton language={language} onClick={handleRestart} />
         <button
