@@ -419,6 +419,7 @@ const TOP_FLOAT_X = 0.0055;
 const BOTTOM_FLOAT_Y = 0.0125;
 const BOTTOM_FLOAT_X = 0.0042;
 const INTRO_FLOAT_MS = 3200;
+const INTRO_FLOAT_MULTIPLIER = matchMedia('(pointer: coarse) and (max-width: 1200px)').matches ? 1.65 : 1;
 const CENTER_GLOW_SIZE = 1.22;
 const CENTER_GLOW_OPACITY = 0.68;
 const PORTAL_WASH_DELAY_MS = 950;
@@ -463,10 +464,10 @@ function postIntroComplete() {
 
 function updateIntroFloat(now) {
   const phase = (now / INTRO_FLOAT_MS) * Math.PI * 2;
-  topLetterGroup.position.x = Math.sin(phase * 0.82) * TOP_FLOAT_X;
-  topLetterGroup.position.y = Math.sin(phase) * TOP_FLOAT_Y;
-  bottomLetterGroup.position.x = Math.sin((phase * 0.72) + 1.1) * BOTTOM_FLOAT_X;
-  bottomLetterGroup.position.y = Math.sin(phase + 1.45) * BOTTOM_FLOAT_Y;
+  topLetterGroup.position.x = Math.sin(phase * 0.82) * TOP_FLOAT_X * INTRO_FLOAT_MULTIPLIER;
+  topLetterGroup.position.y = Math.sin(phase) * TOP_FLOAT_Y * INTRO_FLOAT_MULTIPLIER;
+  bottomLetterGroup.position.x = Math.sin((phase * 0.72) + 1.1) * BOTTOM_FLOAT_X * INTRO_FLOAT_MULTIPLIER;
+  bottomLetterGroup.position.y = Math.sin(phase + 1.45) * BOTTOM_FLOAT_Y * INTRO_FLOAT_MULTIPLIER;
 }
 
 function applyIntroMaterial(root) {
