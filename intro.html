@@ -184,24 +184,6 @@
         transition:none;
       }
     }
-    .intro-debug-reset {
-      appearance:none;
-      background:rgba(216, 216, 208, 0.12);
-      border:1px solid rgba(216, 216, 208, 0.42);
-      border-radius:999px;
-      color:#d8d8d0;
-      cursor:pointer;
-      font:600 12px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      letter-spacing:0;
-      padding:8px 12px;
-      position:fixed;
-      right:18px;
-      top:18px;
-      z-index:6;
-    }
-    .intro-debug-reset:hover {
-      background:rgba(216, 216, 208, 0.2);
-    }
     .intro-language-panel {
       align-items:center;
       bottom:clamp(32px, 8vh, 72px);
@@ -336,7 +318,6 @@
 <img class="intro-corner-logo" alt="" aria-hidden="true" />
 <img class="intro-korean-doorway-type" alt="" aria-hidden="true" />
 <span class="intro-portal-wash" aria-hidden="true"></span>
-<button class="intro-debug-reset" type="button">Reset animation</button>
 <div class="intro-language-panel">
   <div class="intro-language-copy">
     <p class="intro-language-title-en">What type of Bonpuri are you?</p>
@@ -427,7 +408,6 @@ let transitionTimeoutId = 0;
 let transitionWashTimeoutId = 0;
 let transitionStarted = false;
 let introAssetsReady = false;
-const resetButton = document.querySelector('.intro-debug-reset');
 const languageButtons = Array.from(document.querySelectorAll('.intro-language-actions button'));
 
 const OPEN_ANGLE = Math.PI * 0.75;
@@ -613,28 +593,6 @@ function startIntroAnimation() {
   ensureAnimationLoop();
 }
 
-function resetIntroAnimation(event) {
-  if (event) event.stopPropagation();
-
-  playing = false;
-  hasPlayed = false;
-  startRequested = false;
-  selectedLanguage = null;
-  transitionStarted = false;
-  window.clearTimeout(transitionTimeoutId);
-  window.clearTimeout(transitionWashTimeoutId);
-  document.body.classList.remove('is-opening', 'is-transitioning');
-
-  if (leftPivot) leftPivot.rotation.y = 0;
-  if (rightPivot) rightPivot.rotation.y = 0;
-  setCenterGlowProgress(0);
-
-  languageButtons.forEach((button) => {
-    button.disabled = false;
-  });
-  ensureAnimationLoop();
-}
-
 function requestStart(language) {
   if (!introAssetsReady) return;
 
@@ -670,8 +628,6 @@ function renderOnce() {
   renderer.render(scene, camera);
 }
 
-resetButton.addEventListener('pointerdown', resetIntroAnimation);
-resetButton.addEventListener('click', resetIntroAnimation);
 window.addEventListener('message', (event) => {
   if (event.origin !== window.location.origin) return;
   if (event.data?.type !== 'bonpuri-assets-ready') return;
