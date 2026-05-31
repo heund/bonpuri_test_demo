@@ -4,6 +4,9 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Intro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
@@ -50,6 +53,25 @@
     }
     body.is-opening .intro-corner-logo {
       opacity:0;
+    }
+    .intro-korean-doorway-type {
+      display:none;
+      height:auto;
+      left:69.5%;
+      mask-image:linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.55) 16%, #000 34%, #000 100%);
+      -webkit-mask-image:linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.55) 16%, #000 34%, #000 100%);
+      opacity:0.4;
+      pointer-events:none;
+      position:fixed;
+      top:56.5%;
+      transform:translateY(-50%);
+      transition:opacity 900ms ease, transform 900ms ease;
+      width:clamp(46px, 4.7vw, 68px);
+      z-index:2;
+    }
+    body.is-opening .intro-korean-doorway-type {
+      opacity:0;
+      transform:translateY(-50%) translateY(0.25rem);
     }
     .intro-cloud {
       height:min(25vw, 264px);
@@ -180,29 +202,57 @@
     .intro-debug-reset:hover {
       background:rgba(216, 216, 208, 0.2);
     }
-    .intro-language-actions {
+    .intro-language-panel {
       align-items:center;
       bottom:clamp(32px, 8vh, 72px);
-      display:flex;
-      gap:14px;
-      justify-content:center;
+      display:grid;
+      gap:clamp(28px, 4.4vh, 44px);
+      justify-items:center;
       left:50%;
       opacity:0;
       pointer-events:none;
       position:fixed;
       transform:translate(-50%, 0.5rem);
+      transition:opacity 1200ms ease, transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
       z-index:5;
     }
-    body.assets-ready .intro-language-actions {
+    body.assets-ready .intro-language-panel {
       opacity:1;
       pointer-events:auto;
       transform:translate(-50%, 0);
     }
-    body.is-opening .intro-language-actions {
+    body.is-opening .intro-language-panel {
       opacity:0;
       pointer-events:none;
       transform:translate(-50%, 0.35rem);
       transition:opacity 260ms ease, transform 260ms ease;
+    }
+    .intro-language-title {
+      color:#ffffff;
+      font:400 clamp(22px, 3.5vw, 39px)/1.05 "Jua", system-ui, sans-serif;
+      letter-spacing:0;
+      margin:0;
+      text-align:center;
+      white-space:nowrap;
+    }
+    .intro-language-copy {
+      display:grid;
+      gap:clamp(9px, 1.3vh, 15px);
+      justify-items:center;
+    }
+    .intro-language-title-en {
+      color:#ffffff;
+      font:500 clamp(19px, 3.05vw, 34px)/0.98 "SN Pro", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing:0;
+      margin:0;
+      text-align:center;
+      white-space:nowrap;
+    }
+    .intro-language-actions {
+      align-items:center;
+      display:flex;
+      gap:14px;
+      justify-content:center;
     }
     .intro-language-actions button {
       appearance:none;
@@ -211,12 +261,12 @@
       border-radius:999px;
       color:#14120f;
       cursor:pointer;
-      font:650 clamp(15px, 2vw, 18px)/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font:650 clamp(20px, 2.75vw, 25px)/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing:0;
-      min-height:46px;
-      min-width:132px;
+      min-height:54px;
+      min-width:156px;
       opacity:0;
-      padding:14px 22px;
+      padding:17px 27px;
       transform:translateY(0.42rem);
       transition:background 160ms ease, opacity 1200ms ease, transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -244,11 +294,18 @@
 <span class="intro-cloud-two" aria-hidden="true"></span>
 <span class="intro-cloud-four" aria-hidden="true"></span>
 <img class="intro-corner-logo" alt="" aria-hidden="true" />
+<img class="intro-korean-doorway-type" alt="" aria-hidden="true" />
 <span class="intro-portal-wash" aria-hidden="true"></span>
 <button class="intro-debug-reset" type="button">Reset animation</button>
-<div class="intro-language-actions" aria-label="Select language">
-  <button data-language="en" type="button">English</button>
-  <button data-language="ko" type="button">한국어</button>
+<div class="intro-language-panel">
+  <div class="intro-language-copy">
+    <p class="intro-language-title-en">What type of Bonpuri are you?</p>
+    <p class="intro-language-title">나는 어떤 본풀이 유형일까?</p>
+  </div>
+  <div class="intro-language-actions" aria-label="Select language">
+    <button data-language="en" type="button">English</button>
+    <button data-language="ko" type="button">한국어</button>
+  </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
@@ -261,6 +318,7 @@ const cloudImage = params.get('cloud');
 const cloudTwoImage = params.get('cloud2');
 const cloudFourImage = params.get('cloud4');
 const logoImage = params.get('logo');
+const koreanTypeImage = params.get('koreanType');
 
 if (paperImage) {
   document.documentElement.style.setProperty('--intro-paper-image', 'url("' + paperImage + '")');
@@ -280,6 +338,10 @@ if (cloudFourImage) {
 
 if (logoImage) {
   document.querySelector('.intro-corner-logo')?.setAttribute('src', logoImage);
+}
+
+if (koreanTypeImage) {
+  document.querySelector('.intro-korean-doorway-type')?.setAttribute('src', koreanTypeImage);
 }
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });

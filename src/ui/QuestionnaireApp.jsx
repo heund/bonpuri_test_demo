@@ -23,6 +23,7 @@ import introCloudFourImage from "../../image/background/cloud4.png";
 import heroMountainImage from "../../image/BackgroundWebp/mountain.webp";
 import heroOceanImage from "../../image/BackgroundWebp/ocean.webp";
 import introLogoImage from "../../image/logo/LOGOONLY_WW.svg";
+import introKoreanDoorwayImage from "../../image/typography/doorway_korean.svg";
 import selfLensImage from "../../image/self_lens.svg";
 import socialLensImage from "../../image/social_lens.svg";
 import careOrientationImage from "../../image/care_orientation.svg";
@@ -55,6 +56,7 @@ const PRELOAD_IMAGE_URLS = [
   heroCloudTwoImage,
   introCloudFourImage,
   introLogoImage,
+  introKoreanDoorwayImage,
   heroMountainImage,
   heroOceanImage,
   selfLensImage,
@@ -254,7 +256,7 @@ export default function QuestionnaireApp() {
       <iframe
         className="intro-mockup-frame"
         ref={introFrameRef}
-        src={`${introPrototypeUrl}?paper=${encodeURIComponent(heroBlackPaperImage)}&model=${encodeURIComponent(introModelUrl)}&cloud=${encodeURIComponent(heroCloudImage)}&cloud2=${encodeURIComponent(heroCloudTwoImage)}&cloud4=${encodeURIComponent(introCloudFourImage)}&logo=${encodeURIComponent(introLogoImage)}`}
+        src={`${introPrototypeUrl}?paper=${encodeURIComponent(heroBlackPaperImage)}&model=${encodeURIComponent(introModelUrl)}&cloud=${encodeURIComponent(heroCloudImage)}&cloud2=${encodeURIComponent(heroCloudTwoImage)}&cloud4=${encodeURIComponent(introCloudFourImage)}&logo=${encodeURIComponent(introLogoImage)}&koreanType=${encodeURIComponent(introKoreanDoorwayImage)}`}
         title="Bonpuri intro"
         onLoad={() => {
           if (!assetsReady) return;
@@ -377,7 +379,7 @@ export default function QuestionnaireApp() {
         <AssetWarmup onAssetReady={handleWarmAssetReady} urls={PRELOAD_IMAGE_URLS} />
         <iframe
           className="intro-mockup-frame"
-          src={`${introPrototypeUrl}?paper=${encodeURIComponent(heroBlackPaperImage)}&model=${encodeURIComponent(introModelUrl)}&cloud=${encodeURIComponent(heroCloudImage)}&cloud2=${encodeURIComponent(heroCloudTwoImage)}&cloud4=${encodeURIComponent(introCloudFourImage)}&logo=${encodeURIComponent(introLogoImage)}`}
+          src={`${introPrototypeUrl}?paper=${encodeURIComponent(heroBlackPaperImage)}&model=${encodeURIComponent(introModelUrl)}&cloud=${encodeURIComponent(heroCloudImage)}&cloud2=${encodeURIComponent(heroCloudTwoImage)}&cloud4=${encodeURIComponent(introCloudFourImage)}&logo=${encodeURIComponent(introLogoImage)}&koreanType=${encodeURIComponent(introKoreanDoorwayImage)}`}
           title="Bonpuri intro"
         />
         {!assetsReady ? (
